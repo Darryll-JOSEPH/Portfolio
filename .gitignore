@@ -1,0 +1,11 @@
+# Fichiers privés à ne pas publier
+*.private
+*.secret
+notes/
+drafts/
+config.json
+.env
+
+# Fichiers système
+.DS_Store
+Thumbs.db
