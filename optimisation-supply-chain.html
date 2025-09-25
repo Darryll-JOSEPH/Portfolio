@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtag/js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PT5QG324');</script>
+  <!-- End Google Tag Manager -->
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimisation Supply Chain | Eliesse Laslah</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+    
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid var(--highlight);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+    }
+    
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+    }
+    
+    [data-lang="en"] {
+      display: none;
+    }
+    
+    .lang-fr [data-lang="en"] {
+      display: none;
+    }
+    
+    .lang-en [data-lang="fr"] {
+      display: none;
+    }
+    
+         .lang-en [data-lang="en"] {
+       display: block;
+     }
+     
+           .lang-en [data-lang="en"] strong {
+        display: inline !important;
+      }
+      
+      .lang-fr [data-lang="en"] strong {
+        display: none !important;
+      }
+      
+      .lang-en [data-lang="fr"] strong {
+        display: none !important;
+      }
+      
+      /* Règle spécifique pour masquer le texte anglais en français */
+      .lang-fr [data-lang="en"] {
+        display: none !important;
+      }
+      
+      /* Règle spécifique pour masquer le texte français en anglais */
+      .lang-en [data-lang="fr"] {
+        display: none !important;
+      }
+      
+      /* Règle ULTRA spécifique pour masquer le texte anglais en français */
+      .lang-fr [data-lang="en"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+      }
+      
+      /* Règle NUCLEAIRE pour masquer TOUT le texte anglais en français */
+      .lang-fr [data-lang="en"],
+      .lang-fr [data-lang="en"] *,
+      .lang-fr [data-lang="en"] strong,
+      .lang-fr [data-lang="en"] span,
+      .lang-fr [data-lang="en"] p {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+      }
+      
+      /* Règle FINALE pour masquer le texte anglais en français */
+      body.lang-fr [data-lang="en"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+        color: transparent !important;
+        background: transparent !important;
+      }
+  </style>
+</head>
+<body class="lang-fr">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT5QG324"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#about">Mon Approche</a></li>
+        <li><a href="index.html#skills">Compétences</a></li>
+        <li><a href="index.html#projects">Projets</a></li>
+      </ul>
+      
+      <!-- Language Switcher -->
+      <div class="language-switcher">
+        <select id="languageSelect" class="lang-select">
+          <option value="fr" selected>🇫🇷 Français</option>
+          <option value="en">🇺🇸 English</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO PROJECT ========== -->
+  <section class="project-hero">
+    <div class="container">
+      <div class="project-header">
+        <div class="project-status">
+                     <span class="status-badge completed">
+             <i class="fas fa-check-circle"></i> 
+             <span data-lang="fr">Terminé</span>
+             <span data-lang="en">Completed</span>
+           </span>
+        </div>
+        <h1>
+          <span data-lang="fr">Optimisation Supply Chain</span>
+          <span data-lang="en">Global Supply Chain Optimization</span>
+        </h1>
+        <p class="project-subtitle">
+          <span data-lang="fr">Prévisions Intelligentes & Disponibilité Stocks Internationale</span>
+          <span data-lang="en">Enterprise Forecasting Intelligence & Global Inventory Visibility</span>
+        </p>
+        <div class="project-tech-badges">
+          <span class="tech-badge">Power BI</span>
+          <span class="tech-badge">Power Automate</span>
+          <span class="tech-badge">Kinaxis</span>
+          <span class="tech-badge">Excel</span>
+          <span class="tech-badge">DAX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fas fa-bullseye"></i><span data-lang="fr">Vue d'ensemble</span><span data-lang="en">Executive Summary</span>
+      </h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Transformation complète des processus de prévision et de gestion des stocks à l'échelle internationale 
+              grâce à l'intelligence décisionnelle et l'automatisation avancée.
+            </span>
+            <span data-lang="en">
+              Comprehensive transformation of global forecasting and inventory management processes 
+              through advanced business intelligence and end-to-end process automation.
+            </span>
+          </p>
+          <p>
+            <span data-lang="fr">
+              Ce projet a optimisé significativement les processus supply chain en centralisant les données critiques dispersées, 
+              créant un système unifié de prévisions plus fiables et facilitant la prise de décision basée sur les données pour 
+              améliorer la disponibilité produits et réduire les ruptures de stock.
+            </span>
+            <span data-lang="en">
+              This enterprise-level project revolutionized supply chain operations by centralizing 
+              critical data sources, implementing intelligent forecasting algorithms, and delivering 
+              real-time decision-making capabilities that significantly improved product availability 
+              while reducing stockout risks across international subsidiaries.
+            </span>
+          </p>
+          
+
+        </div>
+        <div class="project-image">
+          <img src="assets/projects/optimisation-supply-chain/Présentation%20Dashboard.png" alt="Dashboard principal Optimisation Supply Chain">
+                     <p class="image-caption">
+             <span data-lang="fr">Dashboard principal - Pilotage supply chain temps réel</span>
+             <span data-lang="en">Main Dashboard - Real-time Supply Chain Management</span>
+           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLEM & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+             <h2 class="section-title"><i class="fas fa-lightbulb"></i> 
+         <span data-lang="fr">Problématique & Solution</span>
+         <span data-lang="en">Business Challenge & Solution</span>
+       </h2>
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i> 
+           <span data-lang="fr">Problématique</span>
+           <span data-lang="en">Business Challenge</span>
+         </h3>
+                     <ul>
+             <li>
+               <span data-lang="fr">Faible fiabilité des forecasts existants</span>
+               <span data-lang="en">Low reliability of existing forecasts</span>
+             </li>
+             <li>
+               <span data-lang="fr">Visibilité réduite entre filiales internationales</span>
+               <span data-lang="en">Reduced visibility between international subsidiaries</span>
+             </li>
+             <li>
+               <span data-lang="fr">Décisions prises sans base analytique consolidée</span>
+               <span data-lang="en">Decisions made without consolidated analytical basis</span>
+             </li>
+             <li>
+               <span data-lang="fr">Processus manuels chronophages et sources d'erreurs</span>
+               <span data-lang="en">Time-consuming manual processes and error sources</span>
+             </li>
+             <li>
+               <span data-lang="fr">Absence d'alertes préventives sur les ruptures</span>
+               <span data-lang="en">Lack of preventive alerts on stockouts</span>
+             </li>
+             <li>
+               <span data-lang="fr">Données dispersées dans multiples systèmes</span>
+               <span data-lang="en">Data scattered across multiple systems</span>
+             </li>
+           </ul>
+        </div>
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i> 
+           <span data-lang="fr">Solution Déployée</span>
+           <span data-lang="en">Deployed Solution</span>
+         </h3>
+                     <ul>
+             <li>
+               <span data-lang="fr">Connexion directe aux données critiques Kinaxis</span>
+               <span data-lang="en">Direct connection to critical Kinaxis data</span>
+             </li>
+             <li>
+               <span data-lang="fr">Dashboard Power BI interactif temps réel</span>
+               <span data-lang="en">Real-time interactive Power BI dashboard</span>
+             </li>
+             <li>
+               <span data-lang="fr">Segmentation dynamique ABC/XYZ intelligente</span>
+               <span data-lang="en">Intelligent dynamic ABC/XYZ segmentation</span>
+             </li>
+             <li>
+               <span data-lang="fr">KPIs sur-mesure (FCE %, taux dispo, biais prévision)</span>
+               <span data-lang="en">Custom KPIs (FCE %, availability rate, forecast bias)</span>
+             </li>
+             <li>
+               <span data-lang="fr">Alertes automatisées via Power Automate</span>
+               <span data-lang="en">Automated alerts via Power Automate</span>
+             </li>
+             <li>
+               <span data-lang="fr">Référentiel centralisé avec historisation complète</span>
+               <span data-lang="en">Centralized repository with complete history</span>
+             </li>
+           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="project-section">
+    <div class="container">
+             <h2 class="section-title"><i class="fas fa-cogs"></i> 
+         <span data-lang="fr">Fonctionnalités Clés</span>
+         <span data-lang="en">Key Features</span>
+       </h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/optimisation-supply-chain/Présentation%20Dashboard.png" alt="Dashboard principal Power BI">
+          </div>
+                     <h3>
+             <span data-lang="fr">Dashboard Pilotage Global</span>
+             <span data-lang="en">Global Management Dashboard</span>
+           </h3>
+           <p>
+             <span data-lang="fr">Interface unifiée Power BI avec KPIs temps réel, visualisations interactives et drill-down par filiale/produit.</span>
+             <span data-lang="en">Unified Power BI interface with real-time KPIs, interactive visualizations and drill-down by subsidiary/product.</span>
+           </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/optimisation-supply-chain/Classification%20ABC.png" alt="Segmentation ABC/XYZ">
+          </div>
+                     <h3>
+             <span data-lang="fr">Segmentation Intelligente ABC/XYZ</span>
+             <span data-lang="en">Intelligent ABC/XYZ Segmentation</span>
+           </h3>
+           <p>
+             <span data-lang="fr">Classification dynamique : ABC (rentabilité produits) et XYZ (variabilité demande) pour optimiser la stratégie stock.</span>
+             <span data-lang="en">Dynamic classification: ABC (product profitability) and XYZ (demand variability) to optimize stock strategy.</span>
+           </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/optimisation-supply-chain/Graphique%20par%20années.png" alt="Analytics temporelles">
+          </div>
+                     <h3>
+             <span data-lang="fr">Analytics Temporelles Avancées</span>
+             <span data-lang="en">Advanced Temporal Analytics</span>
+           </h3>
+           <p>
+             <span data-lang="fr">Analyse des tendances par années, saisonnalité et patterns de demande pour affiner les prévisions.</span>
+             <span data-lang="en">Analysis of trends by years, seasonality and demand patterns to refine forecasts.</span>
+           </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/optimisation-supply-chain/Extraction%20des%20historiques.png" alt="Historisation des données">
+          </div>
+                     <h3>
+             <span data-lang="fr">Historisation & Traçabilité</span>
+             <span data-lang="en">History & Traceability</span>
+           </h3>
+           <p>
+             <span data-lang="fr">Système complet d'extraction et stockage des historiques avec référentiel Excel partagé et versionning.</span>
+             <span data-lang="en">Complete system for extracting and storing history with shared Excel repository and versioning.</span>
+           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERIE DU PROJET ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fas fa-images"></i> 
+        <span data-lang="fr">Galerie du Projet</span>
+        <span data-lang="en">Project Gallery</span>
+      </h2>
+      
+      <div class="project-gallery" id="supply-chain-gallery">
+        <div class="gallery-item">
+          <img src="assets/projects/optimisation-supply-chain/Présentation%20Dashboard.png" alt="Dashboard principal Supply Chain" loading="lazy">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">
+              <span data-lang="fr">Dashboard Principal</span>
+              <span data-lang="en">Main Dashboard</span>
+            </div>
+            <div class="gallery-item-desc">
+              <span data-lang="fr">Vue d'ensemble des KPIs supply chain</span>
+              <span data-lang="en">Supply chain KPIs overview</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="assets/projects/optimisation-supply-chain/Classification%20ABC.png" alt="Classification ABC Supply Chain" loading="lazy">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">
+              <span data-lang="fr">Classification ABC</span>
+              <span data-lang="en">ABC Classification</span>
+            </div>
+            <div class="gallery-item-desc">
+              <span data-lang="fr">Analyse des stocks par importance</span>
+              <span data-lang="en">Stock analysis by importance</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="assets/projects/optimisation-supply-chain/Extraction%20des%20historiques.png" alt="Extraction des historiques" loading="lazy">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">
+              <span data-lang="fr">Extraction Historiques</span>
+              <span data-lang="en">Historical Data Extraction</span>
+            </div>
+            <div class="gallery-item-desc">
+              <span data-lang="fr">Processus automatisé d'extraction</span>
+              <span data-lang="en">Automated extraction process</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="assets/projects/optimisation-supply-chain/Graphique%20par%20années.png" alt="Graphique par années" loading="lazy">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-title">
+              <span data-lang="fr">Analyse Temporelle</span>
+              <span data-lang="en">Temporal Analysis</span>
+            </div>
+            <div class="gallery-item-desc">
+              <span data-lang="fr">Évolution des données par année</span>
+              <span data-lang="en">Data evolution by year</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-center" style="margin-top: 20px; color: #666; font-style: italic;">
+        <span data-lang="fr">Cliquez sur une image pour l'agrandir et naviguer dans la galerie</span>
+        <span data-lang="en">Click on an image to enlarge and navigate through the gallery</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== TECH STACK ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+             <h2 class="section-title"><i class="fas fa-code"></i> 
+         <span data-lang="fr">Architecture Technique</span>
+         <span data-lang="en">Technical Architecture</span>
+       </h2>
+      <div class="tech-architecture">
+        <div class="tech-layer">
+                     <h3>
+             <span data-lang="fr">Collecte & Intégration</span>
+             <span data-lang="en">Data Collection & Integration</span>
+           </h3>
+          <div class="tech-items">
+            <div class="tech-item">
+              <img src="assets/logos/kinaxis.png" alt="Kinaxis">
+              <span>Kinaxis</span>
+            </div>
+            <div class="tech-item">
+              <img src="assets/logos/excel.png" alt="Excel">
+              <span>Excel</span>
+            </div>
+            <div class="tech-item">
+              <img src="assets/logos/powerautomate.png" alt="Power Automate">
+              <span>Power Automate</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tech-layer">
+                     <h3>
+             <span data-lang="fr">Analyse & Visualisation</span>
+             <span data-lang="en">Analysis & Visualization</span>
+           </h3>
+          <div class="tech-items">
+            <div class="tech-item">
+              <img src="assets/logos/powerbi.png" alt="Power BI">
+              <span>Power BI</span>
+            </div>
+            <div class="tech-item">
+              <img src="assets/logos/dax.png" alt="DAX">
+              <span>DAX</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tech-layer">
+                     <h3>
+             <span data-lang="fr">Fonctionnalités Métier</span>
+             <span data-lang="en">Business Features</span>
+           </h3>
+          <div class="tech-features">
+                         <span class="feature-tag">
+               <span data-lang="fr">Prévisions Intelligentes</span>
+               <span data-lang="en">Intelligent Forecasting</span>
+             </span>
+             <span class="feature-tag">
+               <span data-lang="fr">Segmentation ABC/XYZ</span>
+               <span data-lang="en">ABC/XYZ Segmentation</span>
+             </span>
+             <span class="feature-tag">
+               <span data-lang="fr">KPIs Personnalisés</span>
+               <span data-lang="en">Custom KPIs</span>
+             </span>
+             <span class="feature-tag">
+               <span data-lang="fr">Alertes Automatisées</span>
+               <span data-lang="en">Automated Alerts</span>
+             </span>
+             <span class="feature-tag">
+               <span data-lang="fr">Reporting S&OP</span>
+               <span data-lang="en">S&OP Reporting</span>
+             </span>
+             <span class="feature-tag">
+               <span data-lang="fr">Traçabilité Complète</span>
+               <span data-lang="en">Complete Traceability</span>
+             </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS & IMPACT ========== -->
+  <section class="project-section">
+    <div class="container">
+             <h2 class="section-title"><i class="fas fa-chart-line"></i> 
+         <span data-lang="fr">Résultats & Impact</span>
+         <span data-lang="en">Results & Impact</span>
+       </h2>
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+                     <h3>
+             <span data-lang="fr">Transformation Décisionnelle</span>
+             <span data-lang="en">Decision Transformation</span>
+           </h3>
+           <p>
+             <span data-lang="fr">Forecasts transformés en véritable outil décisionnel stratégique avec données fiables et actionables</span>
+             <span data-lang="en">Forecasts transformed into a true strategic decision-making tool with reliable and actionable data</span>
+           </p>
+        </div>
+        
+        <div class="result-card success">
+          <div class="result-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+                     <h3>
+             <span data-lang="fr">Réactivité S&OP</span>
+             <span data-lang="en">S&OP Responsiveness</span>
+           </h3>
+           <p>
+             <span data-lang="fr">Gain immédiat en réactivité du processus S&OP grâce aux alertes temps réel et visualisations instantanées</span>
+             <span data-lang="en">Immediate gain in S&OP process responsiveness thanks to real-time alerts and instant visualizations</span>
+           </p>
+        </div>
+        
+        <div class="result-card accent">
+          <div class="result-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+                     <h3>
+             <span data-lang="fr">Automatisation Totale</span>
+             <span data-lang="en">Total Automation</span>
+           </h3>
+                       <p>
+              <span data-lang="fr">Automatisation complète du reporting supply chain avec zéro retraitement manuel</span>
+              <span data-lang="en">Complete automation of supply chain reporting with zero manual reprocessing</span>
+            </p>
+        </div>
+      </div>
+      
+             <div class="impact-summary">
+         <h3>
+           <span data-lang="fr">🎯 Impact Organisationnel</span>
+           <span data-lang="en">🎯 Organizational Impact</span>
+         </h3>
+         <div class="impact-metrics">
+           <div class="metric">
+             <span class="metric-value">100%</span>
+             <span class="metric-label">
+               <span data-lang="fr">Automatisation reporting</span>
+               <span data-lang="en">Reporting Automation</span>
+             </span>
+             <span class="metric-desc">
+               <span data-lang="fr">Tous les rapports supply chain sont générés automatiquement</span>
+               <span data-lang="en">All supply chain reports are generated automatically</span>
+             </span>
+           </div>
+           <div class="metric">
+             <span class="metric-value">0</span>
+             <span class="metric-label">
+               <span data-lang="fr">Retraitement manuel</span>
+               <span data-lang="en">Manual Processing</span>
+             </span>
+             <span class="metric-desc">
+               <span data-lang="fr">Aucune intervention manuelle requise</span>
+               <span data-lang="en">No manual intervention required</span>
+             </span>
+           </div>
+           <div class="metric">
+             <span class="metric-value">
+               <span data-lang="fr">Temps réel</span>
+               <span data-lang="en">Real-time</span>
+             </span>
+             <span class="metric-label">
+               <span data-lang="fr">Alertes ruptures</span>
+               <span data-lang="en">Stockout Alerts</span>
+             </span>
+             <span class="metric-desc">
+               <span data-lang="fr">Notifications instantanées des risques de rupture</span>
+               <span data-lang="en">Instant notifications of stockout risks</span>
+             </span>
+           </div>
+           <div class="metric">
+             <span class="metric-value">Multi</span>
+             <span class="metric-label">
+               <span data-lang="fr">Multi-filiales</span>
+               <span data-lang="en">Multi-subsidiary</span>
+             </span>
+             <span class="metric-desc">
+               <span data-lang="fr">Surveillance centralisée de toutes les filiales</span>
+               <span data-lang="en">Centralized monitoring of all subsidiaries</span>
+             </span>
+           </div>
+         </div>
+       </div>
+    </div>
+  </section>
+
+    <!-- Back to Top Button -->
+                   <button id="backToTop" class="back-to-top" aria-label="Retour en haut de la page">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects">
+                 <a href="chelonia.html" class="nav-btn">
+           <i class="fas fa-arrow-left"></i> 
+           <span data-lang="fr">Projet précédent</span>
+           <span data-lang="en">Previous Project</span>
+         </a>
+         <div class="nav-center">
+           <a href="index.html#projects" class="nav-btn">
+             <i class="fas fa-th-large"></i> 
+             <span data-lang="fr">Tous les projets</span>
+             <span data-lang="en">All Projects</span>
+           </a>
+         </div>
+         <div class="nav-next">
+           <span class="next-label">
+             <span data-lang="fr">Projet suivant :</span>
+             <span data-lang="en">Next Project:</span>
+           </span>
+           <a href="extraction-intelligente.html" class="nav-btn primary">
+             <span data-lang="fr">Extraction Intelligente</span>
+             <span data-lang="en">Intelligent Extraction</span>
+             <i class="fas fa-arrow-right"></i>
+           </a>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Eliesse Laslah</strong> – Data Analyst & BI Developer</p>
+        <div class="footer-links">
+          <a href="https://github.com/EliLas75" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/e-laslah/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:eliesse.laslah@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="assets/Eliesse.pdf" download aria-label="CV PDF"><i class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 – Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+  <!-- Language Switcher Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const langBtns = document.querySelectorAll('.lang-btn');
+      const body = document.body;
+      
+      // Language switching functionality
+      function switchLanguage(lang) {
+        // Update body class
+        body.className = `lang-${lang}`;
+        
+        // Update active button state
+        langBtns.forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+          }
+        });
+        
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+        
+        // Store preference in localStorage
+        localStorage.setItem('preferred-language', lang);
+      }
+      
+      // Add click event listeners
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          switchLanguage(lang);
+        });
+      });
+      
+      // Check for saved language preference
+      const savedLang = localStorage.getItem('preferred-language');
+      if (savedLang && savedLang !== 'fr') {
+        switchLanguage(savedLang);
+      }
+    });
+  </script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageSelect = document.getElementById('languageSelect');
+      const body = document.body;
+
+      function switchLanguage(lang) {
+        body.className = `lang-${lang}`;
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferred-language', lang);
+      }
+
+      // Add change event listener to select
+      languageSelect.addEventListener('change', function() {
+        const selectedLang = this.value;
+        switchLanguage(selectedLang);
+      });
+
+      const savedLang = localStorage.getItem('preferred-language');
+      if (savedLang && savedLang !== 'fr') {
+        languageSelect.value = savedLang;
+        switchLanguage(savedLang);
+      }
+    });
+  </script>
+</body>
+</html>
