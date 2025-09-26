@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Image Gallery</title>
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <span style="--i:1;"><img src="I.jpeg" alt="">
+                <p>paragraphe 1</p>
+                <a href="https://google.com">lien projet</a>
+            </span>
+            <span style="--i:2;"><img src="N.jpeg" alt=""></span>
+            <span style="--i:3;"><img src="S.jpeg" alt=""></span>
+            <span style="--i:4;"><img src="Y.jpeg" alt=""></span>
+            <span style="--i:5;"><img src="I.jpeg" alt=""></span>
+            <span style="--i:6;"><img src="N.jpeg" alt=""></span>
+            <span style="--i:7;"><img src="S.jpeg" alt=""></span>
+            <span style="--i:8;"><img src="Y.jpeg" alt=""></span>
+        </div>
+
+        <div class="btns">
+            <div class="btn prev">&#10094;</div> <!-- Flèche gauche (‹) -->
+            <div class="btn next">&#10095;</div> <!-- Flèche droite (›) -->
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+
+
+
+
+
+
+        const box = document.querySelector('.box');
+        const panels = [...box.querySelectorAll('span')];
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        let angle = 0; // angle courant
+        let speed = 0.15; // vitesse auto (deg/frame)
+        let stepAngle = 0; // 360 / N
+        let radius = 300;
+        const spacingFactor = 1.3;
+        const pauseMs = 5000; // 5s pause après interaction
+
+        let paused = false;
+        let inactivityTimer = null;
+
+        function layoutPanels() {
+            const N = panels.length;
+            if (!N) return;
+
+            stepAngle = 360 / N;
+
+            const panelWidth = box.clientWidth;
+            const r = (panelWidth / 2) / Math.tan(Math.PI / N);
+            radius = Number.isFinite(r) ? Math.round(r * spacingFactor) : 300;
+
+            panels.forEach((p, i) => {
+                p.style.transform = `rotateY(${i * stepAngle}deg) translateZ(${radius}px)`;
+            });
+
+            box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+        }
+
+        function animate() {
+            if (!paused) {
+                angle -= speed;
+                box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        function pauseAuto(ms = pauseMs) {
+            paused = true;
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(() => { paused = false; }, ms);
+        }
+
+        // Calcul de l’angle cible “aligné”
+        function getNearestAlignedAngle(direction) {
+            // combien d’images déjà “passées”
+            const index = Math.round(angle / stepAngle);
+            // cible = index + direction
+            return index * stepAngle + direction * stepAngle;
+        }
+
+        // Animation douce vers l’angle cible
+        function tweenTo(target, duration = 500) {
+            const start = angle;
+            const delta = target - start;
+            const t0 = performance.now();
+
+            function tick(t) {
+                const p = Math.min(1, (t - t0) / duration);
+                const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+                angle = start + delta * eased;
+                box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Flèches = aller pile à l’image suivante / précédente
+        function rotateOne(direction) {
+            pauseAuto();
+            const target = getNearestAlignedAngle(direction);
+            tweenTo(target);
+        }
+
+        prev.addEventListener('click', () => rotateOne(+1));
+        next.addEventListener('click', () => rotateOne(-1));
+
+        // init
+        layoutPanels();
+        animate();
+        window.addEventListener('resize', () => {
+            clearTimeout(window.__layoutT);
+            window.__layoutT = setTimeout(layoutPanels, 120);
+        });
+    </script>
+
+
+</body>
+
+</html>
