@@ -1,139 +1,155 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PT5QG324');</script>
-  <!-- End Google Tag Manager -->
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <title>Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist | Portfolio</title>
-  <meta name="description" content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes projets supply chain, tableaux de bord interactifs et solutions innovantes.">
-  <meta name="keywords" content="Data Analyst, Power BI, Python, Supply Chain, Dashboard, BI Developer, Automatisation, Eliesse Laslah">
-  <meta name="author" content="Darryll Genève Junior JOSEPH">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://elilas75.github.io/portfolio-site/">
-  <meta property="og:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist | Portfolio">
-  <meta property="og:description" content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes projets supply chain, tableaux de bord interactifs et solutions innovantes.">
-  <meta property="og:image" content="https://elilas75.github.io/portfolio-site/assets/CV%20photo.jpg">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://elilas75.github.io/portfolio-site/">
-  <meta property="twitter:title" content="Eliesse Laslah - Data Analyst & BI Developer">
-  <meta property="twitter:description" content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes projets supply chain, tableaux de bord interactifs et solutions innovantes.">
-  <meta property="twitter:image" content="https://elilas75.github.io/portfolio-site/assets/CV%20photo.jpg">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Darryll</title>
+    <meta name="description" content="Portfolio Data Analyst & Data scientist">
+    <meta name="author" content="Darryll Genève Junior JOSEPH">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Language Switcher Styles -->
-  <style>
-    .language-switcher {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-left: auto;
-    }
-    
-    .lang-select {
-      background: var(--bg-alt);
-      border: 2px solid var(--highlight);
-      color: var(--text);
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      font-size: 14px;
-      outline: none;
-    }
-    
-    .lang-select:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .lang-select:focus {
-      border-color: var(--highlight);
-      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), 0.1);
-    }
-    
-    /* Par défaut, le contenu français est visible, l'anglais caché */
-    [data-lang="en"] {
-      display: none;
-    }
-    
-    /* Quand on est en mode français, cacher l'anglais */
-    .lang-fr [data-lang="en"] {
-      display: none;
-    }
-    
-    /* Quand on est en mode anglais, cacher le français et montrer l'anglais */
-    .lang-en [data-lang="fr"] {
-      display: none;
-    }
-    
-    .lang-en [data-lang="en"] {
-      display: block;
-    }
-    
-    /* Pour les éléments inline, utiliser inline-block au lieu de block */
-    .lang-en [data-lang="en"] {
-      display: inline-block;
-    }
-    
-    /* Pour les paragraphes et divs, utiliser block */
-    .lang-en p[data-lang="en"],
-    .lang-en div[data-lang="en"],
-    .lang-en h2[data-lang="en"],
-    .lang-en h3[data-lang="en"] {
-      display: block;
-    }
-    
-    /* Responsive language switcher */
-    @media (max-width: 768px) {
-      .language-switcher {
-        margin-left: 0;
-        margin-top: 15px;
-        justify-content: center;
-      }
-    }
-  </style>
-  
-  <!-- EmailJS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO Meta Tags -->
+    <title>Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist | Portfolio</title>
+    <meta name="description"
+        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+    <meta name="keywords"
+        content="Data Analyst, Power BI, Python, Automatisation, Tableaux de bord interactifs, Analyse de données, Business Intelligence, Machine Learning, Modélisation prédictive, Solutions innovantes, Data Engineering, IA, Reporting décisionnel, Optimisation performance business">
+    <meta name="author" content="Darryll Genève Junior JOSEPH">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darryll1.github.io/Portfolio/">
+    <meta property="og:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
+    <meta property="og:description"
+        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+    <meta property="og:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://darryll1.github.io/Portfolio/">
+    <meta property="twitter:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
+    <meta property="twitter:description"
+        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+    <meta property="twitter:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
+
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Language Switcher Styles -->
+    <style>
+        /* En mode FR : masquer l'anglais */
+        .lang-fr [data-lang="en"] {
+            display: none !important;
+        }
+
+        .lang-en [data-lang="fr"] {
+            display: none !important;
+        }
+
+
+        /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: auto;
+            color: white;
+        }
+
+        .lang-select {
+            background: var(--bg-alt);
+            border: 2px solid #FFAE42;
+            color: white;
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 14px;
+            outline: none;
+            height: auto;
+        }
+
+        .lang-select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+        }
+
+        .lang-select:focus {
+            border-color: var(--highlight);
+            box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+            border: 2px solid #FFAE42;
+            color: white;
+
+
+        }
+
+        .lang-select option {
+            color: black;
+            /* Texte visible dans la liste */
+            background-color: white;
+            /* Fond blanc par défaut */
+        }
+
+        /* Option survolée dans certains navigateurs */
+        .lang-select option:hover,
+        .lang-select option:focus,
+        .lang-select option:checked {
+            background-color: #e5e5e5;
+            /* Gris clair */
+            color: black;
+            /* Texte bien lisible */
+        }
+
+        @media (max-width: 768px) {
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 15px;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Darryll Genève Junior JOSEPH",
     "jobTitle": "Data Analyst & Data Scientist",
     "description": "Data Analyst spécialisé en Power BI, Python et automatisation supply chain",
-    "url": "https://elilas75.github.io/portfolio-site/",
-    "image": "https://elilas75.github.io/portfolio-site/assets/CV%20photo.jpg",
-    "email": "eliesse.laslah@gmail.com",
+    "url": "https://darryll1.github.io/Portfolio/",
+    "image": "https://darryll1.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
     "sameAs": [
-      "https://github.com/EliLas75",
-      "https://www.linkedin.com/in/e-laslah/"
+      "https://github.com/darryll1",
+      "https://www.linkedin.com/in/darryll-joseph/"
     ],
     "knowsAbout": [
       "Power BI",
@@ -141,547 +157,2368 @@
       "SQL",
       "Data Analysis",
       "Business Intelligence",
-      "Supply Chain",
       "Power Automate",
       "Dashboard Development"
     ]
   }
   </script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
-<body class="lang-fr">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT5QG324"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <!-- ========== COOKIE BANNER ========== -->
-  <div id="cookieBanner" class="cookie-banner" style="display: none;">
-    <div class="cookie-content">
-      <div class="cookie-text">
-        <h4>🍪 Cookies et Confidentialité</h4>
-        <p>Nous utilisons des cookies pour analyser le trafic et améliorer votre expérience. En continuant à naviguer, vous acceptez notre utilisation des cookies.</p>
-      </div>
-      <div class="cookie-buttons">
-        <button id="acceptCookies" class="btn primary">Accepter</button>
-        <button id="declineCookies" class="btn secondary">Refuser</button>
-        <a href="#" class="cookie-link">En savoir plus</a>
-      </div>
-    </div>
-  </div>
+<body id="top" class="lang-fr">
 
-  <!-- ========== NAVIGATION STICKY GLASS EFFECT ========== -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <!-- Menu burger (mobile uniquement) -->
-      <button class="mobile-menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <ul class="nav-links">
-        <li><a href="#top">Accueil</a></li>
-        <li><a href="#about">Mon Approche</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      
-      <!-- Language Switcher -->
-      <div class="language-switcher">
-        <select id="languageSelect" class="lang-select">
-          <option value="fr" selected>🇫🇷 Français</option>
-          <option value="en">🇺🇸 English</option>
-        </select>
-      </div>
-    </div>
-  </nav>
+    <!-- === Filtre SVG pour bordure lumineuse fluide (glow-0) === -->
+    <!-- === Filtre SVG pour bordure lumineuse fluide (glow-0) === -->
+    <!-- <svg width="0" height="0" aria-hidden="true">
+        <filter id="glow-0" x="-.25" y="-.25" width="1.5" height="1.5">
+            <feComponentTransfer>
+                <feFuncA type="table" tableValues="0 2 0"></feFuncA>
+            </feComponentTransfer>
+            <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+            <feComponentTransfer result="rond">
+                <feFuncA type="table" tableValues="-2 3"></feFuncA>
+            </feComponentTransfer>
+            <feMorphology operator="dilate" radius="3"></feMorphology>
+            <feGaussianBlur stdDeviation="6"></feGaussianBlur>
+            <feBlend in="rond" result="glow"></feBlend>
+            <feComponentTransfer in="SourceGraphic">
+                <feFuncA type="table" tableValues="0 0 1"></feFuncA>
+            </feComponentTransfer>
+            <feBlend in2="glow"></feBlend>
+        </filter>
+    </svg> -->
 
-  <!-- ========== HERO SECTION ========== -->
-  <section class="hero" id="top">
-    <div class="container">
-      <div class="hero-content">
-        <img src="assets/CV photo.jpg" alt="Eliesse Laslah" class="hero-img" loading="eager">
-        <div class="hero-text">
-          <h1>Eliesse Laslah</h1>
-          <p class="tagline">
-            <span data-lang="fr">Data Analyst & Data Scientist</span>
-            <span data-lang="en">Data Analyst & Data Scientist</span>
-          </p>
-          <p class="intro">
-            <span data-lang="fr">
-              Expert en Data Engineering & Supply Chain Analytics.
-              J'automatise vos workflows pour transformer vos tâches répétitives et coûteuses en un process 100% automatique, transparent et fiable.
-            </span>
-            <span data-lang="en">
-              Expert in Data Engineering & Supply Chain Analytics.
-              I automate your workflows to transform your repetitive and costly tasks into a 100% automatic, transparent and reliable process.
-            </span>
-          </p>
-          <div class="hero-buttons">
-            <a href="assets/Eliesse.pdf" class="btn primary" download>
-              <span data-lang="fr">Télécharger CV</span>
-              <span data-lang="en">Download Resume</span>
-            </a>
-            <a href="#about" class="btn secondary">
-              <span data-lang="fr">En savoir plus</span>
-              <span data-lang="en">Learn More</span>
-            </a>
-          </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT5QG324" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-          <!-- ========== SOCIAL ICONS ========== -->
-          <div class="social-icons">
-            <a href="https://github.com/EliLas75" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/e-laslah/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:eliesse.laslah@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          </div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========== ABOUT SECTION ========== -->
-  <section class="about" id="about">
-  <div class="container">
-    <h2 class="section-title">
-      <i class="fa-solid fa-user"></i> 
-      <span data-lang="fr">Mon Approche</span>
-      <span data-lang="en">My Approach</span>
-    </h2>
-    <p>
-      <span data-lang="fr">
-        <strong>Supply Chain Data Analyst</strong> avec une double expertise analyste/ingénieur, je transforme les données en avantage concurrentiel pour les entreprises pharma et industrielles. Mon dernier projet ? L'automatisation complète du traitement de <strong>+500 fichiers multi-formats</strong> (PDF, emails, images, données logistiques) pour une multinationale pharma. Résultat : <strong>zéro tâche manuelle</strong> sur l'ensemble du processus. Je modernise les infrastructures de données pour optimiser les décisions S&OP : extraction intelligente de données non-structurées, dashboards temps réel, et alertes prédictives qui accélèrent les processus décisionnels.         Mon approche ? Créer des solutions pérennes qui fonctionnent en autonomie, permettant aux équipes de se concentrer sur la stratégie plutôt que sur la saisie de données.
-      </span>
-      <span data-lang="en">
-        <strong>Supply Chain Data Analyst</strong> with dual analyst/engineer expertise, I transform data into competitive advantage for pharma and industrial companies. My latest project? Complete automation of <strong>+500 multi-format files</strong> (PDF, emails, images, logistics data) for a multinational pharma company. Result: <strong>zero manual tasks</strong> across the entire process. I modernize data infrastructures to optimize S&OP decisions: intelligent extraction of unstructured data, real-time dashboards, and predictive alerts that accelerate decision-making processes.         My approach? Create sustainable solutions that work autonomously, allowing teams to focus on strategy rather than data entry.
-      </span>
-    </p>
-  </div>
-</section>
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li class="current">
+                    <a class="smoothscroll" href="#home" title="Accueil">
+                        <span data-lang="fr">Accueil</span>
+                        <span data-lang="en">Home</span>
+                    </a>
+                </li>
 
+                <li>
+                    <a class="smoothscroll" href="#about" title="À propos">
+                        <span data-lang="fr">À propos</span>
+                        <span data-lang="en">About</span>
+                    </a>
+                </li>
 
-  <!-- === SECTION COMPÉTENCES MIS À JOUR === -->
-<section class="skills" id="skills">
-  <div class="container">
-    <h2 class="section-title">
-      <i class="fa-solid fa-star"></i> 
-      <span data-lang="fr">Mes Compétences</span>
-      <span data-lang="en">My Skills</span>
-    </h2>
+                <li>
+                    <a class="smoothscroll" href="#skills" title="Compétences">
+                        <span data-lang="fr">Compétences</span>
+                        <span data-lang="en">Skills</span>
+                    </a>
+                </li>
 
-    <!-- LOGICIELS -->
-    <div class="skills-group">
-      <h3 class="skill-title">
-        <i class="fa-solid fa-display"></i> 
-        <span data-lang="fr">Logiciels</span>
-        <span data-lang="en">Software</span>
-      </h3>
-      <div class="carousel-wrapper">
-        <div class="skills-carousel">
-          <div class="skill-card"><img src="assets/logos/powerbi.png" alt="Power BI"><span>Power BI</span></div>
-          <div class="skill-card"><img src="assets/logos/powerautomate.png" alt="Power Automate"><span>Power Automate</span></div>
-          <div class="skill-card"><img src="assets/logos/alteryx.png" alt="Alteryx"><span>Alteryx</span></div>
-          <div class="skill-card"><img src="assets/logos/postgresql.png" alt="PostgreSQL"><span>PostgreSQL</span></div>
-          <div class="skill-card"><i class="fab fa-docker" style="font-size: 30px; color: var(--dark);"></i><span>Docker</span></div>
-          <div class="skill-card"><img src="assets/logos/excel.png" alt="Excel"><span>Excel</span></div>
-          <div class="skill-card"><img src="assets/logos/azure.png" alt="Azure"><span>Azure</span></div>
-          <div class="skill-card"><img src="assets/logos/dataiku.png" alt="Dataiku"><span>Dataiku</span></div>
-          <div class="skill-card"><img src="assets/logos/metabase.png" alt="Metabase"><span>Metabase</span></div>
-        </div>
-      </div>
-    </div>
+                <li>
+                    <a class="smoothscroll" href="#projects" title="Projets">
+                        <span data-lang="fr">Projets</span>
+                        <span data-lang="en">Projects</span>
+                    </a>
+                </li>
 
-    <!-- TECHNOLOGIES -->
-    <div class="skills-group">
-      <h3 class="skill-title">
-        <i class="fa-solid fa-brain"></i> 
-        <span data-lang="fr">Langages & Technologies</span>
-        <span data-lang="en">Languages & Technologies</span>
-      </h3>
-      <div class="carousel-wrapper">
-        <div class="skills-carousel">
-          <div class="skill-card"><img src="assets/logos/python.png" alt="Python"><span>Python</span></div>
-          <div class="skill-card"><img src="assets/logos/javascript.png" alt="JavaScript"><span>JavaScript</span></div>
-          <div class="skill-card"><img src="assets/logos/SQL.png" alt="SQL"><span>SQL</span></div>
-          <div class="skill-card"><img src="assets/logos/html.png" alt="HTML"><span>HTML</span></div>
-          <div class="skill-card"><img src="assets/logos/css.png" alt="CSS"><span>CSS</span></div>
-          <div class="skill-card"><img src="assets/logos/react.png" alt="React"><span>React</span></div>
-          <div class="skill-card"><img src="assets/logos/Typescript.png" alt="TypeScript"><span>TypeScript</span></div>
-          <div class="skill-card"><i class="fas fa-server" style="font-size: 30px; color: var(--dark);"></i><span>FastAPI</span></div>
-          <div class="skill-card"><img src="assets/logos/dax.png" alt="DAX"><span>DAX</span></div>
-          <div class="skill-card"><img src="assets/logos/vba.png" alt="VBA"><span>VBA</span></div>
-          <div class="skill-card"><img src="assets/logos/r.png" alt="R"><span>R</span></div>
-          <div class="skill-card"><img src="assets/logos/streamlit.png" alt="Streamlit"><span>Streamlit</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                <li>
+                    <a class="smoothscroll" href="#certifications-diplomes" title="Diplômes et certifications">
+                        <span data-lang="fr">Diplômes</span>
+                        <span data-lang="en">Degrees</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="smoothscroll" href="#parcours" title="Parcours">
+                        <span data-lang="fr">Parcours</span>
+                        <span data-lang="en">Career Path</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="smoothscroll" href="#contact" title="Contact">
+                        <span data-lang="fr">Contact</span>
+                        <span data-lang="en">Contact</span>
+                    </a>
+                </li>
+                <li>
+                    <select id="languageSelect" class="smoothscroll lang-select">
+                        <option value="fr" selected>🇫🇷 Français</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+
+                </li>
+            </ul>
+        </nav>
+
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header> <!-- end s-header -->
 
 
+    <!-- home
+   ================================================== -->
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll"
+        data-image-src="images/hero-bg.jpg" data-natural-width=1920 data-natural-height=1080 data-position-y=center>
 
-<!-- ========== PROJECTS SECTION ========== -->
-<section class="projects" id="projects">
-  <div class="container">
-    <h2 class="section-title">
-      <i class="fas fa-folder-open"></i> 
-      <span data-lang="fr">Projets</span>
-      <span data-lang="en">Projects</span>
-    </h2>
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
 
-    <div class="projects-grid">
-      <!-- Projet 1 - Chelonia -->
-      <a href="chelonia.html" class="project-card">
-        <img src="assets/projects/Dashboard%20vue%20global.png" alt="Chelonia - Dashboard Supply Chain" loading="lazy">
-        <h3>
-          <span data-lang="fr">🚀 Chelonia : Quand la Supply Chain Devient Intelligente</span>
-          <span data-lang="en">🚀 Chelonia: When Supply Chain Becomes Intelligent</span>
-        </h3>
-        <div class="badges">
-          <span class="badge">Python</span>
-          <span class="badge">TypeScript</span>
-          <span class="badge">React</span>
-          <span class="badge">FastAPI</span>
-          <span class="badge">PostgreSQL</span>
-        </div>
-        <p class="project-desc">
-          <span data-lang="fr">Application web full-stack pour le monitoring de la supply chain avec tableau de bord interactif, système de notifications automatisé et visualisations KPI temps réel.</span>
-          <span data-lang="en">Full-stack web application for supply chain monitoring with interactive dashboard, automated notification system and real-time KPI visualizations.</span>
-        </p>
-        <div class="project-link">
-          <span data-lang="fr">Voir le projet ↗</span>
-          <span data-lang="en">View Project ↗</span>
-        </div>
-      </a>
+        <div class="home-content">
 
-      <!-- Projet 2 -->
-      <a href="optimisation-supply-chain.html" class="project-card">
-        <img src="assets/projects/optimisation-supply-chain/Présentation%20Dashboard.png" alt="Optimisation Supply Chain Dashboard" loading="lazy">
-        <h3>
-          <span data-lang="fr">La Supply Chain Libérée du Manuel : Optimisation Globale et Décision Instantanée</span>
-          <span data-lang="en">Supply Chain Freed from Manual: Global Optimization and Instant Decision</span>
-        </h3>
-        <div class="badges">
-          <span class="badge">Power BI</span>
-          <span class="badge">Power Automate</span>
-          <span class="badge">Kinaxis</span>
-          <span class="badge">DAX</span>
-        </div>
-        <p class="project-desc">
-          <span data-lang="fr">Transformation des prévisions internationales et de la disponibilité des stocks avec automatisation complète du reporting supply chain, zéro retraitement manuel.</span>
-          <span data-lang="en">International forecasting and inventory availability transformation with full supply chain reporting automation, zero manual reprocessing.</span>
-        </p>
-        <div class="project-link">
-          <span data-lang="fr">Voir le projet ↗</span>
-          <span data-lang="en">View Project ↗</span>
-        </div>
-      </a>
+            <div class="row home-content__main">
 
-      <!-- Projet 3 -->
-      <a href="extraction-intelligente.html" class="project-card">
-        <div class="fake-pipeline-image">
-        <div class="pipeline-header">
-          <div class="header-bar"></div>
-          <div class="header-dots">
-            <span></span><span></span><span></span>
-          </div>
-        </div>
-        <div class="pipeline-content">
-          <div class="pipeline-step">
-            <div class="step-circle email"></div>
-            <div class="step-label">Extraire</div>
-          </div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-step">
-            <div class="step-circle process"></div>
-            <div class="step-label">Traiter</div>
-          </div>
-          <div class="pipeline-arrow">→</div>
-          <div class="pipeline-step">
-            <div class="step-circle output"></div>
-            <div class="step-label">Sortie</div>
-          </div>
-        </div>
-        <div class="pipeline-stats">
-          <span class="stat">+500 fichiers</span>
-          <span class="stat">0% manuel</span>
-        </div>
-      </div>
-        <h3>
-          <span data-lang="fr">Automatisation 360° : Multi-Sources, Action Instantanée</span>
-          <span data-lang="en">360° Automation: Multi-Sources, Instant Action</span>
-        </h3>
-        <div class="badges">
-          <span class="badge">Power Automate</span>
-          <span class="badge">Alteryx</span>
-          <span class="badge">Python</span>
-          <span class="badge">OCR</span>
-        </div>
-        <p class="project-desc">
-          <span data-lang="fr">Automatisation complète de pipelines multi-sources avec traitement OCR et 500+ fichiers automatisés, zéro saisie manuelle de données.</span>
-          <span data-lang="en">Complete automation of multi-source pipelines with OCR processing and 500+ automated files, zero manual data entry.</span>
-        </p>
-        <div class="project-link">
-          <span data-lang="fr">Voir le projet ↗</span>
-          <span data-lang="en">View Project ↗</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+                <h3 data-lang="fr">Bienvenue</h3>
+                <h3 data-lang="en">Welcome</h3>
 
-<!-- ========== CONTACT SECTION ========== -->
-<section class="contact" id="contact">
-  <div class="container">
-    <h2 class="section-title">
-      <i class="fas fa-envelope"></i> 
-      <span data-lang="fr">Me Contacter</span>
-      <span data-lang="en">Contact Me</span>
-    </h2>
-    
-    <div class="contact-content">
-      <div class="contact-info">
-        <h3>
-          <span data-lang="fr">Discutons de votre projet</span>
-          <span data-lang="en">Let's discuss your project</span>
-        </h3>
-        <p>
-          <span data-lang="fr">Vous avez un projet de données, besoin d'optimiser vos processus ou créer des tableaux de bord ? Je serais ravi d'en discuter avec vous.</span>
-          <span data-lang="en">Do you have a data project, need to optimize your processes or create dashboards? I would be happy to discuss with you.</span>
-        </p>
-        
-        <div class="contact-methods">
-          <a href="darrylljoseph619@gmail.com" class="contact-method">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <span>eliesse.laslah@gmail.com</span>
+                <h1>
+                    <span data-lang="fr">Moi c’est Darryll Joseph,</span>
+                    <span data-lang="en">I’m Darryll Joseph,</span>
+                </h1>
+                <h4 style="color:white;margin-top: 0em;">
+                    <span data-lang="fr">
+                        Je transforme les données en insights clairs, modèles prédictifs<br>
+                        et tableaux de bord impactants avec Power BI, Python, SQL & Machine Learning.
+                    </span>
+                    <span data-lang="en">
+                        I turn data into clear insights, predictive models,<br>
+                        and impactful dashboards with Power BI, Python, SQL & Machine Learning.
+                    </span>
+
+                </h4>
+
+                <div class="home-content__buttons">
+                    <a href="#projects" class="smoothscroll btn btn--stroke">
+                        <span data-lang="fr">Derniers Projets</span>
+                        <span data-lang="en">Latest Projects</span>
+                    </a>
+                    <a href="#top2" class="smoothscroll btn btn--stroke">
+                        <span data-lang="fr">Découvrir plus</span>
+                        <span data-lang="en">Discover more</span>
+                    </a>
+                </div>
+
+                <div class="home-content__scroll">
+                    <a href="#top2" class="scroll-link smoothscroll">
+                        <span data-lang="fr">Découvrir plus</span>
+                        <span data-lang="en">Discover more</span>
+                    </a>
+                </div>
+
             </div>
-          </a>
-          
-          <a href="https://www.linkedin.com/in/e-laslah/" target="_blank" class="contact-method">
-            <i class="fab fa-linkedin"></i>
-            <div>
-              <h4>LinkedIn</h4>
-              <span>e-laslah</span>
-            </div>
-          </a>
-          
-          <a href="https://github.com/EliLas75" target="_blank" class="contact-method">
-            <i class="fab fa-github"></i>
-            <div>
-              <h4>GitHub</h4>
-              <span>EliLas75</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      
-      <div class="contact-form">
-        <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdZsx9aTs-teK7y9iutfaLWgXGrlJQq4fnWd4JF0-tPCg1MCw/formResponse" method="POST" target="hidden_iframe">
-          <div class="form-group">
-            <label for="entry.1270326900">
-              <span data-lang="fr">Nom complet *</span>
-              <span data-lang="en">Full Name *</span>
-            </label>
-            <input type="text" id="entry.1270326900" name="entry.1270326900" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="entry.908254638">
-              <span data-lang="fr">Email *</span>
-              <span data-lang="en">Email *</span>
-            </label>
-            <input type="email" id="entry.908254638" name="entry.908254638" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="entry.372960597">
-              <span data-lang="fr">Sujet *</span>
-              <span data-lang="en">Subject *</span>
-            </label>
-            <input type="text" id="entry.372960597" name="entry.372960597" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="entry.2132059708">
-              <span data-lang="fr">Message *</span>
-              <span data-lang="en">Message *</span>
-            </label>
-            <textarea id="entry.2132059708" name="entry.2132059708" rows="5" required></textarea>
-          </div>
-          
-          <button type="submit" id="submitBtn" class="btn primary">
-            <i class="fas fa-paper-plane"></i> 
-            <span data-lang="fr">Envoyer le message</span>
-            <span data-lang="en">Send Message</span>
-          </button>
-        </form>
-        
-        <!-- Iframe caché pour la soumission -->
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ========== FOOTER ========== -->
-<footer class="site-footer">
-  <div class="container footer-content">
-    <div class="footer-info">
-      <p><strong>Darryll Genève Junior JOSEPH</strong> – Data Analyst & Data Scientist</p>
-      <div class="footer-links">
-        <a href="https://github.com/EliLas75" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/e-laslah/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:darrylljoseph619@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="assets/Eliesse.pdf" download aria-label="CV PDF"><i class="fas fa-file-download"></i></a>
-      </div>
-    </div>
-    <p class="footer-copy">
-      <span data-lang="fr">© 2025 – Tous droits réservés.</span>
-      <span data-lang="en">© 2025 – All rights reserved.</span>
-    </p>
-    <!-- Bouton flottant vers le haut -->
-                <a href="#top" class="back-to-top" aria-label="Retour en haut">
-                  <i class="fas fa-arrow-up"></i>
+        </div> <!-- end home-content -->
+
+        <ul class="home-social">
+            <li>
+                <a href="mailto:jos.darryll@gmail.com" target="_blank">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/Darryll1" target="_blank">
+                    <i class="fab fa-github" aria-hidden="true"></i><span>Github</span>
+                </a>
+            </li>
+            <li>
+            </li>
+
+        </ul>
+        <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="top2">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-container">
+                    <img src="assets/CV photo.png" alt="Darryll Genève Junior JOSEPH" class="hero-img profile-photo"
+                        loading="eager">
+                    <!-- ===== BADGES CERTIFICATIONS EN DEMI-CERCLE ===== -->
+                    <div class="certification-arc">
+                        <img src="assets/Certifications/logo/AZ900.png" class="certif-badge" alt="Certification 1">
+                        <img src="assets/Certifications/logo/PL300.png" class="certif-badge" alt="Certification 2">
+                        <img src="assets/Certifications/logo/IBM.png" class="certif-badge" alt="Certification 3">
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1>Darryll Genève Junior JOSEPH</h1>
+                    <p class="tagline">
+                        <span data-lang="fr">Data Analyst & Data Scientist</span>
+                        <span data-lang="en">Data Analyst and Data Scientist</span>
+                    </p>
+                    <p class="intro">
+                        <span data-lang="fr">
+                            Diplômé d’un <strong>Bac+5 en Data Engineering & IA à l’Efrei</strong>, avec <strong>2 ans
+                                d’expérience</strong> en tant que <strong>Data Analyst / Développeur BI</strong>, je
+                            combine expertise
+                            en <strong>analyse de données</strong>, <strong>reporting décisionnel</strong> et
+                            <strong>modélisation
+                                prédictive</strong>.
+                            <br>
+                            Spécialisé en <strong>BI, Data et IA</strong>, j’ai conduit des projets allant de
+                            l’automatisation de
+                            flux de données à la mise en place de <strong>modèles de machine learning</strong>
+                            et
+                            <strong>systèmes de recommandation</strong>.
+                            <br>
+                            <br>
+                            Certifié <strong>Power BI (PL-300)</strong> et formé au <strong>machine learning</strong>,
+                            j’aime
+                            collaborer
+                            avec les équipes métiers et techniques pour concevoir des <strong>solutions data</strong>
+                            innovantes au
+                            service de la
+                            <strong>stratégie d’entreprise</strong>.
+
+                        </span>
+                        <span data-lang="en">
+                            Graduated with a <strong>Master's degree (Bac+5) in Data Engineering & AI from
+                                Efrei</strong>, with
+                            <strong>2 years of experience</strong> as a <strong>Data Analyst / BI Developer</strong>, I
+                            combine
+                            expertise in <strong>data analysis</strong>, <strong>business reporting</strong>, and
+                            <strong>predictive
+                                modeling</strong>.
+                            <br>
+                            Specialized in <strong>BI, Data, and AI</strong>, I have led projects ranging from
+                            automation of data
+                            workflows to implementing <strong>machine learning models</strong> and
+                            <strong>recommendation
+                                systems</strong>.
+                            <br>
+                            <br>
+                            Certified in <strong>Power BI (PL-300)</strong> and trained in <strong>machine
+                                learning</strong>, I enjoy
+                            collaborating with business and technical teams to design innovative <strong>data
+                                solutions</strong> that
+                            support the company’s <strong>strategic goals</strong>.
+                        </span>
+                    </p>
+                    <!-- ===== KPI HERO ===== -->
+                    <div class="hero-kpis">
+                        <div class="hero-kpi">
+                            <div class="hero-kpi-icon">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div class="hero-kpi-text">
+                                <span class="hero-kpi-number">+3</span>
+                                <span class="hero-kpi-label" data-lang="fr">années d’expérience</span>
+                                <span class="hero-kpi-label" data-lang="en">years of experience</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-kpi">
+                            <div class="hero-kpi-icon">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <div class="hero-kpi-text">
+                                <span class="hero-kpi-number">+5</span>
+                                <span class="hero-kpi-label" data-lang="fr">projets réalisés</span>
+                                <span class="hero-kpi-label" data-lang="en">projects delivered</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-kpi">
+                            <div class="hero-kpi-icon">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div class="hero-kpi-text">
+                                <span class="hero-kpi-number">+5</span>
+                                <span class="hero-kpi-label" data-lang="fr">Diplômes & certifications</span>
+                                <span class="hero-kpi-label" data-lang="en">Degrees & certifications</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== FIN KPI HERO ===== -->
+                    <div class="hero-buttons">
+                        <a href="assets/Darryll.pdf" class="btn primary" download>
+                            </br>
+                            </br>
+                            <span data-lang="fr">Télécharger CV</span>
+                            <span data-lang="en">Download Resume</span>
+                        </a>
+                        <a href="#about" class="btn secondary">
+                            <span data-lang="fr">En savoir plus</span>
+                            <span data-lang="en">Learn More</span>
+                        </a>
+                    </div>
+
+                    <!-- ========== SOCIAL ICONS ========== -->
+                    <div class="social-icons">
+                        <a href="https://github.com/Darryll1" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about s-about target-section" id="about">
+
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full text-center">
+                <!-- <h3><span data-lang="fr">À propos</span>
+                    <span data-lang="en">About</span>
+                </h3> -->
+                <h2> <i class="fa-solid fa-user"></i>
+                    <span data-lang="fr">Mon Approche</span>
+                    <span data-lang="en">My Approach</span>
+                </h2>
+
+                <div class="container">
+                    <!-- <h2 class="section-title">
+                        <i class="fa-solid fa-user"></i>
+                        <span data-lang="fr">Mon Approche</span>
+                        <span data-lang="en">My Approach</span>
+                    </h2> -->
+
+                    <div data-lang="fr">
+                        <p>
+                            <strong>Data Analyst</strong> et <strong>Data Scientist</strong>, j’explore, analyse et
+                            modélise les
+                            données
+                            pour en faire un levier de décision et d’anticipation.
+                            <br>
+                            J’allie la rigueur de l’analyse (<em>exploration, visualisation, storytelling, KPIs</em>) à
+                            la
+                            puissance de
+                            la science des données (<em>modèles prédictifs, machine learning, automatisation</em>).
+                        </p>
+
+                        <ul>
+                            <strong>Je crois que :</strong>
+                            <li><strong>L’analyse</strong> révèle le sens caché des données et éclaire les décisions
+                                immédiates.
+                            </li>
+                            <li><strong>La prédiction</strong> donne un temps d’avance, en permettant d’anticiper les
+                                tendances
+                                et
+                                scénarios futurs.</li>
+                            <li><strong>L’automatisation</strong> crée de la valeur durable, en libérant les équipes des
+                                tâches
+                                répétitives pour se concentrer sur la stratégie.</li>
+                        </ul>
+
+                        <p>
+                            <strong>Mon objectif ?</strong><br>
+                            Construire des solutions qui allient <strong>compréhension du passé</strong> et
+                            <strong>maîtrise de
+                                l’avenir</strong>, pour transformer les données en véritable <strong>avantage
+                                compétitif</strong>.
+                        </p>
+                    </div>
+
+                    <div data-lang="en">
+                        <p>
+                            <strong>Data Analyst</strong> and <strong>Data Scientist</strong>, I explore, analyze, and
+                            model
+                            data to turn
+                            it into a lever for decision-making and foresight.
+                            <br>
+                            I combine the rigor of analysis (<em>exploration, visualization, storytelling, KPIs</em>)
+                            with the
+                            power of
+                            data science (<em>predictive models, machine learning, automation</em>).
+                        </p>
+
+
+                        <ul>
+                            <strong>I believe that:</strong>
+                            <li><strong>Analysis</strong> uncovers the hidden meaning in data and guides immediate
+                                decisions.
+                            </li>
+                            <li><strong>Prediction</strong> provides a competitive edge by enabling anticipation of
+                                trends and
+                                future
+                                scenarios.</li>
+                            <li><strong>Automation</strong> creates lasting value by freeing teams from repetitive tasks
+                                so they
+                                can
+                                focus on strategy.</li>
+                        </ul>
+
+                        <p>
+                            <strong>My goal?</strong><br>
+                            To build solutions that combine <strong>understanding of the past</strong> with
+                            <strong>mastery of
+                                the
+                                future</strong>, transforming data into a true <strong>competitive advantage</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- === SECTION COMPÉTENCES === -->
+    <section class="skills target-section" id="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fa-solid fa-star"></i>
+                <span data-lang="fr">Mes Compétences</span>
+                <span data-lang="en">My Skills</span>
+            </h2>
+
+            <!-- Barre de recherche compétences -->
+            <div class="skills-search">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="text" id="skillSearch" type="search" placeholder="Rechercher une compétence"
+                    data-placeholder-fr="Rechercher une compétence" data-placeholder-en="Search a skill">
+            </div>
+
+            </br>
+            </br>
+            <p id="skillNoResults" class="no-results" style="display:none;">
+                <span data-lang="fr">Aucune compétence trouvée.</span>
+                <span data-lang="en">No skills found.</span>
+            </p>
+
+
+
+            <div class="skills-grid">
+                <!-- Outils & DevOps -->
+                <div class="skill-block" data-group="devops">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <span data-lang="fr" class="skill-block-title">Outils & DevOps</span>
+                        <span data-lang="en" class="skill-block-title">Tools & DevOps</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="assets/logos/Git.png" alt="Git"><span>Git</span></div>
+                        <div class="skill-item"><img src="assets/logos/docker.png" alt="Docker"><span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-code-branch" style="font-size:15px; color:var(--accent);"></i>
+                            <span>CI/CD</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-robot" style="font-size:15px; color:var(--accent);"></i>
+                            <span>MLOps</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/Powershell.png"
+                                alt="PowerShell"><span>PowerShell</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-globe" style="font-size:15px; color:var(--accent);"></i>
+                            <span>API & Web Services</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/Postman.png" alt="Postman"><span>Postman</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Analytics & Data Science -->
+                <div class="skill-block" data-group="analytics">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span data-lang="fr" class="skill-block-title">Analyse & Data Science</span>
+                        <span data-lang="en" class="skill-block-title">Analysis & Data Science</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><i class="fa-solid fa-diagram-project"
+                                style="font-size:15px; color:var(--accent);"></i><span>Data modeling</span></div>
+                        <div class="skill-item"><i class="fa-solid fa-chart-line"
+                                style="font-size:15px; color:var(--accent);"></i><span data-lang="fr">Analyse
+                                statistique</span><span data-lang="en">Statistical Analysis</span></div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-chart-column" style="font-size:15px; color:var(--accent);"></i>
+                            <span>Reporting</span>
+                        </div>
+                        <div class="skill-item"><i class="fa-solid fa-gauge"
+                                style="font-size:15px; color:var(--accent);"></i><span data-lang="fr">Suivi
+                                KPIs</span><span data-lang="en">KPI Monitoring</span></div>
+                        <div class="skill-item"><i class="fa-solid fa-comments"
+                                style="font-size:15px; color:var(--accent);"></i><span>Storytelling</span></div>
+                        <div class="skill-item"><i class="fa-solid fa-thumbs-up"
+                                style="font-size:15px; color:var(--accent);"></i><span data-lang="fr">Systèmes de
+                                recommandation</span><span data-lang="en">Recommendation Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualisation & Reporting -->
+                <div class="skill-block" data-group="viz">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <span data-lang="fr" class="skill-block-title">Visualisation & Reporting</span>
+                        <span data-lang="en" class="skill-block-title">Visualization & Reporting</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="assets/logos/powerbi.png" alt="Power BI"><span>Power BI</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/Tableau.png" alt="Tableau"><span>Tableau</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/SSRS.png" alt="SSRS"><span>SSRS</span></div>
+                        <div class="skill-item"><img src="assets/logos/streamlit.png"
+                                alt="Streamlit"><span>Streamlit</span></div>
+                        <div class="skill-item"><img src="assets/logos/Ploty.png" alt="Plotly"><span>Plotly</span></div>
+                        <div class="skill-item"><img src="assets/logos/Matplotlib.png"
+                                alt="Matplotlib"><span>Matplotlib</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/seaborn.png" alt="Seaborn"><span>Seaborn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Learning (avec NLTK & Gensim comme demandé) -->
+                <div class="skill-block" data-group="deep-learning">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-brain"></i>
+                        <span span data-lang="fr" class="skill-block-title">
+                            Apprentissage profond
+                        </span>
+                        <span span data-lang="en" class="skill-block-title">
+                            Deep Learning
+                        </span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="assets/logos/TensorFlow.png"
+                                alt="TensorFlow"><span>TensorFlow</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/Keras.jpg" alt="Keras"><span>Keras</span></div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-brain" style="font-size:15px; color:var(--accent);"></i>
+                            <span>CNN</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-wave-square" style="font-size:15px; color:var(--accent);"></i>
+                            <span>RNN</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/NLTK.png" alt="NLTK"><span>NLTK</span></div>
+                        <div class="skill-item"><img src="assets/logos/gensim.png" alt="Gensim"><span>Gensim</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases de données -->
+                <div class="skill-block" data-group="databases">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-database"></i>
+                        <span data-lang="fr" class="skill-block-title">Bases de données</span>
+                        <span data-lang="en" class="skill-block-title">Databases</span>
+
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="assets/logos/Microsoft SQL Server.png"
+                                alt="SQL Server"><span>SQL
+                                Server</span></div>
+                        <div class="skill-item"><img src="assets/logos/postgresql.png"
+                                alt="PostgreSQL"><span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/MySQL.png" alt="MySQL"><span>MySQL</span></div>
+                        <div class="skill-item"><img src="assets/logos/MongoDB.png" alt="MongoDB"><span>MongoDB</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/Redis.png" alt="Redis"><span>Redis</span></div>
+                        <div class="skill-item"><img src="assets/logos/New4j.png" alt="Neo4j"><span>Neo4j</span></div>
+                    </div>
+                </div>
+
+                <!-- Big Data & Cloud -->
+                <div class="skill-block" data-group="bigdata">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span class="skill-block-title">Big Data & Cloud</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="assets/logos/Apache Spark.png" alt="Spark"><span>Apache
+                                Spark</span></div>
+                        <div class="skill-item"><img src="assets/logos/Apache Hadoop.png"
+                                alt="Hadoop"><span>Hadoop</span></div>
+                        <div class="skill-item"><img src="assets/logos/Apache Kafka.png" alt="Kafka"><span>Kafka</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/azure.png" alt="Azure"><span>Azure</span></div>
+                    </div>
+                </div>
+
+
+                <!-- Langages de programmation -->
+                <div class="skill-block" data-group="languages">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-code"></i>
+                        <span data-lang="fr" class="skill-block-title">Langages de programmation</span>
+                        <span data-lang="en" class="skill-block-title">Programming Languages</span>
+
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="assets/logos/python.png" alt="Python"><span>Python</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/SQL.png" alt="SQL"><span>SQL</span></div>
+                        <div class="skill-item"><img src="assets/logos/NoSQL.png" alt="NoSQL"><span>NoSQL</span></div>
+                        <div class="skill-item"><img src="assets/logos/Scala.png" alt="Scala"><span>Scala</span></div>
+                        <div class="skill-item"><img src="assets/logos/CSharp.png" alt="C#"><span>C#</span></div>
+                        <div class="skill-item"><img src="assets/logos/javascript.png"
+                                alt="JavaScript"><span>JavaScript</span>
+                        </div>
+                        <div class="skill-item"><img src="assets/logos/XML.png" alt="XML"><span>XML</span></div>
+                        <div class="skill-item"><img src="assets/logos/UML.png" alt="UML"><span>UML</span></div>
+                        <div class="skill-item"><img src="assets/logos/dax.png" alt="DAX"><span>DAX</span></div>
+                        <div class="skill-item"><img src="assets/logos/M.png" alt="M"><span>M</span></div>
+                        <div class="skill-item"><img src="assets/logos/NET.png" alt=".NET"><span>.NET</span></div>
+                    </div>
+                </div>
+
+
+                <!-- MACHINE LEARNING -->
+                <div class="skill-block" data-group="ML">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <span data-lang="fr" class="skill-block-title">Machine Learning</span>
+                        <span data-lang="en" class="skill-block-title">Machine Learning</span>
+                    </div>
+
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fa-solid fa-chart-line" style="font-size:16px; color:var(--accent);"></i>
+                            <span data-lang="fr">Régression</span>
+                            <span data-lang="en">Regression</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-sitemap" style="font-size:16px; color:var(--accent);"></i>
+                            <span data-lang="fr">Classification</span>
+                            <span data-lang="en">Classification</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-diagram-project" style="font-size:16px; color:var(--accent);"></i>
+                            <span data-lang="fr">Clustering</span>
+                            <span data-lang="en">Clustering</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-shapes" style="font-size:16px; color:var(--accent);"></i>
+                            <span data-lang="fr">PCA</span>
+                            <span data-lang="en">PCA</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-vial" style="font-size:16px; color:var(--accent);"></i>
+                            <span data-lang="fr">Validation croisée</span>
+                            <span data-lang="en">Cross-validation</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-gears" style="font-size:16px; color:var(--accent);"></i>
+                            <span data-lang="fr">Feature engineering</span>
+                            <span data-lang="en">Feature engineering</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fa-solid fa-sliders" style="font-size:16px; color:var(--accent);"></i>
+                            <span data-lang="fr">Optimisation des hyperparamètres</span>
+                            <span data-lang="en">Hyperparameter optimization</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ETL & Data Engineering -->
+                <div class="skill-block" data-group="etl">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-gears"></i>
+                        <span class="skill-block-title">ETL & Data Engineering</span>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><img src="assets/logos/SSIS.jpg" alt="SSIS"><span>SSIS</span></div>
+                        <div class="skill-item"><img src="assets/logos/azure data factory.jpg"
+                                alt="Azure Data Factory"><span>Azure
+                                Data Factory</span></div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+    </section>
+
+
+
+    <!-- ========== PROJECTS SECTION ==========-->
+    <section class="projects target-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fa-solid fa-folder-open"></i>
+                <span data-lang="fr">Projets</span>
+                <span data-lang="en">Projects</span>
+            </h2>
+
+
+
+            <div class="projects-grid">
+                <!-- Projet 1 - AssurNova -->
+                <a href="Assurnova.html" class="project-card">
+                    <div class="project-image-wrapper" data-main-delay="8000">
+                        <img src="assets/projects/Assurnova/Evolution du Portefeuille.jpg"
+                            alt="AssurNova – Portefeuille & Ciblage Marketing" loading="lazy">
+                    </div>
+                    <h3>
+                        <span data-lang="fr">AssurNova : Portefeuille Clients & Ciblage Marketing</span>
+                        <span data-lang="en">AssurNova: Customer Base & Marketing Targeting</span>
+                    </h3>
+                    <div class="badges">
+                        <span class="badge">Power BI</span>
+                        <span class="badge">DAX</span>
+                        <span class="badge">Power Query</span>
+                        <span class="badge">SQL Server</span>
+                        <span class="badge">Excel (SharePoint)</span>
+                        <span class="badge">RLS</span>
+                        <span class="badge">Git</span>
+                    </div>
+                    <p class="project-desc">
+                        <span data-lang="fr">
+                            <strong>Tableaux de bord interactifs</strong> sur <strong>Power BI</strong> pour suivre
+                            l’évolution
+                            (nouveaux / churnés), profiler le
+                            portefeuille
+                            et estimer les clients ciblables via filtres dynamiques.
+                            <br>
+                            Sources : <strong>SQL Server</strong> & <strong>Excel hébergés sur
+                                SharePoint.</strong>
+                        </span>
+                        <span data-lang="en">
+                            <strong>Interactive dashboards</strong> to track evolution (new / churned), profile the
+                            customer base,
+                            and estimate targetable customers with dynamic slicers.
+                            <br>
+                            Sources: <strong>SQL Server</strong> & <strong>Excel hosted on SharePoint.</strong>
+                        </span>
+                    </p>
+                    <div class="project-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <!-- Texte sous l’icône -->
+                    <div class="project-icon-title">
+                        <span data-lang="fr">Découvrir le projet</span>
+                        <span data-lang="en">Discover Project</span>
+                    </div>
+                    <div class="project-link">
+                        <span data-lang="fr">Voir le projet ↗</span>
+                        <span data-lang="en">View Project ↗</span>
+                    </div>
                 </a>
 
-  </div>
-</footer>
 
-<script src="script.js"></script>
+                <!-- Projet 2 -->
+                <a href="EuroMoneyAI.html" class="project-card">
+                    <div class="project-image-wrapper" data-main-delay="8000">
+                        <img src="assets/projects/EuroMoneyAI/BNSM.png" alt="EuroMoneyAI" loading="lazy">
 
-<script>
-// Gestion du menu burger mobile
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  
-  if (mobileMenuToggle && navLinks) {
-    // Toggle menu burger
-    mobileMenuToggle.addEventListener('click', function() {
-      const isActive = mobileMenuToggle.classList.contains('active');
-      
-      mobileMenuToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      
-      // Mise à jour aria-expanded
-      mobileMenuToggle.classList.toggle('aria-expanded', !isActive);
-    });
-    
-    // Fermer le menu quand on clique sur un lien
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        mobileMenuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        mobileMenuToggle.classList.remove('aria-expanded');
-      });
-    });
-    
-    // Fermer le menu avec Escape
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-        mobileMenuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        mobileMenuToggle.classList.remove('aria-expanded');
-      }
-    });
-  }
+                    </div>
+                    <h3>
+                        <span data-lang="fr">EuroMoneyAI : IA pour la Reconnaissance de Pièces et la Détection de Faux
+                            Billets</span>
+                        <span data-lang="en">EuroMoneyAI: AI for Coin Recognition and Counterfeit Banknote
+                            Detection</span>
+                    </h3>
+                    <div class="badges">
+                        <span class="badge">Deep Learning</span>
+                        <span class="badge">VGG16</span>
+                        <span class="badge">Streamlit</span>
+                        <span class="badge">TensorFlow / Keras</span>
+                        <span class="badge">Scikit-learn</span>
+                        <span class="badge">XGBoost</span>
+                        <span class="badge">Optuna</span>
+                        <span class="badge">MLflow</span>
+                        <span class="badge">Python</span>
+                    </div>
+                    <p class="project-desc">
+                        <span data-lang="fr">Développement pour la BNSM d’une <strong>application IA</strong> unifiée
+                            capable
+                            d’identifier la valeur
+                            d’une pièce d’euro
+                            à partir d’une image et de détecter les faux billets via leurs caractéristiques
+                            dimensionnelles.
+                            <br>
+                            Modèles : <strong>VGG16 Fine-Tuning</strong> & <strong>Random Forest</strong>.</span>
+                        <span data-lang="en">Developed for the BNSM, a unified <strong>AI app</strong> that identifies
+                            the value of
+                            euro coins from
+                            images
+                            and detects counterfeit banknotes using dimensional features.
+                            <br>
+                            Models: <strong>VGG16 Fine-Tuning</strong> & <strong>Random Forest</strong>.
+                        </span></span>
+                    </p>
+                    <div class="project-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <!-- Texte sous l’icône -->
+                    <div class="project-icon-title">
+                        <span data-lang="fr">Découvrir le projet</span>
+                        <span data-lang="en">Discover Project</span>
+                    </div>
+                    <div class="project-link">
+                        <span data-lang="fr">Voir le projet ↗</span>
+                        <span data-lang="en">View Project ↗</span>
+                    </div>
+                </a>
 
-  // Scroll Spy - Indicateur section active
-  function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    
-    let currentSection = '';
-    const scrollPosition = window.scrollY + 100; // Offset pour le header sticky
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute('id');
-      }
-    });
-    
-    // Mettre à jour les classes active
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active');
-      }
-    });
-  }
-  
-  // Écouter le scroll
-  window.addEventListener('scroll', updateActiveNavLink);
-  // Initialiser au chargement
-  updateActiveNavLink();
+                <!-- Projet MedSynora-azure -->
+                <a href="Medsynora-azure.html" class="project-card">
+                    <div class="project-image-wrapper" data-main-delay="8000">
+                        <img src="assets/projects/MedSynora/Architecture.png" alt="MedSynora – Azure Lakehouse"
+                            loading="lazy">
+                    </div>
+                    <h3>
+                        <span data-lang="fr">MedSynora – Lakehouse Azure pour Données Hospitalières</span>
+                        <span data-lang="en">MedSynora – Azure Lakehouse for Hospital Data</span>
+                    </h3>
+                    <div class="badges">
+                        <span class="badge">Azure Data Factory</span>
+                        <span class="badge">Azure Databricks</span>
+                        <span class="badge">ADLS Gen2</span>
+                        <span class="badge">Synapse Serverless</span>
+                        <span class="badge">Power BI</span>
+                        <span class="badge">PySpark</span>
+                        <span class="badge">Lakehouse • ELT</span>
+                        <span class="badge">IAM / Managed Identity</span>
+                        <span class="badge">AES-256</span>
+                    </div>
+                    <p class="project-desc">
+                        <span data-lang="fr">Mise en place d’une architecture <strong>Lakehouse</strong> de bout en bout
+                            : Ingestion
+                            → <strong>Databricks (ELT)</strong> → <strong>ADLS</strong> Bronze/Silver/Gold →
+                            <strong>Synapse</strong>
+                            (modèle en étoile) → <strong>Power BI</strong>.
+                            <br>
+                            Sécurité par <strong>Managed Identity</strong>, IAM et
+                            chiffrement <strong>AES-256</strong>.</span>
+                        <span data-lang="en">End-to-end <strong>Lakehouse</strong> architecture: Ingestion →
+                            <strong>Databricks
+                                (ELT)</strong> → <strong>ADLS</strong> Bronze/Silver/Gold → <strong>Synapse</strong>
+                            (star schema) →
+                            <strong>Power BI</strong>.
+                            <br>
+                            Security with <strong>Managed Identity</strong>, IAM, and
+                            <strong>AES-256</strong> encryption.</span>
+                    </p>
+                    <div class="project-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <!-- Texte sous l’icône -->
+                    <div class="project-icon-title">
+                        <span data-lang="fr">Découvrir le projet</span>
+                        <span data-lang="en">Discover Project</span>
+                    </div>
+                    <div class="project-link">
+                        <span data-lang="fr">Voir le projet ↗</span>
+                        <span data-lang="en">View Project ↗</span>
+                    </div>
+                </a>
 
-  // Gestion du formulaire de contact Google Forms
-  const contactForm = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const hiddenIframe = document.getElementById('hidden_iframe');
-  
-  if (contactForm && submitBtn) {
-    // Gérer la soumission du formulaire
-    contactForm.addEventListener('submit', function(e) {
-      // Changer le bouton en mode loading
-      const originalHTML = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-      submitBtn.disabled = true;
-      
-      // Le formulaire va se soumettre normalement vers Google Forms
-      // On écoute quand l'iframe se charge pour savoir que c'est envoyé
-      hiddenIframe.onload = function() {
-        // Succès !
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
-        submitBtn.style.backgroundColor = '#28a745';
-        
-        // Reset après 3 secondes
-        setTimeout(() => {
-          contactForm.reset();
-          submitBtn.innerHTML = originalHTML;
-          submitBtn.disabled = false;
-          submitBtn.style.backgroundColor = '';
-        }, 3000);
-      };
-    });
-  }
-});
+                <!-- Projet Medibot -->
+                <a href="Medibot.html" class="project-card">
+                    <div class="project-image-wrapper" data-main-delay="8000">
+                        <img src="assets/projects/Medibot/Accueil.png" alt="Medibot – Chatbot Médical Intelligent"
+                            loading="lazy">
+                    </div>
 
-// Language Switcher Script
-document.addEventListener('DOMContentLoaded', function() {
-  const languageSelect = document.getElementById('languageSelect');
-  const body = document.body;
-  
-  // Language switching functionality
-  function switchLanguage(lang) {
-    // Update body class
-    body.className = `lang-${lang}`;
-    
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-    
-    // Store preference in localStorage
-    localStorage.setItem('preferred-language', lang);
-  }
-  
-  // Add change event listener to select
-  languageSelect.addEventListener('change', function() {
-    const selectedLang = this.value;
-    switchLanguage(selectedLang);
-  });
-  
-  // Check for saved language preference
-  const savedLang = localStorage.getItem('preferred-language');
-  if (savedLang && savedLang !== 'fr') {
-    languageSelect.value = savedLang;
-    switchLanguage(savedLang);
-  }
-});
-</script>
+                    <h3>
+                        <span data-lang="fr">Medibot – Chatbot Médical Intelligent (NLP + KMeans)</span>
+                        <span data-lang="en">Medibot – Intelligent Medical Chatbot (NLP + KMeans)</span>
+                    </h3>
+
+                    <div class="badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">Streamlit</span>
+                        <span class="badge">NLTK</span>
+                        <span class="badge">KMeans</span>
+                        <span class="badge">TF-IDF</span>
+                        <span class="badge">Cosine Similarity</span>
+                        <span class="badge">SQLite</span>
+                        <span class="badge">Machine Learning</span>
+                        <span class="badge">NLP Pipeline</span>
+                    </div>
+
+                    <p class="project-desc">
+                        <span data-lang="fr">
+                            Développement d’un <strong>chatbot médical</strong> capable d’analyser des symptômes en
+                            langage naturel,
+                            de prédire la pathologie probable via <strong>KMeans</strong>, puis de fournir une réponse
+                            issue d’une
+                            <strong>base de connaissances médicale</strong> structurée.
+                            <br>Interface utilisateur via <strong>Streamlit</strong> et services modulaires
+                            <strong>FastAPI</strong>
+                            pour la prédiction et le Q&A.
+                        </span>
+                        <span data-lang="en">
+                            Development of an <strong>intelligent medical chatbot</strong> that analyzes
+                            natural-language symptoms,
+                            predicts the likely disease using <strong>KMeans</strong>, and provides answers from a
+                            structured
+                            <strong>medical knowledge base</strong>.
+                            <br>User interface built with <strong>Streamlit</strong> and modular
+                            <strong>FastAPI</strong> services for
+                            prediction and Q&A.
+                        </span>
+                    </p>
+                    <div class="project-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <!-- Texte sous l’icône -->
+                    <div class="project-icon-title">
+                        <span data-lang="fr">Découvrir le projet</span>
+                        <span data-lang="en">Discover Project</span>
+                    </div>
+                    <div class="project-link">
+                        <span data-lang="fr">Voir le projet ↗</span>
+                        <span data-lang="en">View Project ↗</span>
+                    </div>
+                </a>
+
+                <!-- Projet Data Integration -->
+                <a href="data-intégration.html" class="project-card">
+                    <div class="project-image-wrapper" data-main-delay="8000">
+                        <img src="assets/projects/data-intégration/Accueil.jpeg"
+                            alt="Data Integration – Pipeline de Traitement Distribué" loading="lazy">
+                    </div>
+
+                    <h3>
+                        <span data-lang="fr">Data Integration – Pipeline de Traitement Distribué</span>
+                        <span data-lang="en">Data Integration – Distributed Processing Pipeline</span>
+                    </h3>
+
+                    <div class="badges">
+                        <span class="badge">Kafka</span>
+                        <span class="badge">Spark Streaming</span>
+                        <span class="badge">HDFS</span>
+                        <span class="badge">Airflow</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">Prometheus</span>
+                        <span class="badge">Grafana</span>
+                        <span class="badge">Docker Compose</span>
+                        <span class="badge">Python</span>
+                    </div>
+
+                    <p class="project-desc">
+                        <span data-lang="fr">
+                            Conception d’un pipeline <strong>end-to-end</strong> unifiant <strong>ingestion temps
+                                réel</strong>
+                            (Kafka),
+                            <strong>traitements distribués</strong> (Spark Streaming), <strong>stockage</strong> (HDFS)
+                            et
+                            <strong>orchestration</strong> (Airflow), avec exposition via <strong>FastAPI</strong> et
+                            <strong>monitoring</strong> (Prometheus/Grafana). Déploiement conteneurisé avec
+                            <strong>Docker
+                                Compose</strong>.
+                        </span>
+                        <span data-lang="en">
+                            Designed an <strong>end-to-end</strong> pipeline unifying <strong>real-time
+                                ingestion</strong> (Kafka),
+                            <strong>distributed processing</strong> (Spark Streaming), <strong>storage</strong> (HDFS)
+                            and
+                            <strong>orchestration</strong> (Airflow), served via <strong>FastAPI</strong> with
+                            <strong>monitoring</strong> (Prometheus/Grafana).
+                            <br>
+                            Containerized deployment using <strong>Docker
+                                Compose</strong>.
+                        </span>
+                    </p>
+                    <div class="project-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <!-- Texte sous l’icône -->
+                    <div class="project-icon-title">
+                        <span data-lang="fr">Découvrir le projet</span>
+                        <span data-lang="en">Discover Project</span>
+                    </div>
+                    <div class="project-link">
+                        <span data-lang="fr">Voir le projet ↗</span>
+                        <span data-lang="en">View Project ↗</span>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== CERTIFICATIONS SECTION ==========-->
+    <section class="certifications-diplomes target-section" id="certifications-diplomes">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fa-solid fa-certificate"></i>
+                <span data-lang="fr">Diplômes et certifications</span>
+                <span data-lang="en">Diplomas and certifications</span>
+            </h2>
+            <div class="container_carr">
+                <div class="box">
+                    <span style="--i:1;"><img src="assets/Certifications/AZ900.jpg" alt="">
+                        <p><strong>Microsoft Certified: Azure Fundamentals</strong></p>
+                        <a data-lang="fr" class="cadran"
+                            href="https://www.credly.com/badges/6437c7fd-fe42-45cd-9043-82c09b3c4770/linked_in_profile"
+                            target="_blank">Lien de la
+                            certification ↗</a>
+                        <a data-lang="en" class="cadran"
+                            href="https://www.credly.com/badges/6437c7fd-fe42-45cd-9043-82c09b3c4770/linked_in_profile"
+                            target="_blank">Certification link ↗</a>
+
+                    </span>
+                    <span style="--i:2;"><img src="assets/Certifications/IBM.jpg" alt="">
+                        <p><strong>IBM machine learning</strong></p>
+                        <a data-lang="fr" class="cadran"
+                            href="https://coursera.org/share/cbf4418baf8b8c7261eab86bbbef1744" target="_blank">Lien de
+                            la
+                            certification ↗</a>
+                        <a data-lang="en" class="cadran"
+                            href="https://coursera.org/share/cbf4418baf8b8c7261eab86bbbef1744"
+                            target="_blank">Certification link ↗</a>
+                    </span>
+                    <span style="--i:3;"><img src="assets/Certifications/Skills4All.jpg" alt="">
+                        <p data-lang="fr"><strong>Marketing digital</strong></p>
+                        <p data-lang="en"><strong>Digital marketing</strong></p>
+
+                        <!-- <a class="cadran" href="" target="_blank">Lien de la
+              certification ↗</a> -->
+                    </span>
+                    <span style="--i:4;"><img src="assets/Certifications/PL300.jpg" alt="">
+                        <p><strong>Microsoft : Power BI Data Analyst Associate</strong></p>
+                        <!-- <p class="cadran">Microsoft</p> -->
+                        <a data-lang="fr" class="cadran"
+                            href="https://learn.microsoft.com/api/credentials/share/fr-fr/DarryllGenveJuniorJOSEPH-4400/20A244C2F5A07B58?sharingId=89EF537DC544480D"
+                            target="_blank">
+                            Lien de la certification ↗</a>
+                        <a data-lang="en" class="cadran"
+                            href="https://learn.microsoft.com/api/credentials/share/fr-fr/DarryllGenveJuniorJOSEPH-4400/20A244C2F5A07B58?sharingId=89EF537DC544480D"
+                            target="_blank">
+                            Certification link ↗</a>
+                    </span>
+                    <span style="--i:3;"><img src="assets/Certifications/Licence.JPG" alt="">
+                        <p data-lang="fr"><strong>Licence Informatique</strong></p>
+                        <p data-lang="en"><strong>Bachelor's degree in Computer Science</strong></p>
+
+                        <a data-lang="fr" class="cadran"
+                            href="https://odf.univ-spn.fr/fr/offre-de-formation/licence-lmd-XA/licence-informatique-GL4INF_116.html"
+                            target="_blank">Lien de la formation
+                            ↗</a>
+                        <a data-lang="en" class="cadran"
+                            href="https://odf.univ-spn.fr/fr/offre-de-formation/licence-lmd-XA/licence-informatique-GL4INF_116.html"
+                            target="_blank">Training link
+                            ↗</a>
+                    </span>
+                    <span style="--i:4;"><img src="assets/Certifications/brouillon.png" alt="">
+                        <p data-lang="fr"><strong>Master Data Engineering & IA</strong></p>
+                        <p data-lang="en"><strong>Master's degree in Data Engineering & AI</strong></p>
+
+                        <a data-lang="fr" class="cadran"
+                            href="https://www.efrei.fr/programmes-experts/mastere-data-engineering/"
+                            target="_blank">Lien de la formation ↗</a>
+                        <a data-lang="en" class="cadran"
+                            href="https://www.efrei.fr/programmes-experts/mastere-data-engineering/"
+                            target="_blank">Training link
+                            ↗</a>
+                    </span>
+                </div>
+
+
+                <div class="btns">
+                    <div class="btn prev">&#10094;</div> <!-- Flèche gauche (‹) -->
+                    <div class="btn next">&#10095;</div> <!-- Flèche droite (›) -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="parcours target-section" id="parcours">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fa-solid fa-timeline"></i>
+                <span data-lang="fr">Parcours</span>
+                <span data-lang="en">Career Path</span>
+            </h2>
+
+            <div class="content">
+                <div class="container">
+                    <div class="timeline">
+                        <div class="timeline__stepper">
+
+                            <div class="timeline__step">
+                                <img class="timeline__icon timeline__icon--default" src="assets/Parcours/BAC.png"
+                                    alt="Baccalauréat">
+                                <img class="timeline__icon timeline__icon--active" src="assets/Parcours/BAC.png"
+                                    alt="Baccalauréat (actif)">
+                                <p data-lang="fr" class="timeline__step-title">Baccalauréat</p>
+                                <p data-lang="en" class="timeline__step-title">General Baccalaureate</p>
+                            </div>
+
+                            <div class="timeline__step">
+                                <img class="timeline__icon timeline__icon--default" src="assets/Parcours/FDS.png"
+                                    alt="Faculté des Sciences UEH">
+                                <img class="timeline__icon timeline__icon--active" src="assets/Parcours/FDS.png"
+                                    alt="Faculté des Sciences UEH (actif)">
+                                <p data-lang="fr" class="timeline__step-title">Génie Civil</p>
+                                <p data-lang="en" class="timeline__step-title">Civil <br>Engineering</p>
+                            </div>
+
+                            <div class="timeline__step">
+                                <img class="timeline__icon timeline__icon--default" src="assets/Parcours/USPN.png"
+                                    alt="Université Sorbonne Paris Nord">
+                                <img class="timeline__icon timeline__icon--active" src="assets/Parcours/USPN.png"
+                                    alt="Université Sorbonne Paris Nord (actif)">
+                                <p data-lang="fr" class="timeline__step-title">Licence<br>Informatique</p>
+                                <p data-lang="en" class="timeline__step-title">Bachelor<br> in Computer Science</p>
+                            </div>
+
+                            <div class="timeline__step">
+                                <img class="timeline__icon timeline__icon--default"
+                                    src="assets/Parcours/ALBINGIA_LOGO.png" alt="Stage Développeur CRM">
+                                <img class="timeline__icon timeline__icon--active"
+                                    src="assets/Parcours/ALBINGIA_LOGO.png" alt="Stage Développeur CRM (actif)">
+                                <p data-lang="fr" class="timeline__step-title">Stage<br>Informatique</p>
+                                <p data-lang="en" class="timeline__step-title">Internship<br> in Computer Science</p>
+                            </div>
+
+                            <div class="timeline__step">
+                                <img class="timeline__icon timeline__icon--default" src="assets/Parcours/EFREI.png"
+                                    alt="Efrei Paris">
+                                <img class="timeline__icon timeline__icon--active" src="assets/Parcours/EFREI.png"
+                                    alt="Efrei Paris (actif)">
+                                <p data-lang="fr" class="timeline__step-title">Master<br>Data Eng. & IA</p>
+                                <p data-lang="en" class="timeline__step-title">Master<br> in Data Eng. and AI</p>
+                            </div>
+
+
+                            <div class="timeline__step">
+                                <img class="timeline__icon timeline__icon--default"
+                                    src="assets/Parcours/ALBINGIA_LOGO.png" alt="Albingia BI Analyst">
+                                <img class="timeline__icon timeline__icon--active"
+                                    src="assets/Parcours/ALBINGIA_LOGO.png" alt="Albingia BI Analyst (actif)">
+                                <p data-lang="fr" class="timeline__step-title">Développeur BI <br>& Data Analyst</p>
+                                <p data-lang="en" class="timeline__step-title">BI Developer <br>& Data Analyst</p>
+                            </div>
+
+                            <div class="timeline__step is-active">
+                                <img class="timeline__icon timeline__icon--default"
+                                    src="assets/Parcours/ALBINGIA_LOGO.png" alt="Data Analyst & Développeur IA/CRM">
+                                <img class="timeline__icon timeline__icon--active"
+                                    src="assets/Parcours/ALBINGIA_LOGO.png" alt="Data Analyst & AI/CRM Developer">
+                                <p data-lang="fr" class="timeline__step-title">Data Analyst <br>& Développeur IA/CRM</p>
+                                <p data-lang="en" class="timeline__step-title">Data Analyst <br>& AI/CRM Developer</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline__slides">
+
+                            <!-- BAC -->
+                            <div class="timeline__slide">
+                                <h3 class="timeline__slide-title">
+                                    <span data-lang="fr">Baccalauréat Général - Août 2018</span>
+                                    <span data-lang="en">General Baccalaureate - August 2018</span>
+                                </h3>
+                                <div class="timeline__slide-content">
+                                    <p data-lang="fr">
+                                        Obtention du <strong>Baccalauréat Général</strong>.
+                                        Ce premier succès académique a marqué le début d’un parcours orienté vers la
+                                        rigueur scientifique et
+                                        la logique d’analyse.
+                                    </p>
+                                    <p data-lang="en">
+                                        Earned the <strong>General Baccalaureate</strong>.
+                                        This initial academic success marked the beginning of a path driven by
+                                        scientific rigor and
+                                        analytical reasoning.
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <!-- Génie Civil -->
+                            <div class="timeline__slide">
+                                <h3 class="timeline__slide-title">
+                                    <span data-lang="fr">École d’Ingénieur en Génie Civil - Septembre 2018 à Juin
+                                        2020</span>
+                                    <span data-lang="en">Engineering School in Civil Engineering - September 2018 to
+                                        June 2020</span>
+                                </h3>
+                                <div class="timeline__slide-content">
+                                    <p data-lang="fr">
+                                        Formation initiale à la <strong>Faculté des Sciences de l’UEH</strong> en
+                                        <strong>Génie
+                                            Civil</strong>.
+                                        Cette période a permis de développer une forte base en mathématiques appliquées
+                                        et en modélisation.
+                                        Progressivement, mon intérêt s’est orienté vers la <strong>numérisation et
+                                            l’automatisation des
+                                            processus d’ingénierie</strong>,
+                                        menant à une <strong>réorientation vers l’informatique</strong> afin d’explorer
+                                        le potentiel de la
+                                        donnée et des technologies émergentes.
+                                    </p>
+                                    <p data-lang="en">
+                                        Initial training at the <strong>Faculty of Sciences, UEH</strong> in
+                                        <strong>Civil
+                                            Engineering</strong>.
+                                        This period helped me build a solid foundation in applied mathematics and
+                                        modeling.
+                                        Over time, I became increasingly interested in the <strong>digital
+                                            transformation and automation of
+                                            engineering processes</strong>,
+                                        which naturally led me to <strong>shift toward computer science</strong> to
+                                        explore the power of
+                                        data and emerging technologies.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Licence Informatique -->
+                            <div class="timeline__slide">
+                                <h3 class="timeline__slide-title">
+                                    <span data-lang="fr">Licence Informatique - Octobre 2020 à Juillet 2023</span>
+                                    <span data-lang="en">Bachelor's Degree in Computer Science - October 2020 to July
+                                        2023</span>
+                                </h3>
+                                <div class="timeline__slide-content">
+                                    <span data-lang="fr">
+                                        Diplômé d’une <strong>Licence Informatique</strong> à l’<strong>Université
+                                            Sorbonne Paris
+                                            Nord</strong> (RNCP24514).
+                                        Cette formation a consolidé mes compétences en développement logiciel,
+                                        conception de bases de
+                                        données et gestion de systèmes informatiques.
+                                    </span>
+                                    <span data-lang="en">
+                                        Graduated with a <strong>Bachelor’s degree in Computer Science</strong> from
+                                        <strong>Université
+                                            Sorbonne Paris Nord</strong> (RNCP24514).
+                                        The program strengthened my skills in software development, database design, and
+                                        IT system
+                                        management.
+                                    </span>
+                                    <ul data-lang="fr">
+                                        <li data-lang="fr">Conception et développement d’applications informatiques</li>
+                                        <li data-lang="fr">Tests techniques et fonctionnels</li>
+                                        <li data-lang="fr">Documentation technique et support utilisateur</li>
+                                        <li data-lang="fr">Contrôle et analyse du fonctionnement des systèmes</li>
+                                        <li data-lang="fr">Modélisation et maintenance de bases de données</li>
+                                    </ul>
+                                    <ul data-lang="en">
+                                        <li data-lang="en">Design and development of software applications</li>
+                                        <li data-lang="en">Technical and functional testing</li>
+                                        <li data-lang="en">Technical documentation and user support</li>
+                                        <li data-lang="en">System performance monitoring and analysis</li>
+                                        <li data-lang="en">Database modeling and maintenance</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Stage Albingia -->
+                            <div class="timeline__slide">
+                                <h3 class="timeline__slide-title">
+                                    <span data-lang="fr">Stage Développeur CRM Microsoft Dynamics 365 - Mai à Août
+                                        2023</span>
+                                    <span data-lang="en">Internship - CRM Developer Microsoft Dynamics 365 - May to
+                                        August 2023</span>
+                                </h3>
+                                <div class="timeline__slide-content">
+                                    <p data-lang="fr">
+                                        Stage réalisé chez <strong>Albingia</strong> sur le poste de <strong>Développeur
+                                            CRM Microsoft
+                                            Dynamics 365</strong>.
+                                    </p>
+                                    <p data-lang="en">
+                                        Internship at <strong>Albingia</strong> as a <strong>CRM Developer - Microsoft
+                                            Dynamics
+                                            365</strong>.
+                                    </p>
+                                    <ul data-lang="fr">
+                                        <li data-lang="fr">Optimisation des bases de données relationnelles</li>
+                                        <li data-lang="fr">Conception de Web Services en C# pour l’intégration des
+                                            systèmes</li>
+                                        <li data-lang="fr">Amélioration de la fiabilité et de la qualité des données
+                                        </li>
+                                    </ul>
+                                    <ul data-lang="en">
+                                        <li data-lang="en">Optimization of relational database performance</li>
+                                        <li data-lang="en">Development of C# Web Services for system integration</li>
+                                        <li data-lang="en">Improved data reliability and integration across systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Master Data Engineering & IA -->
+                            <div class="timeline__slide">
+                                <h3 class="timeline__slide-title">
+                                    <span data-lang="fr">Master Data Engineering & Intelligence Artificielle - Septembre
+                                        2023 à Juillet
+                                        2025</span>
+                                    <span data-lang="en">Master’s Degree in Data Engineering & Artificial Intelligence -
+                                        September 2023 to
+                                        July 2025</span>
+                                </h3>
+                                <div class="timeline__slide-content">
+                                    <span data-lang="fr">
+                                        Étudiant en <strong>Master Data Engineering & IA</strong> à <strong>l’Efrei
+                                            Paris</strong>
+                                        (RNCP40875).
+                                        Ce cursus m’a permis de me spécialiser dans la conception d’architectures de
+                                        données, le Big Data et
+                                        l’intelligence artificielle.
+                                    </span>
+                                    <span data-lang="en">
+                                        Pursuing a <strong>Master’s degree in Data Engineering & AI</strong> at
+                                        <strong>Efrei Paris</strong>
+                                        (RNCP40875).
+                                        This program focuses on data architecture, big data processing, and artificial
+                                        intelligence
+                                        techniques.
+                                    </span>
+                                    <ul data-lang="fr">
+                                        <li data-lang="fr">Conception de Data Lakes et architectures cloud</li>
+                                        <li data-lang="fr">Optimisation des pipelines de traitement</li>
+                                        <li data-lang="fr">Sécurisation et gouvernance des données</li>
+                                        <li data-lang="fr">Implémentation d’algorithmes de Machine Learning</li>
+                                        <li data-lang="fr">Création de tableaux de bord interactifs</li>
+                                    </ul>
+                                    <ul data-lang="en">
+                                        <li data-lang="en">Design of Data Lakes and cloud architectures</li>
+                                        <li data-lang="en">Optimization of data processing pipelines</li>
+                                        <li data-lang="en">Data security and governance practices</li>
+                                        <li data-lang="en">Implementation of Machine Learning algorithms</li>
+                                        <li data-lang="en">Creation of interactive dashboards and analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Développeur BI & Data Analyst -->
+                            <div class="timeline__slide">
+                                <h3 class="timeline__slide-title">
+                                    <span data-lang="fr">Développeur BI & Data Analyst - Septembre 2023 à Septembre
+                                        2025</span>
+                                    <span data-lang="en">BI Developer & Data Analyst - September 2023 to September
+                                        2025</span>
+                                </h3>
+                                <div class="timeline__slide-content">
+                                    <span data-lang="fr">
+                                        En alternance chez <strong>Albingia</strong> en tant que <strong>Développeur BI
+                                            & Data
+                                            Analyst</strong>.
+                                    </span>
+                                    <span data-lang="en">
+                                        Apprenticeship at <strong>Albingia</strong> as a <strong>BI Developer & Data
+                                            Analyst</strong>.
+                                    </span>
+                                    <ul data-lang="fr">
+                                        <li data-lang="fr">Développement de plus de 15 tableaux de bord Power BI</li>
+                                        <li data-lang="fr">Conception de pipelines ETL automatisés avec SQL et Python
+                                        </li>
+                                        <li data-lang="fr">Analyse et résolution de tickets data et reporting</li>
+                                        <li data-lang="fr">Modélisation de cubes OLAP et modèles sémantiques</li>
+                                        <li data-lang="fr">Application des bonnes pratiques de gouvernance des données
+                                        </li>
+                                        <li data-lang="fr">Collaboration avec les métiers pour des visualisations sur
+                                            mesure</li>
+                                    </ul>
+                                    <ul data-lang="en">
+                                        <li data-lang="en">Developed over 15 interactive Power BI dashboards</li>
+                                        <li data-lang="en">Designed automated ETL pipelines using SQL and Python</li>
+                                        <li data-lang="en">Handled data and reporting tickets for business teams</li>
+                                        <li data-lang="en">Modeled OLAP cubes and semantic data models</li>
+                                        <li data-lang="en">Applied best practices in data governance</li>
+                                        <li data-lang="en">Collaborated with business teams to create custom dashboards
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Data Analyst & Développeur IA/CRM -->
+                            <div class="timeline__slide">
+                                <h3 class="timeline__slide-title">
+                                    <span data-lang="fr">Data Analyst & Développeur IA/CRM - Novembre 2025 à
+                                        Aujourd'hui</span>
+                                    <span data-lang="en">Data Analyst & AI/CRM Developer - November 2025 –
+                                        Present</span>
+                                </h3>
+                                <div class="timeline__slide-content">
+                                    <span data-lang="fr">
+                                        En alternance chez <strong>Albingia</strong> en tant que <strong>Développeur BI
+                                            & Data
+                                            Analyst</strong>.
+                                    </span>
+                                    <span data-lang="en">
+                                        Apprenticeship at <strong>Albingia</strong> as a <strong>BI Developer & Data
+                                            Analyst</strong>.
+                                    </span>
+                                    <ul data-lang="fr">
+                                        <li data-lang="fr">Développement de plus de 15 tableaux de bord Power BI</li>
+                                        <li data-lang="fr">Conception de pipelines ETL automatisés avec SQL et Python
+                                        </li>
+                                        <li data-lang="fr">Analyse et résolution de tickets data et reporting</li>
+                                        <li data-lang="fr">Modélisation de cubes OLAP et modèles sémantiques</li>
+                                        <li data-lang="fr">Application des bonnes pratiques de gouvernance des données
+                                        </li>
+                                        <li data-lang="fr">Collaboration avec les métiers pour des visualisations sur
+                                            mesure</li>
+                                    </ul>
+                                    <ul data-lang="en">
+                                        <li data-lang="en">Developed over 15 interactive Power BI dashboards</li>
+                                        <li data-lang="en">Designed automated ETL pipelines using SQL and Python</li>
+                                        <li data-lang="en">Handled data and reporting tickets for business teams</li>
+                                        <li data-lang="en">Modeled OLAP cubes and semantic data models</li>
+                                        <li data-lang="en">Applied best practices in data governance</li>
+                                        <li data-lang="en">Collaborated with business teams to create custom dashboards
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-envelope"></i>
+                <span data-lang="fr">Me Contacter</span>
+                <span data-lang="en">Contact Me</span>
+            </h2>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>
+                        <span data-lang="fr">Entrons en contact</span>
+                        <span data-lang="en">Let's get in touch</span>
+                    </h3>
+                    <p>
+                        <span data-lang="fr">
+                            Vous êtes recruteur, professionnel ou simplement curieux de mon profil&nbsp;?
+                            </br>
+                            N'hésitez pas à me contacter pour échanger sur une opportunité, une collaboration ou toute
+                            autre
+                            information.
+                        </span>
+                        <span data-lang="en">
+                            Are you a recruiter, professional, or simply interested in my profile ?
+                            </br>
+                            Feel free to reach out to discuss an opportunity, collaboration, or to learn more.
+                        </span>
+                    </p>
+
+
+                    <div class="contact-methods">
+                        <a href="mailto:jos.darryll@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <span>jos.darryll@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <span>Darryll JOSEPH</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/Darryll1" target="_blank" class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <span>Darryll1</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSenGPAVK7nb_5kDeLNjVw3GYll77sKyN6UhbpCA7N6jozipwQ/formResponse"
+                        method="POST" target="hidden_iframe">
+                        <div class="form-group">
+                            <label for="entry.2005620554">
+                                <span data-lang="fr">Nom complet *</span>
+                                <span data-lang="en">Full Name *</span>
+                            </label>
+                            <input type="text" id="entry.2005620554" name="entry.2005620554" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entry.1045781291">
+                                <span data-lang="fr">Email *</span>
+                                <span data-lang="en">Email *</span>
+                            </label>
+                            <input type="email" id="entry.1045781291" name="entry.1045781291" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entry.1065046570">
+                                <span data-lang="fr">Sujet *</span>
+                                <span data-lang="en">Subject *</span>
+                            </label>
+                            <input type="text" id="entry.1065046570" name="entry.1065046570" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entry.1166974658">
+                                <span data-lang="fr">Message *</span>
+                                <span data-lang="en">Message *</span>
+                            </label>
+                            <textarea id="entry.1166974658" name="entry.1166974658" rows="5" required></textarea>
+                        </div>
+                        <input type="hidden" name="fvv" value="1">
+                        <input type="hidden" name="pageHistory" value="0">
+                        <input type="hidden" name="-918070620164135608" value="REMPLACE_MOI">
+
+                        <button type="submit" id="submitBtn" class="btn primary">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-lang="fr">Envoyer le message</span>
+                            <span data-lang="en">Send Message</span>
+                        </button>
+                    </form>
+
+                    <!-- Iframe caché pour la soumission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p><strong>Darryll Genève Junior JOSEPH</strong> – Data Analyst & Data Scientist</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Darryll1" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="assets/CV_Darryll_JOSEPH.pdf" download aria-label="CV PDF"><i
+                            class="fas fa-file-download"></i></a>
+                </div>
+            </div>
+            <p class="footer-copy">
+                <span data-lang="fr">© 2025 – Tous droits réservés.</span>
+                <span data-lang="en">© 2025 – All rights reserved.</span>
+            </p>
+            <!-- Bouton flottant vers le haut -->
+            <a href="#home" class="back-to-top go-top" aria-label="Retour en haut">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+                        title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"
+                        title="Share"></button> <button class="pswp__button pswp__button--fs"
+                        title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"
+                        title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- end photoSwipe background -->
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+
+        function updateSearchPlaceholder(lang) {
+            const searchInput = document.getElementById("skillSearch");
+            if (!searchInput) return;
+
+            const text = searchInput.getAttribute("data-placeholder-" + lang);
+            if (text) {
+                searchInput.placeholder = text;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const languageSelect = document.getElementById("languageSelect");
+
+            if (languageSelect) {
+                // Langue au chargement (valeur sélectionnée dans le select)
+                updateSearchPlaceholder(languageSelect.value || "fr");
+
+                // Quand on change la langue dans le select
+                languageSelect.addEventListener("change", function (e) {
+                    const newLang = e.target.value; // "fr" ou "en"
+                    updateSearchPlaceholder(newLang);
+                });
+            } else {
+                // Au cas où, on met FR par défaut
+                updateSearchPlaceholder("fr");
+            }
+        });
+
+
+
+        /* ZOOM sur images de certifications */
+        (function () {
+            // On cible uniquement les images de la section diplômes & certifications
+            const imgs = Array.from(
+                document.querySelectorAll('#certifications-diplomes .box img')
+            );
+            if (!imgs.length) return;
+
+            // Crée l’overlay
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox-overlay';
+            lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+            document.body.appendChild(lightbox);
+
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            let currentIndex = -1;
+
+            // Ouvrir la lightbox sur une image donnée
+            function openAt(index) {
+                currentIndex = index;
+                const src = imgs[currentIndex].getAttribute('src');
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+            }
+
+            // Fermer la lightbox
+            function close() {
+                lightbox.classList.remove('active');
+                lightboxImg.src = '';
+                currentIndex = -1;
+            }
+
+            // Aller à l’image suivante / précédente
+            function goto(delta) {
+                if (currentIndex === -1) return;
+                currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+                const src = imgs[currentIndex].getAttribute('src');
+                lightboxImg.src = src;
+            }
+
+            // Appliquer le zoom sur chaque image
+            imgs.forEach((img, idx) => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openAt(idx);
+                });
+            });
+
+            // Fermeture via croix
+            closeBtn.addEventListener('click', close);
+
+            // Fermeture en cliquant sur le fond sombre
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) close();
+            });
+
+            // Clavier : ESC pour fermer, ← → pour naviguer
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowRight') goto(+1);
+                if (e.key === 'ArrowLeft') goto(-1);
+            });
+        })();
+
+
+
+
+
+        // ========== CONTACT FORM HANDLER (Google Forms) ==========
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    const submitBtn = document.getElementById('submitBtn');
+                    const originalText = submitBtn.innerHTML;
+
+                    // Désactiver le bouton et montrer le loading
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+                    // Le formulaire va se soumettre vers Google Forms
+                    // Après 2 secondes, on affiche le succès
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
+                        submitBtn.style.backgroundColor = '#10b981';
+
+                        // Réinitialiser le formulaire
+                        contactForm.reset();
+
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.style.backgroundColor = '';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    }, 2000);
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gestion du formulaire de contact Google Forms
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const hiddenIframe = document.getElementById('hidden_iframe');
+
+            if (contactForm && submitBtn && hiddenIframe) {
+                let submitted = false;
+                const originalHTML = submitBtn.innerHTML;
+
+                // Se déclenche quand l'iframe se charge APRÈS un submit
+                hiddenIframe.addEventListener('load', function () {
+                    if (!submitted) return;            // ignorer le premier load "à vide"
+                    submitted = false;                 // reset le flag
+
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
+                    submitBtn.disabled = false;
+
+                    // Remettre le bouton et vider le formulaire après 3s
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.innerHTML = originalHTML;
+                    }, 3000);
+                });
+
+                // Au submit : passer en mode "envoi"
+                contactForm.addEventListener('submit', function () {
+                    submitted = true;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+                    // Filet de sécurité si l'iframe onload ne se déclenche pas
+                    setTimeout(() => {
+                        if (submitted) {
+                            submitted = false;
+                            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
+                            submitBtn.disabled = false;
+                            setTimeout(() => {
+                                contactForm.reset();
+                                submitBtn.innerHTML = originalHTML;
+                            }, 2500);
+                        }
+                    }, 8000);
+                });
+            }
+        });
+
+        document.addEventListener("scroll", function () {
+            const heroSection = document.getElementById("top2");
+            const goTopButton = document.getElementById("go-top");
+
+            const heroHeight = heroSection.offsetHeight;
+
+            // Si on dépasse la hauteur du hero → montrer le bouton
+            if (window.scrollY > heroHeight - 100) {
+                goTopButton.classList.add("visible");
+            } else {
+                goTopButton.classList.remove("visible");
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (!backToTop) return;
+
+            function toggleBackToTop() {
+                // si on a un peu scrollé (30% de la hauteur d'écran)
+                if (window.scrollY > window.innerHeight * 0.3) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            }
+
+            // Vérifie l'état dès le chargement de la page
+            toggleBackToTop();
+
+            // Et à chaque scroll
+            window.addEventListener('scroll', toggleBackToTop);
+        });
+
+
+
+        (function () {
+            const select = document.getElementById('languageSelect');
+
+            function cleanAndApply(lang) {
+                // 1) montrer/cacher via classes, pas de style inline
+                document.body.classList.remove('lang-fr', 'lang-en');
+                document.body.classList.add('lang-' + lang);
+
+                // 2) mettre <html lang="...">
+                document.documentElement.setAttribute('lang', lang);
+
+                void document.body.offsetHeight; // force reflow
+
+
+                // 3) très important : aligner lang sur chaque élément localisé
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.setAttribute('lang', el.getAttribute('data-lang')); // "fr" ou "en"
+                });
+
+                // 4) mémoriser
+                try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+            }
+
+            // init
+            const saved = (() => {
+                try { return localStorage.getItem('preferred-language') || 'fr'; }
+                catch (e) { return 'fr'; }
+            })();
+            cleanAndApply(saved);
+            if (select) {
+                select.value = saved;
+                select.addEventListener('change', () => cleanAndApply(select.value));
+            }
+
+            // garder ton MutationObserver si tu veux
+        })();
+
+
+
+
+        //  Barre de recherche compétence
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('skillSearch');
+            const noRes = document.getElementById('skillNoResults');
+            const blocks = [...document.querySelectorAll('#skills .skill-block')];
+            if (!input || blocks.length === 0) return;
+
+            // --- utils ---
+            const normalize = s => (s || '').toString()
+                .normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+
+            const escapeHtml = s => s.replace(/[&<>"']/g, c =>
+                ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])
+            );
+
+            const clearHighlight = (el) => {
+                if (!el) return;
+                if (el.dataset && el.dataset.label != null) {
+                    el.innerHTML = escapeHtml(el.dataset.label);
+                } else {
+                    el.dataset.label = el.textContent;
+                    el.innerHTML = escapeHtml(el.textContent);
+                }
+            };
+
+            const highlight = (el, query) => {
+                if (!el) return;
+                const raw = el.dataset.label ?? el.textContent;
+                if (!el.dataset.label) el.dataset.label = raw;
+                if (!query) { el.innerHTML = escapeHtml(raw); return; }
+
+                const nr = normalize(raw);
+                const nq = normalize(query);
+                const i = nr.indexOf(nq);
+                if (i === -1) { el.innerHTML = escapeHtml(raw); return; }
+
+                const before = raw.slice(0, i);
+                const mid = raw.slice(i, i + nq.length);
+                const after = raw.slice(i + nq.length);
+                el.innerHTML = `${escapeHtml(before)}<mark>${escapeHtml(mid)}</mark>${escapeHtml(after)}`;
+            };
+
+            // --- filtre principal ---
+            function applyFilter() {
+                const q = input.value.trim();
+                const nq = normalize(q);
+                const currentLang =
+                    document.documentElement.lang ||
+                    (document.body.classList.contains('lang-en') ? 'en' : 'fr');
+
+                let anyVisible = false;
+
+                blocks.forEach(block => {
+                    // 1) Sélectionne le titre visible pour la langue courante
+                    const titleEl =
+                        block.querySelector(`.skill-block-title[data-lang="${currentLang}"]`) ||
+                        block.querySelector('.skill-block-title'); // fallback si pas de version traduite
+                    const titleText = titleEl ? (titleEl.dataset.label ?? titleEl.textContent) : '';
+
+                    // 2) Sélectionne, pour chaque item, le label de la langue courante (ou fallback)
+                    const items = [...block.querySelectorAll('.skill-item')];
+                    const labels = items.map(item => {
+                        const lbl =
+                            item.querySelector(`span[data-lang="${currentLang}"]`) ||
+                            item.querySelector('span:last-child'); // fallback
+                        return { item, lbl };
+                    });
+
+                    // reset highlight
+                    if (titleEl) clearHighlight(titleEl);
+                    labels.forEach(({ lbl }) => clearHighlight(lbl));
+
+                    // pas de requête -> tout afficher
+                    if (nq === '') {
+                        block.style.display = '';
+                        items.forEach(({ style }) => { }); // noop
+                        labels.forEach(({ item }) => (item.style.display = '')); // afficher tous les items
+                        anyVisible = true;
+                        return;
+                    }
+
+                    // match sur le titre (langue courante)
+                    const titleMatch = normalize(titleText).includes(nq);
+
+                    if (titleMatch) {
+                        // Si le titre matche, on montre le bloc ET tous ses items
+                        block.style.display = '';
+                        labels.forEach(({ item }) => (item.style.display = ''));
+                        if (titleEl) highlight(titleEl, q);
+                        anyVisible = true;
+                        return;
+                    }
+
+                    // Sinon, on filtre item par item (langue courante)
+                    let itemMatched = false;
+                    labels.forEach(({ item, lbl }) => {
+                        const txt = lbl ? (lbl.dataset.label ?? lbl.textContent) : '';
+                        const match = normalize(txt).includes(nq);
+                        item.style.display = match ? '' : 'none';
+                        if (match && lbl) {
+                            itemMatched = true;
+                            highlight(lbl, q);
+                        }
+                    });
+
+                    block.style.display = itemMatched ? '' : 'none';
+                    anyVisible = anyVisible || itemMatched;
+                });
+
+                noRes.style.display = anyVisible ? 'none' : 'block';
+            }
+
+
+            // --- interactions ---
+            input.addEventListener('input', applyFilter);
+
+            // Ouvrir/fermer la barre (si tu utilises le style “replié”)
+            const searchBox = document.querySelector('.skills-search');
+            if (searchBox) {
+                searchBox.addEventListener('click', (e) => {
+                    // si on clique la loupe alors que l’input n’est pas focus → ouvrir
+                    if (!searchBox.classList.contains('active')) {
+                        searchBox.classList.add('active');
+                        input.focus();
+                    }
+                    e.stopPropagation();
+                });
+                input.addEventListener('blur', () => {
+                    if (input.value.trim() === '') searchBox.classList.remove('active');
+                });
+            }
+
+            // 1ère passe
+            applyFilter();
+        });
+
+
+
+
+
+
+        /*Carroussel Certification*/
+        const box = document.querySelector('.box');
+        const panels = [...box.querySelectorAll('span')];
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        let angle = 0; // angle courant
+        let speed = 0.15; // vitesse auto (deg/frame)
+        let stepAngle = 0; // 360 / N
+        let radius = 300;
+        const spacingFactor = 1.3;
+        const pauseMs = 5000; // 5s pause après interaction
+
+        let paused = false;
+        let inactivityTimer = null;
+
+        function layoutPanels() {
+            const N = panels.length;
+            if (!N) return;
+
+            stepAngle = 360 / N;
+
+            const panelWidth = box.clientWidth;
+            const r = (panelWidth / 2) / Math.tan(Math.PI / N);
+            radius = Number.isFinite(r) ? Math.round(r * spacingFactor) : 300;
+
+            panels.forEach((p, i) => {
+                p.style.transform = `rotateY(${i * stepAngle}deg) translateZ(${radius}px)`;
+            });
+
+            box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+            updateActivePanel(); // assure update initiale
+        }
+
+        // Met à jour la classe active sur le panneau "en face"
+        function updateActivePanel() {
+            const N = panels.length;
+            if (!N || stepAngle === 0) return;
+
+            // Normalize angle en [0,360)
+            const normalizedAngle = ((angle % 360) + 360) % 360;
+            // Quel index correspond à cet angle (arrondi)
+            const index = Math.round(normalizedAngle / stepAngle) % N;
+            // Conversion pour correspondre à l'ordre visuel (dépend de ton sens de rotation)
+            const activeIndex = (N - index) % N;
+
+            panels.forEach((p, i) => p.classList.toggle('active', i === activeIndex));
+        }
+
+        function animate() {
+            if (!paused) {
+                angle -= speed;
+                box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+                updateActivePanel();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        function pauseAuto(ms = pauseMs) {
+            paused = true;
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(() => {
+                paused = false;
+            }, ms);
+        }
+
+        // Animation douce vers l’angle cible — on met à jour active DURANT la tween
+        function tweenTo(target, duration = 500) {
+            const start = angle;
+            const delta = target - start;
+            const t0 = performance.now();
+
+            function tick(t) {
+                const p = Math.min(1, (t - t0) / duration);
+                const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+                angle = start + delta * eased;
+                box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+
+                // IMPORTANT : mettre à jour l'active pendant l'animation
+                updateActivePanel();
+
+                if (p < 1) requestAnimationFrame(tick);
+                else {
+                    // s'assure de l'état final exact et met à jour une dernière fois
+                    angle = target;
+                    box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+                    updateActivePanel();
+                }
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Calcul de l’angle cible “aligné”
+        function getNearestAlignedAngle(direction) {
+            const index = Math.round(angle / stepAngle);
+            return index * stepAngle + direction * stepAngle;
+        }
+
+        // Flèches = aller pile à l’image suivante / précédente
+        function rotateOne(direction) {
+            pauseAuto();
+            const target = getNearestAlignedAngle(direction);
+            tweenTo(target, 500);
+        }
+
+        prev.addEventListener('click', () => rotateOne(+1));
+        next.addEventListener('click', () => rotateOne(-1));
+
+        // init
+        layoutPanels();
+        animate();
+        window.addEventListener('resize', () => {
+            clearTimeout(window.__layoutT);
+            window.__layoutT = setTimeout(layoutPanels, 120);
+        });
+
+
+        // ===== constants =====
+        const DOM = {
+            timeline: "timeline",
+            timelineStepper: "timeline__stepper",
+            timelineStep: "timeline__step",
+            timelineStepTitle: "timeline__step-title",
+            timelineStepActive: "is-active",
+            timelineStepActiveMarker: "timeline__step-active-marker",
+            timelineSlidesContainer: "timeline__slides",
+            timelineSlide: "timeline__slide",
+            timelineSlideActive: "is-active",
+        };
+
+        const STEP_ACTIVE_MARKEP_CUSTOM_PROPS = {
+            width: "--slide-width",
+            posX: "--slide-pos-x",
+            posY: "--slide-pos-y",
+        };
+
+        const SLIDES_CONTAINER_CUSTOM_PROPS = {
+            height: "--slides-container-height",
+        };
+
+        // ===== DOM refs =====
+        const timeline = document.querySelector(`.${DOM.timeline}`);
+        const timelineStepper = timeline?.querySelector(`.${DOM.timelineStepper}`);
+        const timelineStepTitle = timeline?.querySelector(`.${DOM.timelineStepTitle}`);
+        const timelineSlidesContainer = /** @type {HTMLElement|null} */ (
+            timeline?.querySelector(`.${DOM.timelineSlidesContainer}`)
+        );
+        const timelineSlides =
+            timeline && Array.from(timeline.querySelectorAll(`.${DOM.timelineSlide}`));
+
+        // ===== lifecycle =====
+        window.addEventListener("load", () => {
+            createStepActiveMarker();
+            activateCurrentSlide();
+        });
+
+        window.addEventListener("resize", () => {
+            recalcStepActiveMarkerProps();
+        });
+
+        timeline?.addEventListener("click", (event) => {
+            const { target } = event;
+
+            if (
+                !target ||
+                !(target instanceof Element) ||
+                !target.closest(`.${DOM.timelineStep}`)
+            ) {
+                return;
+            }
+
+            const currentStep = target.closest(`.${DOM.timelineStep}`);
+            if (!currentStep) return;
+
+            deactivateSteps();
+            activateCurrentStep(currentStep);
+
+            recalcStepActiveMarkerProps();
+
+            deactivateSlides();
+            activateCurrentSlide();
+        });
+
+        // ===== steps =====
+        function deactivateSteps() {
+            const steps = document.querySelectorAll(`.${DOM.timelineStep}`);
+            steps.forEach((elem) => elem.classList.remove(DOM.timelineStepActive));
+        }
+
+        function activateCurrentStep(currentStep) {
+            currentStep.classList.add(DOM.timelineStepActive);
+        }
+
+        // ===== slides =====
+        function deactivateSlides() {
+            timelineSlides?.forEach((elem) =>
+                elem.classList.remove(DOM.timelineSlideActive)
+            );
+        }
+
+        function activateCurrentSlide() {
+            const currentSlide = getCurrentSlide();
+            if (!currentSlide) return;
+
+            const currentSlideHeight = getCurrentSlideHeight(currentSlide);
+            setSlideContainerHeight(currentSlideHeight);
+            currentSlide.classList.add(DOM.timelineSlideActive);
+        }
+
+        function setSlideContainerHeight(height) {
+            timelineSlidesContainer?.style.setProperty(
+                SLIDES_CONTAINER_CUSTOM_PROPS.height,
+                `${height}px`
+            );
+        }
+
+        function getCurrentSlideHeight(currentSlide) {
+            return /** @type {HTMLElement} */ (currentSlide).clientHeight;
+        }
+
+        // ===== active marker =====
+        function createStepActiveMarker() {
+            if (!timelineStepper) return;
+
+            const stepActiveMarker = document.createElement("div");
+            stepActiveMarker.classList.add(DOM.timelineStepActiveMarker);
+            timelineStepper.appendChild(stepActiveMarker);
+
+            const positionProps = getStepActiveMarkerProps();
+            if (!positionProps) return;
+
+            setStepActiveMarkerProps({ stepActiveMarker, ...positionProps });
+        }
+
+        function recalcStepActiveMarkerProps() {
+            const stepActiveMarker = /** @type {HTMLElement|null} */ (
+                timeline?.querySelector(`.${DOM.timelineStepActiveMarker}`)
+            );
+            if (!stepActiveMarker) return;
+
+            const stepActiveMarkerProps = getStepActiveMarkerProps();
+            if (!stepActiveMarkerProps) return;
+
+            setStepActiveMarkerProps({ stepActiveMarker, ...stepActiveMarkerProps });
+        }
+
+        function setStepActiveMarkerProps({ stepActiveMarker, posX, posY, width }) {
+            stepActiveMarker.style.setProperty(
+                STEP_ACTIVE_MARKEP_CUSTOM_PROPS.width,
+                `${width}px`
+            );
+            stepActiveMarker.style.setProperty(
+                STEP_ACTIVE_MARKEP_CUSTOM_PROPS.posX,
+                `${posX}px`
+            );
+            if (typeof posY === "number") {
+                stepActiveMarker.style.setProperty(
+                    STEP_ACTIVE_MARKEP_CUSTOM_PROPS.posY,
+                    `${posY}px`
+                );
+            }
+        }
+
+        function getStepActiveMarkerProps() {
+            const { currentStep } = getCurrentStep();
+            if (!currentStep) return null;
+
+            const width = getElementWidth(currentStep);
+            const posX = getStepActiveMarkerPosX(currentStep);
+            const posY = getStepActiveMarkerPosY();
+
+            if (typeof posX !== "number" || typeof posY !== "number") return null;
+            return { posX, posY, width };
+        }
+
+        // ===== helpers =====
+        function getCurrentStep() {
+            const timelineSteps = Array.from(
+                document.querySelectorAll(`.${DOM.timelineStep}`)
+            );
+
+            const currentStep = timelineSteps.find((el) =>
+                el.classList.contains(DOM.timelineStepActive)
+            );
+
+            const currentStepIndex =
+                currentStep &&
+                timelineSteps.findIndex((el) => el.classList.contains(DOM.timelineStepActive));
+
+            return { currentStep, currentStepIndex };
+        }
+
+        function getCurrentSlide() {
+            const { currentStepIndex } = getCurrentStep();
+            if (typeof currentStepIndex !== "number" || !timelineSlides) return null;
+            return timelineSlides[currentStepIndex] || null;
+        }
+
+        function getStepActiveMarkerPosY() {
+            const titleRectTop = timelineStepTitle?.getBoundingClientRect().top;
+            const stepperRectTop = timelineStepper?.getBoundingClientRect().top;
+
+            if (typeof titleRectTop !== "number" || typeof stepperRectTop !== "number") {
+                return null;
+            }
+            return titleRectTop - stepperRectTop;
+        }
+
+        function getStepActiveMarkerPosX(currentStep) {
+            const stepperLeft = timelineStepper?.getBoundingClientRect().left;
+            const currentLeft = currentStep.getBoundingClientRect().left;
+            if (typeof stepperLeft !== "number") return null;
+            return currentLeft - stepperLeft;
+        }
+
+        function getElementWidth(elem) {
+            return /** @type {HTMLElement} */ (elem).clientWidth;
+        }
+
+
+
+    </script>
 
 </body>
+
 </html>

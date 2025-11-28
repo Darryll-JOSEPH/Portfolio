@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Darryll</title>
+    <meta name="description" content="Portfolio Data Analyst & Data scientist">
+    <meta name="author" content="Darryll Genève Junior JOSEPH">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO Meta Tags -->
+    <title>Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist | Portfolio</title>
+    <meta name="description"
+        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+    <meta name="keywords"
+        content="Data Analyst, Power BI, Python, Automatisation, Tableaux de bord interactifs, Analyse de données, Business Intelligence, Machine Learning, Modélisation prédictive, Solutions innovantes, Data Engineering, IA, Reporting décisionnel, Optimisation performance business">
+    <meta name="author" content="Darryll Genève Junior JOSEPH">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darryll1.github.io/Portfolio/">
+    <meta property="og:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
+    <meta property="og:description"
+        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+    <meta property="og:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://darryll1.github.io/Portfolio/">
+    <meta property="twitter:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
+    <meta property="twitter:description"
+        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+    <meta property="twitter:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
+
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Language Switcher Styles -->
+    <style>
+        /* En mode FR : masquer l'anglais */
+        .lang-fr [data-lang="en"] {
+            display: none !important;
+        }
+
+        .lang-en [data-lang="fr"] {
+            display: none !important;
+        }
+
+
+        /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: auto;
+            color: white;
+        }
+
+        .lang-select {
+            background: var(--bg-alt);
+            border: 2px solid #FFAE42;
+            color: white;
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 14px;
+            outline: none;
+            height: auto;
+        }
+
+        .lang-select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+        }
+
+        .lang-select:focus {
+            border-color: var(--highlight);
+            box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+            border: 2px solid #FFAE42;
+            color: white;
+
+
+        }
+
+        .lang-select option {
+            color: black;
+            /* Texte visible dans la liste */
+            background-color: white;
+            /* Fond blanc par défaut */
+        }
+
+        /* Option survolée dans certains navigateurs */
+        .lang-select option:hover,
+        .lang-select option:focus,
+        .lang-select option:checked {
+            background-color: #e5e5e5;
+            /* Gris clair */
+            color: black;
+            /* Texte bien lisible */
+        }
+
+        @media (max-width: 768px) {
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 15px;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll Genève Junior JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Analyst spécialisé en Power BI, Python et automatisation supply chain",
+    "url": "https://darryll1.github.io/Portfolio/",
+    "image": "https://darryll1.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll1",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Power BI",
+      "Python",
+      "SQL",
+      "Data Analysis",
+      "Business Intelligence",
+      "Power Automate",
+      "Dashboard Development"
+    ]
+  }
+  </script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+    <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+    <!-- === Filtre SVG pour bordure lumineuse fluide (glow-0) === -->
+    <!-- === Filtre SVG pour bordure lumineuse fluide (glow-0) === -->
+    <!-- <svg width="0" height="0" aria-hidden="true">
+        <filter id="glow-0" x="-.25" y="-.25" width="1.5" height="1.5">
+            <feComponentTransfer>
+                <feFuncA type="table" tableValues="0 2 0"></feFuncA>
+            </feComponentTransfer>
+            <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+            <feComponentTransfer result="rond">
+                <feFuncA type="table" tableValues="-2 3"></feFuncA>
+            </feComponentTransfer>
+            <feMorphology operator="dilate" radius="3"></feMorphology>
+            <feGaussianBlur stdDeviation="6"></feGaussianBlur>
+            <feBlend in="rond" result="glow"></feBlend>
+            <feComponentTransfer in="SourceGraphic">
+                <feFuncA type="table" tableValues="0 0 1"></feFuncA>
+            </feComponentTransfer>
+            <feBlend in2="glow"></feBlend>
+        </filter>
+    </svg> -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT5QG324" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+        </div>
+
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li>
+                    <a class="smoothscroll" href="index.html" title="Accueil">
+                        <span data-lang="fr">Accueil</span>
+                        <span data-lang="en">Home</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a class="smoothscroll" href="index.html#projects" title="Projets">
+                        <span data-lang="fr">Projets</span>
+                        <span data-lang="en">Projects</span>
+                    </a>
+                </li>
+                <li>
+
+                    <select id="languageSelect" class="smoothscroll lang-select">
+                        <option value="fr" selected>🇫🇷 Français</option>
+                        <option value="en">🇺🇸 English</option>
+                    </select>
+
+                </li>
+            </ul>
+        </nav>
+
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+   ================================================== -->
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/1.jpeg"
+        data-natural-width=1920 data-natural-height=1080 data-position-y=center>
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content2">
+            <div class="project-status">
+                <span class="status-badge completed">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-lang="fr">Terminé</span>
+                    <span data-lang="en">Completed</span>
+                </span>
+            </div>
+
+            <div class="row home-content__main2">
+                <div class="container">
+                    <div class="project-header">
+                        <h1>
+                            <span class="FFAE42" data-lang="fr">Data Integration – Pipeline de Traitement
+                                Distribué</span>
+                            <span class="FFAE42" data-lang="en">Data Integration – Distributed Processing
+                                Pipeline</span>
+                        </h1>
+                        <p class="project-subtitle">
+                            <span data-lang="fr">Kafka (temps réel) <i class="fa fa-arrow-right"></i> Spark
+                                Streaming/HDFS <i class="fa fa-arrow-right"></i> Airflow (batch) <i
+                                    class="fa fa-arrow-right"></i> FastAPI
+                                (exposition) <i class="fa fa-arrow-right"></i> Prometheus & Grafana
+                                (observabilité)</span>
+                            <span data-lang="en">Kafka (real-time) <i class="fa fa-arrow-right"></i> Spark
+                                Streaming/HDFS <i class="fa fa-arrow-right"></i> Airflow (batch) <i
+                                    class="fa fa-arrow-right"></i> FastAPI
+                                (serving) <i class="fa fa-arrow-right"></i> Prometheus & Grafana (observability)</span>
+                        </p>
+
+                        <div class="project-tech-badges">
+                            <span class="tech-badge">Apache Kafka</span>
+                            <span class="tech-badge">Spark Streaming</span>
+                            <span class="tech-badge">HDFS</span>
+                            <span class="tech-badge">Apache Airflow</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">Prometheus</span>
+                            <span class="tech-badge">Grafana</span>
+                            <span class="tech-badge">Docker Compose</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                    </div>
+                </div>
+    </section> <!-- end s-home -->
+
+    <!-- ========== VUE D'ENSEMBLE ========== -->
+    <section class="project-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> <span data-lang="fr">Vue d'ensemble</span> <span
+                    data-lang="en">Project Overview</span></h2>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <p class="lead">
+                        <span data-lang="fr">Mise en place d’une architecture <strong>end-to-end</strong> qui unifie
+                            ingestion temps réel, traitements batch et exposition API afin d’industrialiser la chaîne de
+                            valeur des données. Le pipeline s’appuie sur des <strong>conteneurs Docker</strong> et une
+                            <strong>orchestration Airflow</strong> pour garantir reproductibilité, scalabilité et
+                            monitoring.</span>
+                        <span data-lang="en">An <strong>end-to-end</strong> architecture unifying real-time ingestion,
+                            batch processing and API serving to industrialize the data value chain. The pipeline relies
+                            on <strong>Dockerized services</strong> and <strong>Airflow orchestration</strong> for
+                            reproducibility, scalability and monitoring.</span>
+                    </p>
+                    <ul>
+                        <li><span data-lang="fr"><strong>Objectif :</strong> réduire le time‑to‑insight en automatisant
+                                collecte, traitement, qualité et mise à disposition.</span><span
+                                data-lang="en"><strong>Goal:</strong> reduce time‑to‑insight by automating collection,
+                                processing, data quality and serving.</span></li>
+                        <li><span data-lang="fr"><strong>Approche :</strong> architecture modulaire <em>stream +
+                                    batch</em>, stockage HDFS, API REST FastAPI, observabilité
+                                Prometheus/Grafana.</span><span data-lang="en"><strong>Approach:</strong> modular
+                                <em>stream + batch</em> architecture, HDFS storage, FastAPI REST, Prometheus/Grafana
+                                observability.</span></li>
+                        <li><span data-lang="fr"><strong>Déploiement :</strong> <code>docker-compose.yml</code> pour
+                                lancer l’ensemble des services et réseaux.</span><span
+                                data-lang="en"><strong>Deployment:</strong> <code>docker-compose.yml</code> to spin up
+                                all services and networks.</span></li>
+                    </ul>
+                </div>
+                <div class="project-image arch-diagram">
+                    <img src="assets/projects/data-intégration/Architecture.png"
+                        alt="Schéma d'architecture – Data Integration" loading="lazy">
+                    <p class="image-caption"><span data-lang="fr">Architecture globale – ingestion temps réel & batch,
+                            stockage, serving, observabilité.</span><span data-lang="en">Global architecture – real‑time
+                            & batch, storage, serving, observability.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROBLÉMATIQUE & SUJET ========== -->
+    <section class="project-section bg-alt">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> <span data-lang="fr">Problématique &
+                    Sujet</span><span data-lang="en">Challenge & Rationale</span></h2>
+
+            <div class="problem-solution-grid">
+                <div class="problem-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> <span data-lang="fr">Problématique</span><span
+                            data-lang="en">Problem</span></h3>
+                    <ul>
+                        <li><span data-lang="fr">Données <strong>hétérogènes</strong> et <strong>continues</strong> à
+                                ingérer (fichiers & messages temps réel) nécessitant résilience et
+                                scalabilité.</span><span data-lang="en"><strong>Heterogeneous</strong> and
+                                <strong>continuous</strong> data ingestion (files & real-time messages) requiring
+                                resilience and scale.</span></li>
+                        <li><span data-lang="fr">Besoin d’un <strong>traitement distribué</strong> pour enrichir/agréger
+                                en quasi temps réel et en batch.</span><span data-lang="en">Need for <strong>distributed
+                                    compute</strong> to enrich/aggregate near real-time and batch.</span></li>
+                        <li><span data-lang="fr">Exposer des données <strong>fiables</strong> via API et
+                                <strong>superviser</strong> la santé du pipeline (SLA, latence, erreurs).</span><span
+                                data-lang="en">Expose <strong>trustworthy</strong> data via API and
+                                <strong>observe</strong> pipeline health (SLA, latency, errors).</span></li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3><i class="fas fa-check-circle"></i> <span data-lang="fr">Sujet Pertinent pour le
+                            Portefeuille</span><span data-lang="en">Why it matters in a Portfolio</span></h3>
+                    <ul>
+                        <li><span data-lang="fr"><strong>Architecture de référence</strong> pour les cas d’usage Data/AI
+                                modernes : unifie streaming, batch, API, monitoring.</span><span
+                                data-lang="en"><strong>Reference architecture</strong> for modern Data/AI: unifies
+                                streaming, batch, APIs, monitoring.</span></li>
+                        <li><span data-lang="fr"><strong>Industrialisation</strong> de bout en bout : automatisation
+                                Airflow, conteneurisation, métriques observables.</span><span
+                                data-lang="en"><strong>End‑to‑end industrialization</strong>: Airflow automation,
+                                containerization, observable metrics.</span></li>
+                        <li><span data-lang="fr"><strong>Transférable</strong> à la production: patterns réutilisables
+                                (retries, back‑pressure, idempotence, RAG de logs).</span><span
+                                data-lang="en"><strong>Production‑ready patterns</strong>: retries, back‑pressure,
+                                idempotency, log aggregation.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ARCHITECTURE GÉNÉRALE ========== -->
+    <section class="project-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-network-wired"></i> <span data-lang="fr">Architecture
+                    générale</span><span data-lang="en">Overall Architecture</span></h2>
+
+            <div class="tech-architecture">
+                <div class="tech-layer">
+                    <h3>Ingestion</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fas fa-stream"></i><span>Kafka (Producer Python)</span></div>
+                        <div class="tech-item"><i class="fas fa-file-upload"></i><span>HDFS (sources CSV)</span></div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <h3>Traitement</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fas fa-bolt"></i><span>Spark Streaming (consumer)</span></div>
+                        <div class="tech-item"><i class="fas fa-layer-group"></i><span>Jobs batch (Airflow)</span></div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <h3>Stockage</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fas fa-database"></i><span>HDFS (brut & agrégé)</span></div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <h3>Exposition</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fas fa-plug"></i><span>FastAPI (API REST)</span></div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <h3>Observabilité</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fas fa-chart-line"></i><span>Prometheus (scrape)</span></div>
+                        <div class="tech-item"><i class="far fa-chart-bar"></i><span>Grafana (dashboards)</span></div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <h3>Déploiement</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fab fa-docker"></i><span>Docker Compose</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODULES PRINCIPAUX ========== -->
+    <section class="project-section bg-alt">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-folder-tree"></i> <span data-lang="fr">Modules
+                    principaux</span><span data-lang="en">Main Modules</span></h2>
+            <div class="content-text">
+                <table class="modules-table">
+                    <thead>
+                        <tr>
+                            <th>Dossier/Fichier</th>
+                            <th><span data-lang="fr">Description</span><span data-lang="en">Description</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>kafka_producer/producer.py</code></td>
+                            <td data-lang="fr">Envoie des messages vers Kafka (topic configuré, clés partition,
+                                sérialisation JSON).</td>
+                            <td data-lang="en">Sends messages to Kafka (configured topic, partition keys, JSON
+                                serialization).</td>
+                        </tr>
+                        <tr>
+                            <td><code>spark_streaming/consumer.py</code></td>
+                            <td data-lang="fr">Consomme Kafka et traite avec Spark (parse, enrichissement, write HDFS).
+                            </td>
+                            <td data-lang="en">Consumes Kafka and processes with Spark (parse, enrich, write to HDFS).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>hdfs_data/hdfs_reader.py</code></td>
+                            <td data-lang="fr">Lecture des CSV HDFS pour consolidation/contrôles qualité.</td>
+                            <td data-lang="en">Reads HDFS CSVs for consolidation/quality checks.</td>
+                        </tr>
+                        <tr>
+                            <td><code>spark_streaming/cube_population.py</code></td>
+                            <td data-lang="fr">Création de cubes analytiques (agrégations, partitions, formats
+                                efficaces).</td>
+                            <td data-lang="en">Analytical cube creation (aggregations, partitions, efficient formats).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>api/main.py</code></td>
+                            <td data-lang="fr">API REST FastAPI pour exposer les jeux de données traités.</td>
+                            <td data-lang="en">FastAPI REST to serve processed datasets.</td>
+                        </tr>
+                        <tr>
+                            <td><code>dags/data_pipeline_dag.py</code></td>
+                            <td data-lang="fr">DAG Airflow orchestrant les jobs batch (dépendances, retries, SLA).</td>
+                            <td data-lang="en">Airflow DAG orchestrating batch jobs (dependencies, retries, SLA).</td>
+                        </tr>
+                        <tr>
+                            <td><code>docker-compose.yml</code></td>
+                            <td data-lang="fr">Démarrage coordonné de tous les conteneurs (réseaux, volumes, env).</td>
+                            <td data-lang="en">Coordinated startup for all containers (networks, volumes, env).</td>
+                        </tr>
+                        <tr>
+                            <td><code>prometheus.yml</code></td>
+                            <td data-lang="fr">Scraping des métriques et alerting de base.</td>
+                            <td data-lang="en">Metric scraping and basic alerting.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ORCHESTRATION & WORKFLOWS ========== -->
+    <section class="project-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-diagram-project"></i> <span data-lang="fr">Orchestration
+                    Airflow</span><span data-lang="en">Airflow Orchestration</span></h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <ul>
+                        <li><span data-lang="fr"><strong>DAG</strong> modulaire : extraction fichiers HDFS → traitement
+                                Spark → population de cubes → publication API.</span><span data-lang="en">Modular
+                                <strong>DAG</strong>: HDFS extract → Spark process → cube population → API
+                                publish.</span></li>
+                        <li><span data-lang="fr">Gestion des <strong>retries</strong>, SLA, dépendances, variables et
+                                connexions.</span><span data-lang="en">Handles <strong>retries</strong>, SLAs,
+                                dependencies, variables and connections.</span></li>
+                        <li><span data-lang="fr"><strong>Idempotence</strong> et reprise sur incident (sensors,
+                                backfills).</span><span data-lang="en"><strong>Idempotency</strong> & failure recovery
+                                (sensors, backfills).</span></li>
+                    </ul>
+                </div>
+                <div class="project-image">
+                    <img src="assets/projects/data-intégration/Airflow.png" alt="Airflow DAG" loading="lazy">
+                    <p class="image-caption"><span data-lang="fr">Vue DAG – tâches & dépendances</span><span
+                            data-lang="en">DAG view – tasks & dependencies</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MONITORING & OBSERVABILITÉ ========== -->
+    <section class="project-section bg-alt">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-eye"></i> <span data-lang="fr">Monitoring &
+                    Observabilité</span><span data-lang="en">Monitoring & Observability</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="result-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Prometheus</h3>
+                    <div class="feature-text">
+                        <ul>
+                            <li>Scrape des métriques d’applications (FastAPI, jobs).</li>
+                            <li>Latence pipeline, throughput Kafka, erreurs.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-tech">prometheus.yml</div>
+                </div>
+                <div class="feature-card">
+                    <div class="result-icon"><i class="far fa-chart-bar"></i></div>
+                    <h3>Grafana</h3>
+                    <div class="feature-text">
+                        <ul>
+                            <li>Dashboards temps réel des indicateurs clés.</li>
+                            <li>Alertes visuelles & exploration logs.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-tech">PromQL • Grafana</div>
+                </div>
+                <div class="feature-card">
+                    <div class="result-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Qualité & Fiabilité</h3>
+                    <div class="feature-text">
+                        <ul>
+                            <li>Contrôles de schémas & dupes dans les jobs Spark.</li>
+                            <li>Tests basiques d’API (health, liveness/readiness).</li>
+                        </ul>
+                    </div>
+                    <div class="feature-tech">PySpark • FastAPI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RÉSULTATS & IMPACT ========== -->
+    <section class="project-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> <span data-lang="fr">Résultats & Impact</span><span
+                    data-lang="en">Results & Impact</span></h2>
+
+            <div class="results-grid">
+                <div class="result-card primary">
+                    <div class="result-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3><span data-lang="fr">Chaîne Industrialisée</span><span data-lang="en">Industrialized
+                            Chain</span></h3>
+                    <p><span data-lang="fr">Pipeline <em>stream + batch</em> automatisé, reproductible et
+                            observable.</span><span data-lang="en">Automated, reproducible and observable <em>stream +
+                                batch</em> pipeline.</span></p>
+                </div>
+                <div class="result-card success">
+                    <div class="result-icon"><i class="fas fa-gauge-high"></i></div>
+                    <h3>Time‑to‑Insight</h3>
+                    <p><span data-lang="fr">Latence réduite du flux à la décision, exposition via API.</span><span
+                            data-lang="en">Lower latency from data to decisions, API‑based serving.</span></p>
+                </div>
+                <div class="result-card accent">
+                    <div class="result-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3><span data-lang="fr">Robustesse</span><span data-lang="en">Robustness</span></h3>
+                    <p><span data-lang="fr">Tolérance aux pannes (retries, reprise), jobs idempotents.</span><span
+                            data-lang="en">Fault tolerance (retries, recovery), idempotent jobs.</span></p>
+                </div>
+            </div>
+            </br>
+            <div class="cta-row">
+                <a class="btn" href="#extraits"><i class="fas fa-code"></i> <span data-lang="fr">Voir des
+                        extraits</span><span data-lang="en">See code snippets</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXTRAITS TECHNIQUES ========== -->
+    <section id="extraits" class="project-section bg-alt">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-file-code"></i> <span data-lang="fr">Extraits
+                    Techniques</span><span data-lang="en">Technical Snippets</span></h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <pre class="code-block"><code># producer.py (Kafka)
+producer = KafkaProducer(bootstrap_servers=[...], value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+producer.send('events', key=b'user_42', value={"event":"click","ts":time.time()})
+</code></pre>
+                    <pre class="code-block"><code># consumer.py (Spark Streaming)
+df = spark \
+  .readStream \
+  .format("kafka") \
+  .option("subscribe", "events") \
+  .load()
+
+parsed = df.selectExpr("CAST(value AS STRING) as json")
+</code></pre>
+                    <pre class="code-block"><code># data_pipeline_dag.py (Airflow)
+with DAG("data_pipeline", schedule="0 * * * *", catchup=False) as dag:
+    extract = BashOperator(...)
+    transform = SparkSubmitOperator(...)
+    publish = PythonOperator(...)
+    extract >> transform >> publish
+</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== NAVIGATION PROJETS ========== -->
+    <section class="project-navigation">
+        <div class="container">
+            <div class="nav-projects">
+                <a href="Medibot.html" class="nav-btn"><i class="fas fa-arrow-left"></i><span data-lang="fr">Projet
+                        précédent</span><span data-lang="en">Previous Project</span></a>
+                <div class="nav-center"><a href="index.html#projects" class="nav-btn"><i
+                            class="fas fa-th-large"></i><span data-lang="fr">Tous les projets</span><span
+                            data-lang="en">All Projects</span></a></div>
+                <div class="nav-next">
+                    <span class="next-label"><span data-lang="fr">Projet suivant :</span><span data-lang="en">Next
+                            Project:</span></span>
+                    <a href="medsynora-azure.html" class="nav-btn primary"><span data-lang="fr">MedSynora – Lakehouse
+                            Azure</span><span data-lang="en">MedSynora – Azure Lakehouse</span><i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p><strong>Darryll Genève Junior JOSEPH</strong> – Data Analyst & Data Scientist</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Darryll1" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="assets/CV_Darryll_JOSEPH.pdf" download aria-label="CV PDF"><i
+                            class="fas fa-file-download"></i></a>
+                </div>
+            </div>
+            <p class="footer-copy">
+                <span data-lang="fr">© 2025 – Tous droits réservés.</span>
+                <span data-lang="en">© 2025 – All rights reserved.</span>
+            </p>
+            <!-- Bouton flottant vers le haut -->
+            <a href="#home" class="back-to-top" aria-label="Retour en haut">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+                        title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"
+                        title="Share"></button> <button class="pswp__button pswp__button--fs"
+                        title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"
+                        title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- end photoSwipe background -->
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+
+
+
+
+        document.addEventListener("scroll", function () {
+            const heroSection = document.getElementById("top2");
+            const goTopButton = document.getElementById("go-top");
+
+            const heroHeight = heroSection.offsetHeight;
+
+            // Si on dépasse la hauteur du hero → montrer le bouton
+            if (window.scrollY > heroHeight - 100) {
+                goTopButton.classList.add("visible");
+            } else {
+                goTopButton.classList.remove("visible");
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (!backToTop) return;
+
+            function toggleBackToTop() {
+                // si on a un peu scrollé (30% de la hauteur d'écran)
+                if (window.scrollY > window.innerHeight * 0.3) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            }
+
+            // Vérifie l'état dès le chargement de la page
+            toggleBackToTop();
+
+            //Et à chaque scroll
+            window.addEventListener('scroll', toggleBackToTop);
+        });
+
+
+        (function () {
+            const select = document.getElementById('languageSelect');
+
+            function cleanAndApply(lang) {
+                // 1) montrer/cacher via classes, pas de style inline
+                document.body.classList.remove('lang-fr', 'lang-en');
+                document.body.classList.add('lang-' + lang);
+
+                // 2) mettre <html lang="...">
+                document.documentElement.setAttribute('lang', lang);
+
+                void document.body.offsetHeight; // force reflow
+
+
+                // 3) très important : aligner lang sur chaque élément localisé
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.setAttribute('lang', el.getAttribute('data-lang')); // "fr" ou "en"
+                });
+
+                // 4) mémoriser
+                try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+            }
+
+            // init
+            const saved = (() => {
+                try { return localStorage.getItem('preferred-language') || 'fr'; }
+                catch (e) { return 'fr'; }
+            })();
+            cleanAndApply(saved);
+            if (select) {
+                select.value = saved;
+                select.addEventListener('change', () => cleanAndApply(select.value));
+            }
+
+            // garder ton MutationObserver si tu veux
+        })();
+
+
+
+
+
+
+
+        /* ZOOM sur images*/
+        (function () {
+            const imgs = Array.from(
+                document.querySelectorAll('.project-section img')
+            );
+            if (!imgs.length) return;
+
+            // Crée l’overlay
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox-overlay';
+            lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+            document.body.appendChild(lightbox);
+
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            let currentIndex = -1;
+
+            // Ouvrir la lightbox sur une image donnée
+            function openAt(index) {
+                currentIndex = index;
+                const src = imgs[currentIndex].getAttribute('src');
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+            }
+
+            // Fermer la lightbox
+            function close() {
+                lightbox.classList.remove('active');
+                lightboxImg.src = '';
+                currentIndex = -1;
+            }
+
+            // Aller à l’image suivante / précédente
+            function goto(delta) {
+                if (currentIndex === -1) return;
+                currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+                const src = imgs[currentIndex].getAttribute('src');
+                lightboxImg.src = src;
+            }
+
+            // Appliquer le zoom sur chaque image
+            imgs.forEach((img, idx) => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openAt(idx);
+                });
+            });
+
+            // Fermeture via croix
+            closeBtn.addEventListener('click', close);
+
+            // Fermeture en cliquant sur le fond sombre
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) close();
+            });
+
+            // Clavier : ESC pour fermer, ← → pour naviguer
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowRight') goto(+1);
+                if (e.key === 'ArrowLeft') goto(-1);
+            });
+        })();
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

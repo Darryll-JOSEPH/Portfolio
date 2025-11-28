@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+  <!--- basic page needs
+    ================================================== -->
+  <meta charset="utf-8">
+  <title>Darryll</title>
+  <meta name="description" content="Portfolio Data Analyst & Data scientist">
+  <meta name="author" content="Darryll Genève Junior JOSEPH">
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <title>Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist | Portfolio</title>
+  <meta name="description"
+    content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+  <meta name="keywords"
+    content="Data Analyst, Power BI, Python, Automatisation, Tableaux de bord interactifs, Analyse de données, Business Intelligence, Machine Learning, Modélisation prédictive, Solutions innovantes, Data Engineering, IA, Reporting décisionnel, Optimisation performance business">
+  <meta name="author" content="Darryll Genève Junior JOSEPH">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darryll1.github.io/Portfolio/">
+  <meta property="og:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
+  <meta property="og:description"
+    content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+  <meta property="og:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://darryll1.github.io/Portfolio/">
+  <meta property="twitter:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
+  <meta property="twitter:description"
+    content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+  <meta property="twitter:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
+
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Language Switcher Styles -->
+  <style>
+    /* En mode FR : masquer l'anglais */
+    .lang-fr [data-lang="en"] {
+      display: none !important;
+    }
+
+    .lang-en [data-lang="fr"] {
+      display: none !important;
+    }
+
+
+    /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      color: white;
+    }
+
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid #FFAE42;
+      color: white;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      height: auto;
+    }
+
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+    }
+
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+      border: 2px solid #FFAE42;
+      color: white;
+
+
+    }
+
+    .lang-select option {
+      color: black;
+      /* Texte visible dans la liste */
+      background-color: white;
+      /* Fond blanc par défaut */
+    }
+
+    /* Option survolée dans certains navigateurs */
+    .lang-select option:hover,
+    .lang-select option:focus,
+    .lang-select option:checked {
+      background-color: #e5e5e5;
+      /* Gris clair */
+      color: black;
+      /* Texte bien lisible */
+    }
+
+    @media (max-width: 768px) {
+      .language-switcher {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
+  <script src="js/pace.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll Genève Junior JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Analyst spécialisé en Power BI, Python et automatisation supply chain",
+    "url": "https://darryll1.github.io/Portfolio/",
+    "image": "https://darryll1.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll1",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Power BI",
+      "Python",
+      "SQL",
+      "Data Analysis",
+      "Business Intelligence",
+      "Power Automate",
+      "Dashboard Development"
+    ]
+  }
+  </script>
+
+  <!-- favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+  <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+  <!-- === Filtre SVG pour bordure lumineuse fluide (glow-0) === -->
+  <!-- === Filtre SVG pour bordure lumineuse fluide (glow-0) === -->
+  <!-- <svg width="0" height="0" aria-hidden="true">
+        <filter id="glow-0" x="-.25" y="-.25" width="1.5" height="1.5">
+            <feComponentTransfer>
+                <feFuncA type="table" tableValues="0 2 0"></feFuncA>
+            </feComponentTransfer>
+            <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+            <feComponentTransfer result="rond">
+                <feFuncA type="table" tableValues="-2 3"></feFuncA>
+            </feComponentTransfer>
+            <feMorphology operator="dilate" radius="3"></feMorphology>
+            <feGaussianBlur stdDeviation="6"></feGaussianBlur>
+            <feBlend in="rond" result="glow"></feBlend>
+            <feComponentTransfer in="SourceGraphic">
+                <feFuncA type="table" tableValues="0 0 1"></feFuncA>
+            </feComponentTransfer>
+            <feBlend in2="glow"></feBlend>
+        </filter>
+    </svg> -->
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT5QG324" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  <!-- header
+    ================================================== -->
+  <header class="s-header">
+
+    <div class="header-logo">
+      <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+    </div>
+
+    <nav class="header-nav-wrap">
+      <ul class="header-nav">
+
+        <li>
+          <a class="smoothscroll" href="index.html" title="Accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en">Home</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="smoothscroll" href="index.html#projects" title="Projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en">Projects</span>
+          </a>
+        </li>
+        <li>
+
+          <select id="languageSelect" class="smoothscroll lang-select">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+
+        </li>
+      </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+  </header> <!-- end s-header -->
+
+
+  <!-- home
+   ================================================== -->
+  <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/1.jpeg"
+    data-natural-width=1920 data-natural-height=1080 data-position-y=center>
+
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+
+    <div class="home-content2">
+      <div class="project-status">
+        <span class="status-badge completed">
+          <i class="fas fa-check-circle"></i>
+          <span data-lang="fr">Terminé</span>
+          <span data-lang="en">Completed</span>
+        </span>
+      </div>
+
+      <div class="row home-content__main2">
+        <div class="container">
+          <div class="project-header">
+
+            <h1>
+              <span class="FFAE42" data-lang="fr">AssurNova – Portefeuille Clients & Ciblage Marketing</span>
+              <span class="FFAE42" data-lang="en">AssurNova – Customer Base & Marketing Targeting</span>
+            </h1>
+            <p class="project-subtitle">
+              <span data-lang="fr">Analyses Power BI pour suivre l’évolution, profiler les clients et estimer les
+                clients
+                ciblables</span>
+              <span data-lang="en">Power BI analyses to track trends, profile customers and estimate targetable
+                customers</span>
+            </p>
+
+            <div class="project-tech-badges">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">DAX</span>
+              <span class="tech-badge">Power Query</span>
+              <span class="tech-badge">SQL Server</span>
+              <span class="tech-badge">Excel</span>
+              <span class="tech-badge">RLS</span>
+              <span class="tech-badge">Git</span>
+              <span class="tech-badge">SQL</span>
+            </div>
+          </div>
+        </div>
+
+
+  </section> <!-- end s-home -->
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i>
+        <span data-lang="fr">Vue d'ensemble</span>
+        <span data-lang="en">Project Overview</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              La Direction Data Marketing de la compagnie d’assurance AssurNova souhaitait une vision claire et
+              dynamique du portefeuille clients
+              sur différentes périodes. J’ai conçu dans Power BI des rapports interactifs permettant de
+              suivre
+              l’<strong>évolution des clients</strong> (nouveaux / churnés), de <strong>profiler le
+                portefeuille</strong>
+              et d’<strong>estimer les clients ciblables</strong> pour des campagnes marketing selon des filtres
+              dynamiques.
+            </span>
+            <span data-lang="en">
+              AssurNova’s Data Marketing team needed a clear, dynamic view of customer base across periods.
+              I built interactive Power BI reports to track <strong>customer evolution</strong> (new / churned),
+              <strong>profile the portfolio</strong>, and <strong>estimate targetable customers</strong> via dynamic
+              filters.
+            </span>
+          </p>
+
+          <ul>
+            <li>
+              <span data-lang="fr">
+                <strong>Sources :</strong> Excel (hébergés sur SharePoint pour mise à jour automatique)
+                & SQL Server (Power BI Desktop)
+              </span>
+              <span data-lang="en">
+                <strong>Sources:</strong> Excel (hosted on SharePoint for dynamic refresh)
+                & SQL Server (Power BI Desktop)
+              </span>
+            </li>
+            <li>
+              <span data-lang="fr"><strong>Préparation :</strong> Power Query (nettoyage, transformation) & DAX (modèle,
+                mesures)</span>
+              <span data-lang="en"><strong>Preparation:</strong> Power Query (cleaning, transform) & DAX (model,
+                measures)</span>
+            </li>
+            <li>
+              <span data-lang="fr"><strong>Rapports :</strong> KPIs, barres, secteurs, cartes & filtres
+                interactifs</span>
+              <span data-lang="en"><strong>Reports:</strong> KPIs, bars, pies, cards & interactive slicers</span>
+            </li>
+            <li>
+              <span data-lang="fr"><strong>Gouvernance :</strong> RLS (Row-Level Security), espaces de travail dédiés,
+                rafraîchissement planifié</span>
+              <span data-lang="en"><strong>Governance:</strong> RLS, dedicated workspaces, scheduled refresh</span>
+            </li>
+            <li>
+              <span data-lang="fr"><strong>Collaboration :</strong> Versionning Git & Power BI Service
+                (partage/sécurité)</span>
+              <span data-lang="en"><strong>Collaboration:</strong> Git versioning & Power BI Service
+                (sharing/security)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/Assurnova/Evolution du Portefeuille.jpg" alt="AssurNova – Dashboard Overview"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Evolution du portefeuille – Vue synthétique</span>
+            <span data-lang="en">Portfolio evolution – Summary view</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLÉMATIQUE & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>
+        <span data-lang="fr">Problématique & Solution</span>
+        <span data-lang="en">Business Challenge & Solution</span>
+      </h2>
+
+      <div class="problem-solution-grid">
+        <!-- Problématique -->
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="fr">Problématique</span>
+            <span data-lang="en">Challenge</span>
+          </h3>
+          <ul>
+            <li>
+              <span data-lang="fr">Absence d’une vision consolidée et dynamique du portefeuille clients multi-sources
+                (SQL, Excel)</span>
+              <span data-lang="en">Lack of a consolidated and dynamic multi-source customer portfolio view (SQL,
+                Excel)</span>
+            </li>
+            <li>
+              <span data-lang="fr">Difficulté à suivre l’évolution des clients (nouveaux / churnés) dans le temps</span>
+              <span data-lang="en">Difficulty tracking customer evolution (new / churned) over time</span>
+            </li>
+            <li>
+              <span data-lang="fr">Ciblage marketing manuel et peu fiable sans segmentation claire</span>
+              <span data-lang="en">Manual and unreliable marketing targeting without clear segmentation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Solution -->
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i>
+            <span data-lang="fr">Solution Déployée</span>
+            <span data-lang="en">Deployed Solution</span>
+          </h3>
+          <ul>
+            <li>
+              <span data-lang="fr">Création d’un <strong>modèle Power BI</strong> connecté à <strong>SQL Server</strong>
+                et <strong>Excel SharePoint</strong> pour un rafraîchissement automatique</span>
+              <span data-lang="en">Built a <strong>Power BI model</strong> connected to <strong>SQL Server</strong> and
+                <strong>Excel SharePoint</strong> for automatic refresh</span>
+            </li>
+            <li>
+              <span data-lang="fr">Utilisation de <strong>Power Query</strong> pour la transformation et
+                <strong>DAX</strong> pour les mesures et relations</span>
+              <span data-lang="en">Used <strong>Power Query</strong> for data transformation and <strong>DAX</strong>
+                for measures and relationships</span>
+            </li>
+            <li>
+              <span data-lang="fr">Création de <strong>rapports interactifs</strong> : évolution mensuelle, profil
+                client, ciblage marketing</span>
+              <span data-lang="en">Developed <strong>interactive dashboards</strong>: monthly evolution, customer
+                profile, marketing targeting</span>
+            </li>
+            <li>
+              <span data-lang="fr">Mise en place du <strong>Row-Level Security (RLS)</strong> et du versionning via
+                <strong>Git</strong></span>
+              <span data-lang="en">Implemented <strong>Row-Level Security (RLS)</strong> and <strong>Git</strong>
+                version control</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FONCTIONNALITÉS CLÉS ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-cogs"></i>
+        <span data-lang="fr">Fonctionnalités Clés</span>
+        <span data-lang="en">Key Features</span>
+      </h2>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/Assurnova/Evolution du Portefeuille.jpg" alt="Evolution du portefeuille"
+              loading="lazy">
+          </div>
+          <h3><span data-lang="fr">Evolution du Portefeuille</span><span data-lang="en">Portfolio Evolution</span></h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Suivi mensuel : nombre de clients, contrats, nouveaux, churnés</span><span
+                  data-lang="en">Monthly tracking: customers, contracts, new, churned</span></li>
+              <li><span data-lang="fr">KPIs & tendances (cartes, lignes, barres empilées)</span><span
+                  data-lang="en">KPIs & trends (cards, lines, stacked bars)</span></li>
+              <li><span data-lang="fr">Slicers période & réseau (agence, canal)</span><span data-lang="en">Time &
+                  network slicers (branch, channel)</span></li>
+            </ul>
+          </div>
+          <div class="feature-tech-row">
+            <div class="feature-tech">Power BI</span></div>
+            <div class="feature-tech">DAX</span></div>
+            <div class="feature-tech">Power Query</span></div>
+            <div class="feature-tech">SQL</span></div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/Assurnova/Profil des clients.jpg" alt="Profil des clients" loading="lazy">
+          </div>
+          <h3><span data-lang="fr">Profil des Clients</span><span data-lang="en">Customer Profile</span></h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Répartition par sexe, âge, ancienneté, profession</span><span
+                  data-lang="en">Breakdown by gender, age, tenure, occupation</span></li>
+              <li><span data-lang="fr">Valeur client (étoiles), rentabilité, segments</span><span
+                  data-lang="en">Customer value (stars), profitability, segments</span></li>
+              <li><span data-lang="fr">Tableaux détaillés & filtres croisés</span><span data-lang="en">Detail tables &
+                  cross-filters</span></li>
+            </ul>
+          </div>
+          <div class="feature-tech-row">
+            <div class="feature-tech">Power BI</span></div>
+            <div class="feature-tech">DAX</span></div>
+            <div class="feature-tech">Power Query</span></div>
+            <div class="feature-tech">SQL</span></div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/Assurnova/Ciblage Marketing.jpg" alt="Ciblage marketing" loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Ciblage Marketing</span>
+            <span data-lang="en">Marketing Targeting</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li>
+                <span data-lang="fr">
+                  Estimation des clients ciblables selon plusieurs critères : contactabilité, espace
+                  client, statut de campagne, etc.
+                </span>
+                <span data-lang="en">
+                  Estimation of targetable customers based on multiple criteria: contactability, online
+                  account, campaign status, etc.
+                </span>
+              </li>
+              <li>
+                <span data-lang="fr">
+                  Indicateurs de segmentation par canal de contact et motif
+                  d’exclusion
+                </span>
+                <span data-lang="en">
+                  Segmentation indicators by contact channel and exclusion reason
+                </span>
+              </li>
+              <li>
+                <span data-lang="fr">
+                  Visualisation interactive des clients contactables / non contactables / ciblables
+                </span>
+                <span data-lang="en">
+                  Interactive visualization of contactable / non-contactable / targetable customers
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech-row">
+            <div class="feature-tech">Power BI</span></div>
+            <div class="feature-tech">DAX</span></div>
+            <div class="feature-tech">Power Query</span></div>
+            <div class="feature-tech">SQL</span></div>
+            <div class="feature-tech">Excel</span></div>
+          </div>
+        </div>
+
+
+  </section>
+
+  <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i>
+        <span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
+
+      <div class="tech-architecture">
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Sources & Préparation</span><span data-lang="en">Sources & Preparation</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-database"></i><span>SQL Server</span></div>
+            <div class="tech-item"><i class="far fa-file-excel"></i><span>Excel</span></div>
+            <div class="tech-item"><i class="fas fa-filter"></i><span>Power Query</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Modélisation & Mesures</span><span data-lang="en">Modeling & Measures</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-project-diagram"></i><span data-lang="fr">Modèle en
+                étoile</span><span data-lang="en">Star Schema</span></div>
+            <div class="tech-item"><i class="fas fa-calculator"></i><span>DAX (KPIs)</span></div>
+            <div class="tech-item"><i class="fas fa-exchange-alt"></i><span data-lang="fr">Relations</span><span
+                data-lang="en">Joins</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Déploiement & Sécurité</span><span data-lang="en">Deployment & Security</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-cloud"></i><span>Power BI Service</span></div>
+            <div class="tech-item"><i class="fas fa-user-lock"></i><span>RLS</span></div>
+            <div class="tech-item"><i class="fas fa-sync"></i><span data-lang="fr">Rafraîchissement planifié</span><span
+                data-lang="en">Scheduled Refresh</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Collaboration</span><span data-lang="en">Collaboration</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git (versionning)</span></div>
+            <div class="tech-item"><i class="fas fa-users-cog"></i><span data-lang="fr">Espaces de travail</span><span
+                data-lang="en">Workspace</span></div>
+            <div class="tech-item"><i class="fa-solid fa-chart-column"></i><span data-lang="fr">Application</span><span
+                data-lang="en">Application</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ========== RÉSULTATS & IMPACT ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>
+        <span data-lang="fr">Résultats & Impact</span>
+        <span data-lang="en">Results & Impact</span>
+      </h2>
+
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon"><i class="fas fa-eye"></i></div>
+          <h3><span data-lang="fr">Vision Unifiée</span><span data-lang="en">Unified View</span></h3>
+          <p>
+            <span data-lang="fr">Portefeuille consolidé multi-sources, lecture simple par période & réseau.</span>
+            <span data-lang="en">Consolidated multi-source portfolio, easy reading by period & network.</span>
+          </p>
+        </div>
+
+        <div class="result-card success">
+          <div class="result-icon"><i class="fas fa-bullseye"></i></div>
+          <h3><span data-lang="fr">Ciblage Fiabilisé</span><span data-lang="en">Reliable Targeting</span></h3>
+          <p>
+            <span data-lang="fr">Estimation robuste des clients ciblables selon critères marketing.</span>
+            <span data-lang="en">Robust estimate of targetable customers by marketing criteria.</span>
+          </p>
+        </div>
+
+        <div class="result-card accent">
+          <div class="result-icon"><i class="fas fa-lock"></i></div>
+          <h3><span data-lang="fr">Gouvernance</span><span data-lang="en">Governance</span></h3>
+          <p>
+            <span data-lang="fr">RLS, rafraîchissement planifié & versionning Git pour un partage sécurisé.</span>
+            <span data-lang="en">RLS, scheduled refresh & Git versioning for secure sharing.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects">
+        <!-- <a href="euromoney-ai.html" class="nav-btn">
+          <i class="fas fa-arrow-left"></i>
+          <span data-lang="fr">Projet précédent</span>
+          <span data-lang="en">Previous Project</span>
+        </a> -->
+        <div class="nav-center">
+          <a href="index.html#projects" class="nav-btn">
+            <i class="fas fa-th-large"></i>
+            <span data-lang="fr">Tous les projets</span>
+            <span data-lang="en">All Projects</span>
+          </a>
+        </div>
+        <div class="nav-next">
+          <span class="next-label">
+            <span data-lang="fr">Projet suivant :</span>
+            <span data-lang="en">Next Project:</span>
+          </span>
+          <a href="EuroMoneyAI.html" class="nav-btn primary">
+            <span data-lang="fr">BNSM - Prédiction & Vérification de Monnaie</span>
+            <span data-lang="en">BNSM – Currency Prediction & Verification</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Darryll Genève Junior JOSEPH</strong> – Data Analyst & Data Scientist</p>
+        <div class="footer-links">
+          <a href="https://github.com/Darryll1" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="assets/CV_Darryll_JOSEPH.pdf" download aria-label="CV PDF"><i class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        <span data-lang="fr">© 2025 – Tous droits réservés.</span>
+        <span data-lang="en">© 2025 – All rights reserved.</span>
+      </p>
+      <!-- Bouton flottant vers le haut -->
+      <a href="#home" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- photoswipe background
+    ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end photoSwipe background -->
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+
+    document.addEventListener("scroll", function () {
+      const heroSection = document.getElementById("top2");
+      const goTopButton = document.getElementById("go-top");
+
+      const heroHeight = heroSection.offsetHeight;
+
+      // Si on dépasse la hauteur du hero → montrer le bouton
+      if (window.scrollY > heroHeight - 100) {
+        goTopButton.classList.add("visible");
+      } else {
+        goTopButton.classList.remove("visible");
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        // si on a un peu scrollé (30% de la hauteur d'écran)
+        if (window.scrollY > window.innerHeight * 0.3) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      // Vérifie l'état dès le chargement de la page
+      toggleBackToTop();
+
+      //Et à chaque scroll
+      window.addEventListener('scroll', toggleBackToTop);
+    });
+
+
+    (function () {
+      const select = document.getElementById('languageSelect');
+
+      function cleanAndApply(lang) {
+        // 1) montrer/cacher via classes, pas de style inline
+        document.body.classList.remove('lang-fr', 'lang-en');
+        document.body.classList.add('lang-' + lang);
+
+        // 2) mettre <html lang="...">
+        document.documentElement.setAttribute('lang', lang);
+
+        void document.body.offsetHeight; // force reflow
+
+
+        // 3) très important : aligner lang sur chaque élément localisé
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.setAttribute('lang', el.getAttribute('data-lang')); // "fr" ou "en"
+        });
+
+        // 4) mémoriser
+        try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+      }
+
+      // init
+      const saved = (() => {
+        try { return localStorage.getItem('preferred-language') || 'fr'; }
+        catch (e) { return 'fr'; }
+      })();
+      cleanAndApply(saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', () => cleanAndApply(select.value));
+      }
+
+      // garder ton MutationObserver si tu veux
+    })();
+
+
+
+
+
+
+
+    /* ZOOM sur images*/
+    (function () {
+      const imgs = Array.from(
+        document.querySelectorAll('.project-section img')
+      );
+      if (!imgs.length) return;
+
+      // Crée l’overlay
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-overlay';
+      lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+      document.body.appendChild(lightbox);
+
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      let currentIndex = -1;
+
+      // Ouvrir la lightbox sur une image donnée
+      function openAt(index) {
+        currentIndex = index;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      // Fermer la lightbox
+      function close() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        currentIndex = -1;
+      }
+
+      // Aller à l’image suivante / précédente
+      function goto(delta) {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+      }
+
+      // Appliquer le zoom sur chaque image
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openAt(idx);
+        });
+      });
+
+      // Fermeture via croix
+      closeBtn.addEventListener('click', close);
+
+      // Fermeture en cliquant sur le fond sombre
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      // Clavier : ESC pour fermer, ← → pour naviguer
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') goto(+1);
+        if (e.key === 'ArrowLeft') goto(-1);
+      });
+    })();
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
