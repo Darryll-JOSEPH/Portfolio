@@ -433,9 +433,20 @@
           <h3>Bronze – Ingestion</h3>
           <div class="feature-text">
             <ul>
-              <li>Ingestion via <strong>GitLab API</strong> des fichiers CSV (dataset MedSynora).</li>
-              <li>Stockage brut et horodaté dans <strong>ADLS Gen2</strong> (chemins abfss://...).</li>
-              <li>Accès sécurisé par <strong>Managed Identity</strong> et rôles IAM minimaux.</li>
+              <li>
+                <span data-lang="fr">Ingestion via <strong>GitLab API</strong> des fichiers CSV (dataset
+                  MedSynora).</span>
+                <span data-lang="en">Ingestion of CSV files from <strong>GitLab API</strong> (MedSynora dataset).</span>
+              </li>
+              <li>
+                <span data-lang="fr">Stockage brut et horodaté dans <strong>ADLS Gen2</strong> (chemins
+                  abfss://...).</span>
+                <span data-lang="en">Raw, time-stamped storage in <strong>ADLS Gen2</strong> (abfss:// paths).</span>
+              </li>
+              <li>
+                <span data-lang="fr">Accès sécurisé par <strong>Managed Identity</strong> et rôles IAM minimaux.</span>
+                <span data-lang="en">Secure access via <strong>Managed Identity</strong> and minimal IAM roles.</span>
+              </li>
             </ul>
           </div>
           <div class="feature-tech">Databricks • PySpark • ADLS</div>
@@ -446,12 +457,27 @@
           <div class="result-icon">
             <i class="fas fa-layer-group logo logo--silver" aria-label="Silver"></i>
           </div>
-          <h3>Silver – Qualité & Standardisation</h3>
+          <h3><span data-lang="fr">Silver – Qualité & Standardisation</span>
+            <span data-lang="en">Silver – Quality & Standardization</span>
+          </h3>
           <div class="feature-text">
             <ul>
-              <li>Nettoyage (valeurs manquantes : médiane/mode), <strong>dé‑duplication</strong>.</li>
-              <li>Standardisation des dates, schémas, <strong>traduction des libellés</strong> (EN→FR).</li>
-              <li>Sortie normalisée en <strong>CSV</strong> avec gestion de répertoires temporaires.</li>
+              <li>
+                <span data-lang="fr">Nettoyage (valeurs manquantes : médiane/mode),
+                  <strong>dé-duplication</strong>.</span>
+                <span data-lang="en">Cleaning (missing values: median/mode), <strong>deduplication</strong>.</span>
+              </li>
+              <li>
+                <span data-lang="fr">Standardisation des dates, schémas, <strong>traduction des libellés</strong>
+                  (EN→FR).</span>
+                <span data-lang="en">Standardization of dates, schemas, and <strong>label translation</strong>
+                  (EN→FR).</span>
+              </li>
+              <li>
+                <span data-lang="fr">Sortie normalisée en <strong>CSV</strong> avec gestion de répertoires
+                  temporaires.</span>
+                <span data-lang="en">Normalized <strong>CSV</strong> output with temporary directory handling.</span>
+              </li>
             </ul>
           </div>
           <div class="feature-tech">PySpark • DataFrames</div>
@@ -462,12 +488,27 @@
           <div class="result-icon">
             <i class="fas fa-layer-group logo logo--gold" aria-label="Gold"></i>
           </div>
-          <h3>Gold – Agrégations & KPIs</h3>
+          <h3><span data-lang="fr">Gold – Agrégations & KPIs</span>
+            <span data-lang="en">Gold – Aggregations & KPIs</span>
+          </h3>
           <div class="feature-text">
             <ul>
-              <li>Jointures Patient/Consultation/Coût/Traitement.</li>
-              <li>KPIs : coût total par patient, coût moyen par consultation, coût total par traitement.</li>
-              <li>Dossiers <strong>agregations/</strong> (sexe, tranche d’âge, nationalité, coûts).</li>
+              <li>
+                <span data-lang="fr">Jointures Patient/Consultation/Coût/Traitement.</span>
+                <span data-lang="en">Joins between Patient / Encounter / Cost / Treatment.</span>
+              </li>
+              <li>
+                <span data-lang="fr">KPIs : coût total par patient, coût moyen par consultation, coût total par
+                  traitement.</span>
+                <span data-lang="en">KPIs: total cost per patient, average cost per encounter, total cost per
+                  treatment.</span>
+              </li>
+              <li>
+                <span data-lang="fr">Dossiers <strong>agregations/</strong> (sexe, tranche d’âge, nationalité,
+                  coûts).</span>
+                <span data-lang="en"><strong>agregations/</strong> folders (gender, age band, nationality,
+                  costs).</span>
+              </li>
             </ul>
           </div>
           <div class="feature-tech">PySpark • KPIs</div>
@@ -479,10 +520,15 @@
   <!-- ========== SYNAPSE STAR SCHEMA ========== -->
   <section class="project-section bg-alt">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-project-diagram"></i> Synapse – Modèle en Étoile</h2>
+      <h2 class="section-title"><i class="fas fa-project-diagram"></i><span data-lang="fr">Synapse – Modèle en
+          Étoile</span>
+        <span data-lang="en">Synapse – Star Schema</span>
+      </h2>
       <div class="content-grid">
         <div class="content-text">
-          <p>Modélisation en tables externes (serverless) liées au Data Lake :</p>
+          <p><span data-lang="fr">Modélisation en tables externes (serverless) liées au Data Lake :</span>
+            <span data-lang="en">Modeling with external (serverless) tables connected to the Data Lake:</span>
+          </p>
           <div class="kb-list">
             <ul>
               <li><strong>Dimensions</strong> : Dim_Date, Dim_Patient, Dim_Allergie, Dim_Medecin, Dim_Chambre,
@@ -491,12 +537,17 @@
                 Fact_CoutTraitement</li>
             </ul>
           </div>
-          <p>Power BI se connecte au point de terminaison <em>Serverless</em> pour des requêtes interactives sans
-            duplication.</p>
+          <p><span data-lang="fr">Power BI se connecte au point de terminaison <em>Serverless</em> pour des requêtes
+              interactives sans duplication.</span>
+            <span data-lang="en">Power BI connects to the <em>Serverless</em> endpoint for interactive queries without
+              duplication.</span>
+          </p>
         </div>
         <div class="project-image">
           <img src="assets/projects/MedSynora/Synapse.png" alt="Synapse Star Schema" loading="lazy">
-          <p class="image-caption">Tables externes exposées en lecture pour Power BI.</p>
+          <p class="image-caption"><span data-lang="fr">Tables externes exposées en lecture pour Power BI.</span>
+            <span data-lang="en">External tables exposed in read-only mode for Power BI.</span>
+          </p>
         </div>
       </div>
     </div>
@@ -505,19 +556,32 @@
   <!-- ========== POWER BI DASHBOARDS ========== -->
   <section class="project-section">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-chart-bar"></i> Power BI – Rapports</h2>
+      <h2 class="section-title"><i class="fas fa-chart-bar"></i><span data-lang="fr">Power BI – Rapports</span>
+        <span data-lang="en">Power BI – Reports</span>
+      </h2>
 
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-image">
             <img src="assets/projects/MedSynora/Vue institutionelle.jpg" alt="Vue institutionnelle" loading="lazy">
           </div>
-          <h3>Vue institutionnelle – 2024</h3>
+          <h3><span data-lang="fr">Vue institutionnelle – 2024</span>
+            <span data-lang="en">Institutional View – 2024</span>
+          </h3>
           <div class="feature-text">
             <ul>
-              <li>Patients, consultations, médecins, maladies diagnostiquées.</li>
-              <li>Coûts mensuels & comparaisons consultations vs traitements.</li>
-              <li>Top diagnostics, top médecins/patients, séries temporelles.</li>
+              <li>
+                <span data-lang="fr">Vue globale : patients, consultations, diagnostics, coûts.</span>
+                <span data-lang="en">Global view: patients, encounters, diagnoses, costs.</span>
+              </li>
+              <li>
+                <span data-lang="fr">Séries temporelles : traitements, consultations, dépenses.</span>
+                <span data-lang="en">Time series: treatments, encounters, expenses.</span>
+              </li>
+              <li>
+                <span data-lang="fr">Analyse par médecin, maladie, catégorie de coût.</span>
+                <span data-lang="en">Analysis by doctor, disease, cost category.</span>
+              </li>
             </ul>
           </div>
           <div class="feature-tech">Power BI</div>
@@ -527,12 +591,24 @@
           <div class="feature-image">
             <img src="assets/projects/MedSynora/Vue individuelle.jpg" alt="Vue patient" loading="lazy">
           </div>
-          <h3>Vue individuelle – Profil Patient</h3>
+          <h3><span data-lang="fr">Vue individuelle – Profil Patient</span>
+            <span data-lang="en">Individual View – Patient Profile</span>
+          </h3>
           <div class="feature-text">
             <ul>
-              <li>Identité, <strong>allergies</strong>, historique de diagnostics.</li>
-              <li>Courbe des <strong>dépenses</strong> et suivi des traitements.</li>
-              <li>Navigation et filtres multi‑critères.</li>
+              <li>
+                <span data-lang="fr">Historique complet : allergies, maladies, traitements.</span>
+                <span data-lang="en">Full history: allergies, diseases, treatments.</span>
+              </li>
+              <li>
+                <span data-lang="fr">Analyse des dépenses par période et par acte médical.</span>
+                <span data-lang="en">Spending analysis by period and medical act.</span>
+              </li>
+              <li>
+                <span data-lang="fr">Suivi chronologique des consultations.</span>
+                <span data-lang="en">Chronological tracking of encounters.</span>
+              </li>
+            </ul>
             </ul>
           </div>
           <div class="feature-tech">Power BI</div>
@@ -544,11 +620,15 @@
   <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
   <section class="project-section bg-alt">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-code"></i> Architecture Technique</h2>
+      <h2 class="section-title"><i class="fas fa-code"></i><span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
 
       <div class="tech-architecture">
         <div class="tech-layer">
-          <h3>Stockage & Ingestion</h3>
+          <h3><span data-lang="fr">Stockage & Ingestion</span>
+            <span data-lang="en">Storage & Ingestion</span>
+          </h3>
           <div class="tech-items">
             <div class="tech-item"><i class="fas fa-database"></i><span>ADLS Gen2</span></div>
             <div class="tech-item"><i class="fab fa-gitlab"></i><span>GitLab API</span></div>
@@ -556,25 +636,35 @@
           </div>
         </div>
         <div class="tech-layer">
-          <h3>Traitement</h3>
+          <h3><span data-lang="fr">Traitement</span>
+            <span data-lang="en">Processing</span>
+          </h3>
           <div class="tech-items">
             <div class="tech-item"><i class="fas fa-bolt"></i><span>Databricks (PySpark)</span></div>
             <div class="tech-item"><i class="fas fa-layer-group"></i><span>Bronze/Silver/Gold</span></div>
           </div>
         </div>
         <div class="tech-layer">
-          <h3>Serving & Modélisation</h3>
+          <h3><span data-lang="fr">Serving & Modélisation</span>
+            <span data-lang="en">Serving & Modeling</span>
+          </h3>
           <div class="tech-items">
-            <div class="tech-item"><i class="fas fa-project-diagram"></i><span>Synapse Serverless (tables
-                externes)</span></div>
-            <div class="tech-item"><i class="fas fa-star"></i><span>Modèle en étoile</span></div>
+            <div class="tech-item"><i class="fas fa-project-diagram"></i><span><span data-lang="fr">Synapse Serverless
+                  (tables externes)</span>
+                <span data-lang="en">Synapse Serverless (external tables)</span></span></div>
+            <div class="tech-item"><i class="fas fa-star"></i><span><span data-lang="fr">Modèle en Étoile</span>
+                <span data-lang="en">Star Schema</span></span></div>
           </div>
         </div>
         <div class="tech-layer">
-          <h3>Visualisation</h3>
+          <h3><span data-lang="fr">Visualisation</span>
+            <span data-lang="en">Visualization</span>
+          </h3>
           <div class="tech-items">
             <div class="tech-item"><i class="fas fa-chart-line"></i><span>Power BI</span></div>
-            <div class="tech-item"><i class="fas fa-sync"></i><span>Rafraîchissement planifié</span></div>
+            <div class="tech-item"><i class="fas fa-sync"></i><span><span data-lang="fr">Rafraîchissement
+                  planifié</span>
+                <span data-lang="en">Scheduled refresh</span></span></div>
           </div>
         </div>
         <div class="tech-layer">
@@ -593,7 +683,9 @@
   <!-- ========== RÉSULTATS & IMPACT ========== -->
   <section class="project-section">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-trophy"></i> Résultats & Impact</h2>
+      <h2 class="section-title"><i class="fas fa-trophy"></i><span data-lang="fr">Résultats & Impacts</span>
+        <span data-lang="en">Results & Impacts</span>
+      </h2>
 
       <div class="results-grid">
         <div class="result-card primary">
@@ -605,8 +697,9 @@
 
         <div class="result-card success">
           <div class="result-icon"><i class="fas fa-bullseye"></i></div>
-          <h3>Qualité & Confiance</h3>
-          <p>Données standardisées et gouvernées pour l’aide à la décision.</p>
+          <h3><span data-lang="fr">Qualité & Confiance</span><span data-lang="en">Quality and Reliability</span></h3>
+          <p><span data-lang="fr">Données standardisées et gouvernées pour l’aide à la décision.</span><span
+              data-lang="en">Standardized and Governed Data for Decision Making</span></p>
         </div>
 
         <div class="result-card accent">
@@ -618,7 +711,8 @@
       </div>
       </br>
       <div class="cta-row">
-        <a class="btn" href="#notebooks"><i class="fas fa-code"></i> Voir les notebooks (extraits)</a>
+        <a class="btn" href="#notebooks"><i class="fas fa-code"></i><span data-lang="fr"> Voir les notebooks
+            (extraits)</span><span data-lang="en">View Notebooks (Excerpts)</span></a>
       </div>
     </div>
   </section>
@@ -626,26 +720,37 @@
   <!-- ========== ANNEXES TECHNIQUES (extraits) ========== -->
   <section id="notebooks" class="project-section bg-alt">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-file-code"></i> Extraits Techniques</h2>
+      <h2 class="section-title"><i class="fas fa-file-code"></i><span data-lang="fr">Extraits Techniques</span>
+        <span data-lang="en">Technical Excerpts</span>
+      </h2>
       <div class="content-grid">
         <div class="content-text">
-          <h3>Bronze (ingestion GitLab → ADLS)</h3>
+          <h3><span data-lang="fr">Bronze (ingestion GitLab → ADLS)</span>
+            <span data-lang="en">Bronze (GitLab → ADLS ingestion)</span>
+          </h3>
           <pre class="code-block"><code># PySpark – accès abfss + téléchargement GitLab
 adls_paths = {t: f"abfss://{t}@stockagedataengineering.dfs.core.windows.net/" for t in ["bronze","silver","gold"]}
 # ... listage via API GitLab, filtrage *.csv, sauvegarde dbutils.fs.put()
 </code></pre>
-          <h3>Silver (qualité & standardisation)</h3>
+          <h3><span data-lang="fr">Silver (qualité & standardisation)</span>
+            <span data-lang="en">Silver (quality & standardization)</span>
+          </h3>
           <pre class="code-block"><code># Imputation médiane/mode, dropDuplicates, traduction EN→FR
 # Sauvegarde CSV stabilisée avec répertoires temporaires puis mv → final
 </code></pre>
-          <h3>Gold (KPIs & agrégations)</h3>
+          <h3><span data-lang="fr">Gold (KPIs & agrégations)</span>
+            <span data-lang="en">Gold (KPIs & aggregations)</span>
+          </h3>
           <pre class="code-block"><code># groupBy().agg() pour coûts (patient, consultation, traitement)
 # export des agrégations dans gold/agregations/*.csv
 </code></pre>
         </div>
         <div class="project-image">
           <img src="assets/projects/MedSynora/ADF.png" alt="Pipeline ADF" loading="lazy">
-          <p class="image-caption">Pipeline ADF : notebooks Databricks exécutés séquentiellement (B → S → G).</p>
+          <p class="image-caption"><span data-lang="fr">Pipeline ADF : notebooks Databricks exécutés séquentiellement (B
+              → S → G).</span>
+            <span data-lang="en">ADF pipeline: Databricks notebooks executed sequentially (B → S → G).</span>
+          </p>
         </div>
       </div>
     </div>

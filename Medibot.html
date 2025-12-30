@@ -464,29 +464,33 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="result-icon"><i class="fas fa-broom"></i></div>
-                    <h3>1. <span data-lang="fr">Prétraitement</span><span data-lang="en">Preprocessing</span></h3>
+                    <h3><span data-lang="fr">Prétraitement</span><span data-lang="en">Preprocessing</span></h3>
                     <div class="feature-text">
                         <ul>
                             <li><code>RegexpTokenizer</code>, <span class="kbd">stopwords</span>, lemmatisation</li>
-                            <li>Normalisation minuscule, suppression ponctuation</li>
+                            <li><span data-lang="fr">Normalisation minuscule, suppression ponctuation</span><span
+                                    data-lang="en">Lowercase normalization, punctuation removal</span></li>
                         </ul>
                     </div>
                     <div class="feature-tech">NLTK</div>
                 </div>
                 <div class="feature-card">
                     <div class="result-icon"><i class="fas fa-sort-amount-up"></i></div>
-                    <h3>2. Vectorisation</h3>
+                    <h3><span data-lang="fr">Vectorisation</span><span data-lang="en">Vectorization</span></h3>
                     <div class="feature-text">
                         <ul>
-                            <li><strong>BoW</strong> pour l’apprentissage KMeans</li>
-                            <li><strong>TF‑IDF</strong> pour la similarité (Q&A)</li>
+                            <li><span data-lang="fr"><strong>BoW</strong> pour l’apprentissage KMeans</span><span
+                                    data-lang="en"><strong>BoW</strong> (Bag-of-Words) for KMeans training (or KMeans
+                                    learning).</span></li>
+                            <li><span data-lang="fr"><strong>TF‑IDF</strong> pour la similarité (Q&A)</span><span
+                                    data-lang="en"><strong>TF‑IDF</strong> for similarity (Q&A)</span></li>
                         </ul>
                     </div>
                     <div class="feature-tech">scikit‑learn</div>
                 </div>
                 <div class="feature-card">
                     <div class="result-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>3. Clustering</h3>
+                    <h3>Clustering</h3>
                     <div class="feature-text">
                         <ul>
                             <li><strong>KMeans (k = 41)</strong> : 1 cluster / pathologie</li>
@@ -497,7 +501,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="result-icon"><i class="fas fa-comments"></i></div>
-                    <h3>4. Réponse</h3>
+                    <h3>Réponse</h3>
                     <div class="feature-text">
                         <ul>
                             <li>Similarité cosinus sur TF‑IDF pour sélectionner la phrase la plus pertinente</li>
@@ -975,6 +979,44 @@ curl -X POST http://localhost:8002/Q\&A_Chatbot \
 
 
 
+
+        // ========== LECTEUR VIDÉO PERSONNALISÉ ==========
+        document.addEventListener('DOMContentLoaded', function () {
+            const videoWrapper = document.querySelector('.video-wrapper');
+            const video = document.getElementById('medibotDemo');
+            const playButton = document.querySelector('.video-play');
+
+            if (videoWrapper && video && playButton) {
+                // Gérer le clic sur le bouton de lecture
+                playButton.addEventListener('click', function () {
+                    // 1. Cacher le bouton de lecture (et l'image de prévisualisation/poster)
+                    playButton.style.display = 'none';
+
+                    // 2. Cacher l'effet de lueur si besoin (optionnel)
+                    const glow = videoWrapper.querySelector('.video-glow');
+                    if (glow) {
+                        glow.style.display = 'none';
+                    }
+
+                    // 3. Lancer la lecture de la vidéo
+                    video.play();
+
+                    // 4. Afficher les contrôles natifs si "controls" est défini sur la balise video
+                    video.controls = true;
+                });
+
+                // Si la vidéo est mise en pause ou se termine, réafficher le bouton
+                video.addEventListener('pause', () => {
+                    playButton.style.display = 'block';
+                    video.controls = false;
+                });
+
+                video.addEventListener('ended', () => {
+                    playButton.style.display = 'block';
+                    video.controls = false;
+                });
+            }
+        });
 
 
 
