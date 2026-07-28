@@ -1712,11 +1712,11 @@ body {
   /* Propriétés suivantes pour un meilleur contrôle de l'affichage */
   background-size: cover;
   background-position: contain;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   padding: 100px 20px 80px;
   text-align: center;
   /* min-height: 800px; */
-  
+
   padding-bottom: 80px;
 }
 

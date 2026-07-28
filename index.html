@@ -4,41 +4,62 @@
 
 <head>
 
-    <!--- basic page needs
-    ================================================== -->
+
+
     <meta charset="utf-8">
-    <title>Darryll</title>
-    <meta name="description" content="Portfolio Data Analyst & Data scientist">
+
+    <title id="page-title">
+        Darryll Genève Junior JOSEPH | Portfolio
+    </title>
+
+
+    <meta id="meta-description" name="description" content="Portfolio de Darryll Genève Junior JOSEPH.">
+
+
     <meta name="author" content="Darryll Genève Junior JOSEPH">
 
-    <!-- mobile specific metas
-    ================================================== -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- SEO Meta Tags -->
-    <title>Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist | Portfolio</title>
-    <meta name="description"
-        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
-    <meta name="keywords"
-        content="Data Analyst, Power BI, Python, Automatisation, Tableaux de bord interactifs, Analyse de données, Business Intelligence, Machine Learning, Modélisation prédictive, Solutions innovantes, Data Engineering, IA, Reporting décisionnel, Optimisation performance business">
-    <meta name="author" content="Darryll Genève Junior JOSEPH">
+
+    <meta id="meta-keywords" name="keywords" content="Data Analyst, Data Scientist, AI Engineer, Python, SQL, Power BI">
+
+
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook -->
+
+    <!-- Open Graph -->
+
     <meta property="og:type" content="website">
+
     <meta property="og:url" content="https://darryll1.github.io/Portfolio/">
-    <meta property="og:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
-    <meta property="og:description"
-        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+
+
+    <meta property="og:title" id="og-title" content="Darryll Genève Junior JOSEPH | Portfolio">
+
+
+    <meta property="og:description" id="og-description" content="Portfolio Data">
+
+
     <meta property="og:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
 
+
     <!-- Twitter -->
+
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://darryll1.github.io/Portfolio/">
-    <meta property="twitter:title" content="Darryll Genève Junior JOSEPH - Data Analyst & Data Scientist">
-    <meta property="twitter:description"
-        content="Data Analyst spécialisé en Power BI, Python et automatisation. Découvrez mes tableaux de bord interactifs, projets en analyse de données et solutions innovantes pour optimiser la performance business.">
+
+
+    <meta property="twitter:title" id="twitter-title" content="Darryll Genève Junior JOSEPH | Portfolio">
+
+
+    <meta property="twitter:description" id="twitter-description" content="Portfolio Data">
+
+
     <meta property="twitter:image" content="https://darryll1.github.io/Portfolio/assets/CV%20photo.png">
+
+
+
+
 
 
     <!-- CSS
@@ -131,6 +152,7 @@
     ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
+    <script src="js/portfolio-config.js"></script>
 
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -138,29 +160,7 @@
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Darryll Genève Junior JOSEPH",
-    "jobTitle": "Data Analyst & Data Scientist",
-    "description": "Data Analyst spécialisé en Power BI, Python et automatisation supply chain",
-    "url": "https://darryll1.github.io/Portfolio/",
-    "image": "https://darryll1.github.io/Portfolio/assets/CV%20photo.png",
-    "email": "jos.darryll@gmail.com",
-    "sameAs": [
-      "https://github.com/darryll1",
-      "https://www.linkedin.com/in/darryll-joseph/"
-    ],
-    "knowsAbout": [
-      "Power BI",
-      "Python",
-      "SQL",
-      "Data Analysis",
-      "Business Intelligence",
-      "Power Automate",
-      "Dashboard Development"
-    ]
-  }
+
   </script>
 
     <!-- favicons
@@ -217,7 +217,7 @@
                 </li>
 
                 <li>
-                    <a class="smoothscroll" href="#about" title="À propos">
+                    <a class="smoothscroll" href="#top2" title="À propos">
                         <span data-lang="fr">À propos</span>
                         <span data-lang="en">About</span>
                     </a>
@@ -288,20 +288,49 @@
                 <h3 data-lang="en">Welcome</h3>
 
                 <h1>
-                    <span data-lang="fr">Moi c’est Darryll Joseph,</span>
-                    <span data-lang="en">I’m Darryll Joseph,</span>
+                    <span data-lang="fr">Moi c’est Darryll JOSEPH,</span>
+                    <span data-lang="en">I’m Darryll JOSEPH,</span>
                 </h1>
                 <h4 style="color:white;margin-top: 0em;">
-                    <span data-lang="fr">
-                        Je transforme les données en insights clairs, modèles prédictifs<br>
-                        et tableaux de bord impactants avec Power BI, Python, SQL & Machine Learning.
+
+                    <!-- Data Analyst -->
+                    <span data-profile="da" data-lang="fr">
+                        Je transforme les données en insights exploitables :<br>
+                        analyse, visualisation, KPI et reporting décisionnel avec Power BI, SQL & Python.
                     </span>
-                    <span data-lang="en">
-                        I turn data into clear insights, predictive models,<br>
-                        and impactful dashboards with Power BI, Python, SQL & Machine Learning.
+
+                    <span data-profile="da" data-lang="en">
+                        I transform data into actionable insights:<br>
+                        analysis, visualization, KPIs and business reporting with Power BI, SQL & Python.
+                    </span>
+
+
+                    <!-- Data Analyst / Data Scientist -->
+                    <span data-profile="dads" data-lang="fr">
+                        J’exploite les données pour identifier des tendances,
+                        construire des modèles prédictifs et accompagner la prise de décision.
+                    </span>
+
+                    <span data-profile="dads" data-lang="en">
+                        I leverage data to identify trends,
+                        build predictive models and support data-driven decisions.
+                    </span>
+
+
+                    <!-- Data Scientist / AI Engineer -->
+                    <span data-profile="dsii" data-lang="fr">
+                        Je conçois des solutions Data et IA de bout en bout :
+                        Machine Learning, IA Générative, LLM, Data Engineering et Cloud.
+                    </span>
+
+                    <span data-profile="dsii" data-lang="en">
+                        I design end-to-end Data & AI solutions:
+                        Machine Learning, Generative AI, LLM, Data Engineering and Cloud.
                     </span>
 
                 </h4>
+
+
 
                 <div class="home-content__buttons">
                     <a href="#projects" class="smoothscroll btn btn--stroke">
@@ -366,57 +395,100 @@
                 <div class="hero-text">
                     <h1>Darryll Genève Junior JOSEPH</h1>
                     <p class="tagline">
-                        <span data-lang="fr">Data Analyst & Data Scientist</span>
-                        <span data-lang="en">Data Analyst and Data Scientist</span>
-                    </p>
-                    <p class="intro">
-                        <span data-lang="fr">
-                            Diplômé d’un <strong>Bac+5 en Data Engineering & IA à l’Efrei</strong>, avec <strong>2 ans
-                                d’expérience</strong> en tant que <strong>Data Analyst / Développeur BI</strong>, je
-                            combine expertise
-                            en <strong>analyse de données</strong>, <strong>reporting décisionnel</strong> et
-                            <strong>modélisation
-                                prédictive</strong>.
-                            <br>
-                            Spécialisé en <strong>BI, Data et IA</strong>, j’ai conduit des projets allant de
-                            l’automatisation de
-                            flux de données à la mise en place de <strong>modèles de machine learning</strong>
-                            et
-                            <strong>systèmes de recommandation</strong>.
-                            <br>
-                            <br>
-                            Certifié <strong>Power BI (PL-300)</strong> et formé au <strong>machine learning</strong>,
-                            j’aime
-                            collaborer
-                            avec les équipes métiers et techniques pour concevoir des <strong>solutions data</strong>
-                            innovantes au
-                            service de la
-                            <strong>stratégie d’entreprise</strong>.
+                        <span data-role="da" data-lang="fr">Data Analyst</span>
+                        <span data-role="dads" data-lang="fr">Data Analyst | Data Scientist</span>
+                        <span data-role="dsii" data-lang="fr">Data Scientist | AI Engineer</span>
 
-                        </span>
-                        <span data-lang="en">
-                            Graduated with a <strong>Master's degree (Bac+5) in Data Engineering & AI from
-                                Efrei</strong>, with
-                            <strong>2 years of experience</strong> as a <strong>Data Analyst / BI Developer</strong>, I
-                            combine
-                            expertise in <strong>data analysis</strong>, <strong>business reporting</strong>, and
-                            <strong>predictive
-                                modeling</strong>.
-                            <br>
-                            Specialized in <strong>BI, Data, and AI</strong>, I have led projects ranging from
-                            automation of data
-                            workflows to implementing <strong>machine learning models</strong> and
-                            <strong>recommendation
-                                systems</strong>.
-                            <br>
-                            <br>
-                            Certified in <strong>Power BI (PL-300)</strong> and trained in <strong>machine
-                                learning</strong>, I enjoy
-                            collaborating with business and technical teams to design innovative <strong>data
-                                solutions</strong> that
-                            support the company’s <strong>strategic goals</strong>.
-                        </span>
+                        <span data-role="da" data-lang="en">Data Analyst</span>
+                        <span data-role="dads" data-lang="en">Data Analyst | Data Scientist</span>
+                        <span data-role="dsii" data-lang="en">Data Scientist | AI Engineer</span>
                     </p>
+
+                    <p class="intro">
+
+                        <!-- DATA ANALYST -->
+                        <span data-role="da" data-lang="fr">
+                            Diplômé d’un <strong>Bac+5 en Data Engineering & Intelligence Artificielle</strong>,
+                            je transforme les données en informations utiles à la prise de décision.
+                            <br><br>
+                            Spécialisé en <strong>analyse de données, Business Intelligence et visualisation</strong>,
+                            je conçois des tableaux de bord Power BI, des indicateurs KPI et des solutions
+                            d’analyse permettant d’accompagner les équipes métiers.
+                            <br><br>
+                            Mon objectif : rendre la donnée accessible, fiable et exploitable pour améliorer
+                            la performance opérationnelle.
+                        </span>
+
+                        <span data-role="da" data-lang="en">
+                            Graduated with a <strong>Master’s degree in Data Engineering & Artificial
+                                Intelligence</strong>,
+                            I transform data into actionable insights to support decision-making.
+                            <br><br>
+                            Specialized in <strong>data analysis, Business Intelligence and data visualization</strong>,
+                            I build Power BI dashboards, KPI monitoring solutions and analytical tools
+                            to support business teams.
+                            <br><br>
+                            My goal is to make data reliable, understandable and valuable for organizations.
+                        </span>
+
+
+                        <!-- DATA ANALYST / DATA SCIENTIST -->
+                        <span data-role="dads" data-lang="fr">
+                            Diplômé d’un <strong>Bac+5 en Data Engineering & Intelligence Artificielle</strong>,
+                            je combine analyse de données et approche statistique pour créer des solutions
+                            permettant d’expliquer et de prédire les comportements.
+                            <br><br>
+                            J’interviens sur la préparation des données, l’exploration statistique,
+                            la création de modèles de Machine Learning et la restitution des résultats
+                            via des outils de visualisation.
+                            <br><br>
+                            Mon objectif : transformer les données en insights fiables et en modèles
+                            exploitables pour répondre aux enjeux métiers.
+                        </span>
+
+                        <span data-role="dads" data-lang="en">
+                            Graduated with a <strong>Master’s degree in Data Engineering & Artificial
+                                Intelligence</strong>,
+                            I combine data analysis and statistical approaches to build solutions
+                            that explain and predict business behaviors.
+                            <br><br>
+                            I work on data preparation, exploratory analysis, Machine Learning models
+                            and data visualization to deliver actionable insights.
+                            <br><br>
+                            My goal is to transform data into reliable insights and predictive solutions
+                            that support business decisions.
+                        </span>
+
+
+                        <!-- DATA SCIENTIST / AI ENGINEER -->
+                        <span data-role="dsii" data-lang="fr">
+                            Diplômé d’un <strong>Bac+5 en Data Engineering & Intelligence Artificielle</strong>,
+                            je conçois des solutions Data et IA de bout en bout, de la préparation des données
+                            jusqu’au déploiement des modèles.
+                            <br><br>
+                            Je développe des solutions en <strong>Machine Learning, Deep Learning et IA Générative
+                                (LLM, RAG)</strong> en m’appuyant sur des architectures Data modernes et des
+                            environnements Cloud.
+                            <br><br>
+                            Mon objectif : créer des applications intelligentes capables de répondre
+                            à des problématiques concrètes grâce aux données et à l’intelligence artificielle.
+                        </span>
+
+                        <span data-role="dsii" data-lang="en">
+                            Graduated with a <strong>Master’s degree in Data Engineering & Artificial
+                                Intelligence</strong>,
+                            I design end-to-end Data and AI solutions, from data preparation to model deployment.
+                            <br><br>
+                            I develop solutions based on <strong>Machine Learning, Deep Learning and Generative AI
+                                (LLMs, RAG)</strong> using modern data architectures and cloud environments.
+                            <br><br>
+                            My goal is to build intelligent applications that solve real-world problems
+                            through data and artificial intelligence.
+                        </span>
+
+                    </p>
+
+
                     <!-- ===== KPI HERO ===== -->
                     <div class="hero-kpis">
                         <div class="hero-kpi">
@@ -454,9 +526,10 @@
                     </div>
                     <!-- ===== FIN KPI HERO ===== -->
                     <div class="hero-buttons">
-                        <a href="assets/Darryll.pdf" class="btn primary" download>
-                            </br>
-                            </br>
+                        <a id="cv-download" href="assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf" class="btn primary"
+                            download>
+                            <br>
+                            <br>
                             <span data-lang="fr">Télécharger CV</span>
                             <span data-lang="en">Download Resume</span>
                         </a>
@@ -479,103 +552,7 @@
         </div>
     </section>
 
-    <!-- ========== ABOUT SECTION ========== -->
-    <section class="about s-about target-section" id="about">
 
-        <div class="row narrow section-intro has-bottom-sep">
-            <div class="col-full text-center">
-                <!-- <h3><span data-lang="fr">À propos</span>
-                    <span data-lang="en">About</span>
-                </h3> -->
-                <h2> <i class="fa-solid fa-user"></i>
-                    <span data-lang="fr">Mon Approche</span>
-                    <span data-lang="en">My Approach</span>
-                </h2>
-
-                <div class="container">
-                    <!-- <h2 class="section-title">
-                        <i class="fa-solid fa-user"></i>
-                        <span data-lang="fr">Mon Approche</span>
-                        <span data-lang="en">My Approach</span>
-                    </h2> -->
-
-                    <div data-lang="fr">
-                        <p>
-                            <strong>Data Analyst</strong> et <strong>Data Scientist</strong>, j’explore, analyse et
-                            modélise les
-                            données
-                            pour en faire un levier de décision et d’anticipation.
-                            <br>
-                            J’allie la rigueur de l’analyse (<em>exploration, visualisation, storytelling, KPIs</em>) à
-                            la
-                            puissance de
-                            la science des données (<em>modèles prédictifs, machine learning, automatisation</em>).
-                        </p>
-
-                        <ul>
-                            <strong>Je crois que :</strong>
-                            <li><strong>L’analyse</strong> révèle le sens caché des données et éclaire les décisions
-                                immédiates.
-                            </li>
-                            <li><strong>La prédiction</strong> donne un temps d’avance, en permettant d’anticiper les
-                                tendances
-                                et
-                                scénarios futurs.</li>
-                            <li><strong>L’automatisation</strong> crée de la valeur durable, en libérant les équipes des
-                                tâches
-                                répétitives pour se concentrer sur la stratégie.</li>
-                        </ul>
-
-                        <p>
-                            <strong>Mon objectif ?</strong><br>
-                            Construire des solutions qui allient <strong>compréhension du passé</strong> et
-                            <strong>maîtrise de
-                                l’avenir</strong>, pour transformer les données en véritable <strong>avantage
-                                compétitif</strong>.
-                        </p>
-                    </div>
-
-                    <div data-lang="en">
-                        <p>
-                            <strong>Data Analyst</strong> and <strong>Data Scientist</strong>, I explore, analyze, and
-                            model
-                            data to turn
-                            it into a lever for decision-making and foresight.
-                            <br>
-                            I combine the rigor of analysis (<em>exploration, visualization, storytelling, KPIs</em>)
-                            with the
-                            power of
-                            data science (<em>predictive models, machine learning, automation</em>).
-                        </p>
-
-
-                        <ul>
-                            <strong>I believe that:</strong>
-                            <li><strong>Analysis</strong> uncovers the hidden meaning in data and guides immediate
-                                decisions.
-                            </li>
-                            <li><strong>Prediction</strong> provides a competitive edge by enabling anticipation of
-                                trends and
-                                future
-                                scenarios.</li>
-                            <li><strong>Automation</strong> creates lasting value by freeing teams from repetitive tasks
-                                so they
-                                can
-                                focus on strategy.</li>
-                        </ul>
-
-                        <p>
-                            <strong>My goal?</strong><br>
-                            To build solutions that combine <strong>understanding of the past</strong> with
-                            <strong>mastery of
-                                the
-                                future</strong>, transforming data into a true <strong>competitive advantage</strong>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- === SECTION COMPÉTENCES === -->
@@ -604,257 +581,335 @@
 
 
             <div class="skills-grid">
-                <!-- Outils & DevOps -->
-                <div class="skill-block" data-group="devops">
-                    <div class="skill-block-header">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                        <span data-lang="fr" class="skill-block-title">Outils & DevOps</span>
-                        <span data-lang="en" class="skill-block-title">Tools & DevOps</span>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/logos/Git.png" alt="Git"><span>Git</span></div>
-                        <div class="skill-item"><img src="assets/logos/docker.png" alt="Docker"><span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-code-branch" style="font-size:15px; color:var(--accent);"></i>
-                            <span>CI/CD</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-robot" style="font-size:15px; color:var(--accent);"></i>
-                            <span>MLOps</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/Powershell.png"
-                                alt="PowerShell"><span>PowerShell</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-globe" style="font-size:15px; color:var(--accent);"></i>
-                            <span>API & Web Services</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/Postman.png" alt="Postman"><span>Postman</span>
-                        </div>
-                    </div>
-                </div>
 
-
-
-                <!-- Analytics & Data Science -->
-                <div class="skill-block" data-group="analytics">
-                    <div class="skill-block-header">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span data-lang="fr" class="skill-block-title">Analyse & Data Science</span>
-                        <span data-lang="en" class="skill-block-title">Analysis & Data Science</span>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><i class="fa-solid fa-diagram-project"
-                                style="font-size:15px; color:var(--accent);"></i><span>Data modeling</span></div>
-                        <div class="skill-item"><i class="fa-solid fa-chart-line"
-                                style="font-size:15px; color:var(--accent);"></i><span data-lang="fr">Analyse
-                                statistique</span><span data-lang="en">Statistical Analysis</span></div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-chart-column" style="font-size:15px; color:var(--accent);"></i>
-                            <span>Reporting</span>
-                        </div>
-                        <div class="skill-item"><i class="fa-solid fa-gauge"
-                                style="font-size:15px; color:var(--accent);"></i><span data-lang="fr">Suivi
-                                KPIs</span><span data-lang="en">KPI Monitoring</span></div>
-                        <div class="skill-item"><i class="fa-solid fa-comments"
-                                style="font-size:15px; color:var(--accent);"></i><span>Storytelling</span></div>
-                        <div class="skill-item"><i class="fa-solid fa-thumbs-up"
-                                style="font-size:15px; color:var(--accent);"></i><span data-lang="fr">Systèmes de
-                                recommandation</span><span data-lang="en">Recommendation Systems</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visualisation & Reporting -->
-                <div class="skill-block" data-group="viz">
-                    <div class="skill-block-header">
-                        <i class="fa-solid fa-chart-column"></i>
-                        <span data-lang="fr" class="skill-block-title">Visualisation & Reporting</span>
-                        <span data-lang="en" class="skill-block-title">Visualization & Reporting</span>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/logos/powerbi.png" alt="Power BI"><span>Power BI</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/Tableau.png" alt="Tableau"><span>Tableau</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/SSRS.png" alt="SSRS"><span>SSRS</span></div>
-                        <div class="skill-item"><img src="assets/logos/streamlit.png"
-                                alt="Streamlit"><span>Streamlit</span></div>
-                        <div class="skill-item"><img src="assets/logos/Ploty.png" alt="Plotly"><span>Plotly</span></div>
-                        <div class="skill-item"><img src="assets/logos/Matplotlib.png"
-                                alt="Matplotlib"><span>Matplotlib</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/seaborn.png" alt="Seaborn"><span>Seaborn</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Deep Learning (avec NLTK & Gensim comme demandé) -->
-                <div class="skill-block" data-group="deep-learning">
-                    <div class="skill-block-header">
-                        <i class="fa-solid fa-brain"></i>
-                        <span span data-lang="fr" class="skill-block-title">
-                            Apprentissage profond
-                        </span>
-                        <span span data-lang="en" class="skill-block-title">
-                            Deep Learning
-                        </span>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/logos/TensorFlow.png"
-                                alt="TensorFlow"><span>TensorFlow</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/Keras.jpg" alt="Keras"><span>Keras</span></div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-brain" style="font-size:15px; color:var(--accent);"></i>
-                            <span>CNN</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-wave-square" style="font-size:15px; color:var(--accent);"></i>
-                            <span>RNN</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/NLTK.png" alt="NLTK"><span>NLTK</span></div>
-                        <div class="skill-item"><img src="assets/logos/gensim.png" alt="Gensim"><span>Gensim</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bases de données -->
-                <div class="skill-block" data-group="databases">
-                    <div class="skill-block-header">
-                        <i class="fa-solid fa-database"></i>
-                        <span data-lang="fr" class="skill-block-title">Bases de données</span>
-                        <span data-lang="en" class="skill-block-title">Databases</span>
-
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/logos/Microsoft SQL Server.png"
-                                alt="SQL Server"><span>SQL
-                                Server</span></div>
-                        <div class="skill-item"><img src="assets/logos/postgresql.png"
-                                alt="PostgreSQL"><span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/MySQL.png" alt="MySQL"><span>MySQL</span></div>
-                        <div class="skill-item"><img src="assets/logos/MongoDB.png" alt="MongoDB"><span>MongoDB</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/Redis.png" alt="Redis"><span>Redis</span></div>
-                        <div class="skill-item"><img src="assets/logos/New4j.png" alt="Neo4j"><span>Neo4j</span></div>
-                    </div>
-                </div>
-
-                <!-- Big Data & Cloud -->
-                <div class="skill-block" data-group="bigdata">
-                    <div class="skill-block-header">
-                        <i class="fa-solid fa-cloud"></i>
-                        <span class="skill-block-title">Big Data & Cloud</span>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/logos/Apache Spark.png" alt="Spark"><span>Apache
-                                Spark</span></div>
-                        <div class="skill-item"><img src="assets/logos/Apache Hadoop.png"
-                                alt="Hadoop"><span>Hadoop</span></div>
-                        <div class="skill-item"><img src="assets/logos/Apache Kafka.png" alt="Kafka"><span>Kafka</span>
-                        </div>
-                        <div class="skill-item"><img src="assets/logos/azure.png" alt="Azure"><span>Azure</span></div>
-                    </div>
-                </div>
-
-
-                <!-- Langages de programmation -->
+                <!-- Langages -->
                 <div class="skill-block" data-group="languages">
                     <div class="skill-block-header">
                         <i class="fa-solid fa-code"></i>
-                        <span data-lang="fr" class="skill-block-title">Langages de programmation</span>
+                        <span data-lang="fr" class="skill-block-title">Langages</span>
                         <span data-lang="en" class="skill-block-title">Programming Languages</span>
-
                     </div>
+
                     <div class="skill-items">
-                        <div class="skill-item"><img src="assets/logos/python.png" alt="Python"><span>Python</span>
+                        <div class="skill-item">
+                            <img src="assets/logos/python.png" alt="Python">
+                            <span>Python</span>
                         </div>
-                        <div class="skill-item"><img src="assets/logos/SQL.png" alt="SQL"><span>SQL</span></div>
-                        <div class="skill-item"><img src="assets/logos/NoSQL.png" alt="NoSQL"><span>NoSQL</span></div>
-                        <div class="skill-item"><img src="assets/logos/Scala.png" alt="Scala"><span>Scala</span></div>
-                        <div class="skill-item"><img src="assets/logos/CSharp.png" alt="C#"><span>C#</span></div>
-                        <div class="skill-item"><img src="assets/logos/javascript.png"
-                                alt="JavaScript"><span>JavaScript</span>
+
+                        <div class="skill-item">
+                            <img src="assets/logos/SQL.png" alt="SQL">
+                            <span>SQL</span>
                         </div>
-                        <div class="skill-item"><img src="assets/logos/XML.png" alt="XML"><span>XML</span></div>
-                        <div class="skill-item"><img src="assets/logos/UML.png" alt="UML"><span>UML</span></div>
-                        <div class="skill-item"><img src="assets/logos/dax.png" alt="DAX"><span>DAX</span></div>
-                        <div class="skill-item"><img src="assets/logos/M.png" alt="M"><span>M</span></div>
-                        <div class="skill-item"><img src="assets/logos/NET.png" alt=".NET"><span>.NET</span></div>
+
+                        <div class="skill-item">
+                            <img src="assets/logos/Scala.png" alt="Scala">
+                            <span>Scala</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="assets/logos/dax.png" alt="DAX">
+                            <span>DAX</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="assets/logos/M.png" alt="M" style="width: 60px; height: auto;">
+                            <span>M</span>
+                        </div>
                     </div>
                 </div>
 
 
-                <!-- MACHINE LEARNING -->
-                <div class="skill-block" data-group="ML">
+                <!-- Analyse de données & BI -->
+                <div class=" skill-block" data-group="analytics">
                     <div class="skill-block-header">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                        <span data-lang="fr" class="skill-block-title">Machine Learning</span>
-                        <span data-lang="en" class="skill-block-title">Machine Learning</span>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span data-lang="fr" class="skill-block-title">Analyse de données & Business
+                            Intelligence</span>
+                        <span data-lang="en" class="skill-block-title">Data Analysis & Business
+                            Intelligence</span>
                     </div>
 
                     <div class="skill-items">
                         <div class="skill-item">
-                            <i class="fa-solid fa-chart-line" style="font-size:16px; color:var(--accent);"></i>
-                            <span data-lang="fr">Régression</span>
-                            <span data-lang="en">Regression</span>
+                            <img src="assets/logos/powerbi.png" alt="Power BI">
+                            <span> Power BI </span>
                         </div>
+
                         <div class="skill-item">
-                            <i class="fa-solid fa-sitemap" style="font-size:16px; color:var(--accent);"></i>
+                            <img src="assets/logos/Tableau.png" alt="Tableau" style="width: 60px; height: auto;">
+                            <span>Tableau</span>
+                        </div>
+
+
+                        <div class="skill-item">
+                            <img src="assets/logos/excel.png" alt="Excel" style="width: 60px; height: auto;>
+                            <span>Excel (Power Query, Power Pivot)</span>
+                        </div>
+
+
+                        <div class=" skill-item">
+                            <i class="fa-solid fa-magnifying-glass" style="font-size:15px;color:var(--accent);"></i>
+                            <span data-lang="fr">Analyse exploratoire (EDA)</span>
+                            <span data-lang="en">Exploratory Data Analysis (EDA)</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-filter" style="font-size:15px;color:var(--accent);"></i>
+                            <span data-lang="fr">Nettoyage & préparation des données</span>
+                            <span data-lang="en">Data Cleaning & Preparation</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-chart-simple" style="font-size:15px;color:var(--accent);"></i>
+                            <span data-lang="fr">Statistiques descriptives</span>
+                            <span data-lang="en">Descriptive Statistics</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-arrow-trend-up" style="font-size:15px;color:var(--accent);"></i>
+                            <span data-lang="fr">Analyse de tendances</span>
+                            <span data-lang="en">Trend Analysis</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-gauge" style="font-size:15px;color:var(--accent);"></i>
+                            <span>KPI & Reporting</span>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <!-- Data Science & Machine Learning -->
+                <div class="skill-block" data-group="machine-learning">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-brain"></i>
+                        <span data-lang="fr" class="skill-block-title">Data Science & Machine Learning</span>
+                        <span data-lang="en" class="skill-block-title">Data Science & Machine Learning</span>
+                    </div>
+
+                    <div class="skill-items">
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-gears" style="font-size:15px;color:var(--accent);"></i>
+                            <span>Feature Engineering</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="assets/logos/Scikit-learn.png" alt="Scikit-learn">
+                            <span>Scikit-learn</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <img src="assets/logos/XGBoost.png" alt="XGBoost" style="width: 55px; height: auto;">
+                            <span>XGBoost</span>
+                        </div>
+
+                        <div class=" skill-item">
+                            <img src="assets/logos/LightGBM.png" alt="LightGBM" style="width: 60px; height: auto;">
+                            <span>LightGBM</span>
+                        </div>
+
+                        <div class=" skill-item">
+                            <img src="assets/logos/TensorFlow.png" alt="TensorFlow">
+                            <span>TensorFlow</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-sitemap" style="font-size:15px;color:var(--accent);"></i>
                             <span data-lang="fr">Classification</span>
                             <span data-lang="en">Classification</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-diagram-project" style="font-size:16px; color:var(--accent);"></i>
-                            <span data-lang="fr">Clustering</span>
-                            <span data-lang="en">Clustering</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-shapes" style="font-size:16px; color:var(--accent);"></i>
-                            <span data-lang="fr">PCA</span>
-                            <span data-lang="en">PCA</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-vial" style="font-size:16px; color:var(--accent);"></i>
-                            <span data-lang="fr">Validation croisée</span>
-                            <span data-lang="en">Cross-validation</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-gears" style="font-size:16px; color:var(--accent);"></i>
-                            <span data-lang="fr">Feature engineering</span>
-                            <span data-lang="en">Feature engineering</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fa-solid fa-sliders" style="font-size:16px; color:var(--accent);"></i>
-                            <span data-lang="fr">Optimisation des hyperparamètres</span>
-                            <span data-lang="en">Hyperparameter optimization</span>
-                        </div>
-                    </div>
 
+                        <div class="skill-item">
+                            <i class="fa-solid fa-chart-line" style="font-size:15px;color:var(--accent);"></i>
+                            <span data-lang="fr">Régression</span>
+                            <span data-lang="en">Regression</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-diagram-project" style="font-size:15px;color:var(--accent);"></i>
+                            <span>Clustering</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-gauge-high" style="font-size:15px;color:var(--accent);"></i>
+                            <span data-lang="fr">Évaluation & optimisation des modèles</span>
+                            <span data-lang="en">Model Evaluation & Optimization</span>
+                        </div>
+
+
+                    </div>
                 </div>
 
-                <!-- ETL & Data Engineering -->
-                <div class="skill-block" data-group="etl">
+
+                <!-- Intelligence Artificielle Générative -->
+                <div class="skill-block" data-group="genai">
                     <div class="skill-block-header">
-                        <i class="fa-solid fa-gears"></i>
-                        <span class="skill-block-title">ETL & Data Engineering</span>
+                        <i class="fa-solid fa-robot"></i>
+                        <span data-lang="fr" class="skill-block-title">Intelligence Artificielle
+                            Générative</span>
+                        <span data-lang="en" class="skill-block-title">Generative Artificial Intelligence</span>
                     </div>
+
                     <div class="skill-items">
-                        <div class="skill-item"><img src="assets/logos/SSIS.jpg" alt="SSIS"><span>SSIS</span></div>
-                        <div class="skill-item"><img src="assets/logos/azure data factory.jpg"
-                                alt="Azure Data Factory"><span>Azure
-                                Data Factory</span></div>
+
+
+                        <div class="skill-item"><img src="assets/logos/LangChain.png" alt="LangChain"
+                                style="width: 70px; height: auto;"><span>LangChain</span> </div>
+                        <div class="skill-item"> <img src="assets/logos/LangGraph.png" alt="LangGraph"
+                                style="width: 60px; height: auto;"><span>LangGraph</span></div>
+                        <div class="skill-item"> <img src="assets/logos/LlamaIndex.png" alt="LlamaIndex"
+                                style="width: 60px; height: auto;"><span>LlamaIndex</span></div>
+                        <div class="skill-item"><img src="assets/logos/Hugging Face.png" alt="Hugging Face"
+                                style="width: 60px; height: auto;"><span>
+                                Hugging Face</span> </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-brain" style="font-size:15px;color:var(--accent);"></i>
+                            <span>LLM</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-magnifying-glass-chart"
+                                style="font-size:15px;color:var(--accent);"></i>
+                            <span>RAG</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-robot" style="font-size:15px;color:var(--accent);"></i>
+                            <span>AI Agents</span>
+                        </div>
+
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-comments" style="font-size:15px;color:var(--accent);"></i>
+                            <span>Prompt Engineering</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-vector-square" style="font-size:15px;color:var(--accent);"></i>
+                            <span>Embeddings</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-sliders" style="font-size:15px;color:var(--accent);"></i>
+                            <span>Fine-tuning</span>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+
+                <!-- Data Engineering -->
+                <div class="skill-block" data-group="data-engineering">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-database"></i>
+                        <span data-lang="fr" class="skill-block-title">Data Engineering</span>
+                        <span data-lang="en" class="skill-block-title">Data Engineering</span>
+                    </div>
+
+                    <div class="skill-items">
+
+                        <div class="skill-item"><span>ETL / ELT</span></div>
+
+                        <div class="skill-item">
+                            <span>Apache Spark (PySpark)</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Databricks</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>APIs REST</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span data-lang="fr">Modélisation de données</span>
+                            <span data-lang="en">Data Modeling</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Data Warehouse</span>
+                        </div>
+
                     </div>
                 </div>
 
 
 
 
+
+                <!-- Data Visualisation & Applications -->
+                <div class="skill-block" data-group="visualization">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <span data-lang="fr" class="skill-block-title">Data Visualisation & Applications</span>
+                        <span data-lang="en" class="skill-block-title">Data Visualization & Applications</span>
+                    </div>
+
+                    <div class="skill-items">
+
+                        <div class="skill-item">
+                            <span>Matplotlib</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Plotly</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Streamlit</span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Cloud & MLOps -->
+                <div class="skill-block" data-group="cloud">
+                    <div class="skill-block-header">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span data-lang="fr" class="skill-block-title">Cloud & MLOps</span>
+                        <span data-lang="en" class="skill-block-title">Cloud & MLOps</span>
+                    </div>
+
+                    <div class="skill-items">
+
+                        <div class="skill-item">
+                            <span>Azure</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Docker</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>MLflow</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>CI/CD</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Git</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>FastAPI</span>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
+
     </section>
 
 
@@ -2192,6 +2247,8 @@
             // 1ère passe
             applyFilter();
         });
+
+
 
 
 

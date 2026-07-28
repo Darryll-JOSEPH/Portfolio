@@ -9574,3 +9574,82 @@ button:hover .star-6 {
     padding-top: 100px;
     /* Essayez cette valeur et ajustez */
 }
+
+
+
+/* ===== Correction finale : grille skills alignée H/V ===== */
+.skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: stretch !important;
+}
+
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.skill-block {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.skill-items {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-content: flex-start !important;
+    gap: 10px;
+}
+
+/* ===== Correction finale : grille skills alignée H/V ===== */
+.skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+}
+
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.skills-grid>.skill-block {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    flex: none !important;
+    grid-column: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.skill-items {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-content: flex-start !important;
+    gap: 10px !important;
+}
