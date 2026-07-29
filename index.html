@@ -756,14 +756,13 @@
                     <div class="skill-items">
 
 
-                        <div class="skill-item"><img src="assets/logos/LangChain.png" alt="LangChain"
+                        <div class="skill-item"><img src="assets/logos/langchain-langraph.png" alt="LangChain"
                                 style="width: 70px; height: auto;"><span>LangChain</span> </div>
-                        <div class="skill-item"> <img src="assets/logos/LangGraph.png" alt="LangGraph"
+                        <div class="skill-item"> <img src="assets/logos/langchain-langraph.png" alt="LangGraph"
                                 style="width: 60px; height: auto;"><span>LangGraph</span></div>
-                        <div class="skill-item"> <img src="assets/logos/LlamaIndex.png" alt="LlamaIndex"
-                                style="width: 60px; height: auto;"><span>LlamaIndex</span></div>
-                        <div class="skill-item"><img src="assets/logos/Hugging Face.png" alt="Hugging Face"
-                                style="width: 60px; height: auto;"><span>
+                        <div class="skill-item"> <img src="assets/logos/LlamaIndex.png"
+                                alt="LlamaIndex"><span>LlamaIndex</span></div>
+                        <div class="skill-item"><img src="assets/logos/Hugging Face.png" alt="Hugging Face"><span>
                                 Hugging Face</span> </div>
 
                         <div class="skill-item">
@@ -815,28 +814,50 @@
 
                     <div class="skill-items">
 
-                        <div class="skill-item"><span>ETL / ELT</span></div>
-
                         <div class="skill-item">
+                            <i class="fa-solid fa-arrow-right-arrow-left"
+                                style="font-size:15px;color:var(--accent);"></i>
+                            <span>ETL / ELT</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/logos/azure data factory.png" alt="Azure Data Factory">
+                            <span>Azure Data Factory</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/logos/Apache Spark.png" alt="Apache Spark"
+                                style="width: 60px; height: auto;">
                             <span>Apache Spark (PySpark)</span>
                         </div>
 
                         <div class="skill-item">
+                            <img src="assets/logos/databricks.png" alt="Databricks">
                             <span>Databricks</span>
                         </div>
 
                         <div class="skill-item">
-                            <span>APIs REST</span>
+                            <img src="assets/logos/Azure-Synapse.png" alt="Azure Synapse Analytics">
+                            <span>Azure Synapse Analytics</span>
                         </div>
 
+
                         <div class="skill-item">
+                            <i class="fa-solid fa-diagram-project" style="font-size:15px;color:var(--accent);"></i>
                             <span data-lang="fr">Modélisation de données</span>
                             <span data-lang="en">Data Modeling</span>
                         </div>
 
                         <div class="skill-item">
+                            <i class="fa-solid fa-plug" style="font-size:15px;color:var(--accent);"></i>
+                            <span>APIs REST</span>
+                        </div>
+
+
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-warehouse" style="font-size:15px;color:var(--accent);"></i>
                             <span>Data Warehouse</span>
                         </div>
+
 
                     </div>
                 </div>
@@ -856,14 +877,17 @@
                     <div class="skill-items">
 
                         <div class="skill-item">
+                            <img src="assets/logos/Matplotlib.png" alt="Matplotlib">
                             <span>Matplotlib</span>
                         </div>
 
                         <div class="skill-item">
+                            <img src="assets/logos/Ploty.png" alt="Plotly">
                             <span>Plotly</span>
                         </div>
 
                         <div class="skill-item">
+                            <img src="assets/logos/streamlit.png" alt="Streamlit">
                             <span>Streamlit</span>
                         </div>
 
@@ -882,28 +906,36 @@
                     <div class="skill-items">
 
                         <div class="skill-item">
+                            <img src="assets/logos/azure.png" alt="Azure">
                             <span>Azure</span>
                         </div>
 
                         <div class="skill-item">
+                            <img src="assets/logos/docker.png" alt="Docker">
                             <span>Docker</span>
                         </div>
 
-                        <div class="skill-item">
-                            <span>MLflow</span>
-                        </div>
 
                         <div class="skill-item">
-                            <span>CI/CD</span>
-                        </div>
-
-                        <div class="skill-item">
+                            <img src="assets/logos/GIT.png" alt="Git">
                             <span>Git</span>
                         </div>
 
                         <div class="skill-item">
+                            <img src="assets/logos/fastapi.png" alt="FastAPI">
                             <span>FastAPI</span>
                         </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-flask" style="font-size:15px;color:var(--accent);"></i>
+                            <span>MLflow</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <i class="fa-solid fa-code-branch" style="font-size:15px;color:var(--accent);"></i>
+                            <span>CI/CD</span>
+                        </div>
+
 
                     </div>
                 </div>
@@ -924,10 +956,37 @@
             </h2>
 
 
+            <!-- Barre de recherche compétences projets -->
+            <div class="skills-search projects-search">
+
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
+                <input id="projectSearch" type="search" placeholder="Rechercher une compétence dans les projets"
+                    data-placeholder-fr="Rechercher une compétence dans les projets"
+                    data-placeholder-en="Search a skill in projects">
+
+            </div>
+
+
+            <p id="projectNoResults" class="no-results" style="display:none;">
+
+                <span data-lang="fr">
+                    Aucun projet trouvé.
+                </span>
+
+                <span data-lang="en">
+                    No project found.
+                </span>
+
+            </p>
+
+
 
             <div class="projects-grid">
                 <!-- Projet 1 - AssurNova -->
-                <a href="Assurnova.html" class="project-card">
+                <a href="Assurnova.html" class="project-card" data-project="assurnova"
+                    data-search="
+                AssurNova assurance assurances assurance marketing data marketing portefeuille clients client clientèle CRM CRM analytique Business Intelligence BI Power BI Microsoft Power BI Desktop Power BI Service SQL SQL Server T-SQL Excel SharePoint Power Query DAX Git GitHub versionning RLS Row Level Security Row-Level Security sécurité gouvernance gouvernance des données data governance modèle de données modèle en étoile star schema relations jointures KPIs KPI indicateurs tableaux de bord dashboard dashboards reporting visualisation data visualization analytics analyse analyses décisionnel Business Intelligence Data Analyst reporting interactif rapports interactifs filtres slicers segments segmentation ciblage ciblage marketing campagnes marketing campagne marketing clients ciblables contactabilité espace client churn churnés nouveaux clients évolution portefeuille évolution mensuelle profil client profil des clients valeur client rentabilité ancienneté profession âge sexe cartes graphiques histogrammes secteurs lignes barres empilées tables matrices réseau agence canal contact exclusions rafraîchissement automatique scheduled refresh nettoyage transformation préparation des données ETL ELT qualité des données consolidation multi-sources sources de données SQL Excel SharePoint intelligence décisionnelle performance pilotage reporting opérationnel reporting stratégique analyse marketing analyse clientèle fidélisation acquisition rétention customer analytics customer profile customer segmentation marketing targeting customer targeting interactive dashboard data model measures calculated measures calculated columns dimensions facts">
                     <div class="project-image-wrapper" data-main-delay="8000">
                         <img src="assets/projects/Assurnova/Evolution du Portefeuille.jpg"
                             alt="AssurNova – Portefeuille & Ciblage Marketing" loading="lazy">
@@ -980,7 +1039,47 @@
 
 
                 <!-- Projet 2 -->
-                <a href="EuroMoneyAI.html" class="project-card">
+                <a href="EuroMoneyAI.html" class="project-card" data-project="euromoney" data-search="
+                EuroMoneyAI BNSM Banque Nationale Sécurité Monétaire 
+                IA Intelligence Artificielle Artificial Intelligence 
+                Machine Learning ML Deep Learning 
+                Computer Vision Vision par ordinateur 
+                Reconnaissance image Image Recognition 
+                Classification image Image Classification 
+                CNN Convolutional Neural Network 
+                VGG16 Fine Tuning Transfer Learning 
+                Data Augmentation 
+                TensorFlow Keras 
+                Scikit-learn sklearn 
+                Random Forest RandomForestClassifier 
+                XGBoost 
+                Optuna Hyperparameter Optimization 
+                GridSearchCV Cross Validation 
+                MLflow 
+                Python 
+                Streamlit 
+                Application IA 
+                Déploiement Cloud 
+                Google Drive 
+                MLOps 
+                Détection faux billets 
+                Détection contrefaçon 
+                Fake Detection Counterfeit Detection 
+                Billets banque Banknotes 
+                Pièces euro Euro coins 
+                Reconnaissance pièces 
+                Classification multi-classes 
+                Régression Logistique Logistic Regression 
+                StandardScaler 
+                Feature Engineering 
+                Probabilités confiance inférence 
+                Temps de prédiction Latence 
+                Modèle prédictif 
+                Data Science 
+                Data Scientist 
+                AI Engineer 
+                Deep Learning Engineer
+                ">
                     <div class="project-image-wrapper" data-main-delay="8000">
                         <img src="assets/projects/EuroMoneyAI/BNSM.png" alt="EuroMoneyAI" loading="lazy">
 
@@ -1035,7 +1134,67 @@
                 </a>
 
                 <!-- Projet MedSynora-azure -->
-                <a href="Medsynora-azure.html" class="project-card">
+                <a href="Medsynora-azure.html" class="project-card" data-project="medsynora" data-search="
+                MedSynora données hospitalières données médicales healthcare data medical data data hospitalière hospital data 
+                Azure Microsoft Azure Azure Cloud Cloud Computing cloud data platform 
+                Data Engineering data engineering ingénierie des données ingénieur data 
+                Data Engineer Data Engineering Pipeline pipeline de données data pipeline pipeline ETL pipeline ELT 
+                ELT Extract Load Transform extraction chargement transformation 
+                ETL Extract Transform Load extraction transformation chargement 
+                Azure Data Factory ADF pipelines ADF orchestration orchestration des données triggers déclencheurs workflows 
+                Azure Data Lake Storage ADLS ADLS Gen2 Data Lake data lake stockage cloud cloud storage 
+                Lakehouse architecture Lakehouse architecture architecture lakehouse data lakehouse 
+                Databricks Azure Databricks Databricks notebooks notebooks PySpark 
+                PySpark Spark Apache Spark traitement distribué distributed processing big data 
+                Python Python programming scripts notebooks data processing traitement des données 
+                GitLab API API GitLab API REST ingestion API ingestion de données data ingestion ingestion automatique 
+                CSV fichiers CSV flat files fichiers plats datasets dataset données sources sources de données data sources 
+                Bronze Silver Gold Bronze Layer Silver Layer Gold Layer medallion architecture architecture médaillon 
+                Data transformation transformation des données nettoyage données data cleaning preprocessing préparation des données 
+                Data quality qualité des données data quality management 
+                Data standardization standardisation des données normalization normalisation 
+                Deduplication déduplication suppression des doublons duplicate removal 
+                Missing values valeurs manquantes imputation médiane mode missing data handling 
+                Data validation validation des données contrôle qualité data validation 
+                Data governance gouvernance des données data governance metadata métadonnées 
+                Data warehouse entrepôt de données enterprise data warehouse EDW 
+                Microsoft Fabric Azure Synapse Synapse Analytics Azure Synapse Analytics 
+                Synapse Serverless Serverless SQL SQL Serverless external tables tables externes 
+                SQL SQL queries requêtes SQL T-SQL 
+                Data modeling modélisation des données modèle de données data model 
+                Star schema modèle en étoile star schema 
+                Fact tables tables de faits facts facts tables 
+                Dimension tables tables de dimensions dimensions 
+                Data mart datamart BI 
+                Business Intelligence BI intelligence décisionnelle 
+                Power BI Microsoft Power BI Power BI Desktop Power BI Service 
+                Power BI dashboards tableaux de bord dashboards rapports reports reporting 
+                Data visualization visualisation des données data visualization 
+                KPIs KPI indicateurs indicateurs métiers business indicators metrics 
+                Analytics data analytics analyse de données data analysis 
+                Healthcare analytics medical analytics analyse médicale analyse hospitalière 
+                Patient analytics patient data profil patient patient profile 
+                Costs analysis analyse des coûts cost analysis healthcare costs 
+                Consultations diagnostics treatments traitements diagnostics consultations 
+                Reporting interactif interactive reporting reporting décisionnel 
+                Scheduled refresh rafraîchissement automatique actualisation planifiée 
+                DAX Data Analysis Expressions mesures measures calculated measures colonnes calculées calculated columns 
+                Power Query M langage M Power Query transformation 
+                Security sécurité data security cloud security 
+                IAM Identity and Access Management gestion des identités et accès 
+                Managed Identity Azure Managed Identity identité managée 
+                AES-256 chiffrement encryption cryptography 
+                Defender for Storage Azure Defender sécurité stockage 
+                Azure Monitor monitoring supervision observabilité observability 
+                Logs journaux monitoring logs 
+                GRS Geo Redundant Storage réplication géographique 
+                Cloud Architecture architecture cloud architecture Azure 
+                Solution Architecture architecture technique technical architecture 
+                Data platform plateforme data data platform 
+                End-to-end pipeline pipeline complet industrialisation industrialization 
+                DataOps Data Operations automatisation automation CI/CD déploiement deployment 
+                Git GitLab version control contrôle de version 
+                Portfolio Data Engineer Data Analyst BI Analyst Analytics Engineer Cloud Data Engineer">
                     <div class="project-image-wrapper" data-main-delay="8000">
                         <img src="assets/projects/MedSynora/Architecture.png" alt="MedSynora – Azure Lakehouse"
                             loading="lazy">
@@ -1088,7 +1247,25 @@
                 </a>
 
                 <!-- Projet Medibot -->
-                <a href="Medibot.html" class="project-card">
+                <a href="Medibot.html" class="project-card" data-project="medibot"
+                    data-search="
+                Medibot chatbot chatbot médical chatbot intelligent AI chatbot assistant conversationnel conversational AI intelligence artificielle Artificial Intelligence AI Machine Learning ML apprentissage automatique Data Science Applied Data Science IA santé Healthcare AI HealthTech données médicales healthcare data NLP Natural Language Processing traitement automatique du langage naturel traitement automatique du langage textuel TALN compréhension du langage naturel Natural Language Understanding NLU analyse de texte text analytics text mining text processing text classification classification de texte classification automatique extraction d’informations information extraction question answering QA système questions réponses question answering system chatbot Q&A base de connaissances knowledge base knowledge management recherche sémantique semantic search similarité cosinus cosine similarity recherche d’information information retrieval
+                
+                Python Python programming pandas NumPy scikit-learn sklearn NLTK Natural Language Toolkit FastAPI REST API API REST backend backend development Streamlit application Streamlit data app interface utilisateur user interface UI SQLite base de données database data management gestion des données
+                
+                prétraitement preprocessing text preprocessing nettoyage des données textuelles text cleaning nettoyage texte stopwords suppression des mots vides stopwords removal tokenisation tokenization RegexpTokenizer lemmatisation lemmatization normalisation linguistique text normalization
+                
+                vectorisation vectorization représentation vectorielle vector representation Bag of Words BoW sac de mots TF-IDF TFIDF Term Frequency Inverse Document Frequency feature engineering extraction de features features engineering
+                
+                Machine Learning Pipeline pipeline ML pipeline NLP NLP pipeline architecture pipeline architecture modulaire modular architecture modèle prédictif predictive model modélisation modeling entraînement training apprentissage unsupervisé unsupervised learning clustering regroupement automatique KMeans K-Means K Means clustering segmentation automatique automatic clustering cluster analyse clusters classification non supervisée unsupervised classification
+                
+                prédiction maladie disease prediction prédiction pathologie medical prediction analyse symptômes symptom analysis symptômes symptoms orientation médicale medical guidance aide au diagnostic diagnostic assistance santé digitale digital health système expert expert system
+                
+                API FastAPI services API endpoints microservices architecture REST services déploiement deployment model deployment mise en production production deployment serving modèle ML model serving inference prédiction temps réel real time prediction
+                
+                Data Scientist Data Science Data Analyst Machine Learning Engineer AI Engineer Ingénieur IA Ingénieur Machine Learning NLP Engineer Deep Learning Artificial Intelligence Engineer MLOps industrialisation ML ML industrialization monitoring modèles model monitoring traçabilité prédictions prediction traceability logs observabilité observability
+                
+                projet IA end-to-end end-to-end AI project application IA complète complete AI application portfolio projet portfolio machine learning project NLP project chatbot project">
                     <div class="project-image-wrapper" data-main-delay="8000">
                         <img src="assets/projects/Medibot/Accueil.png" alt="Medibot – Chatbot Médical Intelligent"
                             loading="lazy">
@@ -1149,7 +1326,69 @@
                 </a>
 
                 <!-- Projet Data Integration -->
-                <a href="data-intégration.html" class="project-card">
+                <a href="data-intégration.html" class="project-card" data-project="integration" data-search="
+                Data Integration intégration de données data integration pipeline de données data pipeline 
+                Data Engineering ingénierie des données data engineer ingénieur data Data Engineer 
+                Big Data big data traitement de données massives distributed data processing traitement distribué 
+                Architecture distribuée distributed architecture scalable architecture architecture scalable 
+                End-to-end pipeline pipeline complet chaîne de données data value chain chaîne de valeur data 
+                Real Time Streaming temps réel streaming data real-time data processing 
+                Batch Processing traitement batch batch processing 
+                Stream Processing traitement streaming streaming processing 
+                Lambda Architecture architecture lambda streaming batch 
+                Apache Kafka Kafka message broker broker de messages event streaming event driven architecture 
+                Kafka Producer Kafka Consumer topics partitions serialization JSON 
+                Apache Spark Spark Spark Streaming Structured Streaming 
+                Spark Streaming traitement temps réel distributed computing calcul distribué 
+                PySpark Python Spark DataFrames transformations aggregations 
+                HDFS Hadoop Distributed File System Hadoop stockage distribué distributed storage 
+                Data Lake data lake stockage données raw data données brutes 
+                Apache Airflow Airflow orchestration workflow orchestration pipeline orchestration 
+                DAG Directed Acyclic Graph graphe orienté dépendances dependencies 
+                Airflow Scheduler tasks operators retries SLA backfill sensors 
+                FastAPI API REST REST API API services API endpoints 
+                Backend backend development service API exposition des données data serving 
+                Docker Docker Compose conteneurisation containerization containers microservices 
+                DevOps DataOps CI/CD deployment automatisé automated deployment 
+                Infrastructure as Code IaC environnement reproductible reproducible environment 
+                Prometheus monitoring supervision métriques metrics monitoring 
+                Grafana dashboards monitoring dashboards visualisation métriques 
+                Observability observabilité logs alerting tracing 
+                Performance monitoring surveillance performance 
+                Latency latence throughput débit data throughput 
+                Fault tolerance tolérance aux pannes resilience résilience 
+                Recovery reprise incident failure recovery 
+                Retry mécanismes de retry idempotence idempotent jobs 
+                Data Quality qualité des données data quality validation données data validation 
+                Schema validation contrôle schéma schema checks 
+                Data reliability fiabilité des données trustworthy data 
+                Data processing traitement des données data transformation 
+                Data enrichment enrichissement des données data aggregation agrégation données 
+                Analytical cubes cubes analytiques OLAP analytics 
+                Data warehouse entrepôt de données data warehouse architecture 
+                Data modeling modélisation données modèle analytique analytical model 
+                ETL Extract Transform Load extraction transformation chargement 
+                ELT Extract Load Transform extraction chargement transformation 
+                SQL SQL queries requêtes SQL databases bases de données 
+                CSV fichiers CSV datasets data sources sources de données 
+                Python Python programming scripting scripts automatisation automation 
+                REST RESTful services web services services web 
+                API Integration intégration API 
+                Microservices architecture microservices 
+                Cloud Data Engineer Cloud Data Platform plateforme data cloud 
+                Data Platform plateforme de données modern data platform 
+                Data Infrastructure infrastructure data 
+                Production Ready production ready industrialisation industrialization 
+                DataOps Data Operations opérations data 
+                MLOps machine learning operations préparation IA infrastructure IA 
+                AI Data Pipeline pipeline IA machine learning pipeline 
+                Monitoring pipeline pipeline observability 
+                Security sécurité data security access control contrôle accès 
+                Portfolio Data Engineer portfolio ingénieur data 
+                Analytics Engineer analytics engineer 
+                Big Data Engineer big data engineer 
+                Cloud Engineer cloud engineer 
+                Software Engineer Data ingénieur logiciel data">
                     <div class="project-image-wrapper" data-main-delay="8000">
                         <img src="assets/projects/data-intégration/Accueil.jpeg"
                             alt="Data Integration – Pipeline de Traitement Distribué" loading="lazy">
@@ -2247,6 +2486,276 @@
             // 1ère passe
             applyFilter();
         });
+
+
+        /* =====================================================
+   Recherche compétences dans les projets
+   Recherche dans :
+   - Texte visible
+   - Technologies
+   - data-search (mots-clés cachés)
+   + Highlight du résultat
+===================================================== */
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const projectPages = {
+                assurnova: "Assurnova.html",
+                euromoneyai: "EuroMoneyAI.html",
+                medsynora: "Medsynora-azure.html",
+                medibot: "Medibot.html",
+                integration: "data-intégration.html"
+            };
+
+
+            const input = document.getElementById("projectSearch");
+            const projects = document.querySelectorAll(".project-card");
+            const noResults = document.getElementById("projectNoResults");
+
+
+            if (!input || projects.length === 0) return;
+
+
+
+            // Normalisation texte
+            function normalize(text) {
+
+                return text
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .toLowerCase();
+
+            }
+
+
+
+
+            // Nettoyer les anciens highlights
+            function removeHighlight(element) {
+
+                element.querySelectorAll("mark")
+                    .forEach(mark => {
+
+                        mark.replaceWith(mark.textContent);
+
+                    });
+
+            }
+
+
+
+
+            // Highlight simple
+            function highlight(element, search) {
+
+                if (!search) return;
+
+
+                const text = element.textContent;
+
+                const normalizedText = normalize(text);
+                const normalizedSearch = normalize(search);
+
+
+                const index = normalizedText.indexOf(normalizedSearch);
+
+
+                if (index === -1) return;
+
+
+
+                const before = text.substring(0, index);
+
+                const match = text.substring(
+                    index,
+                    index + search.length
+                );
+
+
+                const after = text.substring(
+                    index + search.length
+                );
+
+
+
+                element.innerHTML =
+                    before +
+                    "<mark>" +
+                    match +
+                    "</mark>" +
+                    after;
+
+            }
+
+
+
+
+
+            input.addEventListener("input", () => {
+
+
+                const search = input.value.trim();
+
+
+                let found = false;
+
+
+
+                projects.forEach(project => {
+
+
+                    // Nettoyage highlight précédent
+                    removeHighlight(project);
+
+
+
+                    /*
+                      Langue affichée
+                    */
+                    const lang =
+                        document.documentElement.lang || "fr";
+
+
+
+                    let content = "";
+
+
+
+                    /*
+                      1) Recherche dans le texte visible
+                    */
+                    const visibleTexts =
+                        project.querySelectorAll(
+                            `[data-lang="${lang}"]`
+                        );
+
+
+                    visibleTexts.forEach(el => {
+
+                        content += " " + el.textContent;
+
+                    });
+
+
+
+
+
+                    /*
+                      2) Recherche dans les badges technologies
+                    */
+                    project.querySelectorAll(".badge")
+                        .forEach(badge => {
+
+                            content += " " + badge.textContent;
+
+                        });
+
+
+
+
+
+
+                    /*
+                      3) Recherche dans data-search
+                      Exemple :
+                      data-search="Power BI SQL Azure..."
+                    */
+                    if (project.dataset.search) {
+
+                        content += " " + project.dataset.search;
+
+                    }
+
+
+
+
+                    /*
+                      Vérification recherche
+                    */
+                    const match =
+                        normalize(content)
+                            .includes(
+                                normalize(search)
+                            );
+
+
+
+
+
+
+                    if (match || search === "") {
+
+
+                        project.style.display = "";
+
+                        found = true;
+
+
+
+
+                        /*
+                          Highlight uniquement
+                          dans le contenu visible
+                        */
+                        if (search !== "") {
+
+
+                            visibleTexts.forEach(el => {
+
+                                highlight(
+                                    el,
+                                    search
+                                );
+
+                            });
+
+
+
+                            project.querySelectorAll(".badge")
+                                .forEach(el => {
+
+                                    highlight(
+                                        el,
+                                        search
+                                    );
+
+                                });
+
+
+                        }
+
+
+
+                    } else {
+
+
+                        project.style.display = "none";
+
+
+                    }
+
+
+
+                });
+
+
+
+
+
+                noResults.style.display =
+                    (!found && search !== "")
+                        ? "block"
+                        : "none";
+
+
+
+            });
+
+
+
+        });
+
+
 
 
 

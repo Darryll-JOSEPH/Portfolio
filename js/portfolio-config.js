@@ -65,16 +65,21 @@ let cfg = params.get("cfg");
 /* =====================================================
    Solution 2 : Session Storage
 ===================================================== */
-
 if (VALID_CFG.includes(cfg)) {
 
-    sessionStorage.setItem("portfolioCfg", cfg);
+    sessionStorage.setItem(
+        "portfolioCfg",
+        cfg
+    );
 
 } else {
 
-    cfg = sessionStorage.getItem("portfolioCfg") || "da";
+    cfg =
+        sessionStorage.getItem("portfolioCfg")
+        || "da";
 
 }
+
 
 const config = PORTFOLIO_CONFIG[cfg];
 
@@ -131,8 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       Solution 1 : Conserver cfg sur tous les liens
-    ===================================================== */
+   Conserver cfg sur tous les liens internes
+===================================================== */
 
     document.querySelectorAll("a[href]").forEach(link => {
 
@@ -140,25 +145,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!href) return;
 
-        // Liens vers une ancre (#about...)
+
+        // Ne pas modifier les liens externes
+        if (
+            href.startsWith("http") ||
+            href.startsWith("mailto:")
+        ) {
+            return;
+        }
+
+
+        // Liens vers une ancre
         if (href.startsWith("#")) {
 
-            link.href = `${window.location.pathname}?cfg=${cfg}${href}`;
+            link.href =
+                `${window.location.pathname}?cfg=${cfg}${href}`;
 
         }
 
-        // index.html ou index.html#about
-        else if (href === "index.html" || href.startsWith("index.html#")) {
+
+        // Retour index.html
+        else if (
+            href === "index.html" ||
+            href.startsWith("index.html#")
+        ) {
 
             const hash = href.includes("#")
                 ? href.substring(href.indexOf("#"))
                 : "";
 
-            link.href = `index.html?cfg=${cfg}${hash}`;
+
+            link.href =
+                `index.html?cfg=${cfg}${hash}`;
 
         }
 
     });
+
 
     /* =====================================================
     CV selon le profil
@@ -175,6 +198,60 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cvButton) {
         cvButton.href = cvFiles[cfg];
     }
+
+    /* =====================================================
+       Ordre des projets selon le profil
+    ===================================================== */
+
+    const PROJECT_ORDER = {
+
+        // Data Analyst
+        da: [
+            "assurnova",
+            "medsynora",
+            "euromoney",
+            "medibot",
+            "integration"
+        ],
+
+        // Data Analyst / Data Scientist
+        dads: [
+            "euromoney",
+            "assurnova",
+            "medibot",
+            "medsynora",
+            "integration"
+        ],
+
+        // Data Scientist / AI Engineer
+        dsii: [
+            "medibot",
+            "euromoney",
+            "integration",
+            "medsynora",
+            "assurnova"
+        ]
+
+    };
+
+    const grid = document.querySelector(".projects-grid");
+
+    if (grid && PROJECT_ORDER[cfg]) {
+
+        const cards = {};
+
+        grid.querySelectorAll(".project-card").forEach(card => {
+            cards[card.dataset.project] = card;
+        });
+
+        PROJECT_ORDER[cfg].forEach(id => {
+            if (cards[id]) {
+                grid.appendChild(cards[id]);
+            }
+        });
+    }
+
+
 
 
 });
