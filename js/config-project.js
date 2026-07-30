@@ -1,24 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const cfg = sessionStorage.getItem("portfolioCfg");
+    const VALID_CFG = ["da", "dads", "dsii"];
 
-    if (!cfg) return;
+    const params = new URLSearchParams(window.location.search);
+    let cfg = params.get("cfg");
 
+    // Si le cfg est présent dans l'URL, on le sauvegarde
+    if (VALID_CFG.includes(cfg)) {
+        sessionStorage.setItem("portfolioCfg", cfg);
+    } else {
+        // Sinon on récupère celui de la session
+        cfg = sessionStorage.getItem("portfolioCfg") || "da";
+    }
 
-    document.querySelectorAll('a[href^="index.html"]')
-        .forEach(link => {
+    document.querySelectorAll("a[href]").forEach(link => {
 
-            const href = link.getAttribute("href");
+        const href = link.getAttribute("href");
+        if (!href) return;
 
-            const hash =
-                href.includes("#")
-                    ? href.substring(href.indexOf("#"))
-                    : "";
+        // Liens externes
+        if (
+            href.startsWith("http") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:")
+        ) {
+            return;
+        }
 
+        // Déjà un cfg
+        if (href.includes("cfg=")) return;
 
-            link.href =
-                `index.html?cfg=${cfg}${hash}`;
+        const [page, hash] = href.split("#");
 
-        });
+        // Ancres
+        if (href.startsWith("#")) {
+            link.href = `${window.location.pathname}?cfg=${cfg}${href}`;
+            return;
+        }
+
+        // Tous les .html
+        if (page.endsWith(".html")) {
+            link.href = `${page}?cfg=${cfg}${hash ? "#" + hash : ""}`;
+        }
+
+    });
 
 });

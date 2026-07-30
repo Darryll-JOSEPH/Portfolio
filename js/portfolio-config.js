@@ -136,51 +136,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-   Conserver cfg sur tous les liens internes
-===================================================== */
-
+    Conserver cfg sur tous les liens internes
+    ===================================================== */
     document.querySelectorAll("a[href]").forEach(link => {
 
         const href = link.getAttribute("href");
-
         if (!href) return;
 
-
-        // Ne pas modifier les liens externes
+        // Liens externes
         if (
             href.startsWith("http") ||
-            href.startsWith("mailto:")
-        ) {
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:")
+        ) return;
+
+        // Ne pas modifier si cfg déjà présent
+        if (href.includes("cfg=")) return;
+
+        // Séparer le hash éventuel
+        const [page, hash] = href.split("#");
+
+        // Ancres de la page courante
+        if (href.startsWith("#")) {
+            link.href = `${window.location.pathname}?cfg=${cfg}${href}`;
             return;
         }
 
-
-        // Liens vers une ancre
-        if (href.startsWith("#")) {
-
-            link.href =
-                `${window.location.pathname}?cfg=${cfg}${href}`;
-
-        }
-
-
-        // Retour index.html
-        else if (
-            href === "index.html" ||
-            href.startsWith("index.html#")
-        ) {
-
-            const hash = href.includes("#")
-                ? href.substring(href.indexOf("#"))
-                : "";
-
-
-            link.href =
-                `index.html?cfg=${cfg}${hash}`;
-
+        // Ajouter cfg à TOUS les fichiers html
+        if (page.endsWith(".html")) {
+            link.href = `${page}?cfg=${cfg}${hash ? "#" + hash : ""}`;
         }
 
     });
+
 
 
     /* =====================================================

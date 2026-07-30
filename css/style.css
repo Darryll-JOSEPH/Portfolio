@@ -1014,7 +1014,7 @@ body {
 /*      PROJECTS         */
 /* ===================== */
 .projects {
-  background-color: var(--bg-light);
+  background-color: white;
   padding: 80px 20px;
   text-align: center;
 }
