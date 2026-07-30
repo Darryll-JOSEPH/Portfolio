@@ -10,44 +10,44 @@ const PORTFOLIO_CONFIG = {
 
     da: {
         title:
-            "Darryll Genève Junior JOSEPH | Data Analyst | Portfolio",
+            "Darryll Genève Junior JOSEPH | Portfolio",
 
         description:
-            "Data Analyst spécialisé en Business Intelligence, Power BI, SQL et Python. Découvrez mes projets d'analyse de données, reporting et visualisation.",
+            "",
 
         keywords:
-            "Data Analyst, Power BI, SQL, Python, Tableau, Business Intelligence, Reporting, KPI, Data Visualization",
+            "",
 
         jobTitle:
-            "Data Analyst"
+            ""
     },
 
     dads: {
         title:
-            "Darryll Genève Junior JOSEPH | Data Analyst • Data Scientist | Portfolio",
+            "Darryll Genève Junior JOSEPH | Portfolio",
 
         description:
-            "Data Analyst et Data Scientist spécialisé en analyse de données, Machine Learning, Business Intelligence et modèles prédictifs.",
+            "",
 
         keywords:
-            "Data Analyst, Data Scientist, Machine Learning, Python, SQL, Power BI, Scikit-learn, XGBoost, Data Science",
+            "",
 
         jobTitle:
-            "Data Analyst | Data Scientist"
+            ""
     },
 
     dsii: {
         title:
-            "Darryll Genève Junior JOSEPH | Data Scientist • AI Engineer | Portfolio",
+            "Darryll Genève Junior JOSEPH | Portfolio",
 
         description:
-            "Data Scientist et AI Engineer spécialisé en Intelligence Artificielle Générative, LLM, RAG, Data Engineering et Cloud Azure.",
+            "",
 
         keywords:
-            "Data Scientist, AI Engineer, LLM, RAG, LangChain, Azure OpenAI, Databricks, PySpark, Machine Learning",
+            "",
 
         jobTitle:
-            "Data Scientist | AI Engineer"
+            ""
     }
 };
 
