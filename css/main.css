@@ -10021,3 +10021,8 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
     width: 100%;
     padding: 100px 0;
 }
+
+
+.hero .hero-text .tagline span {
+    color: #F2AE54;
+}
