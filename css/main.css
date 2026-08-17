@@ -2450,12 +2450,32 @@ p.no-results {
 
 .container_carr {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 150px;
     min-height: 100vh;
     background: write;
     background-size: cover;
     transform-style: preserve-3d;
+}
+
+.carr-counter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+    background: var(--muted);
+    padding: 6px 18px;
+    border-radius: 20px;
+}
+
+.carr-counter-sep {
+    opacity: 0.5;
+    font-weight: 400;
 }
 
 /* Carrousel */
@@ -4371,63 +4391,18 @@ timeline__slide-title {
     border-radius: 50%;
     object-fit: cover;
 
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 
-    /* L'état initial de la lueur et de la taille */
-    box-shadow:
-        0 0 10px rgba(255, 255, 255, 0.4),
-        0 0 25px var(--neon-color);
-
-    transform: scale(1);
-    /* Taille initiale */
-
-    transition: all 0.3s ease-in-out;
-    /* Pour l'effet de survol */
-
-    /* Animation de pulsation combinée */
-    animation: breathe-photo 4s ease-in-out infinite alternate;
-    /*
-      - 4s : Durée d'un cycle complet (inspiration + expiration)
-      - ease-in-out : Ralentit au début et à la fin de chaque phase pour un effet plus naturel
-      - infinite : L'animation se répète sans fin
-      - alternate : L'animation alterne entre l'état "from" et "to", puis "to" et "from"
-    */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 /* --------------------------------- */
 /* Effets d'interaction (recommandé) */
 /* --------------------------------- */
 .profile-photo:hover {
-    box-shadow:
-        0 0 20px rgba(255, 255, 255, 0.6),
-        0 0 50px var(--neon-color);
-    transform: scale(1.05);
-    /* Zoom légèrement plus grand au survol */
-    animation-play-state: paused;
-    /* Optionnel: Mettre en pause la respiration au survol */
-}
-
-/* --------------------------------- */
-/* Keyframes de l'animation "respirer" */
-/* --------------------------------- */
-@keyframes breathe-photo {
-    from {
-        /* L'état "expiré" ou "contracté" */
-        transform: scale(1);
-        /* Taille normale */
-        box-shadow:
-            0 0 10px rgba(255, 255, 255, 0.4),
-            0 0 25px var(--neon-color);
-    }
-
-    to {
-        /* L'état "inspiré" ou "dilaté" */
-        transform: scale(1.01);
-        /* Très légère augmentation de taille (1% plus grand) */
-        box-shadow:
-            0 0 15px rgba(255, 255, 255, 0.6),
-            0 0 35px var(--neon-color);
-    }
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
 }
 
 .project-card h3 {
@@ -8896,11 +8871,8 @@ from 220deg,
     height: 210px;
     border-radius: 50%;
     object-fit: cover;
-    /* border: 3px solid rgba(15, 23, 42, 0.9); */
-    border: 1px solid #FFAE42;
-    box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(255, 174, 66, 0.35);
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
 
@@ -9721,8 +9693,15 @@ mark {
 
 .profile-card-header i {
 
-    font-size: 28px;
-    color: var(--accent);
+    background: var(--muted);
+    color: var(--ink);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
 
 }
 
@@ -9758,7 +9737,7 @@ mark {
 
 .profile-card li i {
 
-    color: var(--accent);
+    color: var(--ink);
     font-size: 14px;
 
 }
@@ -9783,16 +9762,18 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
 
 .softskills-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 
 
 .softskills-chart {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
     position: relative;
+    flex-shrink: 0;
 }
 
 
@@ -9849,19 +9830,26 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
 
 
 
+.softskills-list {
+
+    width: 100%;
+
+}
+
+
 .softskills-list div {
 
     margin-bottom: 12px;
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: flex-start;
 
 }
 
 
 .softskills-list i {
 
-    color: var(--accent);
+    color: var(--ink);
 
 }
 

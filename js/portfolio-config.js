@@ -10,44 +10,44 @@ const PORTFOLIO_CONFIG = {
 
     da: {
         title:
-            "Darryll Genève Junior JOSEPH | Portfolio",
+            "Darryll JOSEPH | Data Analyst Portfolio",
 
         description:
-            "",
+            "Darryll JOSEPH, Data Analyst spécialisé en Business Intelligence, Power BI, SQL et visualisation de données. Découvrez mes projets et compétences.",
 
         keywords:
-            "",
+            "Data Analyst, Power BI, SQL, DAX, Business Intelligence, Data Visualization, Excel, Tableau de bord",
 
         jobTitle:
-            ""
+            "Data Analyst"
     },
 
     dads: {
         title:
-            "Darryll Genève Junior JOSEPH | Portfolio",
+            "Darryll JOSEPH | Data Analyst & Data Scientist Portfolio",
 
         description:
-            "",
+            "Darryll JOSEPH, Data Analyst & Data Scientist spécialisé en Machine Learning, analyse statistique et Business Intelligence.",
 
         keywords:
-            "",
+            "Data Analyst, Data Scientist, Machine Learning, Python, SQL, Power BI, Statistiques",
 
         jobTitle:
-            ""
+            "Data Analyst & Data Scientist"
     },
 
     dsii: {
         title:
-            "Darryll Genève Junior JOSEPH | Portfolio",
+            "Darryll JOSEPH | Data Scientist & AI Engineer Portfolio",
 
         description:
-            "",
+            "Darryll JOSEPH, Data Scientist & AI Engineer spécialisé en Machine Learning, IA Générative, LLM et architectures Data Cloud.",
 
         keywords:
-            "",
+            "Data Scientist, AI Engineer, Machine Learning, Deep Learning, IA Générative, LLM, RAG, Python, Cloud",
 
         jobTitle:
-            ""
+            "Data Scientist & AI Engineer"
     }
 };
 
@@ -88,21 +88,21 @@ const config = PORTFOLIO_CONFIG[cfg];
    Mise à jour SEO
 ===================================================== */
 
+function setIfNotEmpty(id, prop, value) {
+    if (!value) return; // ne jamais écraser une valeur existante avec du vide
+    const el = document.getElementById(id);
+    if (el) el[prop] = value;
+}
+
 document.title = config.title;
 
-document.getElementById("page-title").textContent = config.title;
-
-document.getElementById("meta-description").content = config.description;
-
-document.getElementById("meta-keywords").content = config.keywords;
-
-document.getElementById("og-title").content = config.title;
-
-document.getElementById("og-description").content = config.description;
-
-document.getElementById("twitter-title").content = config.title;
-
-document.getElementById("twitter-description").content = config.description;
+setIfNotEmpty("page-title", "textContent", config.title);
+setIfNotEmpty("meta-description", "content", config.description);
+setIfNotEmpty("meta-keywords", "content", config.keywords);
+setIfNotEmpty("og-title", "content", config.title);
+setIfNotEmpty("og-description", "content", config.description);
+setIfNotEmpty("twitter-title", "content", config.title);
+setIfNotEmpty("twitter-description", "content", config.description);
 
 
 /* =====================================================
@@ -181,11 +181,14 @@ document.addEventListener("DOMContentLoaded", () => {
         dsii: "assets/cv/cv_Darryll_JOSEPH_data_scientist_ia_engineer.pdf"
     };
 
-    const cvButton = document.getElementById("cv-download");
+    const cvButtons = [
+        document.getElementById("cv-download"),
+        document.getElementById("cv-download-footer")
+    ];
 
-    if (cvButton) {
-        cvButton.href = cvFiles[cfg];
-    }
+    cvButtons.forEach(btn => {
+        if (btn) btn.href = cvFiles[cfg];
+    });
 
     /* =====================================================
        Ordre des projets selon le profil
