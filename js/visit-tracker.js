@@ -162,13 +162,17 @@
         // by the Beacon spec, not something this code controls). EmailJS's API
         // responds with Access-Control-Allow-Origin: "*", which browsers reject
         // outright for a credentialed request - so sendBeacon can never reach
-        // this endpoint. A plain fetch() (default credentials:"same-origin")
-        // is accepted, so that's used here instead, even though it is not
-        // guaranteed to complete once the page is actually torn down.
+        // this endpoint. keepalive:true is what lets a fetch() finish even after
+        // the tab is actually closed (a plain fetch can get cut off mid-flight);
+        // credentials:"omit" is set explicitly so this keepalive request doesn't
+        // default to "include" the way sendBeacon does, which would hit the same
+        // wall against EmailJS's wildcard CORS response.
         fetch(EMAILJS_ENDPOINT, {
             method: "POST",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            keepalive: true,
+            credentials: "omit"
         }).catch(function () {});
     }
 
