@@ -13,6 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
         cfg = sessionStorage.getItem("portfolioCfg") || "da";
     }
 
+    // Affichage data-role (contenu spécifique au profil ciblé)
+    document.querySelectorAll("[data-role]").forEach(el => {
+        el.style.display = el.dataset.role === cfg ? "inline" : "none";
+    });
+
+    // CV téléchargeable selon le profil ciblé
+    const cvFiles = {
+        da: "assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf",
+        dads: "assets/cv/cv_Darryll_JOSEPH_data_analyst_data_scientist.pdf",
+        dsii: "assets/cv/cv_Darryll_JOSEPH_data_scientist_ia_engineer.pdf"
+    };
+    const cvButton = document.getElementById("cv-download-footer");
+    if (cvButton) cvButton.href = cvFiles[cfg];
+
     document.querySelectorAll("a[href]").forEach(link => {
 
         const href = link.getAttribute("href");

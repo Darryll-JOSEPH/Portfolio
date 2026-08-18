@@ -4391,7 +4391,7 @@ timeline__slide-title {
     border-radius: 50%;
     object-fit: cover;
 
-    border: 4px solid #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.35);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -4674,7 +4674,7 @@ timeline__slide-title {
     margin-top: 0;
 }
 
-.FFAE42 {
+.project-title-accent {
 
     color: #FFAE42;
     ;
@@ -8871,7 +8871,7 @@ from 220deg,
     height: 210px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.35);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
