@@ -22,6 +22,10 @@
         return map[path] || path;
     }
 
+    function pageEntry() {
+        return { label: pageLabel(), url: location.href };
+    }
+
     function getJSON(key, fallback) {
         try {
             var raw = sessionStorage.getItem(key);
@@ -44,13 +48,14 @@
         sessionStorage.setItem("pv_start", String(Date.now()));
         sessionStorage.setItem("pv_entry_page", pageLabel());
         sessionStorage.setItem("pv_referrer", document.referrer || "Direct / Accès direct");
-        setJSON("pv_pages", [pageLabel()]);
+        setJSON("pv_pages", [pageEntry()]);
         setJSON("pv_clicks", []);
         sessionStorage.removeItem("pv_sent");
     } else {
         var pages = getJSON("pv_pages", []);
-        var current = pageLabel();
-        if (pages[pages.length - 1] !== current) {
+        var current = pageEntry();
+        var last = pages[pages.length - 1];
+        if (!last || last.label !== current.label || last.url !== current.url) {
             pages.push(current);
             setJSON("pv_pages", pages);
         }
@@ -125,7 +130,7 @@
     function buildPayload() {
         var start = parseInt(sessionStorage.getItem("pv_start"), 10) || Date.now();
         var durationSec = Math.round((Date.now() - start) / 1000);
-        var pages = getJSON("pv_pages", [pageLabel()]);
+        var pages = getJSON("pv_pages", [pageEntry()]);
         var clicks = getJSON("pv_clicks", []);
         var ua = navigator.userAgent || "";
         var isMobile = /Mobi|Android|iPhone|iPad/i.test(ua);
@@ -138,7 +143,11 @@
                 entry_page: sessionStorage.getItem("pv_entry_page") || pageLabel(),
                 referrer: sessionStorage.getItem("pv_referrer") || "Direct / Accès direct",
                 duration: durationSec + " s",
-                pages_visited: pages.join(" -> "),
+                pages_visited: pages
+                    .map(function (p) {
+                        return p.label + " (" + p.url + ")";
+                    })
+                    .join(" -> "),
                 clicks: clicks.length ? clicks.join(" | ") : "Aucun clic important",
                 device: (isMobile ? "Mobile" : "Ordinateur") + " - " + window.innerWidth + "x" + window.innerHeight
             }
