@@ -83,17 +83,24 @@
         return null;
     }
 
+    function markInternalNav() {
+        sessionStorage.setItem("pv_internal_nav", "1");
+        // If this click just changes the page (or navigates to another portfolio
+        // page), the script either keeps running on the same document (in-page
+        // anchor - nothing reloads) or gets replaced entirely (full page load,
+        // which clears this flag itself on the next page - see above). This
+        // timeout only matters for the in-page-anchor case, so a later real
+        // exit on this same page isn't blocked forever.
+        setTimeout(function () {
+            sessionStorage.removeItem("pv_internal_nav");
+        }, 1500);
+    }
+
     document.addEventListener(
         "click",
         function (e) {
             var link = e.target && e.target.closest ? e.target.closest("a[href]") : null;
             if (!link) return;
-
-            var href = link.getAttribute("href") || "";
-            var isInternalPage = /\.html($|[?#])/i.test(href) && href.indexOf("http") !== 0;
-            if (isInternalPage) {
-                sessionStorage.setItem("pv_internal_nav", "1");
-            }
 
             var label = describeLink(link);
             if (label) {
@@ -103,6 +110,13 @@
                     setJSON("pv_clicks", clicks);
                 }
             }
+
+            // Any link click - internal (another portfolio page, an in-page
+            // anchor) or external (GitHub, certifications, mailto...) - is just
+            // tracked, never an immediate send. External links mostly open in a
+            // new tab anyway, so this tab stays open; the email only goes out
+            // once this tab is actually closed or sits idle for 5 minutes.
+            markInternalNav();
         },
         true
     );
@@ -163,4 +177,19 @@
     // switching to another tab or app while this one stays open in the background.
     window.addEventListener("pagehide", trySendVisitEmail);
     window.addEventListener("beforeunload", trySendVisitEmail);
+
+    // Also send if the page is left open without any interaction for 5 minutes,
+    // so a visit still gets reported even if the tab is never explicitly closed.
+    var INACTIVITY_MS = 5 * 60 * 1000;
+    var inactivityTimer = null;
+
+    function resetInactivityTimer() {
+        if (inactivityTimer) clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(trySendVisitEmail, INACTIVITY_MS);
+    }
+
+    ["click", "scroll", "mousemove", "keydown", "touchstart"].forEach(function (evt) {
+        window.addEventListener(evt, resetInactivityTimer, { passive: true });
+    });
+    resetInactivityTimer();
 })();
