@@ -139,12 +139,23 @@
         var durationSec = (Date.now() - start) / 1000;
         if (durationSec < MIN_DURATION_SECONDS) return;
 
+        // Lock immediately: visibilitychange and pagehide can both fire for the
+        // same exit, so this must not depend on the request's own outcome.
+        sessionStorage.setItem("pv_sent", "1");
+
         var payload = buildPayload();
-        var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
-        var ok = navigator.sendBeacon(EMAILJS_ENDPOINT, blob);
-        if (ok) {
-            sessionStorage.setItem("pv_sent", "1");
-        }
+        // navigator.sendBeacon() always sends with credentials:"include" (fixed
+        // by the Beacon spec, not something this code controls). EmailJS's API
+        // responds with Access-Control-Allow-Origin: "*", which browsers reject
+        // outright for a credentialed request - so sendBeacon can never reach
+        // this endpoint. A plain fetch() (default credentials:"same-origin")
+        // is accepted, so that's used here instead, even though it is not
+        // guaranteed to complete once the page is actually torn down.
+        fetch(EMAILJS_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(payload)
+        }).catch(function () {});
     }
 
     document.addEventListener("visibilitychange", function () {
