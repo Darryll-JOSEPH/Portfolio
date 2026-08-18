@@ -158,10 +158,9 @@
         }).catch(function () {});
     }
 
-    document.addEventListener("visibilitychange", function () {
-        if (document.visibilityState === "hidden") {
-            trySendVisitEmail();
-        }
-    });
+    // pagehide/beforeunload only fire on a real exit (closing the tab/browser,
+    // or navigating away) - unlike visibilitychange, which also fires just from
+    // switching to another tab or app while this one stays open in the background.
     window.addEventListener("pagehide", trySendVisitEmail);
+    window.addEventListener("beforeunload", trySendVisitEmail);
 })();
