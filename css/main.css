@@ -10090,6 +10090,71 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
     }
 }
 
+/* ===================== */
+/* MOBILE ONLY — Pages projets (Assurnova, EuroMoneyAI, MedSynora,   */
+/* Medibot, Data Intégration) : le logo casse aussi sur index.html   */
+/* car c'est le meme markup/CSS partage, donc ce correctif s'applique */
+/* aux 6 pages. Desktop inchange. */
+/* ===================== */
+@media (max-width: 768px) {
+
+    /* --- Logo du header : 120px fixe, jamais reduit sur mobile,     */
+    /* deborde de la barre d'en-tete (72px) et chevauche le badge     */
+    /* "Terminé" affiche juste en dessous. --- */
+    .header-logo a {
+        width: 45px !important;
+    }
+
+    /* --- Grilles 2 colonnes / auto-fit avec minmax(300px,...) :     */
+    /* un badge tech en white-space:nowrap peut forcer une colonne    */
+    /* plus large que l'ecran (minmax garde un minimum "auto" implicite */
+    /* avec 1fr seul) - minmax(0,1fr) supprime ce plancher. --- */
+    .content-grid,
+    .problem-solution-grid,
+    .features-grid,
+    .results-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .feature-tech {
+        white-space: normal !important;
+    }
+
+    /* --- Tableaux (Medibot, Data Intégration) : contenu (code,      */
+    /* descriptions) trop large pour l'ecran, deborde sans wrapper -  */
+    /* rendu scrollable horizontalement au lieu de deborder la page. --- */
+    .api-table,
+    .modules-table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* --- Blocs de code (prettify.js) : lignes longues non-wrappées   */
+    /* poussent toute la page en debordement horizontal (et decalent   */
+    /* au passage les boutons position:fixed comme back-to-top). --- */
+    pre.prettyprint {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Inline <code> in step lists (ex: commandes shell) : nowrap de
+       base (ligne ~291) pousse aussi la page en debordement - on
+       laisse ces commandes courtes passer à la ligne. Les blocs de
+       code ci-dessus (pre.prettyprint) gardent leur format d'origine. */
+    code {
+        white-space: normal !important;
+        word-break: break-word;
+    }
+
+    pre.prettyprint code {
+        white-space: pre !important;
+        word-break: normal;
+    }
+}
+
 
 .hero .hero-text .tagline span {
     color: #F2AE54;
