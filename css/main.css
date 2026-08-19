@@ -4391,7 +4391,7 @@ timeline__slide-title {
     border-radius: 50%;
     object-fit: cover;
 
-    border: 4px solid #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.35);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -4674,7 +4674,7 @@ timeline__slide-title {
     margin-top: 0;
 }
 
-.FFAE42 {
+.project-title-accent {
 
     color: #FFAE42;
     ;
@@ -8871,7 +8871,7 @@ from 220deg,
     height: 210px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.35);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     z-index: 1;
 }
@@ -10008,6 +10008,151 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
     background: #fff !important;
     width: 100%;
     padding: 100px 0;
+}
+
+/* ===================== */
+/* MOBILE ONLY — Certifications, Parcours, Contact */
+/* Desktop layout/CSS above is untouched; these rules only apply <=768px. */
+/* ===================== */
+@media (max-width: 768px) {
+
+    /* --- Certifications / diplômes : carrousel 3D -> liste empilée --- */
+    .container_carr {
+        display: block;
+        min-height: auto;
+        gap: 0;
+    }
+
+    .box {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        transform: none !important;
+    }
+
+    .box span {
+        position: static;
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+        width: 100%;
+    }
+
+    .box span img {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        margin: 0 auto 8px;
+        display: block;
+    }
+
+    .btns,
+    .carr-counter {
+        display: none !important;
+    }
+
+    /* --- Parcours : stepper cliquable -> toutes les étapes affichées --- */
+    .timeline__stepper {
+        display: none !important;
+    }
+
+    .timeline__slides {
+        position: static;
+        height: auto !important;
+        width: 100%;
+    }
+
+    .timeline__slides:before {
+        display: none;
+    }
+
+    .timeline__slide {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transition: none !important;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline__slide:last-child {
+        border-bottom: none;
+    }
+
+    /* --- Me Contacter : la colonne 2 (ligne ~6080) écrase la règle
+       mobile existante (ligne ~4479) car elle vient après dans le
+       fichier - on la réaffirme ici pour de bon. --- */
+    .contact-content {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===================== */
+/* MOBILE ONLY — Pages projets (Assurnova, EuroMoneyAI, MedSynora,   */
+/* Medibot, Data Intégration) : le logo casse aussi sur index.html   */
+/* car c'est le meme markup/CSS partage, donc ce correctif s'applique */
+/* aux 6 pages. Desktop inchange. */
+/* ===================== */
+@media (max-width: 768px) {
+
+    /* --- Logo du header : 120px fixe, jamais reduit sur mobile,     */
+    /* deborde de la barre d'en-tete (72px) et chevauche le badge     */
+    /* "Terminé" affiche juste en dessous. --- */
+    .header-logo a {
+        width: 45px !important;
+    }
+
+    /* --- Grilles 2 colonnes / auto-fit avec minmax(300px,...) :     */
+    /* un badge tech en white-space:nowrap peut forcer une colonne    */
+    /* plus large que l'ecran (minmax garde un minimum "auto" implicite */
+    /* avec 1fr seul) - minmax(0,1fr) supprime ce plancher. --- */
+    .content-grid,
+    .problem-solution-grid,
+    .features-grid,
+    .results-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .feature-tech {
+        white-space: normal !important;
+    }
+
+    /* --- Tableaux (Medibot, Data Intégration) : contenu (code,      */
+    /* descriptions) trop large pour l'ecran, deborde sans wrapper -  */
+    /* rendu scrollable horizontalement au lieu de deborder la page. --- */
+    .api-table,
+    .modules-table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* --- Blocs de code (prettify.js) : lignes longues non-wrappées   */
+    /* poussent toute la page en debordement horizontal (et decalent   */
+    /* au passage les boutons position:fixed comme back-to-top). --- */
+    pre.prettyprint {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Inline <code> in step lists (ex: commandes shell) : nowrap de
+       base (ligne ~291) pousse aussi la page en debordement - on
+       laisse ces commandes courtes passer à la ligne. Les blocs de
+       code ci-dessus (pre.prettyprint) gardent leur format d'origine. */
+    code {
+        white-space: normal !important;
+        word-break: break-word;
+    }
+
+    pre.prettyprint code {
+        white-space: pre !important;
+        word-break: normal;
+    }
 }
 
 

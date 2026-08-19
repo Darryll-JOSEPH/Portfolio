@@ -255,20 +255,37 @@ function openLink(event) {
      * ------------------------------------------------------ */
     var ssWaypoints = function () {
 
-        var sections = $(".target-section"),
-            navigation_links = $(".header-nav li a");
+        var navigation_links = $(".header-nav li a");
 
-        sections.waypoint({
+        // Les liens de nav pointent vers "index.html?cfg=...#section" (pour
+        // conserver le profil choisi) et non "#section" seul, donc on ne peut
+        // pas les retrouver par un simple attribut href="#id" : on passe par
+        // la propriete .hash (fournie par le navigateur), fiable quel que
+        // soit le prefixe. On construit aussi la liste des sections a partir
+        // de ces memes liens (plutot que .target-section) pour couvrir tout
+        // le menu, y compris "A propos" et "Contact".
+        var sections = navigation_links
+            .map(function () { return this.hash ? this.hash.slice(1) : null; })
+            .get()
+            .filter(function (id, index, arr) { return id && arr.indexOf(id) === index; })
+            .map(function (id) { return document.getElementById(id); })
+            .filter(function (el) { return el; });
+
+        if (!sections.length) return;
+
+        $(sections).waypoint({
 
             handler: function (direction) {
 
-                var active_section;
+                var active_section = this.element;
 
-                active_section = $('section#' + this.element.id);
+                if (direction === "up") {
+                    var idx = sections.indexOf(this.element);
+                    if (sections[idx - 1]) active_section = sections[idx - 1];
+                }
 
-                if (direction === "up") active_section = active_section.prevAll(".target-section").first();
-
-                var active_link = $('.header-nav li a[href="#' + active_section.attr("id") + '"]');
+                var id = active_section.id;
+                var active_link = navigation_links.filter(function () { return this.hash === "#" + id; });
 
                 navigation_links.parent().removeClass("current");
                 active_link.parent().addClass("current");
