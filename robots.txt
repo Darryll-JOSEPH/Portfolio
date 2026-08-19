@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://darryll-joseph.github.io/Portfolio/sitemap.xml

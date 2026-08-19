@@ -391,10 +391,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Suivi des téléchargements de CV
-  const cvDownloadLinks = document.querySelectorAll('a[href*=""]');
+  const cvDownloadLinks = document.querySelectorAll('a[href*="Eliesse.pdf"]');
   cvDownloadLinks.forEach(link => {
     link.addEventListener('click', function () {
-      trackEvent('cv_download', 'engagement', 'download', 'CV', 1);
+      trackEvent('cv_download', 'engagement', 'download', 'CV_Eliesse_Laslah', 1);
     });
   });
 
