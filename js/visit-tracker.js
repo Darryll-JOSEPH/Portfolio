@@ -6,24 +6,37 @@
     var TEMPLATE_ID = "template_q43b26r";
     var PUBLIC_KEY = "kKTydkU_BYi7-oXJE";
     var MIN_DURATION_SECONDS = 5;
-    var MAX_CLICKS = 15;
+    var MAX_CLICKS = 25;
+
+    var PAGE_LABELS = {
+        "index.html": "Accueil",
+        "": "Accueil",
+        "Assurnova.html": "Projet - Assurnova",
+        "EuroMoneyAI.html": "Projet - EuroMoneyAI",
+        "Medsynora-azure.html": "Projet - MedSynora",
+        "Medibot.html": "Projet - Medibot",
+        "data-intégration.html": "Projet - Data Intégration"
+    };
+
+    function labelForPath(path) {
+        return PAGE_LABELS[path] || path;
+    }
 
     function pageLabel() {
-        var path = location.pathname.split("/").pop() || "index.html";
-        var map = {
-            "index.html": "Accueil",
-            "": "Accueil",
-            "Assurnova.html": "Projet - Assurnova",
-            "EuroMoneyAI.html": "Projet - EuroMoneyAI",
-            "Medsynora-azure.html": "Projet - MedSynora",
-            "Medibot.html": "Projet - Medibot",
-            "data-intégration.html": "Projet - Data Intégration"
-        };
-        return map[path] || path;
+        return labelForPath(location.pathname.split("/").pop() || "index.html");
     }
 
     function pageEntry() {
         return { label: pageLabel(), url: location.href };
+    }
+
+    function pushPageEntry(entry) {
+        var pages = getJSON("pv_pages", []);
+        var last = pages[pages.length - 1];
+        if (!last || last.label !== entry.label || last.url !== entry.url) {
+            pages.push(entry);
+            setJSON("pv_pages", pages);
+        }
     }
 
     function getJSON(key, fallback) {
@@ -52,21 +65,35 @@
         setJSON("pv_clicks", []);
         sessionStorage.removeItem("pv_sent");
     } else {
-        var pages = getJSON("pv_pages", []);
-        var current = pageEntry();
-        var last = pages[pages.length - 1];
-        if (!last || last.label !== current.label || last.url !== current.url) {
-            pages.push(current);
-            setJSON("pv_pages", pages);
-        }
+        pushPageEntry(pageEntry());
     }
 
     // A page-to-page click was flagged on the previous page; it has done its job
     // (skipping that page's exit-send), so clear it now that the new page has loaded.
     sessionStorage.removeItem("pv_internal_nav");
 
-    // --- Track clicks on important links ---
-    function describeLink(el) {
+    // --- Track every meaningful click: links, buttons, images ---
+    function truncate(text, max) {
+        text = (text || "").trim().replace(/\s+/g, " ");
+        if (!text) return "";
+        return text.length > max ? text.slice(0, max) + "…" : text;
+    }
+
+    // Many elements hold both a [data-lang="fr"] and [data-lang="en"] child,
+    // toggled via display:none - textContent would otherwise concatenate both.
+    function visibleText(el) {
+        if (!el) return "";
+        var langNodes = el.querySelectorAll ? el.querySelectorAll("[data-lang]") : [];
+        for (var i = 0; i < langNodes.length; i++) {
+            if (langNodes[i].offsetParent !== null) return langNodes[i].textContent.trim();
+        }
+        // Trimmed here (not just in truncate()) so a whitespace-only result -
+        // common with icon-only buttons/links - is falsy and lets the "||"
+        // fallback chain (aria-label, title, ...) in the callers take over.
+        return (el.textContent || "").trim();
+    }
+
+    function describeLinkClick(el) {
         var href = el.getAttribute("href") || "";
 
         if (el.id === "cv-download" || el.id === "cv-download-footer" || /\.pdf($|\?)/i.test(href)) {
@@ -78,13 +105,44 @@
         if (href.indexOf("mailto:") === 0) {
             return "Clic contact (email)";
         }
-        if (href.indexOf("credly.com") !== -1) {
-            return "Certification consultée";
+        if (href.indexOf("linkedin.com") !== -1) {
+            return "Lien LinkedIn";
         }
         var card = el.closest(".project-card");
         if (card) {
             return "Projet ouvert : " + (card.getAttribute("data-project") || href);
         }
+        // Generic fallback: the link's own visible text - covers certification
+        // links, formation/school links, nav links, "Tous les projets", etc.
+        // Icon-only links (back-to-top, socials) have no text, so fall back to
+        // aria-label/title before the raw href.
+        var text = truncate(visibleText(el) || el.getAttribute("aria-label") || el.title, 60);
+        return "Lien cliqué : " + (text || truncate(href, 60));
+    }
+
+    function describeButtonClick(el) {
+        var text = truncate(visibleText(el) || el.value || el.getAttribute("aria-label") || el.title, 60);
+        return "Bouton cliqué : " + (text || truncate(el.className, 40) || "sans libellé");
+    }
+
+    function describeImageClick(el) {
+        var alt = truncate(el.getAttribute("alt"), 60);
+        var src = (el.getAttribute("src") || "").split("/").pop();
+        return "Image cliquée : " + (alt || src || "sans description");
+    }
+
+    function describeClick(target) {
+        if (!target || !target.closest) return null;
+
+        var link = target.closest("a[href]");
+        if (link) return describeLinkClick(link);
+
+        var btn = target.closest("button, [type='submit'], [type='button'], [role='button'], .btn");
+        if (btn) return describeButtonClick(btn);
+
+        var img = target.closest("img");
+        if (img) return describeImageClick(img);
+
         return null;
     }
 
@@ -104,10 +162,7 @@
     document.addEventListener(
         "click",
         function (e) {
-            var link = e.target && e.target.closest ? e.target.closest("a[href]") : null;
-            if (!link) return;
-
-            var label = describeLink(link);
+            var label = describeClick(e.target);
             if (label) {
                 var clicks = getJSON("pv_clicks", []);
                 if (clicks.length < MAX_CLICKS) {
@@ -115,6 +170,25 @@
                     setJSON("pv_clicks", clicks);
                 }
             }
+
+            var link = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+            if (!link) return;
+
+            // Record the destination page right away, from the click itself,
+            // instead of relying only on that page's own script to self-report
+            // on load: a very fast visit (click in, then back/close almost
+            // immediately) can leave the destination page without enough time
+            // to run its own tracking script before the user is already gone.
+            try {
+                var url = new URL(link.getAttribute("href"), location.href);
+                var targetPath = url.pathname.split("/").pop() || "index.html";
+                if (url.origin === location.origin && PAGE_LABELS.hasOwnProperty(targetPath)) {
+                    var currentPath = location.pathname.split("/").pop() || "index.html";
+                    if (targetPath !== currentPath) {
+                        pushPageEntry({ label: labelForPath(targetPath), url: url.href });
+                    }
+                }
+            } catch (e) {}
 
             // Any link click - internal (another portfolio page, an in-page
             // anchor) or external (GitHub, certifications, mailto...) - is just
