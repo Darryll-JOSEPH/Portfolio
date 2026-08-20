@@ -265,9 +265,9 @@
     window.addEventListener("pagehide", trySendVisitEmail);
     window.addEventListener("beforeunload", trySendVisitEmail);
 
-    // Also send if the page is left open without any interaction for 5 minutes,
+    // Also send if the page is left open without any interaction for 10 minutes,
     // so a visit still gets reported even if the tab is never explicitly closed.
-    var INACTIVITY_MS = 5 * 60 * 1000;
+    var INACTIVITY_MS = 10 * 60 * 1000;
     var inactivityTimer = null;
 
     function resetInactivityTimer() {
