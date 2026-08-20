@@ -7382,6 +7382,18 @@ html.no-csstransitions .home-content__main2 {
     text-align: center;
 }
 
+/* Bouton d'action dans le hero (ex: "Voir le rapport PDF") : sans
+   ceci, .nav-btn hérite du font-size:6rem pose sur .home-content2
+   (pense pour le h1) et s'affiche geant et non centre. */
+.project-report-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.project-report-link .nav-btn {
+    font-size: 1.3rem;
+}
+
 .status-badge {
     display: inline-flex;
     align-items: center;

@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Data Analyst
         da: [
             "assurnova",
+            "lumio",
             "medsynora",
             "euromoney",
             "medibot",
@@ -208,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Data Analyst / Data Scientist
         dads: [
             "euromoney",
+            "lumio",
             "assurnova",
             "medibot",
             "medsynora",
@@ -220,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "euromoney",
             "integration",
             "medsynora",
+            "lumio",
             "assurnova"
         ]
 

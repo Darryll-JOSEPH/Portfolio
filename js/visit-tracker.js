@@ -15,7 +15,8 @@
         "EuroMoneyAI.html": "Projet - EuroMoneyAI",
         "Medsynora-azure.html": "Projet - MedSynora",
         "Medibot.html": "Projet - Medibot",
-        "data-intégration.html": "Projet - Data Intégration"
+        "data-intégration.html": "Projet - Data Intégration",
+        "Lumio.html": "Projet - Lumio"
     };
 
     function labelForPath(path) {

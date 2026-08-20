@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKFCXYNH8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKFCXYNH8');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "y4a5lxhz87");
+  </script>
+
+  <!--- basic page needs
+    ================================================== -->
+  <meta charset="utf-8">
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <title>Lumio – Analyse de la Satisfaction Client (NPS & CSAT) | Darryll JOSEPH</title>
+  <meta name="description"
+    content="Projet Lumio : analyse de la satisfaction client (NPS & CSAT) pour une enseigne retail omnicanale, impact de la refonte de l'app mobile, segmentation par canal, rapport PDF automatisé. Python, pandas, Matplotlib, Seaborn, ReportLab.">
+  <meta name="keywords"
+    content="Data Analyst, NPS, CSAT, satisfaction client, customer satisfaction, retail, omnicanal, Python, pandas, NumPy, Jupyter, Matplotlib, Seaborn, Google Forms, Google Sheets, ReportLab, analyse de texte, reporting">
+  <meta name="author" content="Darryll JOSEPH">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="og:title" content="Lumio – Analyse de la Satisfaction Client (NPS & CSAT) | Darryll JOSEPH">
+  <meta property="og:description"
+    content="Projet Lumio : analyse de la satisfaction client (NPS & CSAT) pour une enseigne retail omnicanale, impact de la refonte de l'app mobile, segmentation par canal, rapport PDF automatisé. Python, pandas, Matplotlib, Seaborn, ReportLab.">
+  <meta property="og:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="twitter:title" content="Lumio – Analyse de la Satisfaction Client (NPS & CSAT) | Darryll JOSEPH">
+  <meta property="twitter:description"
+    content="Projet Lumio : analyse de la satisfaction client (NPS & CSAT) pour une enseigne retail omnicanale, impact de la refonte de l'app mobile, segmentation par canal, rapport PDF automatisé. Python, pandas, Matplotlib, Seaborn, ReportLab.">
+  <meta property="twitter:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Language Switcher Styles -->
+  <style>
+    /* En mode FR : masquer l'anglais */
+    .lang-fr [data-lang="en"] {
+      display: none !important;
+    }
+
+    .lang-en [data-lang="fr"] {
+      display: none !important;
+    }
+
+
+    /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      color: white;
+    }
+
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid #FFAE42;
+      color: white;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      height: auto;
+    }
+
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+    }
+
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+      border: 2px solid #FFAE42;
+      color: white;
+
+
+    }
+
+    .lang-select option {
+      color: black;
+      /* Texte visible dans la liste */
+      background-color: white;
+      /* Fond blanc par défaut */
+    }
+
+    /* Option survolée dans certains navigateurs */
+    .lang-select option:hover,
+    .lang-select option:focus,
+    .lang-select option:checked {
+      background-color: #e5e5e5;
+      /* Gris clair */
+      color: black;
+      /* Texte bien lisible */
+    }
+
+    @media (max-width: 768px) {
+      .language-switcher {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
+  <script src="js/pace.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/visit-tracker.js"></script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Analyst spécialisé en satisfaction client, Business Intelligence et analyse de données",
+    "url": "https://darryll-joseph.github.io/Portfolio/",
+    "image": "https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll-joseph",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Power BI",
+      "Python",
+      "SQL",
+      "Data Analysis",
+      "Business Intelligence",
+      "Power Automate",
+      "Dashboard Development"
+    ]
+  }
+  </script>
+
+  <!-- favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+  <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+  <!-- header
+    ================================================== -->
+  <header class="s-header">
+
+    <div class="header-logo">
+      <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+    </div>
+
+    <nav class="header-nav-wrap">
+      <ul class="header-nav">
+        <li>
+          <a class="smoothscroll" href="index.html" title="Accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en">Home</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="smoothscroll" href="index.html#projects" title="Projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en">Projects</span>
+          </a>
+        </li>
+        <li>
+
+          <select id="languageSelect" class="smoothscroll lang-select">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+
+        </li>
+      </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+  </header> <!-- end s-header -->
+
+
+  <!-- home
+   ================================================== -->
+  <section id="home" class="s-home page-hero target-section"
+    style="background-image:url('images/IMG_0596.jpeg'); background-repeat:no-repeat; background-position:center center; background-size:cover; background-color:#111;">
+
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+
+    <div class="home-content2 decal">
+      <div class="project-status">
+        <span class="status-badge completed">
+          <i class="fas fa-check-circle"></i>
+          <span data-lang="fr">Terminé</span>
+          <span data-lang="en">Completed</span>
+        </span>
+      </div>
+
+      <div class="row home-content__main2">
+        <div class="container">
+          <div class="project-header">
+
+            <h1>
+              <span class="project-title-accent" data-lang="fr">Lumio – Analyse de la Satisfaction Client (NPS &
+                CSAT)</span>
+              <span class="project-title-accent" data-lang="en">Lumio – Customer Satisfaction Analysis (NPS &
+                CSAT)</span>
+            </h1>
+            <p class="project-subtitle">
+              <span data-lang="fr">Enquête de satisfaction pour une enseigne retail omnicanale : impact de la
+                refonte de l’app et de la livraison express sur le NPS et le CSAT</span>
+              <span data-lang="en">Satisfaction survey for an omnichannel retail brand: impact of the app redesign
+                and express delivery on NPS and CSAT</span>
+            </p>
+
+            <div class="project-tech-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Pandas</span>
+              <span class="tech-badge">NumPy</span>
+              <span class="tech-badge">Jupyter</span>
+              <span class="tech-badge">Matplotlib</span>
+              <span class="tech-badge">Seaborn</span>
+              <span class="tech-badge">Google Forms</span>
+              <span class="tech-badge">Google Sheets</span>
+              <span class="tech-badge">ReportLab</span>
+            </div>
+
+            <p class="project-report-link">
+              <a href="assets/reports/rapport_satisfaction_lumio.pdf" target="_blank" class="nav-btn primary">
+                <i class="fas fa-file-pdf"></i>
+                <span data-lang="fr">Voir le rapport PDF</span>
+                <span data-lang="en">View PDF Report</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- end s-home -->
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i>
+        <span data-lang="fr">Vue d'ensemble</span>
+        <span data-lang="en">Project Overview</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Pour <strong>Lumio</strong>, enseigne retail omnicanale (site web, application mobile, ~15 magasins
+              physiques) spécialisée en équipement maison, j’ai analysé une enquête de satisfaction de <strong>986
+                réponses</strong> pour mesurer l’impact de la refonte de l’application mobile et du nouveau service
+              de livraison express, et livré un <strong>rapport PDF</strong> avec des recommandations actionnables
+              pour les équipes produit, CX et logistique.
+            </span>
+            <span data-lang="en">
+              For <strong>Lumio</strong>, an omnichannel retail brand (website, mobile app, ~15 physical stores)
+              specialised in home & lifestyle equipment, I analysed a satisfaction survey of <strong>986
+                responses</strong> to measure the impact of the mobile app redesign and the new express delivery
+              service, and delivered a <strong>PDF report</strong> with actionable recommendations for the product,
+              CX and logistics teams.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr"><strong>NPS (Net Promoter Score)</strong> et <strong>CSAT (Customer
+                  Satisfaction Score)</strong> calculés globalement et par segment (canal, tranche d’âge, catégorie
+                de produit)</span>
+              <span data-lang="en"><strong>NPS (Net Promoter Score)</strong> and <strong>CSAT (Customer Satisfaction
+                  Score)</strong> computed globally and by segment (channel, age group, product category)</span>
+            </li>
+            <li><span data-lang="fr">Suivi mensuel de l’évolution du NPS par canal, avant/après la refonte de
+                l’application</span>
+              <span data-lang="en">Monthly NPS trend by channel, before/after the app redesign</span>
+            </li>
+            <br>
+            <li><span data-lang="fr">Analyse des verbatims libres : mots-clés, thèmes et nuages de mots par
+                catégorie de répondants (promoteurs / passifs / détracteurs)</span>
+              <span data-lang="en">Open-text verbatim analysis: keywords, themes and word clouds by respondent
+                category (promoters / passives / detractors)</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/Lumio/Evolution_NPS_par_canal.png"
+            alt="Lumio – Évolution mensuelle du NPS par canal" loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Évolution mensuelle du NPS par canal – avant/après la refonte de l’app</span>
+            <span data-lang="en">Monthly NPS trend by channel – before/after the app redesign</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLÈME & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>
+        <span data-lang="fr">Problématique & Solution</span>
+        <span data-lang="en">Business Challenge & Solution</span>
+      </h2>
+
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="fr">Problématique</span>
+            <span data-lang="en">Challenge</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">La direction veut savoir si la refonte de l’app et la livraison express ont
+                réellement amélioré la satisfaction client</span><span data-lang="en">Leadership needs to know
+                whether the app redesign and express delivery actually improved customer satisfaction</span></li>
+            <li><span data-lang="fr">Identifier les points de friction restants, par canal d’achat et par
+                segment</span><span data-lang="en">Identify the remaining friction points, by purchase channel and
+                segment</span></li>
+            <li><span data-lang="fr">Transformer des centaines de réponses libres en recommandations concrètes et
+                priorisées</span><span data-lang="en">Turn hundreds of open-text responses into concrete, prioritised
+                recommendations</span></li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i>
+            <span data-lang="fr">Solution Déployée</span>
+            <span data-lang="en">Deployed Solution</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Pipeline Python (pandas) : nettoyage, calcul des KPIs NPS/CSAT globaux et par
+                segment</span><span data-lang="en">Python pipeline (pandas): cleaning, global and per-segment
+                NPS/CSAT calculation</span></li>
+            <li><span data-lang="fr">Suivi temporel du canal application mobile pour isoler l’effet de la
+                refonte</span><span data-lang="en">Time-tracking of the mobile app channel to isolate the redesign’s
+                effect</span></li>
+            <li><span data-lang="fr">Rapport PDF automatisé (ReportLab) avec recommandations et destinataire pour
+                chacune</span><span data-lang="en">Automated PDF report (ReportLab) with recommendations and an
+                owner for each</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FONCTIONNALITÉS CLÉS ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-cogs"></i>
+        <span data-lang="fr">Fonctionnalités Clés</span>
+        <span data-lang="en">Key Features</span>
+      </h2>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/Lumio/NPS_par_canal.png" alt="Lumio – NPS par canal d’achat" loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">KPIs NPS & CSAT par Segment</span>
+            <span data-lang="en">NPS & CSAT KPIs by Segment</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">NPS = % promoteurs (note 9-10) − % détracteurs (note 0-6). CSAT en méthode
+                top-2-box (satisfaction globale ≥ 4/5). Écart massif entre canaux :</span>
+              <span data-lang="en">NPS = % promoters (score 9-10) − % detractors (score 0-6). CSAT with the
+                top-2-box method (overall satisfaction ≥ 4/5). A massive gap between channels:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr"><strong>Magasin physique :</strong> NPS +42, CSAT 97%</span>
+                <span data-lang="en"><strong>Physical store:</strong> NPS +42, CSAT 97%</span></li>
+              <li><span data-lang="fr"><strong>Site web :</strong> NPS +2, CSAT 86%</span>
+                <span data-lang="en"><strong>Website:</strong> NPS +2, CSAT 86%</span></li>
+              <li><span data-lang="fr"><strong>Application mobile :</strong> NPS −72, CSAT 24,5%</span>
+                <span data-lang="en"><strong>Mobile app:</strong> NPS −72, CSAT 24.5%</span></li>
+            </ul>
+            <p class="model-arch"><strong>Google Sheets → pandas → NPS/CSAT (global + segments)</strong></p>
+          </div>
+
+          <div class="feature-tech">Pandas</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/Lumio/Impact_refonte_app.png" alt="Lumio – Impact de la refonte de l’application mobile"
+              loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">Impact de la Refonte de l’App</span>
+            <span data-lang="en">App Redesign Impact</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">Comparaison avant/après refonte sur le canal application, avec un suivi mensuel
+                pour isoler la tendance réelle :</span>
+              <span data-lang="en">Before/after comparison on the app channel, with monthly tracking to isolate the
+                real trend:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr"><strong>Avant refonte :</strong> NPS −94,7, CSAT 8,4%</span>
+                <span data-lang="en"><strong>Before redesign:</strong> NPS −94.7, CSAT 8.4%</span></li>
+              <li><span data-lang="fr"><strong>Après refonte (moyenne période) :</strong> NPS −45,5, CSAT 43%</span>
+                <span data-lang="en"><strong>After redesign (period average):</strong> NPS −45.5, CSAT 43%</span>
+              </li>
+              <li><span data-lang="fr"><strong>Tendance mensuelle :</strong> retour en territoire NPS positif en fin
+                  de suivi</span>
+                <span data-lang="en"><strong>Monthly trend:</strong> NPS turns positive again by the end of the
+                  tracking window</span></li>
+            </ul>
+            <p class="model-arch">
+              <span data-lang="fr"><strong>Suivi mensuel + marqueur de refonte sur la série temporelle</strong></span>
+              <span data-lang="en"><strong>Monthly tracking + redesign marker on the time series</strong></span>
+            </p>
+          </div>
+
+          <div class="feature-tech">Matplotlib</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/Lumio/Wordcloud_promoteurs_detracteurs.png"
+              alt="Lumio – Nuages de mots promoteurs vs détracteurs" loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">Analyse des Verbatims</span>
+            <span data-lang="en">Verbatim Analysis</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">Extraction des mots-clés et thèmes des réponses libres, par catégorie de
+                répondant :</span>
+              <span data-lang="en">Keyword and theme extraction from open-text responses, by respondent
+                category:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr"><strong>Promoteurs :</strong> « livraison », « rapide », « express » reviennent
+                  le plus souvent</span>
+                <span data-lang="en"><strong>Promoters:</strong> "delivery", "fast", "express" come up most
+                  often</span></li>
+              <li><span data-lang="fr"><strong>Détracteurs :</strong> « application », « bugs », « plante »,
+                  « frustrant » dominent</span>
+                <span data-lang="en"><strong>Detractors:</strong> "app", "bugs", "crashes", "frustrating"
+                  dominate</span></li>
+              <li><span data-lang="fr"><strong>Signal clair :</strong> fiabiliser l’app en priorité, capitaliser sur
+                  la livraison</span>
+                <span data-lang="en"><strong>Clear signal:</strong> prioritise app reliability, capitalise on
+                  delivery</span></li>
+            </ul>
+          </div>
+
+          <div class="feature-tech">Seaborn</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i>
+        <span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
+
+      <div class="tech-architecture">
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Collecte</span><span data-lang="en">Collection</span></h3>
+          <div class="tech-items">
+            <div class="tech-item">
+              <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill="#7248B9"
+                  d="M14.727 6h6l-6-6v6zm0 .727H14V0H4.91c-.905 0-1.637.732-1.637 1.636v20.728c0 .904.732 1.636 1.636 1.636h14.182c.904 0 1.636-.732 1.636-1.636V6.727h-6zM7.91 17.318a.819.819 0 1 1 .001-1.638.819.819 0 0 1 0 1.638zm0-3.273a.819.819 0 1 1 .001-1.637.819.819 0 0 1 0 1.637zm0-3.272a.819.819 0 1 1 .001-1.638.819.819 0 0 1 0 1.638zm9 6.409h-6.818v-1.364h6.818v1.364zm0-3.273h-6.818v-1.364h6.818v1.364zm0-3.273h-6.818V9.273h6.818v1.363z" />
+              </svg>
+              <span>Google Forms</span>
+            </div>
+            <div class="tech-item">
+              <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill="#34A853"
+                  d="M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z" />
+              </svg>
+              <span>Google Sheets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Traitement des Données</span><span data-lang="en">Data Processing</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/python.png" alt="Python"><span>Python</span></div>
+            <div class="tech-item">
+              <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill="#150458"
+                  d="M16.922 0h2.623v18.104h-2.623zm-4.126 12.94h2.623v2.57h-2.623zm0-7.037h2.623v5.446h-2.623zm0 11.197h2.623v5.446h-2.623zM4.456 5.896h2.622V24H4.455zm4.213 2.559h2.623v2.57H8.67zm0 4.151h2.623v5.447H8.67zm0-11.187h2.623v5.446H8.67Z" />
+              </svg>
+              <span>Pandas</span>
+            </div>
+            <div class="tech-item"><i class="fas fa-calculator"></i><span>NumPy</span></div>
+            <div class="tech-item">
+              <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill="#F37626"
+                  d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799zM20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427zM4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056zm7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.363 9.363 0 0 0-3.393-4.547 9.238 9.238 0 0 0-5.377-1.728A9.238 9.238 0 0 0 6.95 3.73a9.363 9.363 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424zm.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.363 9.363 0 0 0 3.394 4.547A9.238 9.238 0 0 0 12.33 21a9.238 9.238 0 0 0 5.377-1.729 9.363 9.363 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z" />
+              </svg>
+              <span>Jupyter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Analyse & Visualisation</span><span data-lang="en">Analysis & Visualisation</span>
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/Matplotlib.png" alt="Matplotlib"><span>Matplotlib</span>
+            </div>
+            <div class="tech-item"><img src="assets/logos/seaborn.png" alt="Seaborn"><span>Seaborn</span></div>
+            <div class="tech-item"><i class="fas fa-comment-dots"></i>
+              <span data-lang="fr">Analyse de texte</span>
+              <span data-lang="en">Text Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Reporting</span><span data-lang="en">Reporting</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-file-pdf"></i><span>ReportLab</span></div>
+            <div class="tech-item"><i class="fas fa-robot"></i>
+              <span data-lang="fr">Génération automatisée</span>
+              <span data-lang="en">Automated Generation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RÉSULTATS & IMPACT ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>
+        <span data-lang="fr">Résultats & Impact</span>
+        <span data-lang="en">Results & Impact</span>
+      </h2>
+
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon"><i class="fas fa-mobile-screen-button"></i></div>
+          <h3><span data-lang="fr">Redressement de l’App Confirmé</span><span data-lang="en">Confirmed App
+              Turnaround</span></h3>
+          <p>
+            <span data-lang="fr">Le suivi mensuel isole précisément l’effet de la refonte et montre un
+              redressement progressif du NPS de l’application, jusqu’à repasser en territoire positif.</span>
+            <span data-lang="en">The monthly tracking precisely isolates the redesign’s effect and shows a
+              progressive recovery of the app’s NPS, up to turning positive again.</span>
+          </p>
+        </div>
+
+        <div class="result-card success">
+          <div class="result-icon"><i class="fas fa-store"></i></div>
+          <h3><span data-lang="fr">Priorisation Claire par Canal</span><span data-lang="en">Clear Channel
+              Prioritisation</span></h3>
+          <p>
+            <span data-lang="fr">L’écart de satisfaction entre magasin (97% CSAT) et application (24,5% CSAT)
+              donne à la direction une priorité sans ambiguïté pour l’allocation des ressources.</span>
+            <span data-lang="en">The satisfaction gap between store (97% CSAT) and app (24.5% CSAT) gives leadership
+              an unambiguous priority for resource allocation.</span>
+          </p>
+        </div>
+
+        <div class="result-card accent">
+          <div class="result-icon"><i class="fas fa-file-pdf"></i></div>
+          <h3><span data-lang="fr">Rapport 100% Généré</span><span data-lang="en">Fully Generated Report</span></h3>
+          <p>
+            <span data-lang="fr">Rapport PDF de 7 pages entièrement généré depuis les données (aucun chiffre codé en
+              dur), avec des recommandations actionnables et un destinataire pour chacune.</span>
+            <span data-lang="en">7-page PDF report fully generated from the data (no hard-coded figures), with
+              actionable recommendations and an owner for each.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects" style="justify-content: center;">
+        <div class="nav-center">
+          <a href="index.html#projects" class="nav-btn">
+            <i class="fas fa-th-large"></i>
+            <span data-lang="fr">Tous les projets</span>
+            <span data-lang="en">All Projects</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Darryll JOSEPH</strong> –
+          <span data-role="da" data-lang="fr">Data Analyst</span>
+          <span data-role="dads" data-lang="fr">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="fr">Data Scientist | AI Engineer</span>
+          <span data-role="da" data-lang="en">Data Analyst</span>
+          <span data-role="dads" data-lang="en">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="en">Data Scientist | AI Engineer</span>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/darryll-joseph" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a id="cv-download-footer" href="assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf" download aria-label="CV PDF"><i
+              class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        <span data-lang="fr">© 2026 – Tous droits réservés.</span>
+        <span data-lang="en">© 2026 – All rights reserved.</span>
+      </p>
+      <!-- Bouton flottant vers le haut -->
+      <a href="#home" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- photoswipe background
+    ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end photoSwipe background -->
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/config-project.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        // si on a un peu scrollé (30% de la hauteur d'écran)
+        if (window.scrollY > window.innerHeight * 0.3) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      // Vérifie l'état dès le chargement de la page
+      toggleBackToTop();
+
+      //Et à chaque scroll
+      window.addEventListener('scroll', toggleBackToTop);
+    });
+
+
+    (function () {
+      const select = document.getElementById('languageSelect');
+
+      function cleanAndApply(lang) {
+        // 1) montrer/cacher via classes, pas de style inline
+        document.body.classList.remove('lang-fr', 'lang-en');
+        document.body.classList.add('lang-' + lang);
+
+        // 2) mettre <html lang="...">
+        document.documentElement.setAttribute('lang', lang);
+
+        void document.body.offsetHeight; // force reflow
+
+
+        // 3) très important : aligner lang sur chaque élément localisé
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.setAttribute('lang', el.getAttribute('data-lang')); // "fr" ou "en"
+        });
+
+        // 4) mémoriser
+        try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+      }
+
+      // init
+      const saved = (() => {
+        try { return localStorage.getItem('preferred-language') || 'fr'; }
+        catch (e) { return 'fr'; }
+      })();
+      cleanAndApply(saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', () => cleanAndApply(select.value));
+      }
+
+      // garder ton MutationObserver si tu veux
+    })();
+
+
+
+
+
+
+
+
+    /* ZOOM sur images*/
+    (function () {
+      const imgs = Array.from(
+        document.querySelectorAll('.project-section img')
+      );
+      if (!imgs.length) return;
+
+      // Crée l’overlay
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-overlay';
+      lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+      document.body.appendChild(lightbox);
+
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      let currentIndex = -1;
+
+      // Ouvrir la lightbox sur une image donnée
+      function openAt(index) {
+        currentIndex = index;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      // Fermer la lightbox
+      function close() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        currentIndex = -1;
+      }
+
+      // Aller à l’image suivante / précédente
+      function goto(delta) {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+      }
+
+      // Appliquer le zoom sur chaque image
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openAt(idx);
+        });
+      });
+
+      // Fermeture via croix
+      closeBtn.addEventListener('click', close);
+
+      // Fermeture en cliquant sur le fond sombre
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      // Clavier : ESC pour fermer, ← → pour naviguer
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') goto(+1);
+        if (e.key === 'ArrowLeft') goto(-1);
+      });
+    })();
+
+
+
+
+  </script>
+
+</body>
+
+</html>
