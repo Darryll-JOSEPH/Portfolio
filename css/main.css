@@ -10171,3 +10171,89 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
 .hero .hero-text .tagline span {
     color: #F2AE54;
 }
+
+/* ===================== */
+/* Pagination numerotee de la grille projets (6 par page). Inactif   */
+/* tant qu'il y a 6 projets ou moins (le JS quitte sans rien         */
+/* afficher).                                                        */
+/* ===================== */
+.projects-pagination {
+    margin-top: 40px;
+}
+
+.projects-remaining {
+    text-align: center;
+    color: var(--dark);
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.projects-remaining .projects-remaining-count {
+    color: #FFAE42;
+    font-weight: 800;
+}
+
+.projects-page-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.projects-page-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.projects-page-btn:hover:not(:disabled) {
+    border-color: #FFAE42;
+    color: #FFAE42;
+}
+
+.projects-page-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.projects-page-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.projects-page-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.projects-page-num:hover {
+    border-color: #FFAE42;
+}
+
+.projects-page-num.is-active {
+    background: #FFAE42;
+    border-color: #FFAE42;
+    color: #000;
+}
+
+/* Toutes les images de couverture de projets n'ont pas le meme ratio
+   source (captures d'ecran ~3:2 vs graphique Lumio en 2:1), ce qui
+   donnait des cartes de hauteurs differentes dans la grille. Un ratio
+   fixe uniformise toutes les cartes, quelle que soit l'image source. */
+.project-image-wrapper img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
