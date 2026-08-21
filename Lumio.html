@@ -394,8 +394,119 @@
     </div>
   </section>
 
-  <!-- ========== FONCTIONNALITÉS CLÉS ========== -->
+  <!-- ========== NETTOYAGE & TRANSFORMATION DES DONNÉES ========== -->
   <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-broom"></i>
+        <span data-lang="fr">Nettoyage & Transformation des Données</span>
+        <span data-lang="en">Data Cleaning & Transformation</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 760px; margin: 0 auto 30px;">
+        <span data-lang="fr">Un export d’enquête réel n’est jamais directement exploitable. Quatre familles
+          d’anomalies sont traitées explicitement, avec une décision documentée pour chacune plutôt qu’un nettoyage
+          automatique aveugle.</span>
+        <span data-lang="en">A real survey export is never directly usable. Four families of data issues are
+          handled explicitly, with a documented decision for each rather than blind automated cleaning.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><i class="fas fa-circle-question"></i>
+            <span data-lang="fr">Valeurs Manquantes</span>
+            <span data-lang="en">Missing Values</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr"><strong>NPS manquant :</strong> ligne supprimée (KPI principal,
+                  inestimable)</span>
+                <span data-lang="en"><strong>Missing NPS:</strong> row dropped (main KPI, cannot be
+                  estimated)</span>
+              </li>
+              <li><span data-lang="fr"><strong>Tranche d’âge manquante :</strong> remplacée par « Non renseigné »
+                  (segment ignorable, pas la ligne)</span>
+                <span data-lang="en"><strong>Missing age group:</strong> replaced with "Not provided" (ignorable
+                  segment, not the row)</span>
+              </li>
+              <li><span data-lang="fr"><strong>Verbatim manquant :</strong> chaîne vide (champ facultatif du
+                  formulaire)</span>
+                <span data-lang="en"><strong>Missing verbatim:</strong> empty string (optional form field)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-calendar-check"></i>
+            <span data-lang="fr">Typage & Harmonisation</span>
+            <span data-lang="en">Typing & Harmonisation</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr"><strong>Dates en 2 formats</strong> dans le même fichier (ISO et JJ/MM/AAAA) :
+                  détection explicite par format plutôt qu’une inférence naïve qui casse certaines dates
+                  ISO</span>
+                <span data-lang="en"><strong>Dates in 2 formats</strong> within the same file (ISO and DD/MM/YYYY):
+                  explicit per-format parsing instead of a naive inference that breaks some ISO dates</span>
+              </li>
+              <li><span data-lang="fr"><strong>Canal d’achat :</strong> casse et espaces incohérents (« SITE WEB »,
+                  « site web ») harmonisés</span>
+                <span data-lang="en"><strong>Purchase channel:</strong> inconsistent casing/spacing ("SITE WEB",
+                  " site web ") normalised</span>
+              </li>
+              <li><span data-lang="fr">Notes converties en entier <strong>nullable (Int64)</strong></span>
+                <span data-lang="en">Ratings converted to <strong>nullable integer (Int64)</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-clone"></i>
+            <span data-lang="fr">Doublons</span>
+            <span data-lang="en">Duplicates</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Détection sur <strong>toutes les colonnes sauf l’identifiant</strong> de
+                  réponse</span>
+                <span data-lang="en">Detected on <strong>every column except the response identifier</strong></span>
+              </li>
+              <li><span data-lang="fr">Un double envoi du formulaire génère un nouvel ID unique : l’ID seul ne
+                  suffit pas à détecter un doublon</span>
+                <span data-lang="en">A duplicate form submission gets a new unique ID: the ID alone can’t detect a
+                  duplicate</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-ruler"></i>
+            <span data-lang="fr">Échelles & Colonnes Dérivées</span>
+            <span data-lang="en">Scales & Derived Columns</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr"><strong>Notes hors bornes</strong> (ex : 11/10) : traitées comme manquantes,
+                  jamais devinées</span>
+                <span data-lang="en"><strong>Out-of-range ratings</strong> (e.g. 11/10): treated as missing, never
+                  guessed</span>
+              </li>
+              <li><span data-lang="fr">Colonnes calculées : <strong>mois d’achat</strong>,
+                  <strong>catégorie NPS</strong> (promoteur/passif/détracteur), <strong>CSAT top-2-box</strong></span>
+                <span data-lang="en">Derived columns: <strong>purchase month</strong>, <strong>NPS
+                    category</strong> (promoter/passive/detractor), <strong>top-2-box CSAT</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FONCTIONNALITÉS CLÉS ========== -->
+  <section class="project-section bg-alt">
     <div class="container">
       <h2 class="section-title"><i class="fas fa-cogs"></i>
         <span data-lang="fr">Fonctionnalités Clés</span>
@@ -423,11 +534,14 @@
             </p>
             <ul>
               <li><span data-lang="fr"><strong>Magasin physique :</strong> NPS +42, CSAT 97%</span>
-                <span data-lang="en"><strong>Physical store:</strong> NPS +42, CSAT 97%</span></li>
+                <span data-lang="en"><strong>Physical store:</strong> NPS +42, CSAT 97%</span>
+              </li>
               <li><span data-lang="fr"><strong>Site web :</strong> NPS +2, CSAT 86%</span>
-                <span data-lang="en"><strong>Website:</strong> NPS +2, CSAT 86%</span></li>
+                <span data-lang="en"><strong>Website:</strong> NPS +2, CSAT 86%</span>
+              </li>
               <li><span data-lang="fr"><strong>Application mobile :</strong> NPS −72, CSAT 24,5%</span>
-                <span data-lang="en"><strong>Mobile app:</strong> NPS −72, CSAT 24.5%</span></li>
+                <span data-lang="en"><strong>Mobile app:</strong> NPS −72, CSAT 24.5%</span>
+              </li>
             </ul>
             <p class="model-arch"><strong>Google Sheets → pandas → NPS/CSAT (global + segments)</strong></p>
           </div>
@@ -438,8 +552,8 @@
         <!-- Card 2 -->
         <div class="feature-card">
           <div class="feature-image">
-            <img src="assets/projects/Lumio/Impact_refonte_app.png" alt="Lumio – Impact de la refonte de l’application mobile"
-              loading="lazy">
+            <img src="assets/projects/Lumio/Impact_refonte_app.png"
+              alt="Lumio – Impact de la refonte de l’application mobile" loading="lazy">
           </div>
 
           <h3>
@@ -456,14 +570,16 @@
             </p>
             <ul>
               <li><span data-lang="fr"><strong>Avant refonte :</strong> NPS −94,7, CSAT 8,4%</span>
-                <span data-lang="en"><strong>Before redesign:</strong> NPS −94.7, CSAT 8.4%</span></li>
+                <span data-lang="en"><strong>Before redesign:</strong> NPS −94.7, CSAT 8.4%</span>
+              </li>
               <li><span data-lang="fr"><strong>Après refonte (moyenne période) :</strong> NPS −45,5, CSAT 43%</span>
                 <span data-lang="en"><strong>After redesign (period average):</strong> NPS −45.5, CSAT 43%</span>
               </li>
               <li><span data-lang="fr"><strong>Tendance mensuelle :</strong> retour en territoire NPS positif en fin
                   de suivi</span>
                 <span data-lang="en"><strong>Monthly trend:</strong> NPS turns positive again by the end of the
-                  tracking window</span></li>
+                  tracking window</span>
+              </li>
             </ul>
             <p class="model-arch">
               <span data-lang="fr"><strong>Suivi mensuel + marqueur de refonte sur la série temporelle</strong></span>
@@ -497,15 +613,18 @@
               <li><span data-lang="fr"><strong>Promoteurs :</strong> « livraison », « rapide », « express » reviennent
                   le plus souvent</span>
                 <span data-lang="en"><strong>Promoters:</strong> "delivery", "fast", "express" come up most
-                  often</span></li>
+                  often</span>
+              </li>
               <li><span data-lang="fr"><strong>Détracteurs :</strong> « application », « bugs », « plante »,
                   « frustrant » dominent</span>
                 <span data-lang="en"><strong>Detractors:</strong> "app", "bugs", "crashes", "frustrating"
-                  dominate</span></li>
+                  dominate</span>
+              </li>
               <li><span data-lang="fr"><strong>Signal clair :</strong> fiabiliser l’app en priorité, capitaliser sur
                   la livraison</span>
                 <span data-lang="en"><strong>Clear signal:</strong> prioritise app reliability, capitalise on
-                  delivery</span></li>
+                  delivery</span>
+              </li>
             </ul>
           </div>
 
@@ -516,12 +635,22 @@
   </section>
 
   <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
-  <section class="project-section bg-alt">
+  <section class="project-section">
     <div class="container">
       <h2 class="section-title"><i class="fas fa-code"></i>
         <span data-lang="fr">Architecture Technique</span>
         <span data-lang="en">Technical Architecture</span>
       </h2>
+
+      <div class="project-image" style="max-width: 900px; margin: 0 auto 40px;">
+        <img src="assets/projects/Lumio/architecture.svg"
+          alt="Schéma d’architecture du pipeline Lumio : Google Forms, Google Sheets, Python/pandas, Jupyter, Matplotlib/Seaborn, ReportLab"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">De la collecte des réponses au rapport PDF final</span>
+          <span data-lang="en">From response collection to the final PDF report</span>
+        </p>
+      </div>
 
       <div class="tech-architecture">
         <div class="tech-layer">
@@ -595,7 +724,7 @@
   </section>
 
   <!-- ========== RÉSULTATS & IMPACT ========== -->
-  <section class="project-section">
+  <section class="project-section bg-alt">
     <div class="container">
       <h2 class="section-title"><i class="fas fa-chart-line"></i>
         <span data-lang="fr">Résultats & Impact</span>
@@ -631,9 +760,9 @@
           <div class="result-icon"><i class="fas fa-file-pdf"></i></div>
           <h3><span data-lang="fr">Rapport 100% Généré</span><span data-lang="en">Fully Generated Report</span></h3>
           <p>
-            <span data-lang="fr">Rapport PDF de 7 pages entièrement généré depuis les données (aucun chiffre codé en
-              dur), avec des recommandations actionnables et un destinataire pour chacune.</span>
-            <span data-lang="en">7-page PDF report fully generated from the data (no hard-coded figures), with
+            <span data-lang="fr">Rapport PDF de 7 pages entièrement généré depuis les données, avec des recommandations
+              actionnables et un destinataire pour chacune.</span>
+            <span data-lang="en">7-page PDF report fully generated from the data, with
               actionable recommendations and an owner for each.</span>
           </p>
         </div>

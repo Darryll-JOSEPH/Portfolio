@@ -1,6 +1,10 @@
 (function () {
     "use strict";
 
+
+    var TRACKING_ENABLED = false;
+    if (!TRACKING_ENABLED) return;
+
     var EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
     var SERVICE_ID = "service_i69ky8n";
     var TEMPLATE_ID = "template_q43b26r";
@@ -52,7 +56,7 @@
     function setJSON(key, value) {
         try {
             sessionStorage.setItem(key, JSON.stringify(value));
-        } catch (e) {}
+        } catch (e) { }
     }
 
     // --- Session bootstrap (runs on every page load) ---
@@ -189,7 +193,7 @@
                         pushPageEntry({ label: labelForPath(targetPath), url: url.href });
                     }
                 }
-            } catch (e) {}
+            } catch (e) { }
 
             // Any link click - internal (another portfolio page, an in-page
             // anchor) or external (GitHub, certifications, mailto...) - is just
@@ -257,7 +261,7 @@
             body: JSON.stringify(payload),
             keepalive: true,
             credentials: "omit"
-        }).catch(function () {});
+        }).catch(function () { });
     }
 
     // pagehide/beforeunload only fire on a real exit (closing the tab/browser,
