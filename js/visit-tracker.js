@@ -20,7 +20,10 @@
         "Medsynora-azure.html": "Projet - MedSynora",
         "Medibot.html": "Projet - Medibot",
         "data-intégration.html": "Projet - Data Intégration",
-        "Lumio.html": "Projet - Lumio"
+        "Lumio.html": "Projet - Lumio",
+        "FinancialAnalytics.html": "Projet - Financial Analytics",
+        "RetailAnalytics.html": "Projet - Retail Sales Analytics",
+        "CustomerCohortChurn.html": "Projet - Customer Cohort & Churn"
     };
 
     function labelForPath(path) {

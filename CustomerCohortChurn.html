@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKFCXYNH8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKFCXYNH8');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "y4a5lxhz87");
+  </script>
+
+  <!--- basic page needs
+    ================================================== -->
+  <meta charset="utf-8">
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <title>Customer Cohort & Churn – Azure Databricks & Power BI | Darryll JOSEPH</title>
+  <meta name="description"
+    content="Projet Customer Cohort & Churn : pipeline Azure Data Factory + Databricks (PySpark) pour analyser la rétention par cohortes, segmenter la clientèle CRM en RFM et prédire le churn par régression logistique, avec restitution Power BI. Azure, Databricks, Machine Learning, DAX.">
+  <meta name="keywords"
+    content="Data Scientist, Data Engineer, Customer Analytics, Azure Databricks, PySpark, Machine Learning, Churn Prediction, Régression logistique, RFM, Cohort Analysis, Rétention client, Azure Data Factory, Power BI, DAX, SQL">
+  <meta name="author" content="Darryll JOSEPH">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="og:title" content="Customer Cohort & Churn – Azure Databricks & Power BI | Darryll JOSEPH">
+  <meta property="og:description"
+    content="Projet Customer Cohort & Churn : pipeline Azure Data Factory + Databricks (PySpark) pour analyser la rétention par cohortes, segmenter la clientèle CRM en RFM et prédire le churn par régression logistique, avec restitution Power BI. Azure, Databricks, Machine Learning, DAX.">
+  <meta property="og:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="twitter:title" content="Customer Cohort & Churn – Azure Databricks & Power BI | Darryll JOSEPH">
+  <meta property="twitter:description"
+    content="Projet Customer Cohort & Churn : pipeline Azure Data Factory + Databricks (PySpark) pour analyser la rétention par cohortes, segmenter la clientèle CRM en RFM et prédire le churn par régression logistique, avec restitution Power BI. Azure, Databricks, Machine Learning, DAX.">
+  <meta property="twitter:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Language Switcher Styles -->
+  <style>
+    /* En mode FR : masquer l'anglais */
+    .lang-fr [data-lang="en"] {
+      display: none !important;
+    }
+
+    .lang-en [data-lang="fr"] {
+      display: none !important;
+    }
+
+
+    /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      color: white;
+    }
+
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid #FFAE42;
+      color: white;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      height: auto;
+    }
+
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+    }
+
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+      border: 2px solid #FFAE42;
+      color: white;
+
+
+    }
+
+    .lang-select option {
+      color: black;
+      /* Texte visible dans la liste */
+      background-color: white;
+      /* Fond blanc par défaut */
+    }
+
+    /* Option survolée dans certains navigateurs */
+    .lang-select option:hover,
+    .lang-select option:focus,
+    .lang-select option:checked {
+      background-color: #e5e5e5;
+      /* Gris clair */
+      color: black;
+      /* Texte bien lisible */
+    }
+
+    @media (max-width: 768px) {
+      .language-switcher {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
+  <script src="js/pace.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/visit-tracker.js"></script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Scientist spécialisé en Customer Analytics, Machine Learning et ingénierie de données Cloud",
+    "url": "https://darryll-joseph.github.io/Portfolio/",
+    "image": "https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll-joseph",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Databricks",
+      "PySpark",
+      "Machine Learning",
+      "Azure",
+      "SQL",
+      "DAX",
+      "Power BI",
+      "Data Science",
+      "Dashboard Development"
+    ]
+  }
+  </script>
+
+  <!-- favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+  <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+  <!-- header
+    ================================================== -->
+  <header class="s-header">
+
+    <div class="header-logo">
+      <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+    </div>
+
+    <nav class="header-nav-wrap">
+      <ul class="header-nav">
+        <li>
+          <a class="smoothscroll" href="index.html" title="Accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en">Home</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="smoothscroll" href="index.html#projects" title="Projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en">Projects</span>
+          </a>
+        </li>
+        <li>
+
+          <select id="languageSelect" class="smoothscroll lang-select">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+
+        </li>
+      </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+  </header> <!-- end s-header -->
+
+
+  <!-- home
+   ================================================== -->
+  <section id="home" class="s-home page-hero target-section"
+    style="background-image:url('images/IMG_0596.jpeg'); background-repeat:no-repeat; background-position:center center; background-size:cover; background-color:#111;">
+
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+
+    <div class="home-content2 decal">
+      <div class="project-status">
+        <span class="status-badge completed">
+          <i class="fas fa-check-circle"></i>
+          <span data-lang="fr">Terminé</span>
+          <span data-lang="en">Completed</span>
+        </span>
+      </div>
+
+      <div class="row home-content__main2">
+        <div class="container">
+          <div class="project-header">
+
+            <h1>
+              <span class="project-title-accent" data-lang="fr">Customer Cohort & Churn – Rétention Client &
+                Prédiction d'Attrition</span>
+              <span class="project-title-accent" data-lang="en">Customer Cohort & Churn – Customer Retention &
+                Attrition Prediction</span>
+            </h1>
+            <p class="project-subtitle">
+              <span data-lang="fr">Pipeline Azure Data Factory + Databricks pour une base CRM de 5 988 clients :
+                analyse de rétention par cohortes, segmentation RFM et scoring de churn par Machine Learning,
+                restitués dans Power BI</span>
+              <span data-lang="en">Azure Data Factory + Databricks pipeline for a 5,988-customer CRM base: cohort
+                retention analysis, RFM segmentation and Machine Learning churn scoring, delivered through Power
+                BI</span>
+            </p>
+
+            <div class="project-tech-badges">
+              <span class="tech-badge">Azure Data Factory</span>
+              <span class="tech-badge">Databricks</span>
+              <span class="tech-badge">PySpark</span>
+              <span class="tech-badge">Machine Learning</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">DAX</span>
+            </div>
+
+            <p class="project-report-link">
+              <a href="assets/reports/rapport_customer_cohort_churn.pdf" target="_blank" class="nav-btn primary">
+                <i class="fas fa-file-pdf"></i>
+                <span data-lang="fr">Voir la documentation complète (PDF)</span>
+                <span data-lang="en">View Full Documentation (PDF)</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- end s-home -->
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i>
+        <span data-lang="fr">Vue d'ensemble</span>
+        <span data-lang="en">Project Overview</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              L'équipe CRM d'une entreprise e-commerce constatait un taux d'attrition élevé sans en comprendre les
+              leviers. J'ai reproduit ce scénario de bout en bout : ingestion quotidienne de <strong>5 988
+                clients</strong> et <strong>56 851 commandes</strong> depuis un CRM Azure SQL, construction de
+              cohortes mensuelles de rétention, segmentation <strong>RFM</strong> (Récence, Fréquence, Montant) et
+              entraînement d'un modèle de <strong>régression logistique</strong> pour prédire le churn à 90 jours,
+              restitués dans un rapport Power BI à 3 pages.
+            </span>
+            <span data-lang="en">
+              An e-commerce company's CRM team observed high customer attrition without understanding its drivers.
+              I reproduced this scenario end to end: daily ingestion of <strong>5,988 customers</strong> and
+              <strong>56,851 orders</strong> from an Azure SQL CRM, building monthly retention cohorts,
+              <strong>RFM</strong> segmentation (Recency, Frequency, Monetary), and training a <strong>logistic
+                regression</strong> model to predict 90-day churn, delivered in a 3-page Power BI report.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr">Ingestion incrémentale <strong>Bronze</strong> (Customers, Orders) via
+                <strong>Azure Data Factory</strong>, déclenchement quotidien à 02h00</span>
+              <span data-lang="en">Incremental <strong>Bronze</strong> ingestion (Customers, Orders) via
+                <strong>Azure Data Factory</strong>, daily 02:00 trigger</span>
+            </li>
+            <li><span data-lang="fr">Contrôle qualité et enrichissement <strong>Databricks / PySpark</strong>,
+                production de tables <strong>Silver</strong> et <strong>Gold</strong> (cohortes, RFM, scores)</span>
+              <span data-lang="en"><strong>Databricks / PySpark</strong> quality control and enrichment, producing
+                <strong>Silver</strong> and <strong>Gold</strong> tables (cohorts, RFM, scores)</span>
+            </li>
+            <br>
+            <li><span data-lang="fr">Modèle de <strong>régression logistique</strong> (AUC-ROC 0,947) scorant le
+                risque de churn de chaque client actif</span>
+              <span data-lang="en"><strong>Logistic regression</strong> model (0.947 AUC-ROC) scoring each active
+                customer's churn risk</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/CustomerCohortChurn/01-retention-cohortes.png"
+            alt="Customer Cohort & Churn – Rapport Power BI, page Rétention & Cohortes : matrice de rétention par cohorte mensuelle"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Rapport Power BI « Customer Cohort & Churn » – Matrice de rétention par cohorte
+              mensuelle (14 dernières cohortes)</span>
+            <span data-lang="en">"Customer Cohort & Churn" Power BI report – Monthly cohort retention matrix (last
+              14 cohorts)</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLÈME & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>
+        <span data-lang="fr">Problématique & Solution</span>
+        <span data-lang="en">Business Challenge & Solution</span>
+      </h2>
+
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="fr">Problématique</span>
+            <span data-lang="en">Challenge</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Taux de churn global de <strong>60,59%</strong> sans indicateur de rétention
+                dans le temps ni segmentation actionnable</span>
+              <span data-lang="en">Overall churn rate of <strong>60.59%</strong> with no time-based retention
+                indicator nor actionable segmentation</span>
+            </li>
+            <li><span data-lang="fr">Incapacité à identifier, en amont, les clients à fort risque d'attrition parmi
+                la base active</span>
+              <span data-lang="en">Inability to proactively identify high-risk customers within the active
+                base</span>
+            </li>
+            <li><span data-lang="fr">Données CRM brutes non fiabilisées : doublons, régions manquantes, commandes
+                orphelines</span>
+              <span data-lang="en">Unreliable raw CRM data: duplicates, missing regions, orphan orders</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i>
+            <span data-lang="fr">Solution Déployée</span>
+            <span data-lang="en">Deployed Solution</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Pipeline <strong>Azure Data Factory → Databricks</strong> en architecture
+                médaillon (Bronze/Silver/Gold), orchestré quotidiennement</span>
+              <span data-lang="en"><strong>Azure Data Factory → Databricks</strong> pipeline in a medallion
+                architecture (Bronze/Silver/Gold), orchestrated daily</span>
+            </li>
+            <li><span data-lang="fr">Construction de cohortes de rétention mensuelles et segmentation
+                <strong>RFM</strong> en 7 segments (Champions, À Risque, Perdus…)</span>
+              <span data-lang="en">Monthly retention cohort construction and <strong>RFM</strong> segmentation into
+                7 segments (Champions, At Risk, Lost…)</span>
+            </li>
+            <li><span data-lang="fr">Modèle de <strong>régression logistique</strong> (scikit-learn) exposé en Gold
+                et scoré sur la base active, restitué en Power BI</span>
+              <span data-lang="en"><strong>Logistic regression</strong> model (scikit-learn) exposed in Gold and
+                scored on the active base, surfaced in Power BI</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTRÔLE QUALITÉ DES DONNÉES ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-shield-halved"></i>
+        <span data-lang="fr">Contrôle Qualité des Données</span>
+        <span data-lang="en">Data Quality Control</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 760px; margin: 0 auto 30px;">
+        <span data-lang="fr">Un notebook Databricks nettoie la base CRM avant toute analyse — complétude à
+          <strong>100%</strong> sur les tables finales, avec quarantaine systématique des lignes non
+          conformes.</span>
+        <span data-lang="en">A Databricks notebook cleans the CRM base before any analysis — <strong>100%</strong>
+          completeness on the final tables, with systematic quarantine of non-compliant rows.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><i class="fas fa-fingerprint"></i>
+            <span data-lang="fr">Doublons Clients — 45 supprimés</span>
+            <span data-lang="en">Customer Duplicates — 45 removed</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">45 fiches clients dupliquées détectées et fusionnées</span>
+                <span data-lang="en">45 duplicate customer records detected and merged</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-map-location-dot"></i>
+            <span data-lang="fr">Régions Manquantes — 60 corrigées</span>
+            <span data-lang="en">Missing Regions — 60 fixed</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">60 régions client nulles réconciliées via le référentiel adresses</span>
+                <span data-lang="en">60 null customer regions reconciled via the address reference data</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-circle-check"></i>
+            <span data-lang="fr">Validité — 12 âges invalides</span>
+            <span data-lang="en">Validity — 12 invalid ages</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">12 clients avec âge hors domaine retirés de l'analyse</span>
+                <span data-lang="en">12 customers with out-of-range age removed from the analysis</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-link"></i>
+            <span data-lang="fr">Intégrité Référentielle — 111 orphelines</span>
+            <span data-lang="en">Referential Integrity — 111 orphans</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">111 commandes sans client associé isolées (FK manquante)</span>
+                <span data-lang="en">111 orders with no matching customer quarantined (missing FK)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-coins"></i>
+            <span data-lang="fr">Montants Invalides — 25 rejetés</span>
+            <span data-lang="en">Invalid Amounts — 25 rejected</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">25 commandes à montant négatif ou nul mises en quarantaine</span>
+                <span data-lang="en">25 orders with negative or zero amount quarantined</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-clock"></i>
+            <span data-lang="fr">Fraîcheur — 1 jour</span>
+            <span data-lang="en">Freshness — 1 day</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Décalage maximal observé entre ingestion et dernière commande</span>
+                <span data-lang="en">Maximum observed lag between ingestion and latest order</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FONCTIONNALITÉS CLÉS ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-cogs"></i>
+        <span data-lang="fr">Fonctionnalités Clés</span>
+        <span data-lang="en">Key Features</span>
+      </h2>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerCohortChurn/01-retention-cohortes.png"
+              alt="Customer Cohort & Churn – Rétention par ancienneté et évolution du chiffre d'affaires mensuel"
+              loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">Rétention par Cohortes</span>
+            <span data-lang="en">Cohort Retention</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">Matrice de rétention M0 à M12 sur 14 cohortes mensuelles glissantes :</span>
+              <span data-lang="en">M0 to M12 retention matrix across 14 rolling monthly cohorts:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr">Rétention <strong>M+1 : 43,47%</strong>, <strong>M+3 : 40%</strong>,
+                  <strong>M+6 : 35%</strong>, <strong>M+12 : 27%</strong></span>
+                <span data-lang="en">Retention <strong>M+1: 43.47%</strong>, <strong>M+3: 40%</strong>,
+                  <strong>M+6: 35%</strong>, <strong>M+12: 27%</strong></span>
+              </li>
+              <li><span data-lang="fr"><strong>2 302 clients actifs</strong> sur 90 jours (38,4% de la base)</span>
+                <span data-lang="en"><strong>2,302 active customers</strong> over 90 days (38.4% of the base)</span>
+              </li>
+            </ul>
+            <p class="model-arch"><strong>Gold cohort_retention → matrice M0-M12 par mois d'inscription</strong>
+            </p>
+          </div>
+
+          <div class="feature-tech">Databricks</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerCohortChurn/02-churn-rfm.png"
+              alt="Customer Cohort & Churn – Segmentation RFM et scoring de churn par régression logistique"
+              loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">Segmentation RFM & Scoring Churn</span>
+            <span data-lang="en">RFM Segmentation & Churn Scoring</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">7 segments RFM et modèle prédictif de risque de churn :</span>
+              <span data-lang="en">7 RFM segments and a predictive churn-risk model:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr">Segment <strong>Champions</strong> (27,1% des clients) génère
+                  <strong>75,2%</strong> du chiffre d'affaires (effet Pareto)</span>
+                <span data-lang="en"><strong>Champions</strong> segment (27.1% of customers) drives
+                  <strong>75.2%</strong> of revenue (Pareto effect)</span>
+              </li>
+              <li><span data-lang="fr"><strong>3 457 clients</strong> à risque élevé, <strong>500</strong> à
+                  risque moyen et <strong>2 031</strong> à risque faible</span>
+                <span data-lang="en"><strong>3,457 customers</strong> at high risk, <strong>500</strong> at
+                  medium risk and <strong>2,031</strong> at low risk</span>
+              </li>
+              <li><span data-lang="fr">Le churn régional varie de <strong>58,8%</strong> (Grand Est) à
+                  <strong>64,0%</strong> (Hauts-de-France)</span>
+                <span data-lang="en">Regional churn ranges from <strong>58.8%</strong> (Grand Est) to
+                  <strong>64.0%</strong> (Hauts-de-France)</span>
+              </li>
+            </ul>
+            <p class="model-arch"><strong>Régression logistique — AUC-ROC 0,947 · Précision 93,7% · Rappel
+                85,2%</strong></p>
+          </div>
+
+          <div class="feature-tech">Machine Learning</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PERFORMANCE DU MODÈLE ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-brain"></i>
+        <span data-lang="fr">Performance du Modèle de Churn</span>
+        <span data-lang="en">Churn Model Performance</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Le modèle de <strong>régression logistique</strong> est évalué sur un échantillon test
+              out-of-time de <strong>1 420 clients</strong> (T0 = 27/05/2026), avec une fenêtre de prédiction de
+              <strong>90 jours</strong>. La variable la plus influente est <code>recency_days</code>
+              (coefficient 4,808) : plus un client n'a pas commandé récemment, plus son risque de churn augmente
+              fortement — cohérent avec la définition métier du churn (&gt; 90 jours sans commande).
+            </span>
+            <span data-lang="en">
+              The <strong>logistic regression</strong> model is evaluated on an out-of-time test sample of
+              <strong>1,420 customers</strong> (T0 = 2026-05-27), with a <strong>90-day</strong> prediction window.
+              The most influential feature is <code>recency_days</code> (coefficient 4.808): the longer since a
+              customer's last order, the sharper the rise in churn risk — consistent with the business definition
+              of churn (&gt; 90 days without an order).
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr"><strong>Exactitude :</strong> 87,0% · <strong>Précision :</strong> 93,7% ·
+                <strong>Rappel :</strong> 85,2% · <strong>Score F1 :</strong> 89,3%</span>
+              <span data-lang="en"><strong>Accuracy:</strong> 87.0% · <strong>Precision:</strong> 93.7% ·
+                <strong>Recall:</strong> 85.2% · <strong>F1 Score:</strong> 89.3%</span>
+            </li>
+            <li><span data-lang="fr">Matrice de confusion : 768 vrais positifs, 467 vrais négatifs, 133 faux
+                négatifs, 52 faux positifs</span>
+              <span data-lang="en">Confusion matrix: 768 true positives, 467 true negatives, 133 false negatives,
+                52 false positives</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/CustomerCohortChurn/02-churn-rfm.png"
+            alt="Customer Cohort & Churn – Performance du modèle de régression logistique : AUC-ROC 0,947"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">AUC-ROC de 0,947 et CLV moyen de 720,08 € sur la base active</span>
+            <span data-lang="en">0.947 AUC-ROC and €720.08 average CLV across the active base</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i>
+        <span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
+
+      <div class="project-image" style="max-width: 900px; margin: 0 auto 40px;">
+        <img src="assets/projects/CustomerCohortChurn/architecture-diagram.png"
+          alt="Schéma d'architecture Customer Cohort & Churn : CRM SQL → Azure Data Factory → ADLS Gen2 (Bronze/Silver/Gold) → Databricks PySpark → Cohortes RFM & Modèle Churn → Power BI"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Architecture médaillon Azure + Databricks + Power BI, orchestrée quotidiennement
+            par Azure Data Factory</span>
+          <span data-lang="en">Azure + Databricks + Power BI medallion architecture, orchestrated daily by Azure
+            Data Factory</span>
+        </p>
+      </div>
+
+      <div class="tech-architecture">
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Sources & Ingestion</span><span data-lang="en">Sources & Ingestion</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-database"></i><span>CRM (Azure SQL)</span></div>
+            <div class="tech-item"><i class="fas fa-diagram-project"></i><span>Azure Data Factory</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Stockage & Traitement</span><span data-lang="en">Storage & Processing</span>
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-layer-group"></i><span>ADLS Gen2 (Bronze/Silver/Gold)</span>
+            </div>
+            <div class="tech-item"><img src="assets/logos/python.png" alt="Databricks"><span>Databricks
+                PySpark</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Analyse & Machine Learning</span><span data-lang="en">Analytics & Machine
+              Learning</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-users-rectangle"></i><span data-lang="fr">Cohortes &
+                RFM</span><span data-lang="en">Cohorts & RFM</span></div>
+            <div class="tech-item"><i class="fas fa-brain"></i><span data-lang="fr">Régression logistique</span>
+              <span data-lang="en">Logistic Regression</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Sécurité & Reporting</span><span data-lang="en">Security & Reporting</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-key"></i><span>Azure Key Vault</span></div>
+            <div class="tech-item"><img src="assets/logos/powerbi.png" alt="Power BI"><span>Power BI</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RÉSULTATS & IMPACT ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>
+        <span data-lang="fr">Résultats & Impact</span>
+        <span data-lang="en">Results & Impact</span>
+      </h2>
+
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon"><i class="fas fa-users"></i></div>
+          <h3><span data-lang="fr">Rétention Mesurée</span><span data-lang="en">Measured Retention</span></h3>
+          <p>
+            <span data-lang="fr">Suivi de rétention fiabilisé sur 14 cohortes mensuelles, avec un CLV moyen de
+              <strong>720,08 €</strong> et un panier moyen de 75,84 €.</span>
+            <span data-lang="en">Reliable retention tracking across 14 monthly cohorts, with an average CLV of
+              <strong>€720.08</strong> and an average basket of €75.84.</span>
+          </p>
+        </div>
+
+        <div class="result-card success">
+          <div class="result-icon"><i class="fas fa-bullseye"></i></div>
+          <h3><span data-lang="fr">Churn Anticipé</span><span data-lang="en">Anticipated Churn</span></h3>
+          <p>
+            <span data-lang="fr">Identification proactive de <strong>3 457 clients</strong> à risque élevé grâce à
+              un modèle atteignant <strong>0,947</strong> d'AUC-ROC.</span>
+            <span data-lang="en">Proactive identification of <strong>3,457</strong> high-risk customers via a
+              model reaching <strong>0.947</strong> AUC-ROC.</span>
+          </p>
+        </div>
+
+        <div class="result-card accent">
+          <div class="result-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3><span data-lang="fr">Fiabilité des Données</span><span data-lang="en">Data Reliability</span></h3>
+          <p>
+            <span data-lang="fr">Complétude de <strong>100%</strong> sur les tables finales grâce à la quarantaine
+              automatique des doublons, orphelines et valeurs invalides.</span>
+            <span data-lang="en"><strong>100%</strong> completeness on final tables through automatic quarantine
+              of duplicates, orphans and invalid values.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects" style="justify-content: center;">
+        <div class="nav-center">
+          <a href="index.html#projects" class="nav-btn">
+            <i class="fas fa-th-large"></i>
+            <span data-lang="fr">Tous les projets</span>
+            <span data-lang="en">All Projects</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Darryll JOSEPH</strong> –
+          <span data-role="da" data-lang="fr">Data Analyst</span>
+          <span data-role="dads" data-lang="fr">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="fr">Data Scientist | AI Engineer</span>
+          <span data-role="da" data-lang="en">Data Analyst</span>
+          <span data-role="dads" data-lang="en">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="en">Data Scientist | AI Engineer</span>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/darryll-joseph" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a id="cv-download-footer" href="assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf" download aria-label="CV PDF"><i
+              class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        <span data-lang="fr">© 2026 – Tous droits réservés.</span>
+        <span data-lang="en">© 2026 – All rights reserved.</span>
+      </p>
+      <!-- Bouton flottant vers le haut -->
+      <a href="#home" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- photoswipe background
+    ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end photoSwipe background -->
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/config-project.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        if (window.scrollY > window.innerHeight * 0.3) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop);
+    });
+
+
+    (function () {
+      const select = document.getElementById('languageSelect');
+
+      function cleanAndApply(lang) {
+        document.body.classList.remove('lang-fr', 'lang-en');
+        document.body.classList.add('lang-' + lang);
+
+        document.documentElement.setAttribute('lang', lang);
+
+        void document.body.offsetHeight; // force reflow
+
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.setAttribute('lang', el.getAttribute('data-lang'));
+        });
+
+        try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+      }
+
+      const saved = (() => {
+        try { return localStorage.getItem('preferred-language') || 'fr'; }
+        catch (e) { return 'fr'; }
+      })();
+      cleanAndApply(saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', () => cleanAndApply(select.value));
+      }
+    })();
+
+
+    /* ZOOM sur images*/
+    (function () {
+      const imgs = Array.from(
+        document.querySelectorAll('.project-section img')
+      );
+      if (!imgs.length) return;
+
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-overlay';
+      lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+      document.body.appendChild(lightbox);
+
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      let currentIndex = -1;
+
+      function openAt(index) {
+        currentIndex = index;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        currentIndex = -1;
+      }
+
+      function goto(delta) {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+      }
+
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openAt(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', close);
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') goto(+1);
+        if (e.key === 'ArrowLeft') goto(-1);
+      });
+    })();
+
+  </script>
+
+</body>
+
+</html>

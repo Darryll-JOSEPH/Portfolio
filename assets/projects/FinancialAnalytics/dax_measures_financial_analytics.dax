@@ -1,0 +1,169 @@
+-- ============================================================================
+-- Mesures DAX - Modele Financial Analytics (FIN_Model)
+-- ============================================================================
+-- Modele : Warehouse Fabric (Gold), relations en etoile
+--   dim_date[date] 1--* Fact_Transactions[date]        (Dim_Date marquee "table de dates")
+--   dim_entity[entity_id] 1--* Fact_Transactions[entity_id]
+--   dim_costcenter[cost_center_id] 1--* Fact_Transactions[cost_center_id]
+--   dim_account[account_id] 1--* Fact_Transactions[account_id]
+--   dim_scenario[scenario_id] 1--* Fact_Transactions[scenario_id]
+--
+-- Fact_Transactions reunit Actual + Budget + Forecast dans un grain unique
+-- (1 ligne = 1 mouvement, quel que soit le scenario, distingue par
+-- dim_scenario[scenario_name] : "Actual", "Budget", "Forecast").
+-- dim_account[account_category] classe chaque compte en 5 categories :
+-- Revenue, COGS, Opex, D&A, BelowEBITDA.
+-- ============================================================================
+
+
+-- ============================================================
+-- 1. SCENARIOS - sommes filtrees par dim_scenario[scenario_name]
+-- ============================================================
+Actual =
+CALCULATE (
+    SUM ( Fact_Transactions[amount] ),
+    dim_scenario[scenario_name] = "Actual"
+)
+
+Forecast =
+CALCULATE (
+    SUM ( Fact_Transactions[amount] ),
+    dim_scenario[scenario_name] = "Forecast"
+)
+
+-- Budget "brut" (toute la periode disponible, ex. 36 mois)
+Budget (Brut) =
+CALCULATE (
+    SUM ( Fact_Transactions[amount] ),
+    dim_scenario[scenario_name] = "Budget"
+)
+
+
+-- ============================================================
+-- 2. PERIODE ALIGNEE - ne jamais comparer un Actual partiel
+--    (dernier mois cloture) a un Budget annuel complet
+--    (cf. section 06 de la documentation : anomalie n2, Variance %
+--    gonflee de -13,7% a cause d'un perimetre de dates different)
+-- ============================================================
+Derniere Date Actual =
+CALCULATE (
+    MAX ( dim_date[date] ),
+    dim_scenario[scenario_name] = "Actual"
+)
+
+-- Budget recalcule sur la meme periode que l'Actual disponible
+Budget =
+CALCULATE (
+    [Budget (Brut)],
+    dim_date[date] <= [Derniere Date Actual]
+)
+
+
+-- ============================================================
+-- 3. VARIANCE - ecart Actual vs Budget (periode alignee)
+-- ============================================================
+Variance =
+[Actual] - [Budget]
+
+Variance % =
+DIVIDE ( [Variance], [Budget] )
+
+
+-- ============================================================
+-- 4. INTELLIGENCE TEMPORELLE - YoY / MoM
+--    (necessite Dim_Date marquee comme table de dates officielle)
+-- ============================================================
+Actual PY =
+CALCULATE ( [Actual], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+YoY % =
+DIVIDE ( [Actual] - [Actual PY], [Actual PY] )
+
+Actual PM =
+CALCULATE ( [Actual], DATEADD ( dim_date[date], -1, MONTH ) )
+
+MoM % =
+DIVIDE ( [Actual] - [Actual PM], [Actual PM] )
+
+
+-- ============================================================
+-- 5. CUMULS DEPUIS LE 1ER JANVIER (YTD)
+-- ============================================================
+Actual YTD =
+TOTALYTD ( [Actual], dim_date[date] )
+
+Budget YTD =
+TOTALYTD ( [Budget (Brut)], dim_date[date] )
+
+
+-- ============================================================
+-- 6. P&L - sommes filtrees par dim_account[account_category]
+-- ============================================================
+Revenue =
+CALCULATE ( [Actual], dim_account[account_category] = "Revenue" )
+
+COGS =
+CALCULATE ( [Actual], dim_account[account_category] = "COGS" )
+
+Opex =
+CALCULATE ( [Actual], dim_account[account_category] = "Opex" )
+
+D&A =
+CALCULATE ( [Actual], dim_account[account_category] = "D&A" )
+
+
+-- ============================================================
+-- 7. RENTABILITE - EBITDA
+-- ============================================================
+EBITDA =
+[Revenue] - [COGS] - [Opex]
+
+Marge EBITDA % =
+DIVIDE ( [EBITDA], [Revenue] )
+
+
+-- ============================================================
+-- 8. DETECTION D'ANOMALIES - dispersion des charges Opex
+--    sur les 12 derniers mois (alerte si un mois s'ecarte trop
+--    de la moyenne glissante)
+-- ============================================================
+Opex Ecart-type 12M =
+VAR DerniereDate = MAX ( dim_date[date] )
+VAR OpexParMois =
+    ADDCOLUMNS (
+        DATESINPERIOD ( dim_date[date], DerniereDate, -12, MONTH ),
+        "@OpexMois", CALCULATE ( [Opex] )
+    )
+RETURN
+    STDEVX.P ( OpexParMois, [@OpexMois] )
+
+
+-- ============================================================
+-- 9. FORMAT STRING (a appliquer dans le volet Mesure > Mise en forme)
+-- ============================================================
+-- Actual / Budget / Forecast / Revenue / COGS / Opex / EBITDA  : "#,##0.00 € ;-#,##0.00 €"
+-- Variance / Opex Ecart-type 12M                               : "#,##0.00 € ;-#,##0.00 €"
+-- Variance % / YoY % / MoM % / Marge EBITDA %                  : "0.00% ;-0.00%"
+
+
+-- ============================================================
+-- 10. ROW-LEVEL SECURITY (RLS)
+-- ============================================================
+-- Role "RLS_France" (Modelisation > Gerer les roles), filtre sur dim_entity :
+--   [entity_name] = "France"
+-- Duplique par entite (RLS_Germany, RLS_Spain, RLS_USA, RLS_Japan).
+-- Teste via "Afficher en tant que" (View as) dans Power BI Desktop.
+
+
+-- ============================================================
+-- Relations du modele
+-- ============================================================
+-- Table          | Cle            | Cardinalite | Table liee
+-- dim_date       | date           | 1 -> *      | Fact_Transactions  (marquee table de dates)
+-- dim_entity     | entity_id      | 1 -> *      | Fact_Transactions
+-- dim_costcenter | cost_center_id | 1 -> *      | Fact_Transactions
+-- dim_account    | account_id     | 1 -> *      | Fact_Transactions
+-- dim_scenario   | scenario_id    | 1 -> *      | Fact_Transactions
+--
+-- Mode de connexion : Direct Lake (lecture directe des tables Delta du
+-- Warehouse FIN_Warehouse, sans Import ni DirectQuery classique).

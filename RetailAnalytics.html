@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKFCXYNH8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKFCXYNH8');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "y4a5lxhz87");
+  </script>
+
+  <!--- basic page needs
+    ================================================== -->
+  <meta charset="utf-8">
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <title>Retail Sales Analytics – Microsoft Fabric & Power BI | Darryll JOSEPH</title>
+  <meta name="description"
+    content="Projet Retail Sales Analytics : pipeline Microsoft Fabric (Data Factory, OneLake, Lakehouse, Warehouse) pour consolider ventes, magasins et stocks d'une enseigne retail multi-canal, avec modèle en étoile, RLS et rapports Power BI. Fabric, DAX, SQL, Power Query.">
+  <meta name="keywords"
+    content="Data Analyst, Data Engineer, Retail Analytics, Microsoft Fabric, Power BI, DAX, Power Query, SQL, OneLake, Lakehouse, Warehouse, Row-Level Security, RLS, Star Schema, Business Intelligence, Ventes, Retail">
+  <meta name="author" content="Darryll JOSEPH">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="og:title" content="Retail Sales Analytics – Microsoft Fabric & Power BI | Darryll JOSEPH">
+  <meta property="og:description"
+    content="Projet Retail Sales Analytics : pipeline Microsoft Fabric (Data Factory, OneLake, Lakehouse, Warehouse) pour consolider ventes, magasins et stocks d'une enseigne retail multi-canal, avec modèle en étoile, RLS et rapports Power BI. Fabric, DAX, SQL, Power Query.">
+  <meta property="og:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="twitter:title" content="Retail Sales Analytics – Microsoft Fabric & Power BI | Darryll JOSEPH">
+  <meta property="twitter:description"
+    content="Projet Retail Sales Analytics : pipeline Microsoft Fabric (Data Factory, OneLake, Lakehouse, Warehouse) pour consolider ventes, magasins et stocks d'une enseigne retail multi-canal, avec modèle en étoile, RLS et rapports Power BI. Fabric, DAX, SQL, Power Query.">
+  <meta property="twitter:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Language Switcher Styles -->
+  <style>
+    /* En mode FR : masquer l'anglais */
+    .lang-fr [data-lang="en"] {
+      display: none !important;
+    }
+
+    .lang-en [data-lang="fr"] {
+      display: none !important;
+    }
+
+
+    /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      color: white;
+    }
+
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid #FFAE42;
+      color: white;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      height: auto;
+    }
+
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+    }
+
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+      border: 2px solid #FFAE42;
+      color: white;
+
+
+    }
+
+    .lang-select option {
+      color: black;
+      /* Texte visible dans la liste */
+      background-color: white;
+      /* Fond blanc par défaut */
+    }
+
+    /* Option survolée dans certains navigateurs */
+    .lang-select option:hover,
+    .lang-select option:focus,
+    .lang-select option:checked {
+      background-color: #e5e5e5;
+      /* Gris clair */
+      color: black;
+      /* Texte bien lisible */
+    }
+
+    @media (max-width: 768px) {
+      .language-switcher {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
+  <script src="js/pace.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/visit-tracker.js"></script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Analyst spécialisé en Retail Analytics, Business Intelligence et ingénierie de données Cloud",
+    "url": "https://darryll-joseph.github.io/Portfolio/",
+    "image": "https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll-joseph",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Power BI",
+      "Microsoft Fabric",
+      "Azure",
+      "SQL",
+      "DAX",
+      "Power Query",
+      "Data Analysis",
+      "Business Intelligence",
+      "Dashboard Development"
+    ]
+  }
+  </script>
+
+  <!-- favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+  <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+  <!-- header
+    ================================================== -->
+  <header class="s-header">
+
+    <div class="header-logo">
+      <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+    </div>
+
+    <nav class="header-nav-wrap">
+      <ul class="header-nav">
+        <li>
+          <a class="smoothscroll" href="index.html" title="Accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en">Home</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="smoothscroll" href="index.html#projects" title="Projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en">Projects</span>
+          </a>
+        </li>
+        <li>
+
+          <select id="languageSelect" class="smoothscroll lang-select">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+
+        </li>
+      </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+  </header> <!-- end s-header -->
+
+
+  <!-- home
+   ================================================== -->
+  <section id="home" class="s-home page-hero target-section"
+    style="background-image:url('images/IMG_0596.jpeg'); background-repeat:no-repeat; background-position:center center; background-size:cover; background-color:#111;">
+
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+
+    <div class="home-content2 decal">
+      <div class="project-status">
+        <span class="status-badge completed">
+          <i class="fas fa-check-circle"></i>
+          <span data-lang="fr">Terminé</span>
+          <span data-lang="en">Completed</span>
+        </span>
+      </div>
+
+      <div class="row home-content__main2">
+        <div class="container">
+          <div class="project-header">
+
+            <h1>
+              <span class="project-title-accent" data-lang="fr">Retail Sales Analytics – Pilotage des Ventes avec
+                Microsoft Fabric & Power BI</span>
+              <span class="project-title-accent" data-lang="en">Retail Sales Analytics – Sales Reporting with
+                Microsoft Fabric & Power BI</span>
+            </h1>
+            <p class="project-subtitle">
+              <span data-lang="fr">Consolidation des ventes, magasins et promotions d'une enseigne retail (20
+                magasins, 302 références) dans un Lakehouse Microsoft Fabric, jusqu'à des rapports Power BI de
+                pilotage commercial</span>
+              <span data-lang="en">Sales, store and promotion consolidation for a retail chain (20 stores, 302
+                SKUs) into a Microsoft Fabric Lakehouse, through to Power BI reports for commercial steering</span>
+            </p>
+
+            <div class="project-tech-badges">
+              <span class="tech-badge">Microsoft Fabric</span>
+              <span class="tech-badge">OneLake</span>
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">DAX</span>
+              <span class="tech-badge">Power Query</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">RLS</span>
+            </div>
+
+            <p class="project-report-link">
+              <a href="assets/reports/rapport_retail_sales_analytics.pdf" target="_blank" class="nav-btn primary">
+                <i class="fas fa-file-pdf"></i>
+                <span data-lang="fr">Voir la documentation complète (PDF)</span>
+                <span data-lang="en">View Full Documentation (PDF)</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- end s-home -->
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i>
+        <span data-lang="fr">Vue d'ensemble</span>
+        <span data-lang="en">Project Overview</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              La direction commerciale d'une enseigne retail (hypermarchés, supermarchés, magasins de proximité)
+              avait besoin d'une vision unifiée des ventes <strong>magasin + click & collect</strong> pour piloter
+              chiffre d'affaires, marge et performance par région. J'ai reproduit ce scénario de bout en bout :
+              ingestion de <strong>20 magasins</strong>, <strong>302 références produit</strong> et
+              <strong>115 K transactions</strong> sur 31 mois, modélisation en étoile dans Microsoft Fabric et
+              livraison d'un rapport Power BI en 4 pages sécurisé par région.
+            </span>
+            <span data-lang="en">
+              A retail chain's commercial management (hypermarkets, supermarkets, convenience stores) needed a
+              unified view of <strong>in-store + click & collect</strong> sales to steer revenue, margin and
+              regional performance. I reproduced this scenario end to end: ingesting <strong>20 stores</strong>,
+              <strong>302 product references</strong> and <strong>115K transactions</strong> over 31 months,
+              star-schema modelling in Microsoft Fabric, and delivery of a 4-page Power BI report secured by
+              region.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr">Ingestion <strong>Bronze</strong> multi-sources (PostgreSQL, Excel reporting
+                magasin, API promotions) dans un Lakehouse Microsoft Fabric via Data Factory</span>
+              <span data-lang="en"><strong>Bronze</strong> multi-source ingestion (PostgreSQL, Excel store
+                reporting, promotions API) into a Microsoft Fabric Lakehouse via Data Factory</span>
+            </li>
+            <li><span data-lang="fr">Nettoyage et contrôle qualité via <strong>Dataflows Gen2</strong> et notebooks,
+                production de tables <strong>Silver</strong></span>
+              <span data-lang="en">Cleansing and quality control via <strong>Dataflows Gen2</strong> and notebooks,
+                producing <strong>Silver</strong> tables</span>
+            </li>
+            <br>
+            <li><span data-lang="fr">Modèle en étoile <strong>Gold</strong> dans un Warehouse Fabric, modèle
+                sémantique DAX avec sécurité au niveau ligne (<strong>RLS</strong>) par région / magasin</span>
+              <span data-lang="en"><strong>Gold</strong> star schema in a Fabric Warehouse, DAX semantic model with
+                region/store-level <strong>row-level security (RLS)</strong></span>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/RetailAnalytics/01-vue-ensemble.png"
+            alt="Retail Sales Analytics – Rapport Power BI, Vue d'ensemble : chiffre d'affaires, marge, panier moyen, évolution CA par canal de vente"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Rapport Power BI « Retail Analytics » – Vue d'ensemble : 7 M€ de CA, marge de
+              84,51%, panier moyen de 57,38 €</span>
+            <span data-lang="en">"Retail Analytics" Power BI report – Overview: €7M revenue, 84.51% margin, €57.38
+              average basket</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLÈME & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>
+        <span data-lang="fr">Problématique & Solution</span>
+        <span data-lang="en">Business Challenge & Solution</span>
+      </h2>
+
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="fr">Problématique</span>
+            <span data-lang="en">Challenge</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Ventes dispersées entre base transactionnelle (PostgreSQL), reporting Excel
+                magasin et API promotions, sans vision consolidée</span>
+              <span data-lang="en">Sales scattered across a transactional database (PostgreSQL), Excel store
+                reporting and a promotions API, with no consolidated view</span>
+            </li>
+            <li><span data-lang="fr">Difficulté à comparer la performance entre types de magasin (hyper, super,
+                proximité) et canaux (magasin, click & collect)</span>
+              <span data-lang="en">Difficulty comparing performance across store types (hyper, super, convenience)
+                and channels (in-store, click & collect)</span>
+            </li>
+            <li><span data-lang="fr">Absence de contrôle d'accès : chaque directeur régional voyait l'ensemble du
+                périmètre national</span>
+              <span data-lang="en">No access control: every regional director could see the entire national
+                scope</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i>
+            <span data-lang="fr">Solution Déployée</span>
+            <span data-lang="en">Deployed Solution</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Architecture en médaillon <strong>Bronze/Silver/Gold</strong> sur Microsoft
+                Fabric (OneLake, Lakehouse, Warehouse), orchestrée par Data Factory</span>
+              <span data-lang="en"><strong>Bronze/Silver/Gold</strong> medallion architecture on Microsoft Fabric
+                (OneLake, Lakehouse, Warehouse), orchestrated by Data Factory</span>
+            </li>
+            <li><span data-lang="fr">Modèle sémantique DAX (évolution, tendances, top produits) et rapport Power BI
+                en 4 pages</span>
+              <span data-lang="en">DAX semantic model (evolution, trends, top products) and a 4-page Power BI
+                report</span>
+            </li>
+            <li><span data-lang="fr">Rôles <strong>RLS</strong> par région et par magasin, testés via « Afficher en
+                tant que » dans Power BI</span>
+              <span data-lang="en">Region- and store-level <strong>RLS</strong> roles, tested via Power BI's "View
+                as" feature</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FONCTIONNALITÉS CLÉS ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-cogs"></i>
+        <span data-lang="fr">Fonctionnalités Clés</span>
+        <span data-lang="en">Key Features</span>
+      </h2>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RetailAnalytics/02-produits.png"
+              alt="Retail Sales Analytics – Page Produits : top 10 produits, répartition du CA par catégorie"
+              loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">Analyse Produits & Catégories</span>
+            <span data-lang="en">Product & Category Analysis</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">Suivi du catalogue (302 références actives) et des 10 catégories de produits
+                :</span>
+              <span data-lang="en">Tracking of the catalog (302 active SKUs) and 10 product categories:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr">Top produit : <strong>Textile #282</strong> (226 K€), catégorie leader
+                  <strong>Bazar & Textile</strong> (730 K€)</span>
+                <span data-lang="en">Top product: <strong>Textile #282</strong> (€226K), leading category
+                  <strong>Bazar & Textile</strong> (€730K)</span>
+              </li>
+              <li><span data-lang="fr">Classement des 10 catégories par chiffre d'affaires</span>
+                <span data-lang="en">Ranking of the 10 categories by revenue</span>
+              </li>
+            </ul>
+            <p class="model-arch"><strong>Warehouse (Gold) → DIM_PRODUCT → Top N produits & catégories</strong></p>
+          </div>
+
+          <div class="feature-tech">DAX</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RetailAnalytics/03-magasins.png"
+              alt="Retail Sales Analytics – Page Magasins : CA par magasin, CA par type de magasin" loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">Performance par Magasin</span>
+            <span data-lang="en">Store Performance</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">Comparaison des 20 magasins (8 hyper, 8 super, 4 proximité) :</span>
+              <span data-lang="en">Comparison of the 20 stores (8 hyper, 8 super, 4 convenience):</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr">Meilleur magasin : <strong>Lyon Part-Dieu</strong> (823 K€), CA moyen au m²
+                  de <strong>99,05 €</strong></span>
+                <span data-lang="en">Best store: <strong>Lyon Part-Dieu</strong> (€823K), average revenue per
+                  m² of <strong>€99.05</strong></span>
+              </li>
+              <li><span data-lang="fr">Les hypermarchés génèrent <strong>5,1 M€</strong> sur les 7 M€ de CA
+                  total</span>
+                <span data-lang="en">Hypermarkets generate <strong>€5.1M</strong> of the €7M total revenue</span>
+              </li>
+            </ul>
+            <p class="model-arch"><strong>DIM_STORE relié à FACT_SALES par store_id</strong></p>
+          </div>
+
+          <div class="feature-tech">Power BI</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RetailAnalytics/04-tendances.png"
+              alt="Retail Sales Analytics – Page Tendances : évolution du CA mensuel et YoY, CA par jour de semaine"
+              loading="lazy">
+          </div>
+
+          <h3>
+            <span data-lang="fr">Tendances & Saisonnalité</span>
+            <span data-lang="en">Trends & Seasonality</span>
+          </h3>
+
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">Intelligence temporelle DAX sur 31 mois glissants :</span>
+              <span data-lang="en">DAX time intelligence over a 31-month rolling window:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr">Évolution <strong>YTD 2026 vs 2025 : -61,36%</strong>, meilleur mois historique
+                  Janvier 2025 (632 K€)</span>
+                <span data-lang="en"><strong>YTD 2026 vs 2025 evolution: -61.36%</strong>, best historical month
+                  January 2025 (€632K)</span>
+              </li>
+              <li><span data-lang="fr">Le week-end (samedi/dimanche) concentre <strong>25,88%</strong> du CA
+                  total, la part la plus forte de la semaine</span>
+                <span data-lang="en">Weekends (Saturday/Sunday) concentrate <strong>25.88%</strong> of total
+                  revenue, the strongest share of the week</span>
+              </li>
+            </ul>
+            <p class="model-arch"><strong>Mesures YoY / MoM via SAMEPERIODLASTYEAR & DATEADD</strong></p>
+          </div>
+
+          <div class="feature-tech">DAX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MODÉLISATION EN ÉTOILE ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-star"></i>
+        <span data-lang="fr">Modélisation en Étoile</span>
+        <span data-lang="en">Star Schema Modelling</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Un script SQL construit le schéma en étoile final dans le Warehouse <strong>Gold</strong> :
+              une table de faits <strong>FACT_SALES</strong> au grain de la ligne de vente (542 786 lignes),
+              reliée à 4 dimensions — <strong>DIM_DATE, DIM_PRODUCT, DIM_STORE, DIM_CUSTOMER</strong>. La
+              dimension client porte le segment fidélité, utilisé pour l'analyse par segment
+              (Occasionnel / Régulier / Fidèle Premium).
+            </span>
+            <span data-lang="en">
+              A SQL script builds the final star schema in the <strong>Gold</strong> Warehouse: a
+              <strong>FACT_SALES</strong> table at sales-line grain (542,786 rows), linked to 4 dimensions —
+              <strong>DIM_DATE, DIM_PRODUCT, DIM_STORE, DIM_CUSTOMER</strong>. The customer dimension carries
+              the loyalty segment, used for segment analysis (Occasional / Regular / Premium Loyal).
+            </span>
+          </p>
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/RetailAnalytics/star-schema-diagram.png"
+            alt="Retail Sales Analytics – Modèle de données en étoile : FACT_SALES reliée à DIM_DATE, DIM_PRODUCT, DIM_STORE, DIM_CUSTOMER"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Schéma en étoile : FACT_SALES et ses 4 dimensions</span>
+            <span data-lang="en">Star schema: FACT_SALES and its 4 dimensions</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i>
+        <span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
+
+      <div class="project-image" style="max-width: 900px; margin: 0 auto 40px;">
+        <img src="assets/projects/RetailAnalytics/architecture-diagram.png"
+          alt="Schéma d'architecture Retail Sales Analytics : PostgreSQL/Excel/API → Fabric Data Factory → OneLake Bronze → Dataflow Gen2 (qualité) → Lakehouse Silver → Warehouse Gold → Modèle sémantique DAX/RLS → Power BI"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Des sources de vente brutes au rapport Power BI, dans un même workspace Fabric</span>
+          <span data-lang="en">From raw sales sources to the Power BI report, within a single Fabric workspace</span>
+        </p>
+      </div>
+
+      <div class="tech-architecture">
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Sources</span><span data-lang="en">Sources</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-database"></i><span>PostgreSQL (retail_ops)</span></div>
+            <div class="tech-item"><img src="assets/logos/excel.png" alt="Excel"><span data-lang="fr">Excel
+                (reporting magasin)</span><span data-lang="en">Excel (store reporting)</span></div>
+            <div class="tech-item"><i class="fas fa-plug"></i><span data-lang="fr">API (promotions)</span><span
+                data-lang="en">API (promotions)</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Ingestion & Stockage</span><span data-lang="en">Ingestion & Storage</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-diagram-project"></i><span>Fabric Data Factory</span></div>
+            <div class="tech-item"><i class="fas fa-water"></i><span>OneLake</span></div>
+            <div class="tech-item"><i class="fas fa-filter"></i><span>Dataflow Gen2</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Traitement & Modélisation</span><span data-lang="en">Processing &
+              Modelling</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-layer-group"></i><span>Bronze / Silver / Gold</span></div>
+            <div class="tech-item"><i class="fas fa-star"></i><span data-lang="fr">Modèle en étoile</span><span
+                data-lang="en">Star Schema</span></div>
+            <div class="tech-item"><img src="assets/logos/dax.png" alt="DAX"><span>DAX</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Sécurité & Reporting</span><span data-lang="en">Security & Reporting</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-user-shield"></i><span>RLS</span></div>
+            <div class="tech-item"><img src="assets/logos/powerbi.png" alt="Power BI"><span>Power BI</span></div>
+            <div class="tech-item"><i class="fas fa-sync"></i><span data-lang="fr">Rafraîchissement planifié</span>
+              <span data-lang="en">Scheduled Refresh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RÉSULTATS & IMPACT ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>
+        <span data-lang="fr">Résultats & Impact</span>
+        <span data-lang="en">Results & Impact</span>
+      </h2>
+
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon"><i class="fas fa-eye"></i></div>
+          <h3><span data-lang="fr">Vision Unifiée</span><span data-lang="en">Unified View</span></h3>
+          <p>
+            <span data-lang="fr">Consolidation de <strong>7 M€</strong> de chiffre d'affaires et 115 K
+              transactions sur 20 magasins et 2 canaux (91,4% magasin, 8,6% click & collect).</span>
+            <span data-lang="en">Consolidation of <strong>€7M</strong> in revenue and 115K transactions across
+              20 stores and 2 channels (91.4% in-store, 8.6% click & collect).</span>
+          </p>
+        </div>
+
+        <div class="result-card success">
+          <div class="result-icon"><i class="fas fa-arrow-trend-up"></i></div>
+          <h3><span data-lang="fr">Croissance Pilotée</span><span data-lang="en">Tracked Growth</span></h3>
+          <p>
+            <span data-lang="fr">Suivi YoY fiabilisé : <strong>-61,36%</strong> d'évolution CA YTD 2026 vs 2025,
+              détection immédiate des pics saisonniers (janvier 2025 : 632 K€).</span>
+            <span data-lang="en">Reliable YoY tracking: <strong>-61.36%</strong> YTD 2026 vs 2025 revenue change,
+              immediate detection of seasonal peaks (January 2025: €632K).</span>
+          </p>
+        </div>
+
+        <div class="result-card accent">
+          <div class="result-icon"><i class="fas fa-lock"></i></div>
+          <h3><span data-lang="fr">Gouvernance</span><span data-lang="en">Governance</span></h3>
+          <p>
+            <span data-lang="fr">RLS par région/magasin, rafraîchissement planifié & workspace Fabric unique pour un
+              partage sécurisé et sans duplication de rapports.</span>
+            <span data-lang="en">Region/store-level RLS, scheduled refresh & a single Fabric workspace for secure
+              sharing with no duplicated reports.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects" style="justify-content: center;">
+        <div class="nav-center">
+          <a href="index.html#projects" class="nav-btn">
+            <i class="fas fa-th-large"></i>
+            <span data-lang="fr">Tous les projets</span>
+            <span data-lang="en">All Projects</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Darryll JOSEPH</strong> –
+          <span data-role="da" data-lang="fr">Data Analyst</span>
+          <span data-role="dads" data-lang="fr">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="fr">Data Scientist | AI Engineer</span>
+          <span data-role="da" data-lang="en">Data Analyst</span>
+          <span data-role="dads" data-lang="en">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="en">Data Scientist | AI Engineer</span>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/darryll-joseph" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a id="cv-download-footer" href="assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf" download aria-label="CV PDF"><i
+              class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        <span data-lang="fr">© 2026 – Tous droits réservés.</span>
+        <span data-lang="en">© 2026 – All rights reserved.</span>
+      </p>
+      <!-- Bouton flottant vers le haut -->
+      <a href="#home" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- photoswipe background
+    ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end photoSwipe background -->
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/config-project.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        if (window.scrollY > window.innerHeight * 0.3) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop);
+    });
+
+
+    (function () {
+      const select = document.getElementById('languageSelect');
+
+      function cleanAndApply(lang) {
+        document.body.classList.remove('lang-fr', 'lang-en');
+        document.body.classList.add('lang-' + lang);
+
+        document.documentElement.setAttribute('lang', lang);
+
+        void document.body.offsetHeight; // force reflow
+
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.setAttribute('lang', el.getAttribute('data-lang'));
+        });
+
+        try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+      }
+
+      const saved = (() => {
+        try { return localStorage.getItem('preferred-language') || 'fr'; }
+        catch (e) { return 'fr'; }
+      })();
+      cleanAndApply(saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', () => cleanAndApply(select.value));
+      }
+    })();
+
+
+    /* ZOOM sur images*/
+    (function () {
+      const imgs = Array.from(
+        document.querySelectorAll('.project-section img')
+      );
+      if (!imgs.length) return;
+
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-overlay';
+      lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+      document.body.appendChild(lightbox);
+
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      let currentIndex = -1;
+
+      function openAt(index) {
+        currentIndex = index;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        currentIndex = -1;
+      }
+
+      function goto(delta) {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+      }
+
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openAt(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', close);
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') goto(+1);
+        if (e.key === 'ArrowLeft') goto(-1);
+      });
+    })();
+
+  </script>
+
+</body>
+
+</html>
