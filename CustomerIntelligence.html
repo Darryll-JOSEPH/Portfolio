@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKFCXYNH8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKFCXYNH8');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "y4a5lxhz87");
+  </script>
+
+  <!--- basic page needs
+    ================================================== -->
+  <meta charset="utf-8">
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <title>Customer Intelligence – Segmentation, Churn & Lead Scoring | Darryll JOSEPH</title>
+  <meta name="description"
+    content="Projet Customer Intelligence : pipeline SQL + Python de bout en bout sur deux datasets clients — segmentation K-Means, prédiction du churn (XGBoost), lead scoring commercial et interprétabilité SHAP, restitués dans Power BI. Python, Scikit-learn, XGBoost, SHAP, Power BI.">
+  <meta name="keywords"
+    content="Data Scientist, Data Analyst, Customer Intelligence, Segmentation client, K-Means, Churn Prediction, XGBoost, Logistic Regression, Lead Scoring, SHAP, Interprétabilité, Python, Pandas, Scikit-learn, SQL, Power BI, Machine Learning">
+  <meta name="author" content="Darryll JOSEPH">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="og:title" content="Customer Intelligence – Segmentation, Churn & Lead Scoring | Darryll JOSEPH">
+  <meta property="og:description"
+    content="Projet Customer Intelligence : pipeline SQL + Python de bout en bout sur deux datasets clients — segmentation K-Means, prédiction du churn (XGBoost), lead scoring commercial et interprétabilité SHAP, restitués dans Power BI. Python, Scikit-learn, XGBoost, SHAP, Power BI.">
+  <meta property="og:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="twitter:title" content="Customer Intelligence – Segmentation, Churn & Lead Scoring | Darryll JOSEPH">
+  <meta property="twitter:description"
+    content="Projet Customer Intelligence : pipeline SQL + Python de bout en bout sur deux datasets clients — segmentation K-Means, prédiction du churn (XGBoost), lead scoring commercial et interprétabilité SHAP, restitués dans Power BI. Python, Scikit-learn, XGBoost, SHAP, Power BI.">
+  <meta property="twitter:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Language Switcher Styles -->
+  <style>
+    /* En mode FR : masquer l'anglais */
+    .lang-fr [data-lang="en"] {
+      display: none !important;
+    }
+
+    .lang-en [data-lang="fr"] {
+      display: none !important;
+    }
+
+
+    /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      color: white;
+    }
+
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid #FFAE42;
+      color: white;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      height: auto;
+    }
+
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+    }
+
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+      border: 2px solid #FFAE42;
+      color: white;
+
+
+    }
+
+    .lang-select option {
+      color: black;
+      /* Texte visible dans la liste */
+      background-color: white;
+      /* Fond blanc par défaut */
+    }
+
+    /* Option survolée dans certains navigateurs */
+    .lang-select option:hover,
+    .lang-select option:focus,
+    .lang-select option:checked {
+      background-color: #e5e5e5;
+      /* Gris clair */
+      color: black;
+      /* Texte bien lisible */
+    }
+
+    @media (max-width: 768px) {
+      .language-switcher {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
+  <script src="js/pace.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/visit-tracker.js"></script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Scientist spécialisé en Customer Analytics, Machine Learning et interprétabilité de modèles",
+    "url": "https://darryll-joseph.github.io/Portfolio/",
+    "image": "https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll-joseph",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "XGBoost",
+      "SHAP",
+      "SQL",
+      "K-Means",
+      "Power BI",
+      "Machine Learning",
+      "Data Science"
+    ]
+  }
+  </script>
+
+  <!-- favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+  <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+  <!-- header
+    ================================================== -->
+  <header class="s-header">
+
+    <div class="header-logo">
+      <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+    </div>
+
+    <nav class="header-nav-wrap">
+      <ul class="header-nav">
+        <li>
+          <a class="smoothscroll" href="index.html" title="Accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en">Home</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="smoothscroll" href="index.html#projects" title="Projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en">Projects</span>
+          </a>
+        </li>
+        <li>
+
+          <select id="languageSelect" class="smoothscroll lang-select">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+
+        </li>
+      </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+  </header> <!-- end s-header -->
+
+
+  <!-- home
+   ================================================== -->
+  <section id="home" class="s-home page-hero target-section"
+    style="background-image:url('images/IMG_0596.jpeg'); background-repeat:no-repeat; background-position:center center; background-size:cover; background-color:#111;">
+
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+
+    <div class="home-content2 decal">
+      <div class="project-status">
+        <span class="status-badge completed">
+          <i class="fas fa-check-circle"></i>
+          <span data-lang="fr">Terminé</span>
+          <span data-lang="en">Completed</span>
+        </span>
+      </div>
+
+      <div class="row home-content__main2">
+        <div class="container">
+          <div class="project-header">
+
+            <h1>
+              <span class="project-title-accent" data-lang="fr">Customer Intelligence – Segmentation, Churn &
+                Lead Scoring</span>
+              <span class="project-title-accent" data-lang="en">Customer Intelligence – Segmentation, Churn &
+                Lead Scoring</span>
+            </h1>
+            <p class="project-subtitle">
+              <span data-lang="fr">Plateforme d'analyse client de bout en bout sur 7 043 clients et 9 240
+                prospects : segmentation K-Means, prédiction du churn par Machine Learning, lead scoring
+                commercial et interprétabilité SHAP, restitués dans un dashboard Power BI</span>
+              <span data-lang="en">End-to-end customer analytics platform across 7,043 customers and 9,240
+                leads: K-Means segmentation, Machine Learning churn prediction, commercial lead scoring and SHAP
+                interpretability, delivered through a Power BI dashboard</span>
+            </p>
+
+            <div class="project-tech-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">XGBoost</span>
+              <span class="tech-badge">SHAP</span>
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">Jupyter</span>
+            </div>
+
+            <p class="project-report-link">
+              <a href="assets/reports/rapport_customer_intelligence.pdf" target="_blank" class="nav-btn primary">
+                <i class="fas fa-file-pdf"></i>
+                <span data-lang="fr">Voir la documentation complète (PDF)</span>
+                <span data-lang="en">View Full Documentation (PDF)</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- end s-home -->
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i>
+        <span data-lang="fr">Vue d'ensemble</span>
+        <span data-lang="en">Project Overview</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Trois questions business, une seule plateforme d'analyse : <strong>qui sont mes clients</strong>
+              (segmentation), <strong>qui va partir</strong> (churn) et <strong>quel prospect a le plus de
+                potentiel commercial</strong> (lead scoring). J'ai construit ce pipeline de bout en bout sur deux
+              jeux de données publics consolidés dans une base <strong>SQLite</strong> : <strong>7 043
+                clients</strong> télécom (Telco Customer Churn) et <strong>9 240 prospects</strong> commerciaux
+              (Leads Dataset).
+            </span>
+            <span data-lang="en">
+              Three business questions, one analytics platform: <strong>who are my customers</strong>
+              (segmentation), <strong>who is about to leave</strong> (churn) and <strong>which prospect has the
+                highest commercial potential</strong> (lead scoring). I built this pipeline end to end on two
+              public datasets consolidated into a <strong>SQLite</strong> database: <strong>7,043</strong> telecom
+              customers (Telco Customer Churn) and <strong>9,240</strong> commercial prospects (Leads Dataset).
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr">18 requêtes <strong>SQL</strong> d'analyse descriptive, puis nettoyage et
+                <strong>feature engineering</strong> en <strong>Python / Pandas</strong></span>
+              <span data-lang="en">18 descriptive-analysis <strong>SQL</strong> queries, then cleaning and
+                <strong>feature engineering</strong> in <strong>Python / Pandas</strong></span>
+            </li>
+            <li><span data-lang="fr"><strong>Segmentation K-Means + PCA</strong> et modèles de classification
+                (<strong>Régression logistique, Random Forest, XGBoost</strong>) comparés objectivement</span>
+              <span data-lang="en"><strong>K-Means + PCA segmentation</strong> and classification models
+                (<strong>Logistic Regression, Random Forest, XGBoost</strong>) benchmarked objectively</span>
+            </li>
+            <br>
+            <li><span data-lang="fr">Interprétabilité <strong>SHAP</strong> sur les deux modèles et
+                recommandations marketing chiffrées, restituées dans <strong>Power BI</strong></span>
+              <span data-lang="en"><strong>SHAP</strong> interpretability on both models and quantified marketing
+                recommendations, delivered in <strong>Power BI</strong></span>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/CustomerIntelligence/powerbi-1-churn.jpg"
+            alt="Customer Intelligence – Rapport Power BI, page Churn : taux de churn global et facteurs clés"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Rapport Power BI « Customer Intelligence » – Vue d'ensemble du churn</span>
+            <span data-lang="en">"Customer Intelligence" Power BI report – Churn overview</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLÈME & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>
+        <span data-lang="fr">Problématique & Solution</span>
+        <span data-lang="en">Business Challenge & Solution</span>
+      </h2>
+
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="fr">Problématique</span>
+            <span data-lang="en">Challenge</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Taux de churn global de <strong>26,5%</strong>, soit <strong>2,86 M$</strong>
+                de revenus perdus, sans compréhension fine des profils clients concernés</span>
+              <span data-lang="en">Overall churn rate of <strong>26.5%</strong>, i.e. <strong>$2.86M</strong> in
+                lost revenue, with no clear understanding of which customer profiles are affected</span>
+            </li>
+            <li><span data-lang="fr">Aucune priorisation commerciale : l'équipe contacte les leads sans
+                distinction, au détriment des prospects à fort potentiel</span>
+              <span data-lang="en">No commercial prioritization: the team contacts leads indiscriminately, at
+                the expense of high-potential prospects</span>
+            </li>
+            <li><span data-lang="fr">Des modèles "boîte noire" difficiles à justifier auprès des équipes
+                marketing et commerciales</span>
+              <span data-lang="en">"Black-box" models that are hard to justify to marketing and sales teams</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i>
+            <span data-lang="fr">Solution Déployée</span>
+            <span data-lang="en">Deployed Solution</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr"><strong>Segmentation K-Means</strong> en 4 profils clients actionnables,
+                priorisés par risque de churn</span>
+              <span data-lang="en"><strong>K-Means segmentation</strong> into 4 actionable customer profiles,
+                prioritized by churn risk</span>
+            </li>
+            <li><span data-lang="fr">Modèle <strong>XGBoost</strong> détectant <strong>78%</strong> des churners
+                réels, et modèle de <strong>lead scoring</strong> classant les prospects par potentiel</span>
+              <span data-lang="en"><strong>XGBoost</strong> model detecting <strong>78%</strong> of actual
+                churners, and a <strong>lead scoring</strong> model ranking prospects by potential</span>
+            </li>
+            <li><span data-lang="fr">Interprétabilité <strong>SHAP</strong> pour justifier chaque score, restitué
+                dans un rapport <strong>Power BI</strong> à 3 pages</span>
+              <span data-lang="en"><strong>SHAP</strong> interpretability to justify every score, delivered in a
+                3-page <strong>Power BI</strong> report</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEGMENTATION CLIENTS ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-users-rectangle"></i>
+        <span data-lang="fr">Segmentation Clients</span>
+        <span data-lang="en">Customer Segmentation</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="project-image">
+          <img src="assets/projects/CustomerIntelligence/segmentation-pca.png"
+            alt="Customer Intelligence – Segments clients projetés en 2D par PCA après K-Means"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">4 segments clients identifiés par K-Means, projection PCA à 2 composantes</span>
+            <span data-lang="en">4 customer segments identified by K-Means, 2-component PCA projection</span>
+          </p>
+        </div>
+
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Un clustering <strong>K-Means</strong> sur les variables comportementales (ancienneté, facturation,
+              services souscrits, type de contrat) fait ressortir <strong>4 segments</strong> aux profils de
+              risque très différents — de <strong>7,4%</strong> à <strong>46,1%</strong> de churn.
+            </span>
+            <span data-lang="en">
+              A <strong>K-Means</strong> clustering on behavioral variables (tenure, billing, subscribed
+              services, contract type) reveals <strong>4 segments</strong> with very different risk profiles —
+              from <strong>7.4%</strong> to <strong>46.1%</strong> churn.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr">🔴 <strong>Nouveaux fibre à risque</strong> — 2 696 clients (38,3%),
+                <strong>46,1% de churn</strong> : récents (15,9 mois), fibre optique, contrat mensuel, peu de
+                services (1,44 en moyenne)</span>
+              <span data-lang="en">🔴 <strong>New at-risk fiber customers</strong> — 2,696 customers (38.3%),
+                <strong>46.1% churn</strong>: recent (15.9 months), fiber optic, monthly contract, few services
+                (1.44 on average)</span>
+            </li>
+            <li><span data-lang="fr">🟢 <strong>Premium fidèles</strong> — 2 139 clients (30,4%), 16,0% de churn :
+                54,6 mois d'ancienneté, 92,6$/mois, 4,07 services souscrits</span>
+              <span data-lang="en">🟢 <strong>Loyal premium</strong> — 2,139 customers (30.4%), 16.0% churn: 54.6
+                months tenure, $92.6/month, 4.07 subscribed services</span>
+            </li>
+            <li><span data-lang="fr">🔵 <strong>Économes sans internet</strong> — 1 526 clients (21,7%), 7,4% de
+                churn : segment stable, priorité basse</span>
+              <span data-lang="en">🔵 <strong>Thrifty, no internet</strong> — 1,526 customers (21.7%), 7.4%
+                churn: stable segment, low priority</span>
+            </li>
+            <li><span data-lang="fr">🟠 <strong>DSL engagement mensuel</strong> — 682 clients (9,7%), 24,9% de
+                churn : bon candidat à l'upsell services additionnels</span>
+              <span data-lang="en">🟠 <strong>DSL monthly commitment</strong> — 682 customers (9.7%), 24.9%
+                churn: good candidate for additional-services upsell</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRÉDICTION DU CHURN ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-brain"></i>
+        <span data-lang="fr">Prédiction du Churn</span>
+        <span data-lang="en">Churn Prediction</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 820px; margin: 0 auto 30px;">
+        <span data-lang="fr">Trois modèles entraînés sur un split stratifié 80/20 (classes pondérées pour
+          compenser le déséquilibre 26,5% / 73,5%) et comparés sur l'AUC-ROC, le rappel et la précision — le
+          rappel étant la métrique métier prioritaire : mieux vaut sur-solliciter quelques clients fidèles que
+          manquer un client sur le départ.</span>
+        <span data-lang="en">Three models trained on an 80/20 stratified split (class-weighted to offset the
+          26.5% / 73.5% imbalance) and compared on AUC-ROC, recall and precision — recall being the priority
+          business metric: better to over-target a few loyal customers than miss one who is about to
+          leave.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerIntelligence/churn-roc.png"
+              alt="Customer Intelligence – Courbes ROC comparant Régression Logistique, Random Forest et XGBoost"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Comparaison des Modèles</span>
+            <span data-lang="en">Model Comparison</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr"><strong>Régression logistique</strong> — AUC 0,841 · Rappel 78,1% ·
+                  Précision 50,7%</span>
+                <span data-lang="en"><strong>Logistic Regression</strong> — AUC 0.841 · Recall 78.1% ·
+                  Precision 50.7%</span>
+              </li>
+              <li><span data-lang="fr"><strong>Random Forest</strong> — AUC 0,827 · Rappel 62,3% ·
+                  Précision 54,9%</span>
+                <span data-lang="en"><strong>Random Forest</strong> — AUC 0.827 · Recall 62.3% ·
+                  Precision 54.9%</span>
+              </li>
+              <li><span data-lang="fr"><strong>XGBoost (retenu)</strong> — AUC 0,839 · Rappel <strong>78,1%</strong>
+                  · Précision 51,5%</span>
+                <span data-lang="en"><strong>XGBoost (selected)</strong> — AUC 0.839 · Recall <strong>78.1%</strong>
+                  · Precision 51.5%</span>
+              </li>
+            </ul>
+            <p class="model-arch"><strong>XGBoost retenu pour sa robustesse et sa compatibilité SHAP native</strong>
+            </p>
+          </div>
+          <div class="feature-tech">Scikit-learn / XGBoost</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerIntelligence/churn-confusion-matrix.png"
+              alt="Customer Intelligence – Matrices de confusion des 3 modèles de churn sur l'échantillon test"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Matrices de Confusion (Test)</span>
+            <span data-lang="en">Confusion Matrices (Test Set)</span>
+          </h3>
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">Échantillon test de 1 409 clients (20% stratifié) :</span>
+              <span data-lang="en">1,409-customer test sample (20% stratified):</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr">XGBoost détecte <strong>292 des 374 churners réels</strong> (78,1% de
+                  rappel), au prix de 275 faux positifs</span>
+                <span data-lang="en">XGBoost detects <strong>292 of the 374 actual churners</strong> (78.1%
+                  recall), at the cost of 275 false positives</span>
+              </li>
+              <li><span data-lang="fr">Compromis assumé : cibler plus large en rétention plutôt que laisser
+                  partir un client à fort potentiel</span>
+                <span data-lang="en">Deliberate trade-off: cast a wider retention net rather than let a
+                  high-potential customer leave unnoticed</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Machine Learning</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LEAD SCORING ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-ranking-star"></i>
+        <span data-lang="fr">Lead Scoring Commercial</span>
+        <span data-lang="en">Commercial Lead Scoring</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Sur les <strong>9 240 prospects</strong> (taux de conversion de base : 38,5%), un modèle de scoring
+              classe chaque lead de 0 à 100 et l'assigne à un niveau de priorité (Froid / Tiède / Chaud). La
+              courbe de gain cumulé quantifie le bénéfice d'un ciblage par score plutôt qu'aléatoire.
+            </span>
+            <span data-lang="en">
+              Across <strong>9,240 prospects</strong> (baseline conversion rate: 38.5%), a scoring model ranks
+              each lead from 0 to 100 and assigns a priority tier (Cold / Warm / Hot). The cumulative gain curve
+              quantifies the benefit of score-based over random targeting.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr">En contactant les <strong>40%</strong> de leads les mieux scorés, l'équipe
+                capte <strong>78,4%</strong> des conversions réelles (vs 40% en ciblage aléatoire)</span>
+              <span data-lang="en">By contacting the top-scored <strong>40%</strong> of leads, the team captures
+                <strong>78.4%</strong> of real conversions (vs. 40% with random targeting)</span>
+            </li>
+            <li><span data-lang="fr">Les leads <strong>"Chauds"</strong> (35,1% du volume) convertissent à
+                <strong>80,1%</strong>, contre <strong>8%</strong> pour les leads "Froids"</span>
+              <span data-lang="en"><strong>"Hot"</strong> leads (35.1% of volume) convert at
+                <strong>80.1%</strong>, versus <strong>8%</strong> for "Cold" leads</span>
+            </li>
+            <li><span data-lang="fr">Recommandation : réallouer le budget marketing vers les canaux "Reference"
+                et "Welingak Website" (&gt;90% de conversion)</span>
+              <span data-lang="en">Recommendation: reallocate marketing budget toward the "Reference" and
+                "Welingak Website" channels (&gt;90% conversion)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/CustomerIntelligence/lead-scoring-gain.png"
+            alt="Customer Intelligence – Courbe de gain cumulé du modèle de lead scoring vs ciblage aléatoire"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Courbe de gain cumulé : 78,4% des conversions captées en contactant 40% des
+              leads</span>
+            <span data-lang="en">Cumulative gain curve: 78.4% of conversions captured by contacting 40% of
+              leads</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="project-image" style="max-width: 700px; margin: 40px auto 0;">
+        <img src="assets/projects/CustomerIntelligence/lead-scoring-conversion.png"
+          alt="Customer Intelligence – Taux de conversion réel par niveau de priorité (Froid, Tiède, Chaud)"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Taux de conversion réel par niveau de priorité</span>
+          <span data-lang="en">Real conversion rate by priority tier</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTERPRÉTABILITÉ SHAP ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-magnifying-glass-chart"></i>
+        <span data-lang="fr">Interprétabilité SHAP</span>
+        <span data-lang="en">SHAP Interpretability</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 820px; margin: 0 auto 30px;">
+        <span data-lang="fr">Un modèle de score n'est actionnable que si l'on peut expliquer <em>pourquoi</em>.
+          <strong>SHAP</strong> quantifie la contribution de chaque variable à chaque prédiction, pour les deux
+          modèles.</span>
+        <span data-lang="en">A scoring model is only actionable if you can explain <em>why</em>.
+          <strong>SHAP</strong> quantifies each variable's contribution to every prediction, for both
+          models.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerIntelligence/shap-churn.png"
+              alt="Customer Intelligence – SHAP summary plot du modèle de churn : type de contrat et ancienneté en tête"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Facteurs du Churn</span>
+            <span data-lang="en">Churn Drivers</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Le <strong>type de contrat</strong> (engagement 2 ans) et
+                  l'<strong>ancienneté</strong> sont, de loin, les 2 facteurs les plus déterminants</span>
+                <span data-lang="en"><strong>Contract type</strong> (2-year commitment) and <strong>tenure</strong>
+                  are by far the two most determining factors</span>
+              </li>
+              <li><span data-lang="fr">La <strong>fibre optique</strong> et le paiement par <strong>chèque
+                    électronique</strong> augmentent également le risque</span>
+                <span data-lang="en"><strong>Fiber optic</strong> internet and payment by <strong>electronic
+                    check</strong> also increase risk</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">SHAP · XGBoost</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerIntelligence/shap-leads.png"
+              alt="Customer Intelligence – SHAP summary plot du modèle de lead scoring : temps passé sur le site en tête"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Facteurs de Conversion</span>
+            <span data-lang="en">Conversion Drivers</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Le <strong>temps total passé sur le site</strong> est de très loin le
+                  facteur n°1 de conversion d'un lead</span>
+                <span data-lang="en"><strong>Total time spent on the website</strong> is by far the #1 factor
+                  driving lead conversion</span>
+              </li>
+              <li><span data-lang="fr">L'origine du lead ("Lead Add Form") et l'activité "SMS envoyé" sont
+                  également prédictives</span>
+                <span data-lang="en">Lead origin ("Lead Add Form") and "SMS Sent" activity are also
+                  predictive</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">SHAP · Lead Scoring</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DASHBOARD POWER BI ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-pie"></i>
+        <span data-lang="fr">Dashboard Power BI</span>
+        <span data-lang="en">Power BI Dashboard</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 760px; margin: 0 auto 30px;">
+        <span data-lang="fr">Rapport à 3 pages consommant les tables exportées par le pipeline Python : vue
+          d'ensemble du churn, segmentation clients et priorisation des leads.</span>
+        <span data-lang="en">3-page report consuming the tables exported by the Python pipeline: churn
+          overview, customer segmentation and lead prioritization.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerIntelligence/powerbi-1-churn.jpg"
+              alt="Customer Intelligence – Power BI, page Churn" loading="lazy">
+          </div>
+          <h3><span data-lang="fr">Vue d'ensemble Churn</span><span data-lang="en">Churn Overview</span></h3>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerIntelligence/powerbi-2-segmentation.jpg"
+              alt="Customer Intelligence – Power BI, page Segmentation Clients" loading="lazy">
+          </div>
+          <h3><span data-lang="fr">Segmentation Clients</span><span data-lang="en">Customer Segmentation</span>
+          </h3>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/CustomerIntelligence/powerbi-3-leadscoring.jpg"
+              alt="Customer Intelligence – Power BI, page Lead Scoring" loading="lazy">
+          </div>
+          <h3><span data-lang="fr">Lead Scoring</span><span data-lang="en">Lead Scoring</span></h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i>
+        <span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
+
+      <div class="project-image" style="max-width: 1000px; margin: 0 auto 40px;">
+        <img src="assets/projects/CustomerIntelligence/architecture-diagram.png"
+          alt="Schéma d'architecture Customer Intelligence : SQLite → Python/Pandas → Segmentation K-Means → Modélisation XGBoost → SHAP → Power BI"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Pipeline reproductible : notebooks Jupyter numérotés, scripts src/ réutilisables,
+            modèles exportés (.pkl)</span>
+          <span data-lang="en">Reproducible pipeline: numbered Jupyter notebooks, reusable src/ scripts,
+            exported (.pkl) models</span>
+        </p>
+      </div>
+
+      <div class="project-image" style="max-width: 1200px; margin: 0 auto 40px;">
+        <img src="assets/projects/CustomerIntelligence/architecture-diagram-detaillee.png"
+          alt="Architecture détaillée Customer Intelligence : flux complet des données sources jusqu'aux tables Power BI, par swimlane (Données sources, Ingénierie des données, Machine Learning, Explicabilité & artefacts, Restitution métier)"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Architecture détaillée — flux complet par swimlane : données sources, ingénierie
+            des données, Machine Learning, explicabilité & artefacts, restitution métier (cliquer pour zoomer)</span>
+          <span data-lang="en">Detailed architecture — full flow by swimlane: data sources, data engineering,
+            Machine Learning, explainability & artifacts, business reporting (click to zoom)</span>
+        </p>
+      </div>
+
+      <div class="tech-architecture">
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Sources & Préparation</span><span data-lang="en">Sources & Preparation</span>
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-database"></i><span>SQLite</span></div>
+            <div class="tech-item"><img src="assets/logos/python.png" alt="Python"><span>Python / Pandas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Segmentation</span><span data-lang="en">Segmentation</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-diagram-project"></i><span>K-Means + PCA</span></div>
+            <div class="tech-item"><img src="assets/logos/Scikit-learn.png" alt="Scikit-learn"><span>Scikit-learn</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Modélisation & Interprétation</span><span data-lang="en">Modeling &
+              Interpretation</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/XGBoost.png" alt="XGBoost"><span>XGBoost</span></div>
+            <div class="tech-item"><i class="fas fa-magnifying-glass-chart"></i><span>SHAP</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Restitution</span><span data-lang="en">Reporting</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/powerbi.png" alt="Power BI"><span>Power BI</span></div>
+            <div class="tech-item"><i class="fas fa-book"></i><span data-lang="fr">Notebooks Jupyter</span>
+              <span data-lang="en">Jupyter Notebooks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RECOMMANDATIONS BUSINESS ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullhorn"></i>
+        <span data-lang="fr">Recommandations Business</span>
+        <span data-lang="en">Business Recommendations</span>
+      </h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><i class="fas fa-fire"></i>
+            <span data-lang="fr">Priorité n°1 — Rétention Fibre</span>
+            <span data-lang="en">Priority #1 — Fiber Retention</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Campagne de rétention immédiate sur le segment "Nouveaux fibre à
+                  risque" (46,1% de churn)</span>
+                <span data-lang="en">Immediate retention campaign on the "New at-risk fiber" segment (46.1%
+                  churn)</span>
+              </li>
+              <li><span data-lang="fr">1 à 2 services additionnels offerts 2-3 mois pour augmenter
+                  l'engagement</span>
+                <span data-lang="en">1-2 additional services offered free for 2-3 months to increase
+                  engagement</span>
+              </li>
+              <li><span data-lang="fr">Inciter à migrer vers un contrat 1 an dans les 90 premiers jours</span>
+                <span data-lang="en">Encourage migration to a 1-year contract within the first 90 days</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-credit-card"></i>
+            <span data-lang="fr">Leviers Structurels</span>
+            <span data-lang="en">Structural Levers</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Favoriser les engagements longs : le type de contrat est le facteur de
+                  churn n°1 (SHAP)</span>
+                <span data-lang="en">Encourage longer commitments: contract type is the #1 churn factor
+                  (SHAP)</span>
+              </li>
+              <li><span data-lang="fr">Inciter au prélèvement automatique : le chèque électronique est associé
+                  à 45,3% de churn</span>
+                <span data-lang="en">Push automatic payment: electronic check is associated with 45.3%
+                  churn</span>
+              </li>
+              <li><span data-lang="fr">Creuser la satisfaction qualité/prix fibre (41,9% de churn vs 19,0% en
+                  DSL)</span>
+                <span data-lang="en">Investigate fiber value-for-money satisfaction (41.9% churn vs. 19.0% for
+                  DSL)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-arrow-trend-up"></i>
+            <span data-lang="fr">Priorisation Commerciale</span>
+            <span data-lang="en">Commercial Prioritization</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Contacter en priorité les leads "Chauds" (35,1% du volume, 80,1% de
+                  conversion)</span>
+                <span data-lang="en">Prioritize contacting "Hot" leads (35.1% of volume, 80.1% conversion)</span>
+              </li>
+              <li><span data-lang="fr">Réallouer le budget vers les canaux "Reference" et "Welingak Website"
+                  (&gt;90% de conversion)</span>
+                <span data-lang="en">Reallocate budget toward the "Reference" and "Welingak Website" channels
+                  (&gt;90% conversion)</span>
+              </li>
+              <li><span data-lang="fr">Déclencher une relance automatique au-delà d'un seuil de temps passé sur
+                  le site</span>
+                <span data-lang="en">Trigger an automatic follow-up beyond a time-on-site threshold</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RÉSULTATS & IMPACT ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>
+        <span data-lang="fr">Résultats & Impact</span>
+        <span data-lang="en">Results & Impact</span>
+      </h2>
+
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon"><i class="fas fa-users-rectangle"></i></div>
+          <h3><span data-lang="fr">Segmentation Actionnable</span><span data-lang="en">Actionable
+              Segmentation</span></h3>
+          <p>
+            <span data-lang="fr">4 segments clients identifiés — le plus critique concentre <strong>38,3%</strong>
+              des clients et <strong>46,1%</strong> de churn, ciblable nommément.</span>
+            <span data-lang="en">4 customer segments identified — the most critical one holds <strong>38.3%</strong>
+              of customers and <strong>46.1%</strong> churn, individually targetable.</span>
+          </p>
+        </div>
+
+        <div class="result-card success">
+          <div class="result-icon"><i class="fas fa-bullseye"></i></div>
+          <h3><span data-lang="fr">Churn Anticipé</span><span data-lang="en">Anticipated Churn</span></h3>
+          <p>
+            <span data-lang="fr">Modèle XGBoost détectant <strong>78%</strong> des churners réels sur
+              <strong>2,86 M$</strong> de revenus à risque.</span>
+            <span data-lang="en">XGBoost model detecting <strong>78%</strong> of actual churners across
+              <strong>$2.86M</strong> of revenue at risk.</span>
+          </p>
+        </div>
+
+        <div class="result-card accent">
+          <div class="result-icon"><i class="fas fa-ranking-star"></i></div>
+          <h3><span data-lang="fr">Efficacité Commerciale</span><span data-lang="en">Sales Efficiency</span></h3>
+          <p>
+            <span data-lang="fr">En contactant <strong>40%</strong> des leads les mieux scorés, l'équipe capte
+              <strong>78,4%</strong> des conversions réelles.</span>
+            <span data-lang="en">By contacting the top-scored <strong>40%</strong> of leads, the team captures
+              <strong>78.4%</strong> of real conversions.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects" style="justify-content: center;">
+        <div class="nav-center">
+          <a href="index.html#projects" class="nav-btn">
+            <i class="fas fa-th-large"></i>
+            <span data-lang="fr">Tous les projets</span>
+            <span data-lang="en">All Projects</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Darryll JOSEPH</strong> –
+          <span data-role="da" data-lang="fr">Data Analyst</span>
+          <span data-role="dads" data-lang="fr">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="fr">Data Scientist | AI Engineer</span>
+          <span data-role="da" data-lang="en">Data Analyst</span>
+          <span data-role="dads" data-lang="en">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="en">Data Scientist | AI Engineer</span>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/darryll-joseph" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a id="cv-download-footer" href="assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf" download aria-label="CV PDF"><i
+              class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        <span data-lang="fr">© 2026 – Tous droits réservés.</span>
+        <span data-lang="en">© 2026 – All rights reserved.</span>
+      </p>
+      <!-- Bouton flottant vers le haut -->
+      <a href="#home" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- photoswipe background
+    ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end photoSwipe background -->
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/config-project.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        if (window.scrollY > window.innerHeight * 0.3) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop);
+    });
+
+
+    (function () {
+      const select = document.getElementById('languageSelect');
+
+      function cleanAndApply(lang) {
+        document.body.classList.remove('lang-fr', 'lang-en');
+        document.body.classList.add('lang-' + lang);
+
+        document.documentElement.setAttribute('lang', lang);
+
+        void document.body.offsetHeight; // force reflow
+
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.setAttribute('lang', el.getAttribute('data-lang'));
+        });
+
+        try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+      }
+
+      const saved = (() => {
+        try { return localStorage.getItem('preferred-language') || 'fr'; }
+        catch (e) { return 'fr'; }
+      })();
+      cleanAndApply(saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', () => cleanAndApply(select.value));
+      }
+    })();
+
+
+    /* ZOOM sur images*/
+    (function () {
+      const imgs = Array.from(
+        document.querySelectorAll('.project-section img')
+      );
+      if (!imgs.length) return;
+
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-overlay';
+      lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+      document.body.appendChild(lightbox);
+
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      let currentIndex = -1;
+
+      function openAt(index) {
+        currentIndex = index;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        currentIndex = -1;
+      }
+
+      function goto(delta) {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+      }
+
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openAt(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', close);
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') goto(+1);
+        if (e.key === 'ArrowLeft') goto(-1);
+      });
+    })();
+
+  </script>
+
+</body>
+
+</html>

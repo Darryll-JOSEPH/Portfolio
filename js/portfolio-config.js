@@ -112,6 +112,19 @@ setIfNotEmpty("twitter-description", "content", config.description);
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
+       Compétences selon le profil
+    =========================== */
+
+    document.querySelectorAll(".skills-grid[data-skills-cfg]").forEach(grid => {
+
+        if (grid.dataset.skillsCfg !== cfg) {
+            grid.remove();
+        }
+
+    });
+
+
+    /* ===========================
        Affichage data-profile
     =========================== */
 
@@ -205,6 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "medsynora",
             "euromoney",
             "cohortchurn",
+            "customerintelligence",
             "medibot",
             "integration"
         ],
@@ -212,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Data Analyst / Data Scientist
         dads: [
             "financial",
+            "customerintelligence",
             "cohortchurn",
             "euromoney",
             "retail",
@@ -226,6 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dsii: [
             "medibot",
             "cohortchurn",
+            "customerintelligence",
             "euromoney",
             "integration",
             "financial",

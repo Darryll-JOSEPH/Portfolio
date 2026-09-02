@@ -23,7 +23,8 @@
         "Lumio.html": "Projet - Lumio",
         "FinancialAnalytics.html": "Projet - Financial Analytics",
         "RetailAnalytics.html": "Projet - Retail Sales Analytics",
-        "CustomerCohortChurn.html": "Projet - Customer Cohort & Churn"
+        "CustomerCohortChurn.html": "Projet - Customer Cohort & Churn",
+        "CustomerIntelligence.html": "Projet - Customer Intelligence"
     };
 
     function labelForPath(path) {
