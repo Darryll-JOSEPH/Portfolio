@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKFCXYNH8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKFCXYNH8');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "y4a5lxhz87");
+  </script>
+
+  <!--- basic page needs
+    ================================================== -->
+  <meta charset="utf-8">
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <title>Credit Risk & Anomaly Detection – Scoring Crédit & Détection de Fraude | Darryll JOSEPH</title>
+  <meta name="description"
+    content="Projet Credit Risk & Anomaly Detection : pipeline SQL + Python sur 307 511 emprunteurs et 284 807 transactions réelles. Scoring du risque de défaut par XGBoost, interprétabilité SHAP et détection non supervisée d'anomalies (Isolation Forest, DBSCAN).">
+  <meta name="keywords"
+    content="Data Scientist, Credit Risk, Scoring crédit, Fraud Detection, Anomaly Detection, XGBoost, SHAP, Isolation Forest, DBSCAN, Imbalanced Learning, SMOTE, Python, SQL, Machine Learning">
+  <meta name="author" content="Darryll JOSEPH">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="og:title" content="Credit Risk & Anomaly Detection – Scoring Crédit & Détection de Fraude | Darryll JOSEPH">
+  <meta property="og:description"
+    content="Projet Credit Risk & Anomaly Detection : pipeline SQL + Python sur 307 511 emprunteurs et 284 807 transactions réelles. Scoring du risque de défaut par XGBoost, interprétabilité SHAP et détection non supervisée d'anomalies (Isolation Forest, DBSCAN).">
+  <meta property="og:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="twitter:title" content="Credit Risk & Anomaly Detection – Scoring Crédit & Détection de Fraude | Darryll JOSEPH">
+  <meta property="twitter:description"
+    content="Projet Credit Risk & Anomaly Detection : pipeline SQL + Python sur 307 511 emprunteurs et 284 807 transactions réelles. Scoring du risque de défaut par XGBoost, interprétabilité SHAP et détection non supervisée d'anomalies (Isolation Forest, DBSCAN).">
+  <meta property="twitter:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Language Switcher Styles -->
+  <style>
+    /* En mode FR : masquer l'anglais */
+    .lang-fr [data-lang="en"] {
+      display: none !important;
+    }
+
+    .lang-en [data-lang="fr"] {
+      display: none !important;
+    }
+
+
+    /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      color: white;
+    }
+
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid #FFAE42;
+      color: white;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      height: auto;
+    }
+
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+    }
+
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+      border: 2px solid #FFAE42;
+      color: white;
+
+
+    }
+
+    .lang-select option {
+      color: black;
+      /* Texte visible dans la liste */
+      background-color: white;
+      /* Fond blanc par défaut */
+    }
+
+    /* Option survolée dans certains navigateurs */
+    .lang-select option:hover,
+    .lang-select option:focus,
+    .lang-select option:checked {
+      background-color: #e5e5e5;
+      /* Gris clair */
+      color: black;
+      /* Texte bien lisible */
+    }
+
+    @media (max-width: 768px) {
+      .language-switcher {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
+  <script src="js/pace.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/visit-tracker.js"></script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Scientist spécialisé en scoring de risque, détection d'anomalies et interprétabilité de modèles",
+    "url": "https://darryll-joseph.github.io/Portfolio/",
+    "image": "https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll-joseph",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Python",
+      "SQL",
+      "XGBoost",
+      "SHAP",
+      "Isolation Forest",
+      "DBSCAN",
+      "Imbalanced Learning",
+      "Credit Risk Scoring",
+      "Fraud Detection"
+    ]
+  }
+  </script>
+
+  <!-- favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+  <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+  <!-- header
+    ================================================== -->
+  <header class="s-header">
+
+    <div class="header-logo">
+      <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+    </div>
+
+    <nav class="header-nav-wrap">
+      <ul class="header-nav">
+        <li>
+          <a class="smoothscroll" href="index.html" title="Accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en">Home</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="smoothscroll" href="index.html#projects" title="Projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en">Projects</span>
+          </a>
+        </li>
+        <li>
+
+          <select id="languageSelect" class="smoothscroll lang-select">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+
+        </li>
+      </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+  </header> <!-- end s-header -->
+
+
+  <!-- home
+   ================================================== -->
+  <section id="home" class="s-home page-hero target-section"
+    style="background-image:url('images/IMG_0596.jpeg'); background-repeat:no-repeat; background-position:center center; background-size:cover; background-color:#111;">
+
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+
+    <div class="home-content2 decal">
+      <div class="project-status">
+        <span class="status-badge completed">
+          <i class="fas fa-check-circle"></i>
+          <span data-lang="fr">Terminé</span>
+          <span data-lang="en">Completed</span>
+        </span>
+      </div>
+
+      <div class="row home-content__main2">
+        <div class="container">
+          <div class="project-header">
+
+            <h1>
+              <span class="project-title-accent" data-lang="fr">Credit Risk & Anomaly Detection – Scoring
+                Crédit & Détection de Fraude</span>
+              <span class="project-title-accent" data-lang="en">Credit Risk & Anomaly Detection – Credit
+                Scoring & Fraud Detection</span>
+            </h1>
+            <p class="project-subtitle">
+              <span data-lang="fr">Pipeline SQL + Python sur 307 511 emprunteurs et 284 807 transactions
+                réelles : scoring du risque de défaut par XGBoost, interprétabilité SHAP et détection non
+                supervisée d'anomalies transactionnelles</span>
+              <span data-lang="en">SQL + Python pipeline across 307,511 borrowers and 284,807 real
+                transactions: default risk scoring via XGBoost, SHAP interpretability and unsupervised
+                transaction anomaly detection</span>
+            </p>
+
+            <div class="project-tech-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">XGBoost</span>
+              <span class="tech-badge">SHAP</span>
+              <span class="tech-badge">Scikit-learn</span>
+            </div>
+
+            <p class="project-report-link">
+              <a href="assets/reports/rapport_risk_anomaly.pdf" target="_blank" class="nav-btn primary">
+                <i class="fas fa-file-pdf"></i>
+                <span data-lang="fr">Voir la documentation complète (PDF)</span>
+                <span data-lang="en">View Full Documentation (PDF)</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- end s-home -->
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i>
+        <span data-lang="fr">Vue d'ensemble</span>
+        <span data-lang="en">Project Overview</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Une institution de crédit doit (1) évaluer le <strong>risque de défaut</strong> d'un emprunteur
+              avant d'accorder un prêt, et (2) surveiller ses transactions en production pour détecter des
+              comportements <strong>frauduleux ou anormaux</strong>. Ce projet couvre les deux volets sur des
+              données financières réelles : <strong>307 511 emprunteurs</strong> (8 tables liées) et
+              <strong>284 807 transactions</strong> (0,173% de fraude).
+            </span>
+            <span data-lang="en">
+              A credit institution must (1) assess a borrower's <strong>default risk</strong> before granting a
+              loan, and (2) monitor its production transactions to detect <strong>fraudulent or abnormal</strong>
+              behavior. This project covers both areas on real financial data: <strong>307,511 borrowers</strong>
+              (8 linked tables) and <strong>284,807 transactions</strong> (0.173% fraud).
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr">Agrégation <strong>SQL</strong> de 5 tables secondaires → <strong>224
+                  features</strong> en Python</span>
+              <span data-lang="en"><strong>SQL</strong> aggregation of 5 secondary tables → <strong>224
+                  features</strong> in Python</span>
+            </li>
+            <li><span data-lang="fr">Comparaison de 3 stratégies de gestion du déséquilibre, puis
+                <strong>XGBoost</strong> et interprétabilité <strong>SHAP</strong></span>
+              <span data-lang="en">Comparison of 3 imbalance-handling strategies, then <strong>XGBoost</strong>
+                and <strong>SHAP</strong> interpretability</span>
+            </li>
+            <br>
+            <li><span data-lang="fr">Détection non supervisée <strong>Isolation Forest</strong> et
+                <strong>DBSCAN</strong> sur les transactions, sans labels</span>
+              <span data-lang="en">Unsupervised <strong>Isolation Forest</strong> and <strong>DBSCAN</strong>
+                detection on transactions, without labels</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/RiskAnomaly/default-rate-by-segment.png"
+            alt="Credit Risk & Anomaly Detection – Taux de défaut par segment (genre, éducation, statut familial, type de revenu)"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Taux de défaut par segment — écarts marqués selon le type de revenu (jusqu'à
+              40% pour le congé maternité)</span>
+            <span data-lang="en">Default rate by segment — sharp gaps by income type (up to 40% for maternity
+              leave)</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLÉMATIQUE & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>
+        <span data-lang="fr">Problématique & Solution</span>
+        <span data-lang="en">Business Challenge & Solution</span>
+      </h2>
+
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="fr">Problématique</span>
+            <span data-lang="en">Challenge</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Décisions de prêt sans scoring fiable : risque de défaut non anticipé, ou
+                opportunités perdues par excès de prudence</span>
+              <span data-lang="en">Lending decisions without reliable scoring: unanticipated default risk, or
+                lost opportunities from excessive caution</span>
+            </li>
+            <li><span data-lang="fr">Déséquilibre extrême des classes (~8% de défauts, 0,173% de fraude)
+                rendant les modèles naïfs inutilisables (rappel ~3,5% en baseline)</span>
+              <span data-lang="en">Extreme class imbalance (~8% defaults, 0.173% fraud) making naive models
+                unusable (baseline recall ~3.5%)</span>
+            </li>
+            <li><span data-lang="fr">Absence de surveillance automatisée des transactions pour détecter les
+                comportements frauduleux</span>
+              <span data-lang="en">No automated transaction monitoring to detect fraudulent behavior</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i>
+            <span data-lang="fr">Solution Déployée</span>
+            <span data-lang="en">Deployed Solution</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Agrégation <strong>SQL</strong> de 5 tables secondaires (bureau, prêts
+                précédents, POS, cartes, échéances) → 224 features</span>
+              <span data-lang="en"><strong>SQL</strong> aggregation of 5 secondary tables (bureau, previous
+                loans, POS, cards, installments) → 224 features</span>
+            </li>
+            <li><span data-lang="fr">Comparaison objective de 3 stratégies de déséquilibre → <strong>scale_pos_weight</strong>
+                retenu (rappel x18 vs baseline)</span>
+              <span data-lang="en">Objective comparison of 3 imbalance strategies → <strong>scale_pos_weight</strong>
+                selected (18x recall vs. baseline)</span>
+            </li>
+            <li><span data-lang="fr"><strong>XGBoost</strong> + <strong>SHAP</strong> pour justifier chaque
+                score de risque auprès des équipes crédit</span>
+              <span data-lang="en"><strong>XGBoost</strong> + <strong>SHAP</strong> to justify every risk score
+                to credit teams</span>
+            </li>
+            <li><span data-lang="fr">Détection non supervisée (<strong>Isolation Forest</strong> +
+                <strong>DBSCAN</strong>) pour les transactions, sans nécessiter de labels</span>
+              <span data-lang="en">Unsupervised detection (<strong>Isolation Forest</strong> +
+                <strong>DBSCAN</strong>) for transactions, without requiring labels</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VOLET A : CREDIT RISK ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-scale-balanced"></i>
+        <span data-lang="fr">Volet A — Scoring du Risque Crédit</span>
+        <span data-lang="en">Part A — Credit Risk Scoring</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 840px; margin: 0 auto 30px;">
+        <span data-lang="fr">Sur ~8% de défauts, un modèle naïf (baseline) ne détecte quasiment aucun défaut
+          (rappel 3,5%) malgré un ROC-AUC honorable de 0,780 — un piège classique du déséquilibre de classes.
+          Trois stratégies de rééquilibrage sont comparées en validation croisée 5 folds.</span>
+        <span data-lang="en">With ~8% defaults, a naive (baseline) model detects almost no defaults (3.5%
+          recall) despite a decent 0.780 ROC-AUC — a classic class-imbalance trap. Three rebalancing strategies
+          are compared via 5-fold cross-validation.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RiskAnomaly/roc-pr-curves.png"
+              alt="Credit Risk – Courbes ROC et Precision-Recall comparant baseline, scale_pos_weight et SMOTE"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Gestion du Déséquilibre</span>
+            <span data-lang="en">Imbalance Handling</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Baseline — ROC-AUC 0,780, rappel <strong>3,5%</strong> au seuil 0,5</span>
+                <span data-lang="en">Baseline — 0.780 ROC-AUC, <strong>3.5%</strong> recall at 0.5 threshold</span>
+              </li>
+              <li><span data-lang="fr"><strong>scale_pos_weight</strong> — ROC-AUC 0,778, rappel
+                  <strong>67,3%</strong>, F1 0,291 (retenu)</span>
+                <span data-lang="en"><strong>scale_pos_weight</strong> — 0.778 ROC-AUC, <strong>67.3%</strong>
+                  recall, 0.291 F1 (selected)</span>
+              </li>
+              <li><span data-lang="fr">SMOTE — moins performant en haute dimension (222 features), rappel
+                  2,0%</span>
+                <span data-lang="en">SMOTE — underperforms in high dimension (222 features), 2.0% recall</span>
+              </li>
+            </ul>
+            <p class="model-arch"><strong>Le PR-AUC seul ne suffit pas à départager : le rappel au seuil métier
+                révèle l'écart opérationnel réel</strong></p>
+          </div>
+          <div class="feature-tech">XGBoost / Imbalanced Learning</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RiskAnomaly/confusion-matrices.png"
+              alt="Credit Risk – Matrices de confusion des 3 stratégies : baseline, scale_pos_weight, SMOTE"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Évaluation sur le Test Set</span>
+            <span data-lang="en">Test Set Evaluation</span>
+          </h3>
+          <div class="feature-text">
+            <p>
+              <span data-lang="fr">61 503 clients jamais vus à l'entraînement :</span>
+              <span data-lang="en">61,503 customers never seen during training:</span>
+            </p>
+            <ul>
+              <li><span data-lang="fr">Seuil 0,50 : ROC-AUC 0,783, rappel <strong>68,5%</strong>, précision
+                  18,7%</span>
+                <span data-lang="en">0.50 threshold: 0.783 ROC-AUC, <strong>68.5%</strong> recall, 18.7%
+                  precision</span>
+              </li>
+              <li><span data-lang="fr">Seuil optimal F1 (0,65) : précision 26,3%, rappel 47,0%, <strong>F1
+                    0,337</strong></span>
+                <span data-lang="en">Optimal F1 threshold (0.65): 26.3% precision, 47.0% recall,
+                  <strong>0.337 F1</strong></span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Model Evaluation</div>
+        </div>
+      </div>
+
+      <div class="content-grid" style="margin-top: 40px;">
+        <div class="project-image">
+          <img src="assets/projects/RiskAnomaly/shap-beeswarm.png"
+            alt="Credit Risk – SHAP beeswarm : EXT_SOURCE_1/2/3 dominent, features métier dans le top 20"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">SHAP beeswarm — impact de chaque variable sur le score de risque prédit</span>
+            <span data-lang="en">SHAP beeswarm — each variable's impact on the predicted risk score</span>
+          </p>
+        </div>
+
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Les scores externes <code>EXT_SOURCE_1/2/3</code> dominent l'importance globale, mais plusieurs
+              features <strong>construites en feature engineering</strong> — taux de retard de paiement, ratio
+              crédit/annuité, taux de refus des demandes précédentes, endettement moyen — figurent dans le top
+              20, validant l'effort d'agrégation SQL.
+            </span>
+            <span data-lang="en">
+              The external scores <code>EXT_SOURCE_1/2/3</code> dominate global importance, but several
+              features <strong>built during feature engineering</strong> — late payment rate, credit/annuity
+              ratio, previous-application refusal rate, average debt — rank in the top 20, validating the SQL
+              aggregation effort.
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VOLET B : DÉTECTION D'ANOMALIES ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-triangle-exclamation"></i>
+        <span data-lang="fr">Volet B — Détection d'Anomalies Transactionnelles</span>
+        <span data-lang="en">Part B — Transaction Anomaly Detection</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Sur <strong>284 807 transactions</strong> réelles, seules <strong>492 (0,173%)</strong> sont
+              frauduleuses — un déséquilibre encore plus extrême que le volet crédit, traité ici sans labels par
+              deux approches non supervisées complémentaires.
+            </span>
+            <span data-lang="en">
+              Across <strong>284,807</strong> real transactions, only <strong>492 (0.173%)</strong> are
+              fraudulent — an even more extreme imbalance than the credit part, handled here without labels via
+              two complementary unsupervised approaches.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr"><strong>Isolation Forest</strong> (284 807 transactions) — Precision /
+                Rappel / F1 : <strong>0,256</strong></span>
+              <span data-lang="en"><strong>Isolation Forest</strong> (284,807 transactions) — Precision /
+                Recall / F1: <strong>0.256</strong></span>
+            </li>
+            <li><span data-lang="fr"><strong>DBSCAN</strong> (30 492, échantillon stratifié) — Precision 0,321,
+                Rappel 0,638, <strong>F1 0,428</strong></span>
+              <span data-lang="en"><strong>DBSCAN</strong> (30,492, stratified sample) — 0.321 precision, 0.638
+                recall, <strong>0.428 F1</strong></span>
+            </li>
+            <li><span data-lang="fr">Note méthodologique : la méthode du "coude" pour choisir <code>eps</code>
+                a échoué (distribution à queue lourde) → remplacée par une heuristique du 95e percentile</span>
+              <span data-lang="en">Methodological note: the "elbow" method for choosing <code>eps</code> failed
+                (heavy-tailed distribution) → replaced by a 95th-percentile heuristic</span>
+            </li>
+            <li><span data-lang="fr">Compromis : DBSCAN nécessite un échantillonnage (coût quadratique),
+                Isolation Forest passe à l'échelle nativement</span>
+              <span data-lang="en">Trade-off: DBSCAN requires sampling (quadratic cost), Isolation Forest
+                scales natively</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/RiskAnomaly/anomaly-pca-comparison.png"
+            alt="Credit Risk – Comparaison PCA : vraies labels vs Isolation Forest vs DBSCAN sur les transactions"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Projection PCA : vraies fraudes vs détections Isolation Forest et DBSCAN</span>
+            <span data-lang="en">PCA projection: real fraud vs. Isolation Forest and DBSCAN detections</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="project-image" style="max-width: 700px; margin: 40px auto 0;">
+        <img src="assets/projects/RiskAnomaly/isolation-forest-confusion.png"
+          alt="Credit Risk – Matrice de confusion Isolation Forest sur les 284 807 transactions"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Isolation Forest — matrice de confusion sur l'ensemble des transactions</span>
+          <span data-lang="en">Isolation Forest — confusion matrix on the full transaction set</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i>
+        <span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
+
+      <div class="project-image" style="max-width: 1000px; margin: 0 auto 40px;">
+        <img src="assets/projects/RiskAnomaly/architecture-diagram.png"
+          alt="Schéma d'architecture Credit Risk & Anomaly Detection : SQL → Python → XGBoost → SHAP → Isolation Forest / DBSCAN"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Pipeline reproductible : notebooks numérotés (paired .py/.ipynb), modèle
+            XGBoost exporté, orchestré par run_pipeline.py</span>
+          <span data-lang="en">Reproducible pipeline: numbered notebooks (paired .py/.ipynb), exported XGBoost
+            model, orchestrated by run_pipeline.py</span>
+        </p>
+      </div>
+
+      <div class="tech-architecture">
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Sources & Feature Engineering</span><span data-lang="en">Sources & Feature
+              Engineering</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-database"></i><span>SQL (11 requêtes)</span></div>
+            <div class="tech-item"><img src="assets/logos/python.png" alt="Python"><span>Python / Pandas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Modélisation Supervisée</span><span data-lang="en">Supervised Modeling</span>
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/XGBoost.png" alt="XGBoost"><span>XGBoost</span></div>
+            <div class="tech-item"><i class="fas fa-scale-balanced"></i><span data-lang="fr">scale_pos_weight
+                / SMOTE</span><span data-lang="en">scale_pos_weight / SMOTE</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Interprétabilité</span><span data-lang="en">Interpretability</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-magnifying-glass-chart"></i><span>SHAP</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Détection Non Supervisée</span><span data-lang="en">Unsupervised
+              Detection</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/Scikit-learn.png" alt="Scikit-learn"><span>Isolation
+                Forest</span></div>
+            <div class="tech-item"><i class="fas fa-braille"></i><span>DBSCAN</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RÉSULTATS & IMPACT ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>
+        <span data-lang="fr">Résultats & Impact</span>
+        <span data-lang="en">Results & Impact</span>
+      </h2>
+
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon"><i class="fas fa-magnifying-glass-dollar"></i></div>
+          <h3><span data-lang="fr">Détection de Défaut x18</span><span data-lang="en">18x Default Detection</span>
+          </h3>
+          <p>
+            <span data-lang="fr">Le rappel passe de <strong>3,5%</strong> (baseline) à <strong>68,5%</strong>
+              sur le test set, rendant le score opérationnellement exploitable.</span>
+            <span data-lang="en">Recall jumps from <strong>3.5%</strong> (baseline) to <strong>68.5%</strong> on
+              the test set, making the score operationally usable.</span>
+          </p>
+        </div>
+
+        <div class="result-card success">
+          <div class="result-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+          <h3><span data-lang="fr">Interprétabilité Validée</span><span data-lang="en">Validated
+              Interpretability</span></h3>
+          <p>
+            <span data-lang="fr">SHAP confirme la pertinence des features métier construites (retards de
+              paiement, ratios de crédit) en plus des scores externes.</span>
+            <span data-lang="en">SHAP confirms the relevance of engineered business features (late payments,
+              credit ratios) alongside external scores.</span>
+          </p>
+        </div>
+
+        <div class="result-card accent">
+          <div class="result-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3><span data-lang="fr">Fraude Détectée Sans Labels</span><span data-lang="en">Fraud Detected
+              Without Labels</span></h3>
+          <p>
+            <span data-lang="fr">DBSCAN atteint un F1 de <strong>0,428</strong> sur un échantillon stratifié,
+              démontrant la viabilité d'une détection non supervisée.</span>
+            <span data-lang="en">DBSCAN reaches an F1 of <strong>0.428</strong> on a stratified sample,
+              demonstrating the viability of unsupervised detection.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects" style="justify-content: center;">
+        <div class="nav-center">
+          <a href="index.html#projects" class="nav-btn">
+            <i class="fas fa-th-large"></i>
+            <span data-lang="fr">Tous les projets</span>
+            <span data-lang="en">All Projects</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Darryll JOSEPH</strong> –
+          <span data-role="da" data-lang="fr">Data Analyst</span>
+          <span data-role="dads" data-lang="fr">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="fr">Data Scientist | AI Engineer</span>
+          <span data-role="da" data-lang="en">Data Analyst</span>
+          <span data-role="dads" data-lang="en">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="en">Data Scientist | AI Engineer</span>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/darryll-joseph" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a id="cv-download-footer" href="assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf" download aria-label="CV PDF"><i
+              class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        <span data-lang="fr">© 2026 – Tous droits réservés.</span>
+        <span data-lang="en">© 2026 – All rights reserved.</span>
+      </p>
+      <!-- Bouton flottant vers le haut -->
+      <a href="#home" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- photoswipe background
+    ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end photoSwipe background -->
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/config-project.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        if (window.scrollY > window.innerHeight * 0.3) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop);
+    });
+
+
+    (function () {
+      const select = document.getElementById('languageSelect');
+
+      function cleanAndApply(lang) {
+        document.body.classList.remove('lang-fr', 'lang-en');
+        document.body.classList.add('lang-' + lang);
+
+        document.documentElement.setAttribute('lang', lang);
+
+        void document.body.offsetHeight; // force reflow
+
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.setAttribute('lang', el.getAttribute('data-lang'));
+        });
+
+        try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+      }
+
+      const saved = (() => {
+        try { return localStorage.getItem('preferred-language') || 'fr'; }
+        catch (e) { return 'fr'; }
+      })();
+      cleanAndApply(saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', () => cleanAndApply(select.value));
+      }
+    })();
+
+
+    /* ZOOM sur images*/
+    (function () {
+      const imgs = Array.from(
+        document.querySelectorAll('.project-section img')
+      );
+      if (!imgs.length) return;
+
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-overlay';
+      lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+      document.body.appendChild(lightbox);
+
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      let currentIndex = -1;
+
+      function openAt(index) {
+        currentIndex = index;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        currentIndex = -1;
+      }
+
+      function goto(delta) {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+      }
+
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openAt(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', close);
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') goto(+1);
+        if (e.key === 'ArrowLeft') goto(-1);
+      });
+    })();
+
+  </script>
+
+</body>
+
+</html>

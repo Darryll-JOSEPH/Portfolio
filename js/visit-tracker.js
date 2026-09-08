@@ -24,7 +24,9 @@
         "FinancialAnalytics.html": "Projet - Financial Analytics",
         "RetailAnalytics.html": "Projet - Retail Sales Analytics",
         "CustomerCohortChurn.html": "Projet - Customer Cohort & Churn",
-        "CustomerIntelligence.html": "Projet - Customer Intelligence"
+        "CustomerIntelligence.html": "Projet - Customer Intelligence",
+        "SalesForecasting.html": "Projet - Sales Forecasting & Experimentation",
+        "RiskAnomalyDetection.html": "Projet - Credit Risk & Anomaly Detection"
     };
 
     function labelForPath(path) {

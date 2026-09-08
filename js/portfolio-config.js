@@ -214,11 +214,13 @@ document.addEventListener("DOMContentLoaded", () => {
             "assurnova",
             "retail",
             "financial",
+            "salesforecasting",
             "lumio",
             "medsynora",
             "euromoney",
             "cohortchurn",
             "customerintelligence",
+            "riskanomaly",
             "medibot",
             "integration"
         ],
@@ -227,7 +229,9 @@ document.addEventListener("DOMContentLoaded", () => {
         dads: [
             "financial",
             "customerintelligence",
+            "riskanomaly",
             "cohortchurn",
+            "salesforecasting",
             "euromoney",
             "retail",
             "lumio",
@@ -240,8 +244,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Data Scientist / AI Engineer
         dsii: [
             "medibot",
+            "riskanomaly",
             "cohortchurn",
             "customerintelligence",
+            "salesforecasting",
             "euromoney",
             "integration",
             "financial",
