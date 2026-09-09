@@ -85,6 +85,23 @@ const config = PORTFOLIO_CONFIG[cfg];
 
 
 /* =====================================================
+   CV sur-mesure (candidature via l'agent IA)
+   URL : ?id=<uuid Supabase>
+   Si absent : on garde les CV génériques par profil.
+===================================================== */
+
+const SUPABASE_DOCS_BASE = "https://ftgbtlgybubhpsxwwlbh.supabase.co/storage/v1/object/public/documents";
+
+let candidateId = params.get("id");
+
+if (candidateId) {
+    sessionStorage.setItem("portfolioCandidateId", candidateId);
+} else {
+    candidateId = sessionStorage.getItem("portfolioCandidateId") || null;
+}
+
+
+/* =====================================================
    Mise à jour SEO
 ===================================================== */
 
@@ -149,8 +166,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-    Conserver cfg sur tous les liens internes
+    Conserver cfg (et id, si présent) sur tous les liens internes
     ===================================================== */
+    const persistedParams = candidateId
+        ? `cfg=${cfg}&id=${encodeURIComponent(candidateId)}`
+        : `cfg=${cfg}`;
+
     document.querySelectorAll("a[href]").forEach(link => {
 
         const href = link.getAttribute("href");
@@ -171,13 +192,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Ancres de la page courante
         if (href.startsWith("#")) {
-            link.href = `${window.location.pathname}?cfg=${cfg}${href}`;
+            link.href = `${window.location.pathname}?${persistedParams}${href}`;
             return;
         }
 
-        // Ajouter cfg à TOUS les fichiers html
+        // Ajouter cfg (et id) à TOUS les fichiers html
         if (page.endsWith(".html")) {
-            link.href = `${page}?cfg=${cfg}${hash ? "#" + hash : ""}`;
+            link.href = `${page}?${persistedParams}${hash ? "#" + hash : ""}`;
         }
 
     });
@@ -202,6 +223,24 @@ document.addEventListener("DOMContentLoaded", () => {
     cvButtons.forEach(btn => {
         if (btn) btn.href = cvFiles[cfg];
     });
+
+    // Si un id de candidature est présent, on tente de basculer sur le CV
+    // sur-mesure généré par l'agent IA (stocké dans Supabase Storage).
+    // En cas d'échec (id invalide, fichier absent), on garde le CV générique
+    // déjà assigné ci-dessus.
+    if (candidateId) {
+        const candidateCvUrl = `${SUPABASE_DOCS_BASE}/${encodeURIComponent(candidateId)}/cv.pdf`;
+
+        fetch(candidateCvUrl, { method: "HEAD" })
+            .then(res => {
+                if (res.ok) {
+                    cvButtons.forEach(btn => {
+                        if (btn) btn.href = candidateCvUrl;
+                    });
+                }
+            })
+            .catch(() => { });
+    }
 
     /* =====================================================
        Ordre des projets selon le profil

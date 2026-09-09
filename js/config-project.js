@@ -13,6 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
         cfg = sessionStorage.getItem("portfolioCfg") || "da";
     }
 
+    // CV sur-mesure (candidature via l'agent IA) — voir portfolio-config.js
+    // pour le détail. Si absent : on garde les CV génériques par profil.
+    const SUPABASE_DOCS_BASE = "https://ftgbtlgybubhpsxwwlbh.supabase.co/storage/v1/object/public/documents";
+
+    let candidateId = params.get("id");
+    if (candidateId) {
+        sessionStorage.setItem("portfolioCandidateId", candidateId);
+    } else {
+        candidateId = sessionStorage.getItem("portfolioCandidateId") || null;
+    }
+
     // Affichage data-role (contenu spécifique au profil ciblé)
     document.querySelectorAll("[data-role]").forEach(el => {
         el.style.display = el.dataset.role === cfg ? "inline" : "none";
@@ -26,6 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     const cvButton = document.getElementById("cv-download-footer");
     if (cvButton) cvButton.href = cvFiles[cfg];
+
+    // Si un id de candidature est présent, on tente de basculer sur le CV
+    // sur-mesure (Supabase Storage) ; sinon on garde le CV générique ci-dessus.
+    if (candidateId) {
+        const candidateCvUrl = `${SUPABASE_DOCS_BASE}/${encodeURIComponent(candidateId)}/cv.pdf`;
+
+        fetch(candidateCvUrl, { method: "HEAD" })
+            .then(res => {
+                if (res.ok && cvButton) cvButton.href = candidateCvUrl;
+            })
+            .catch(() => { });
+    }
+
+    const persistedParams = candidateId
+        ? `cfg=${cfg}&id=${encodeURIComponent(candidateId)}`
+        : `cfg=${cfg}`;
 
     document.querySelectorAll("a[href]").forEach(link => {
 
@@ -48,13 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Ancres
         if (href.startsWith("#")) {
-            link.href = `${window.location.pathname}?cfg=${cfg}${href}`;
+            link.href = `${window.location.pathname}?${persistedParams}${href}`;
             return;
         }
 
         // Tous les .html
         if (page.endsWith(".html")) {
-            link.href = `${page}?cfg=${cfg}${hash ? "#" + hash : ""}`;
+            link.href = `${page}?${persistedParams}${hash ? "#" + hash : ""}`;
         }
 
     });
