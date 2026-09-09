@@ -14,15 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // CV sur-mesure (candidature via l'agent IA) — voir portfolio-config.js
-    // pour le détail. Si absent : on garde les CV génériques par profil.
+    // pour le détail. Lu uniquement depuis l'URL courante : absent => CV
+    // générique du profil (cfg), toujours. La persistance d'une page à
+    // l'autre passe par les liens internes réécrits plus bas.
     const SUPABASE_DOCS_BASE = "https://ftgbtlgybubhpsxwwlbh.supabase.co/storage/v1/object/public/documents";
 
-    let candidateId = params.get("id");
-    if (candidateId) {
-        sessionStorage.setItem("portfolioCandidateId", candidateId);
-    } else {
-        candidateId = sessionStorage.getItem("portfolioCandidateId") || null;
-    }
+    const candidateId = params.get("id") || null;
 
     // Affichage data-role (contenu spécifique au profil ciblé)
     document.querySelectorAll("[data-role]").forEach(el => {

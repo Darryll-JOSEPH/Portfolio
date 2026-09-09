@@ -87,18 +87,16 @@ const config = PORTFOLIO_CONFIG[cfg];
 /* =====================================================
    CV sur-mesure (candidature via l'agent IA)
    URL : ?id=<uuid Supabase>
-   Si absent : on garde les CV génériques par profil.
+   Lu uniquement depuis l'URL courante (pas de session) :
+   absent de l'URL => CV générique du profil (cfg), toujours.
+   La persistance d'une page à l'autre se fait via les liens
+   internes réécrits plus bas (?cfg=...&id=...), pas via un
+   souvenir de session qui resterait collé après un test.
 ===================================================== */
 
 const SUPABASE_DOCS_BASE = "https://ftgbtlgybubhpsxwwlbh.supabase.co/storage/v1/object/public/documents";
 
-let candidateId = params.get("id");
-
-if (candidateId) {
-    sessionStorage.setItem("portfolioCandidateId", candidateId);
-} else {
-    candidateId = sessionStorage.getItem("portfolioCandidateId") || null;
-}
+const candidateId = params.get("id") || null;
 
 
 /* =====================================================
