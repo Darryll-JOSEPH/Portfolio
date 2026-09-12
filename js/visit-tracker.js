@@ -26,7 +26,8 @@
         "CustomerCohortChurn.html": "Projet - Customer Cohort & Churn",
         "CustomerIntelligence.html": "Projet - Customer Intelligence",
         "SalesForecasting.html": "Projet - Sales Forecasting & Experimentation",
-        "RiskAnomalyDetection.html": "Projet - Credit Risk & Anomaly Detection"
+        "RiskAnomalyDetection.html": "Projet - Credit Risk & Anomaly Detection",
+        "RecommendationFeedback.html": "Projet - Recommendation & Customer Feedback"
     };
 
     function labelForPath(path) {

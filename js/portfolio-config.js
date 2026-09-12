@@ -258,6 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "cohortchurn",
             "customerintelligence",
             "riskanomaly",
+            "recommendation",
             "medibot",
             "integration"
         ],
@@ -267,6 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "financial",
             "customerintelligence",
             "riskanomaly",
+            "recommendation",
             "cohortchurn",
             "salesforecasting",
             "euromoney",
@@ -282,6 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dsii: [
             "medibot",
             "riskanomaly",
+            "recommendation",
             "cohortchurn",
             "customerintelligence",
             "salesforecasting",

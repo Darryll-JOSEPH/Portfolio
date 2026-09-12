@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<!--<![endif]-->
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHKFCXYNH8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LHKFCXYNH8');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "y4a5lxhz87");
+  </script>
+
+  <!--- basic page needs
+    ================================================== -->
+  <meta charset="utf-8">
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta Tags -->
+  <title>Recommendation & Customer Feedback – Moteur de Recommandation & NLP | Darryll JOSEPH</title>
+  <meta name="description"
+    content="Projet Recommendation & Customer Feedback : pipeline SQL + Python de bout en bout sur 200 000 avis Amazon (catégorie All Beauty). Moteur de recommandation hybride (collaborative filtering + content-based) et analyse NLP des avis clients (sentiment, thèmes), restitués dans un dashboard Streamlit.">
+  <meta name="keywords"
+    content="Data Scientist, Data Analyst, Recommendation System, Système de recommandation, Collaborative Filtering, Content-based, NLP, Sentiment Analysis, Topic Modeling, NMF, TF-IDF, VADER, spaCy, Python, SQL, SQLite, Streamlit, Scikit-learn">
+  <meta name="author" content="Darryll JOSEPH">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="og:title" content="Recommendation & Customer Feedback – Moteur de Recommandation & NLP | Darryll JOSEPH">
+  <meta property="og:description"
+    content="Projet Recommendation & Customer Feedback : pipeline SQL + Python de bout en bout sur 200 000 avis Amazon (catégorie All Beauty). Moteur de recommandation hybride (collaborative filtering + content-based) et analyse NLP des avis clients (sentiment, thèmes), restitués dans un dashboard Streamlit.">
+  <meta property="og:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://darryll-joseph.github.io/Portfolio/">
+  <meta property="twitter:title" content="Recommendation & Customer Feedback – Moteur de Recommandation & NLP | Darryll JOSEPH">
+  <meta property="twitter:description"
+    content="Projet Recommendation & Customer Feedback : pipeline SQL + Python de bout en bout sur 200 000 avis Amazon (catégorie All Beauty). Moteur de recommandation hybride (collaborative filtering + content-based) et analyse NLP des avis clients (sentiment, thèmes), restitués dans un dashboard Streamlit.">
+  <meta property="twitter:image" content="https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png">
+
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Language Switcher Styles -->
+  <style>
+    /* En mode FR : masquer l'anglais */
+    .lang-fr [data-lang="en"] {
+      display: none !important;
+    }
+
+    .lang-en [data-lang="fr"] {
+      display: none !important;
+    }
+
+
+    /* Style du sélecteur (garde tes styles non liés à l'affichage des langues) */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: auto;
+      color: white;
+    }
+
+    .lang-select {
+      background: var(--bg-alt);
+      border: 2px solid #FFAE42;
+      color: white;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none;
+      height: auto;
+    }
+
+    .lang-select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
+    }
+
+    .lang-select:focus {
+      border-color: var(--highlight);
+      box-shadow: 0 0 0 3px rgba(var(--highlight-rgb), .1);
+      border: 2px solid #FFAE42;
+      color: white;
+
+
+    }
+
+    .lang-select option {
+      color: black;
+      /* Texte visible dans la liste */
+      background-color: white;
+      /* Fond blanc par défaut */
+    }
+
+    /* Option survolée dans certains navigateurs */
+    .lang-select option:hover,
+    .lang-select option:focus,
+    .lang-select option:checked {
+      background-color: #e5e5e5;
+      /* Gris clair */
+      color: black;
+      /* Texte bien lisible */
+    }
+
+    @media (max-width: 768px) {
+      .language-switcher {
+        margin-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
+  <script src="js/pace.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/visit-tracker.js"></script>
+
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darryll JOSEPH",
+    "jobTitle": "Data Analyst & Data Scientist",
+    "description": "Data Scientist spécialisé en systèmes de recommandation, NLP et analyse du feedback client",
+    "url": "https://darryll-joseph.github.io/Portfolio/",
+    "image": "https://darryll-joseph.github.io/Portfolio/assets/CV%20photo.png",
+    "email": "jos.darryll@gmail.com",
+    "sameAs": [
+      "https://github.com/darryll-joseph",
+      "https://www.linkedin.com/in/darryll-joseph/"
+    ],
+    "knowsAbout": [
+      "Python",
+      "SQL",
+      "Scikit-learn",
+      "spaCy",
+      "NLTK",
+      "Collaborative Filtering",
+      "Content-based Filtering",
+      "Topic Modeling",
+      "Sentiment Analysis",
+      "Streamlit"
+    ]
+  }
+  </script>
+
+  <!-- favicons
+    ================================================== -->
+  <link rel="shortcut icon" href="data-analytics-icon.ico" type="image/x-icon">
+  <link rel="icon" href="data-analytics-icon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top" class="lang-fr">
+
+  <!-- header
+    ================================================== -->
+  <header class="s-header">
+
+    <div class="header-logo">
+      <a class="site-logo" href="index.html"><img src="images/logo.png" alt="Homepage"></a>
+    </div>
+
+    <nav class="header-nav-wrap">
+      <ul class="header-nav">
+        <li>
+          <a class="smoothscroll" href="index.html" title="Accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en">Home</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a class="smoothscroll" href="index.html#projects" title="Projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en">Projects</span>
+          </a>
+        </li>
+        <li>
+
+          <select id="languageSelect" class="smoothscroll lang-select">
+            <option value="fr" selected>🇫🇷 Français</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+
+        </li>
+      </ul>
+    </nav>
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+  </header> <!-- end s-header -->
+
+
+  <!-- home
+   ================================================== -->
+  <section id="home" class="s-home page-hero target-section"
+    style="background-image:url('images/IMG_0596.jpeg'); background-repeat:no-repeat; background-position:center center; background-size:cover; background-color:#111;">
+
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+
+    <div class="home-content2 decal">
+      <div class="project-status">
+        <span class="status-badge completed">
+          <i class="fas fa-check-circle"></i>
+          <span data-lang="fr">Terminé</span>
+          <span data-lang="en">Completed</span>
+        </span>
+      </div>
+
+      <div class="row home-content__main2">
+        <div class="container">
+          <div class="project-header">
+
+            <h1>
+              <span class="project-title-accent" data-lang="fr">Recommendation & Customer Feedback</span>
+              <span class="project-title-accent" data-lang="en">Recommendation & Customer Feedback</span>
+            </h1>
+            <p class="project-subtitle">
+              <span data-lang="fr">Pipeline data science de bout en bout sur 200 000 avis Amazon (catégorie
+                "All Beauty") : moteur de recommandation hybride (collaborative filtering + content-based) et
+                analyse NLP des avis clients (sentiment, thèmes), restitués dans un dashboard Streamlit</span>
+              <span data-lang="en">End-to-end data science pipeline across 200,000 Amazon reviews ("All Beauty"
+                category): hybrid recommendation engine (collaborative filtering + content-based) and NLP
+                analysis of customer reviews (sentiment, topics), delivered through a Streamlit dashboard</span>
+            </p>
+
+            <div class="project-tech-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">spaCy</span>
+              <span class="tech-badge">NLTK</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">Streamlit</span>
+            </div>
+
+            <p class="project-report-link">
+              <a href="assets/reports/rapport_recommendation_customer_feedback.pdf" target="_blank" class="nav-btn primary">
+                <i class="fas fa-file-pdf"></i>
+                <span data-lang="fr">Voir la documentation complète (PDF)</span>
+                <span data-lang="en">View Full Documentation (PDF)</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- end s-home -->
+
+  <!-- ========== PROJECT OVERVIEW ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i>
+        <span data-lang="fr">Vue d'ensemble</span>
+        <span data-lang="en">Project Overview</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              Un e-commerçant reçoit des milliers d'avis clients (note + texte libre) sur son catalogue produit.
+              Deux besoins concrets, à partir de <strong>la même source de données brute</strong> : personnaliser
+              les recommandations plutôt que d'afficher les mêmes produits populaires à tout le monde
+              (<strong>Marketing / Growth</strong>), et comprendre le sentiment et les thèmes récurrents des avis
+              sans avoir à tous les lire (<strong>Qualité / Produit</strong>). J'ai construit ce pipeline de bout
+              en bout sur un catalogue e-commerce réel : <strong>200 000 avis</strong> Amazon Reviews 2023
+              (catégorie <em>All Beauty</em>), streamés directement depuis Hugging Face.
+            </span>
+            <span data-lang="en">
+              An e-commerce retailer receives thousands of customer reviews (rating + free text) on its product
+              catalog. Two concrete needs, from <strong>the same raw data source</strong>: personalizing
+              recommendations instead of showing the same popular products to everyone
+              (<strong>Marketing / Growth</strong>), and understanding sentiment and recurring themes in reviews
+              without reading them all (<strong>Quality / Product</strong>). I built this pipeline end to end on
+              a real e-commerce catalog: <strong>200,000 reviews</strong> from Amazon Reviews 2023 (<em>All
+                Beauty</em> category), streamed directly from Hugging Face.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr">Chargement <strong>SQL (SQLite)</strong> de 200 000 avis et 60 725 produits,
+                puis nettoyage et <strong>NLP</strong> (spaCy, VADER, NMF) en <strong>Python</strong></span>
+              <span data-lang="en"><strong>SQL (SQLite)</strong> loading of 200,000 reviews and 60,725 products,
+                then cleaning and <strong>NLP</strong> (spaCy, VADER, NMF) in <strong>Python</strong></span>
+            </li>
+            <li><span data-lang="fr">Moteur de recommandation <strong>hybride</strong> : collaborative filtering
+                item-based pour les utilisateurs actifs, <strong>content-based</strong> (TF-IDF) en fallback pour
+                le cold-start</span>
+              <span data-lang="en"><strong>Hybrid</strong> recommendation engine: item-based collaborative
+                filtering for active users, <strong>content-based</strong> (TF-IDF) fallback for cold-start</span>
+            </li>
+            <br>
+            <li><span data-lang="fr">Évaluation rigoureuse <strong>vs baseline popularité</strong> (Precision@K
+                / Recall@K) et dashboard <strong>Streamlit</strong> à 4 onglets</span>
+              <span data-lang="en">Rigorous <strong>vs. popularity baseline</strong> evaluation (Precision@K /
+                Recall@K) and a 4-tab <strong>Streamlit</strong> dashboard</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="project-image">
+          <img src="assets/projects/RecommendationFeedback/rating_distribution.png"
+            alt="Recommendation & Customer Feedback – Distribution des notes sur 200 000 avis Amazon : 61% de 5 étoiles"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Distribution des notes — 61% des avis sont notés 5★, un biais classique en
+              e-commerce</span>
+            <span data-lang="en">Rating distribution — 61% of reviews are rated 5★, a classic e-commerce bias</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLÉMATIQUE & SOLUTION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-lightbulb"></i>
+        <span data-lang="fr">Problématique & Solution</span>
+        <span data-lang="en">Business Challenge & Solution</span>
+      </h2>
+
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <h3><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="fr">Problématique</span>
+            <span data-lang="en">Challenge</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr">Recommandations génériques (produits populaires pour tout le monde),
+                sans personnalisation malgré l'historique d'avis disponible</span>
+              <span data-lang="en">Generic recommendations (popular products for everyone), with no
+                personalization despite the available review history</span>
+            </li>
+            <li><span data-lang="fr">Matrice utilisateur-produit extrêmement <strong>sparse</strong> : 88% des
+                168 659 utilisateurs (148 429) n'ont laissé qu'un seul avis, hors de portée du collaborative
+                filtering classique</span>
+              <span data-lang="en">Extremely <strong>sparse</strong> user-item matrix: 88% of the 168,659 users
+                (148,429) left only one review, out of reach for classic collaborative filtering</span>
+            </li>
+            <li><span data-lang="fr">Des milliers d'avis texte libre non exploités : impossible de suivre
+                manuellement le sentiment et les thèmes récurrents (odeur, texture, prix...) par produit</span>
+              <span data-lang="en">Thousands of unexploited free-text reviews: impossible to manually track
+                sentiment and recurring themes (scent, texture, price...) per product</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <h3><i class="fas fa-check-circle"></i>
+            <span data-lang="fr">Solution Déployée</span>
+            <span data-lang="en">Deployed Solution</span>
+          </h3>
+          <ul>
+            <li><span data-lang="fr"><strong>Collaborative filtering</strong> item-based (similarité cosinus)
+                sur un noyau <strong>k-core</strong> filtré, avec <strong>+429%</strong> de lift @20 vs
+                popularité</span>
+              <span data-lang="en">Item-based <strong>collaborative filtering</strong> (cosine similarity) on a
+                filtered <strong>k-core</strong> segment, with <strong>+429%</strong> lift @20 vs. popularity</span>
+            </li>
+            <li><span data-lang="fr">Module <strong>content-based</strong> (TF-IDF sur 60 725 produits) comblant
+                le trou laissé par le CF, dès un seul avis positif connu</span>
+              <span data-lang="en"><strong>Content-based</strong> module (TF-IDF across 60,725 products) filling
+                the gap left by CF, working from a single known positive review</span>
+            </li>
+            <li><span data-lang="fr"><strong>NLP</strong> (VADER + NMF) : sentiment indépendant de la note et 8
+                thèmes dominants, agrégés par produit</span>
+              <span data-lang="en"><strong>NLP</strong> (VADER + NMF): sentiment independent from the star
+                rating and 8 dominant topics, aggregated per product</span>
+            </li>
+            <li><span data-lang="fr">Dashboard <strong>Streamlit</strong> à 4 onglets pour explorer produits,
+                recommandations et résultats d'évaluation</span>
+              <span data-lang="en">4-tab <strong>Streamlit</strong> dashboard to explore products,
+                recommendations and evaluation results</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANALYSE NLP DES AVIS ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-comments"></i>
+        <span data-lang="fr">Analyse NLP des Avis Clients</span>
+        <span data-lang="en">NLP Analysis of Customer Reviews</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 820px; margin: 0 auto 30px;">
+        <span data-lang="fr">Nettoyage (HTML/URLs, doublons), tokenisation et lemmatisation <strong>spaCy</strong>,
+          puis deux analyses complémentaires sur le texte libre des avis : sentiment (<strong>VADER</strong>) et
+          thèmes récurrents (<strong>NMF</strong> sur TF-IDF).</span>
+        <span data-lang="en">Cleaning (HTML/URLs, duplicates), <strong>spaCy</strong> tokenization and
+          lemmatization, then two complementary analyses on the reviews' free text: sentiment (<strong>VADER</strong>)
+          and recurring themes (<strong>NMF</strong> on TF-IDF).</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RecommendationFeedback/sentiment_pie.png"
+              alt="Recommendation & Customer Feedback – Répartition du sentiment VADER sur 199 119 avis : 77% positif, 13% négatif, 10% neutre"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Sentiment Indépendant de la Note</span>
+            <span data-lang="en">Sentiment Independent from the Rating</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr"><strong>77%</strong> des avis positifs, <strong>13%</strong> négatifs,
+                  <strong>10%</strong> neutres (score continu VADER, indépendant de la note en étoiles)</span>
+                <span data-lang="en"><strong>77%</strong> positive reviews, <strong>13%</strong> negative,
+                  <strong>10%</strong> neutral (continuous VADER score, independent of the star rating)</span>
+              </li>
+              <li><span data-lang="fr">Permet de détecter les décalages : avis 5★ au texte en réalité
+                  mitigé</span>
+                <span data-lang="en">Surfaces mismatches: 5★ reviews whose text is actually mixed</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">NLTK / VADER</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RecommendationFeedback/sentiment_by_rating.png"
+              alt="Recommendation & Customer Feedback – Validation croisée : score de sentiment VADER moyen par note en étoiles, de -0,10 (1★) à 0,64 (5★)"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Validation Croisée du Sentiment</span>
+            <span data-lang="en">Sentiment Cross-Validation</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Score de sentiment moyen croissant avec la note : de <strong>-0,10</strong>
+                  (1★) à <strong>+0,64</strong> (5★)</span>
+                <span data-lang="en">Average sentiment score increases with the rating: from
+                  <strong>-0.10</strong> (1★) to <strong>+0.64</strong> (5★)</span>
+              </li>
+              <li><span data-lang="fr">Cohérence globale confirmée, l'analyse VADER n'est pas une simple
+                  redite de la note</span>
+                <span data-lang="en">Overall consistency confirmed — the VADER analysis is not a simple restatement
+                  of the rating</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">spaCy / VADER</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RecommendationFeedback/topics.png"
+              alt="Recommendation & Customer Feedback – Répartition des avis par thème (NMF, 8 thèmes) : peau/couleur, cheveux, odeur, prix..."
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">8 Thèmes Récurrents (NMF)</span>
+            <span data-lang="en">8 Recurring Topics (NMF)</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Thème dominant : "skin, color, easy, perfect" (<strong>88 042</strong>
+                  avis), suivi de "hair, thick, hold, brush"</span>
+                <span data-lang="en">Dominant topic: "skin, color, easy, perfect" (<strong>88,042</strong>
+                  reviews), followed by "hair, thick, hold, brush"</span>
+              </li>
+              <li><span data-lang="fr">Mots-clés dominants agrégés par produit — exploitable sans lire chaque
+                  avis individuellement</span>
+                <span data-lang="en">Dominant keywords aggregated per product — actionable without reading every
+                  individual review</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">NMF / TF-IDF</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOTEUR DE RECOMMANDATION ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-wand-magic-sparkles"></i>
+        <span data-lang="fr">Moteur de Recommandation Hybride</span>
+        <span data-lang="en">Hybrid Recommendation Engine</span>
+      </h2>
+
+      <div class="content-grid">
+        <div class="project-image">
+          <img src="assets/projects/RecommendationFeedback/user_activity.png"
+            alt="Recommendation & Customer Feedback – Sparsité du comportement d'achat : 88% des 168 659 utilisateurs n'ont laissé qu'un seul avis"
+            loading="lazy">
+          <p class="image-caption">
+            <span data-lang="fr">Sparsité du comportement d'achat — 88% des utilisateurs n'ont laissé qu'un seul
+              avis, hors de portée du CF classique</span>
+            <span data-lang="en">Purchase-behavior sparsity — 88% of users left only one review, out of reach
+              for classic CF</span>
+          </p>
+        </div>
+
+        <div class="content-text">
+          <p class="lead">
+            <span data-lang="fr">
+              La matrice utilisateur-produit brute est extrêmement sparse : la grande majorité des clients
+              n'achètent/notent qu'une seule fois dans cette catégorie. Deux modules complémentaires couvrent
+              l'ensemble du spectre client, de l'utilisateur actif au tout nouveau client.
+            </span>
+            <span data-lang="en">
+              The raw user-item matrix is extremely sparse: the vast majority of customers only buy/review once
+              in this category. Two complementary modules cover the full customer spectrum, from active users to
+              brand-new ones.
+            </span>
+          </p>
+          <ul>
+            <li><span data-lang="fr"><strong>Collaborative filtering item-based</strong> : similarité cosinus
+                entre produits sur un noyau <strong>k-core</strong> (utilisateurs et produits avec ≥ 3 avis),
+                split train/test leave-one-out</span>
+              <span data-lang="en"><strong>Item-based collaborative filtering</strong>: cosine similarity
+                between products on a <strong>k-core</strong> segment (users and products with ≥ 3 reviews),
+                leave-one-out train/test split</span>
+            </li>
+            <li><span data-lang="fr"><strong>Content-based (fallback)</strong> : TF-IDF sur titre, description,
+                features, catégories et marque des <strong>60 725 produits</strong> — fonctionne dès un seul avis
+                positif, sans dépendre de l'historique utilisateur</span>
+              <span data-lang="en"><strong>Content-based (fallback)</strong>: TF-IDF on title, description,
+                features, categories and brand across <strong>60,725 products</strong> — works from a single
+                positive review, with no dependency on user history</span>
+            </li>
+            <li><span data-lang="fr">Comble le trou laissé par le CF : <strong>148 429 utilisateurs sur
+                  168 659</strong> (~88%) n'ont qu'un seul avis et ne peuvent intégrer le noyau k-core</span>
+              <span data-lang="en">Fills the gap left by CF: <strong>148,429 of 168,659 users</strong> (~88%)
+                have only one review and cannot enter the k-core segment</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-image" style="max-width: 800px; margin: 40px auto 0;">
+        <img src="assets/projects/RecommendationFeedback/kcore_experiment.png"
+          alt="Recommendation & Customer Feedback – Expérimentation méthodologique : 4 configurations testées, la similarité brute avec seuil k-core=3 obtient +428,6% de lift"
+          loading="lazy">
+        <p class="image-caption">
+          <span data-lang="fr">Démarche notable : une hypothèse initiale (similarité <em>ajustée</em> pour
+            corriger le biais des notes 5★) a été testée puis rejetée — la vraie cause racine était un seuil
+            k-core trop bas, pas le biais de notation</span>
+          <span data-lang="en">Notable process: an initial hypothesis (similarity <em>adjusted</em> to correct
+            the 5★ rating bias) was tested then rejected — the real root cause was too low a k-core threshold,
+            not the rating bias</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ÉVALUATION ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-flask"></i>
+        <span data-lang="fr">Évaluation vs Baseline Popularité</span>
+        <span data-lang="en">Evaluation vs. Popularity Baseline</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 820px; margin: 0 auto 30px;">
+        <span data-lang="fr">Deux comparaisons <strong>Precision@K / Recall@K</strong> (K = 5/10/20) contre une
+          baseline "produits les plus populaires", chacune évaluée sur la cohorte pertinente pour le modèle
+          testé.</span>
+        <span data-lang="en">Two <strong>Precision@K / Recall@K</strong> comparisons (K = 5/10/20) against a
+          "most popular products" baseline, each evaluated on the cohort relevant to the tested model.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RecommendationFeedback/cf_vs_pop.png"
+              alt="Recommendation & Customer Feedback – Recall@K collaborative filtering vs popularité, 606 utilisateurs, noyau k-core >= 3 avis"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Collaborative Filtering</span>
+            <span data-lang="en">Collaborative Filtering</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Recall@20 : <strong>6,11%</strong> vs <strong>1,16%</strong> baseline —
+                  <strong>+429%</strong> de lift (606 utilisateurs, noyau k-core)</span>
+                <span data-lang="en">Recall@20: <strong>6.11%</strong> vs. <strong>1.16%</strong> baseline —
+                  <strong>+429%</strong> lift (606 users, k-core segment)</span>
+              </li>
+              <li><span data-lang="fr">Recall@5 : +180% · Recall@10 : +320% de lift vs popularité</span>
+                <span data-lang="en">Recall@5: +180% · Recall@10: +320% lift vs. popularity</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Precision@K / Recall@K</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RecommendationFeedback/content_vs_pop.png"
+              alt="Recommendation & Customer Feedback – Recall@K content-based vs popularité, 15 631 utilisateurs, cohorte exactement 2 avis"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Content-based (Fallback)</span>
+            <span data-lang="en">Content-based (Fallback)</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Recall@5 : <strong>3,84%</strong> vs <strong>0,90%</strong> baseline —
+                  <strong>+326%</strong> de lift (15 631 utilisateurs)</span>
+                <span data-lang="en">Recall@5: <strong>3.84%</strong> vs. <strong>0.90%</strong> baseline —
+                  <strong>+326%</strong> lift (15,631 users)</span>
+              </li>
+              <li><span data-lang="fr">Évalué sur un échantillon 25x plus grand que le CF — mesure la plus
+                  fiable statistiquement</span>
+                <span data-lang="en">Evaluated on a sample 25x larger than CF — the statistically most reliable
+                  measurement</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">TF-IDF / Cosine Similarity</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RecommendationFeedback/coverage.png"
+              alt="Recommendation & Customer Feedback – Couverture du système hybride : 606 utilisateurs en noyau CF, 15 631 en fallback content-based, 148 429 en cold-start total"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Couverture du Système Hybride</span>
+            <span data-lang="en">Hybrid System Coverage</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Noyau CF (606) + fallback content-based (15 631) + cold-start total
+                  (148 429) = <strong>168 659</strong> utilisateurs</span>
+                <span data-lang="en">CF segment (606) + content-based fallback (15,631) + total cold-start
+                  (148,429) = <strong>168,659</strong> users</span>
+              </li>
+              <li><span data-lang="fr">Cold-start total non couvert : reçoit la baseline popularité en
+                  attendant un second avis</span>
+                <span data-lang="en">Uncovered total cold-start: receives the popularity baseline while waiting
+                  for a second review</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Échelle logarithmique</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DASHBOARD STREAMLIT ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-desktop"></i>
+        <span data-lang="fr">Dashboard Streamlit</span>
+        <span data-lang="en">Streamlit Dashboard</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 760px; margin: 0 auto 30px;">
+        <span data-lang="fr">Application Streamlit à 4 onglets, lisant exclusivement la base SQLite précalculée
+          par le pipeline — aucun calcul lourd côté dashboard.</span>
+        <span data-lang="en">4-tab Streamlit app, reading exclusively from the SQLite database precomputed by
+          the pipeline — no heavy computation on the dashboard side.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><i class="fas fa-chart-pie"></i>
+            <span data-lang="fr">Vue d'ensemble</span>
+            <span data-lang="en">Overview</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">KPIs globaux (avis, note moyenne, catalogue) et répartition du
+                  sentiment</span>
+                <span data-lang="en">Global KPIs (reviews, average rating, catalog) and sentiment breakdown</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Plotly</div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-magnifying-glass"></i>
+            <span data-lang="fr">Analyse par Produit</span>
+            <span data-lang="en">Product Analysis</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Sentiment et thèmes dominants par produit, avis les plus positifs/négatifs</span>
+                <span data-lang="en">Sentiment and dominant topics per product, most positive/negative reviews</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">SQLite</div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-wand-magic-sparkles"></i>
+            <span data-lang="fr">Recommandation</span>
+            <span data-lang="en">Recommendation</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Top 10 recommandations CF par utilisateur, top 10 produits similaires
+                  (content-based)</span>
+                <span data-lang="en">Top 10 CF recommendations per user, top 10 similar products (content-based)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Streamlit</div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-chart-line"></i>
+            <span data-lang="fr">Évaluation</span>
+            <span data-lang="en">Evaluation</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Recall@K des deux modules vs popularité, couverture globale du système
+                  hybride</span>
+                <span data-lang="en">Recall@K for both modules vs. popularity, overall hybrid system coverage</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Precision@K / Recall@K</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ARCHITECTURE TECHNIQUE ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i>
+        <span data-lang="fr">Architecture Technique</span>
+        <span data-lang="en">Technical Architecture</span>
+      </h2>
+
+      <p class="lead" style="text-align:center; max-width: 820px; margin: 0 auto 30px;">
+        <span data-lang="fr"><code>SQL → Python → NLP → Recommendation → Evaluation → Dashboard</code> — pipeline
+          reproductible, scripts <code>src/</code> numérotés par étape, base SQLite unique régénérée
+          localement.</span>
+        <span data-lang="en"><code>SQL → Python → NLP → Recommendation → Evaluation → Dashboard</code> —
+          reproducible pipeline, <code>src/</code> scripts numbered by stage, single SQLite database regenerated
+          locally.</span>
+      </p>
+
+      <div class="tech-architecture">
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Ingestion & Stockage</span><span data-lang="en">Ingestion & Storage</span>
+          </h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/Hugging Face.png" alt="Hugging Face"><span>Hugging Face
+                Datasets</span></div>
+            <div class="tech-item"><i class="fas fa-database"></i><span>SQLite</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">NLP</span><span data-lang="en">NLP</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><i class="fas fa-spell-check"></i><span>spaCy</span></div>
+            <div class="tech-item"><img src="assets/logos/NLTK.png" alt="NLTK"><span>NLTK / VADER</span></div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Recommandation</span><span data-lang="en">Recommendation</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/Scikit-learn.png" alt="Scikit-learn"><span>Scikit-learn</span>
+            </div>
+            <div class="tech-item"><i class="fas fa-diagram-project"></i><span>TF-IDF / NMF / Cosine Similarity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-layer">
+          <h3><span data-lang="fr">Restitution</span><span data-lang="en">Reporting</span></h3>
+          <div class="tech-items">
+            <div class="tech-item"><img src="assets/logos/streamlit.png" alt="Streamlit"><span>Streamlit</span>
+            </div>
+            <div class="tech-item"><img src="assets/logos/Ploty.png" alt="Plotly"><span>Plotly</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIMITES ========== -->
+  <section class="project-section bg-alt">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-triangle-exclamation"></i>
+        <span data-lang="fr">Limites Assumées</span>
+        <span data-lang="en">Assumed Limitations</span>
+      </h2>
+      <div class="content-grid">
+        <div class="content-text" style="max-width: 900px; margin: 0 auto;">
+          <ul>
+            <li><span data-lang="fr">Échantillon test CF modeste (<strong>606 utilisateurs</strong>) : le lift
+                mesuré est directionnellement significatif mais n'a pas fait l'objet d'un test de significativité
+                statistique formel — à traiter comme preuve de concept</span>
+              <span data-lang="en">Modest CF test sample (<strong>606 users</strong>): the measured lift is
+                directionally significant but was not subject to a formal statistical significance test — to be
+                treated as a proof of concept</span>
+            </li>
+            <li><span data-lang="fr">Cold-start total non couvert : les <strong>148 429 utilisateurs</strong>
+                avec un seul avis n'ont ni CF ni fallback content-based évaluable ; en production, ils
+                recevraient la baseline popularité le temps d'accumuler un second achat</span>
+              <span data-lang="en">Total cold-start not covered: the <strong>148,429 users</strong> with a
+                single review have no evaluable CF or content-based fallback; in production, they would receive
+                the popularity baseline while accumulating a second purchase</span>
+            </li>
+            <li><span data-lang="fr">Sentiment lexical (VADER) : quelques faux positifs/négatifs observés sur
+                des tournures ironiques ou des négations complexes — un modèle contextuel (transformer)
+                améliorerait la précision</span>
+              <span data-lang="en">Lexical sentiment (VADER): some false positives/negatives observed on ironic
+                phrasing or complex negations — a contextual (transformer) model would improve precision</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RÉSULTATS & IMPACT ========== -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i>
+        <span data-lang="fr">Résultats & Impact</span>
+        <span data-lang="en">Results & Impact</span>
+      </h2>
+
+      <div class="results-grid">
+        <div class="result-card primary">
+          <div class="result-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <h3><span data-lang="fr">Recommandation Personnalisée</span><span data-lang="en">Personalized
+              Recommendation</span></h3>
+          <p>
+            <span data-lang="fr">Collaborative filtering à <strong>+429%</strong> de lift @20 vs popularité sur
+              le noyau d'utilisateurs actifs.</span>
+            <span data-lang="en">Collaborative filtering delivers a <strong>+429%</strong> lift @20 vs. popularity
+              on the active-user segment.</span>
+          </p>
+        </div>
+
+        <div class="result-card success">
+          <div class="result-icon"><i class="fas fa-users"></i></div>
+          <h3><span data-lang="fr">Cold-Start Comblé</span><span data-lang="en">Cold-Start Bridged</span></h3>
+          <p>
+            <span data-lang="fr">Fallback content-based couvrant <strong>15 631 utilisateurs</strong>
+              supplémentaires (+326% de lift @5), dès un seul avis positif.</span>
+            <span data-lang="en">Content-based fallback covering <strong>15,631 additional users</strong> (+326%
+              lift @5), from a single positive review.</span>
+          </p>
+        </div>
+
+        <div class="result-card accent">
+          <div class="result-icon"><i class="fas fa-comments"></i></div>
+          <h3><span data-lang="fr">Feedback Client Exploité</span><span data-lang="en">Customer Feedback Unlocked</span>
+          </h3>
+          <p>
+            <span data-lang="fr">200 000 avis analysés automatiquement (sentiment + 8 thèmes), sans lecture
+              manuelle, restitués dans un dashboard <strong>Streamlit</strong>.</span>
+            <span data-lang="en">200,000 reviews automatically analyzed (sentiment + 8 topics), no manual
+              reading required, delivered through a <strong>Streamlit</strong> dashboard.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== NAVIGATION PROJETS ========== -->
+  <section class="project-navigation">
+    <div class="container">
+      <div class="nav-projects" style="justify-content: center;">
+        <div class="nav-center">
+          <a href="index.html#projects" class="nav-btn">
+            <i class="fas fa-th-large"></i>
+            <span data-lang="fr">Tous les projets</span>
+            <span data-lang="en">All Projects</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <p><strong>Darryll JOSEPH</strong> –
+          <span data-role="da" data-lang="fr">Data Analyst</span>
+          <span data-role="dads" data-lang="fr">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="fr">Data Scientist | AI Engineer</span>
+          <span data-role="da" data-lang="en">Data Analyst</span>
+          <span data-role="dads" data-lang="en">Data Analyst | Data Scientist</span>
+          <span data-role="dsii" data-lang="en">Data Scientist | AI Engineer</span>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/darryll-joseph" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/darryll-joseph/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="mailto:jos.darryll@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a id="cv-download-footer" href="assets/cv/cv_Darryll_JOSEPH_data_analyst.pdf" download aria-label="CV PDF"><i
+              class="fas fa-file-download"></i></a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        <span data-lang="fr">© 2026 – Tous droits réservés.</span>
+        <span data-lang="en">© 2026 – All rights reserved.</span>
+      </p>
+      <!-- Bouton flottant vers le haut -->
+      <a href="#home" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- photoswipe background
+    ================================================== -->
+  <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+            title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button
+            class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end photoSwipe background -->
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+
+  <!-- Java Script
+    ================================================== -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/config-project.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        if (window.scrollY > window.innerHeight * 0.3) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop);
+    });
+
+
+    (function () {
+      const select = document.getElementById('languageSelect');
+
+      function cleanAndApply(lang) {
+        document.body.classList.remove('lang-fr', 'lang-en');
+        document.body.classList.add('lang-' + lang);
+
+        document.documentElement.setAttribute('lang', lang);
+
+        void document.body.offsetHeight; // force reflow
+
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.setAttribute('lang', el.getAttribute('data-lang'));
+        });
+
+        try { localStorage.setItem('preferred-language', lang); } catch (e) { }
+      }
+
+      const saved = (() => {
+        try { return localStorage.getItem('preferred-language') || 'fr'; }
+        catch (e) { return 'fr'; }
+      })();
+      cleanAndApply(saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', () => cleanAndApply(select.value));
+      }
+    })();
+
+
+    /* ZOOM sur images*/
+    (function () {
+      const imgs = Array.from(
+        document.querySelectorAll('.project-section img')
+      );
+      if (!imgs.length) return;
+
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-overlay';
+      lightbox.innerHTML = `
+<span class="lightbox-close" aria-label="Fermer">&times;</span>
+<img src="" alt="zoom certification">
+`;
+      document.body.appendChild(lightbox);
+
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      let currentIndex = -1;
+
+      function openAt(index) {
+        currentIndex = index;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        currentIndex = -1;
+      }
+
+      function goto(delta) {
+        if (currentIndex === -1) return;
+        currentIndex = (currentIndex + delta + imgs.length) % imgs.length;
+        const src = imgs[currentIndex].getAttribute('src');
+        lightboxImg.src = src;
+      }
+
+      imgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openAt(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', close);
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') goto(+1);
+        if (e.key === 'ArrowLeft') goto(-1);
+      });
+    })();
+
+  </script>
+
+</body>
+
+</html>
