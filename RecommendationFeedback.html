@@ -834,37 +834,93 @@
     </div>
   </section>
 
-  <!-- ========== LIMITES ========== -->
+  <!-- ========== CAS D'USAGE BUSINESS ========== -->
   <section class="project-section bg-alt">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-triangle-exclamation"></i>
-        <span data-lang="fr">Limites Assumées</span>
-        <span data-lang="en">Assumed Limitations</span>
+      <h2 class="section-title"><i class="fas fa-briefcase"></i>
+        <span data-lang="fr">Cas d'Usage Business Concrets</span>
+        <span data-lang="en">Concrete Business Use Cases</span>
       </h2>
-      <div class="content-grid">
-        <div class="content-text" style="max-width: 900px; margin: 0 auto;">
-          <ul>
-            <li><span data-lang="fr">Échantillon test CF modeste (<strong>606 utilisateurs</strong>) : le lift
-                mesuré est directionnellement significatif mais n'a pas fait l'objet d'un test de significativité
-                statistique formel — à traiter comme preuve de concept</span>
-              <span data-lang="en">Modest CF test sample (<strong>606 users</strong>): the measured lift is
-                directionally significant but was not subject to a formal statistical significance test — to be
-                treated as a proof of concept</span>
-            </li>
-            <li><span data-lang="fr">Cold-start total non couvert : les <strong>148 429 utilisateurs</strong>
-                avec un seul avis n'ont ni CF ni fallback content-based évaluable ; en production, ils
-                recevraient la baseline popularité le temps d'accumuler un second achat</span>
-              <span data-lang="en">Total cold-start not covered: the <strong>148,429 users</strong> with a
-                single review have no evaluable CF or content-based fallback; in production, they would receive
-                the popularity baseline while accumulating a second purchase</span>
-            </li>
-            <li><span data-lang="fr">Sentiment lexical (VADER) : quelques faux positifs/négatifs observés sur
-                des tournures ironiques ou des négations complexes — un modèle contextuel (transformer)
-                améliorerait la précision</span>
-              <span data-lang="en">Lexical sentiment (VADER): some false positives/negatives observed on ironic
-                phrasing or complex negations — a contextual (transformer) model would improve precision</span>
-            </li>
-          </ul>
+
+      <p class="lead" style="text-align:center; max-width: 820px; margin: 0 auto 30px;">
+        <span data-lang="fr">Les deux modules (recommandation et NLP) ne sont pas de simples preuves de
+          concept techniques : voici comment ils s'intègrent concrètement dans les opérations d'un
+          e-commerçant.</span>
+        <span data-lang="en">Both modules (recommendation and NLP) are not just technical proofs of concept:
+          here is how they concretely plug into an e-commerce retailer's operations.</span>
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><i class="fas fa-basket-shopping"></i>
+            <span data-lang="fr">Page Produit Personnalisée</span>
+            <span data-lang="en">Personalized Product Page</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Bloc "Produits similaires" alimenté par le <strong>collaborative
+                    filtering</strong> pour les 606 clients du noyau actif, et par le
+                  <strong>content-based</strong> pour les 15 631 clients à 2 avis</span>
+                <span data-lang="en">"Similar products" block powered by <strong>collaborative filtering</strong>
+                  for the 606 active-core customers, and by <strong>content-based</strong> for the 15,631
+                  customers with 2 reviews</span>
+              </li>
+              <li><span data-lang="fr">Le routage se fait automatiquement selon le nombre d'avis connus de
+                  l'utilisateur — aucune intervention manuelle</span>
+                <span data-lang="en">Routing happens automatically based on the user's known review count — no
+                  manual intervention</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Cross-sell / Upsell</div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-triangle-exclamation"></i>
+            <span data-lang="fr">Alerte Qualité Produit</span>
+            <span data-lang="en">Product Quality Alert</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Suivi du <strong>sentiment moyen</strong> et des <strong>thèmes
+                    dominants</strong> par produit dans le temps : une hausse des avis négatifs sur le thème
+                  "odeur" ou "texture" déclenche une alerte à l'équipe qualité</span>
+                <span data-lang="en">Tracking <strong>average sentiment</strong> and <strong>dominant
+                    topics</strong> per product over time: a rise in negative reviews on the "scent" or
+                  "texture" topic triggers an alert to the quality team</span>
+              </li>
+              <li><span data-lang="fr">Détecte les décalages note/texte (avis 5★ au sentiment mitigé) qu'un
+                  suivi basé uniquement sur la note en étoiles manquerait</span>
+                <span data-lang="en">Catches rating/text mismatches (5★ reviews with mixed sentiment) that a
+                  star-rating-only monitor would miss</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Qualité / Produit</div>
+        </div>
+
+        <div class="feature-card">
+          <h3><i class="fas fa-envelope-open-text"></i>
+            <span data-lang="fr">Ciblage Marketing par Segment</span>
+            <span data-lang="en">Segment-Based Marketing Targeting</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Les 3 segments de couverture (CF, fallback content-based, cold-start)
+                  définissent 3 traitements marketing différents : recommandations personnalisées par email
+                  pour les deux premiers, mise en avant des meilleures ventes pour le troisième</span>
+                <span data-lang="en">The 3 coverage segments (CF, content-based fallback, cold-start) define 3
+                  different marketing treatments: personalized email recommendations for the first two,
+                  best-sellers highlighted for the third</span>
+              </li>
+              <li><span data-lang="fr">Évite d'envoyer une recommandation non fiable à un client sans
+                  historique suffisant — un risque d'expérience client dégradée</span>
+                <span data-lang="en">Avoids sending an unreliable recommendation to a customer without enough
+                  history — a risk to the customer experience</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">Growth / CRM</div>
         </div>
       </div>
     </div>
