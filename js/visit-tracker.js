@@ -2,7 +2,7 @@
     "use strict";
 
 
-    var TRACKING_ENABLED = false;
+    var TRACKING_ENABLED = true;
     if (!TRACKING_ENABLED) return;
 
     var EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
