@@ -439,6 +439,103 @@
           and recurring themes (<strong>NMF</strong> on TF-IDF).</span>
       </p>
 
+      <div class="content-text" style="max-width: 900px; margin: 0 auto 40px;">
+        <h3>
+          <span data-lang="fr">Étape 3 — Analyse automatique du langage des avis clients</span>
+          <span data-lang="en">Step 3 — Automated Language Analysis of Customer Reviews</span>
+        </h3>
+        <p>
+          <span data-lang="fr">Cette étape transforme le texte libre des avis clients — des phrases écrites
+            spontanément, sans structure — en informations exploitables et mesurables. Elle se décompose en
+            quatre sous-étapes successives.</span>
+          <span data-lang="en">This step turns the free text of customer reviews — sentences written
+            spontaneously, with no structure — into actionable, measurable information. It breaks down into
+            four successive sub-steps.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">a) Nettoyage du texte</span>
+          <span data-lang="en">a) Text Cleaning</span>
+        </h4>
+        <p>
+          <span data-lang="fr">Le texte brut de chaque avis est d'abord nettoyé : suppression des liens web, du
+            code HTML résiduel et de la ponctuation superflue. L'objectif est de ne garder que la matière
+            textuelle utile avant toute analyse.</span>
+          <span data-lang="en">The raw text of each review is first cleaned: web links, leftover HTML code and
+            superfluous punctuation are removed. The goal is to keep only the useful textual material before any
+            analysis.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">b) Compréhension grammaticale et lemmatisation (modèle <code>en_core_web_sm</code>
+            de spaCy)</span>
+          <span data-lang="en">b) Grammatical Understanding and Lemmatization (spaCy's
+            <code>en_core_web_sm</code> model)</span>
+        </h4>
+        <p>
+          <span data-lang="fr">Le texte nettoyé est ensuite analysé par le modèle de langage
+            <code>en_core_web_sm</code> de la librairie <strong>spaCy</strong>. Ce modèle, pré-entraîné sur de
+            grandes quantités de texte anglais, « comprend » la grammaire de la phrase et ramène chaque mot à sa
+            forme de base — par exemple <em>loved</em>, <em>loving</em> et <em>loves</em> sont tous ramenés à
+            <em>love</em>. Il filtre au passage les mots trop courants et peu informatifs (<em>the</em>,
+            <em>is</em>, <em>and</em>...). Cette étape prépare le texte pour les deux analyses suivantes, qui
+            portent sur le même corpus mais répondent à deux questions différentes.</span>
+          <span data-lang="en">The cleaned text is then analyzed by spaCy's <code>en_core_web_sm</code> language
+            model. Pre-trained on large amounts of English text, this model "understands" the sentence's grammar
+            and reduces each word to its base form — for example <em>loved</em>, <em>loving</em> and
+            <em>loves</em> are all reduced to <em>love</em>. Along the way, it filters out overly common,
+            low-information words (<em>the</em>, <em>is</em>, <em>and</em>...). This step prepares the text for
+            the two following analyses, which operate on the same corpus but answer two different questions.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">c) Analyse de sentiment (score VADER, librairie NLTK)</span>
+          <span data-lang="en">c) Sentiment Analysis (VADER score, NLTK library)</span>
+        </h4>
+        <p>
+          <span data-lang="fr">La première analyse mesure le ton de l'avis grâce à l'outil <strong>VADER</strong> :
+            il attribue à chaque avis un score de positivité ou de négativité compris entre -1 et +1, calculé à
+            partir du texte réel de l'avis — y compris les majuscules, les points d'exclamation ou les
+            émoticônes, qui renforcent le ton perçu. L'intérêt majeur est que ce score est calculé
+            indépendamment de la note en étoiles donnée par le client, ce qui permet de repérer des décalages
+            révélateurs : un avis noté 5 étoiles mais au texte en réalité mitigé ou ironique.</span>
+          <span data-lang="en">The first analysis measures the tone of the review using <strong>VADER</strong>:
+            it assigns each review a positivity/negativity score between -1 and +1, computed from the review's
+            actual text — including capital letters, exclamation marks or emoticons, which reinforce the
+            perceived tone. The key advantage is that this score is computed independently of the star rating
+            given by the customer, which surfaces revealing mismatches: a review rated 5 stars whose text is
+            actually mixed or ironic.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">d) Regroupement automatique par thèmes (algorithme NMF)</span>
+          <span data-lang="en">d) Automatic Topic Clustering (NMF algorithm)</span>
+        </h4>
+        <p>
+          <span data-lang="fr">La seconde analyse identifie les sujets récurrents grâce à un algorithme appelé
+            <strong>NMF</strong> (Non-negative Matrix Factorization). Sans qu'on lui indique à l'avance quels
+            sujets chercher, cet algorithme repère les mots qui reviennent fréquemment ensemble à travers des
+            milliers d'avis, et en déduit un petit nombre de thèmes récurrents (par exemple l'odeur d'un
+            produit, sa texture, son prix ou la qualité de la livraison), chacun résumé par ses mots-clés les
+            plus représentatifs.</span>
+          <span data-lang="en">The second analysis identifies recurring subjects using an algorithm called
+            <strong>NMF</strong> (Non-negative Matrix Factorization). Without being told in advance which topics
+            to look for, this algorithm spots words that frequently occur together across thousands of reviews,
+            and infers a small number of recurring themes (for example a product's scent, texture, price or
+            delivery quality), each summarized by its most representative keywords.</span>
+        </p>
+
+        <p>
+          <strong><span data-lang="fr">Résultat de l'étape — </span><span data-lang="en">Step outcome — </span></strong>
+          <span data-lang="fr">Chaque avis se voit ainsi attribuer un score de sentiment et un thème dominant —
+            deux informations synthétiques qui remplacent la lecture manuelle de centaines de milliers de
+            commentaires par des indicateurs directement exploitables dans le tableau de bord.</span>
+          <span data-lang="en">Each review is thus assigned a sentiment score and a dominant topic — two
+            synthetic pieces of information that replace the manual reading of hundreds of thousands of
+            comments with indicators directly usable in the dashboard.</span>
+        </p>
+      </div>
+
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-image">
@@ -581,6 +678,95 @@
         </div>
       </div>
 
+      <div class="content-text" style="max-width: 900px; margin: 40px auto 0;">
+        <h3>
+          <span data-lang="fr">Étape 4 — Recommandation par filtrage collaboratif (collaborative filtering)</span>
+          <span data-lang="en">Step 4 — Collaborative Filtering Recommendations</span>
+        </h3>
+        <p>
+          <span data-lang="fr">Cette étape construit un moteur de recommandation basé sur le comportement des
+            clients : elle repère les produits achetés/notés ensemble par les mêmes personnes, sans jamais
+            regarder le contenu des produits eux-mêmes. Elle se décompose en quatre sous-étapes.</span>
+          <span data-lang="en">This step builds a recommendation engine based on customer behavior: it spots
+            products bought/rated together by the same people, without ever looking at the products' own
+            content. It breaks down into four sub-steps.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">a) Filtrage du noyau actif (k-core)</span>
+          <span data-lang="en">a) Active-Core Filtering (k-core)</span>
+        </h4>
+        <p>
+          <span data-lang="fr">La matrice complète clients × produits est extrêmement « creuse » : la grande
+            majorité des clients n'ont noté qu'un seul produit dans cette catégorie, ce qui ne suffit pas à
+            établir un lien fiable entre deux produits. On ne garde donc que les clients et les produits ayant
+            au moins 3 avis, en répétant le filtre jusqu'à stabilisation (retirer un produit peut faire passer
+            un client sous le seuil, et inversement).</span>
+          <span data-lang="en">The full customer × product matrix is extremely "sparse": the vast majority of
+            customers have rated only one product in this category, which isn't enough to establish a reliable
+            link between two products. Only customers and products with at least 3 reviews are kept, repeating
+            the filter until it stabilizes (removing a product can push a customer below the threshold, and
+            vice versa).</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">b) Séparation entraînement / test (leave-one-out)</span>
+          <span data-lang="en">b) Train / Test Split (leave-one-out)</span>
+        </h4>
+        <p>
+          <span data-lang="fr">Pour chaque client conservé, son avis le plus récent est mis de côté comme
+            « test » (la bonne réponse à retrouver), et tous ses avis précédents servent à l'entraînement du
+            modèle. Ce protocole permet de vérifier ensuite si le modèle aurait effectivement recommandé le bon
+            produit avant que le client ne l'achète.</span>
+          <span data-lang="en">For each kept customer, their most recent review is held out as the "test" (the
+            correct answer to recover), and all their earlier reviews are used to train the model. This
+            protocol makes it possible to check whether the model would actually have recommended the right
+            product before the customer bought it.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">c) Calcul de similarité entre produits (similarité cosinus)</span>
+          <span data-lang="en">c) Product Similarity Computation (cosine similarity)</span>
+        </h4>
+        <p>
+          <span data-lang="fr">À partir des notes du jeu d'entraînement, l'algorithme calcule à quel point deux
+            produits sont « similaires » en observant s'ils sont notés de façon comparable par les mêmes
+            clients (deux produits fréquemment bien notés par les mêmes personnes sont jugés proches). Cette
+            mesure s'appelle la <strong>similarité cosinus</strong>, et elle est calculée ici entre produits (on
+            parle d'approche « item-based »).</span>
+          <span data-lang="en">Using the training-set ratings, the algorithm computes how "similar" two
+            products are by checking whether they are rated in a comparable way by the same customers (two
+            products frequently rated well by the same people are considered close). This measure is called
+            <strong>cosine similarity</strong>, and it's computed here between products (an "item-based"
+            approach).</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">d) Sélection des voisins les plus proches</span>
+          <span data-lang="en">d) Nearest-Neighbor Selection</span>
+        </h4>
+        <p>
+          <span data-lang="fr">Pour chaque produit, seuls les 20 produits les plus similaires sont conservés —
+            c'est cette liste de « voisins » qui sert de base au calcul des recommandations personnalisées (un
+            client ayant aimé le produit A se voit proposer les produits les plus proches de A selon cette
+            mesure).</span>
+          <span data-lang="en">For each product, only the 20 most similar products are kept — this "neighbor"
+            list is the basis for computing personalized recommendations (a customer who liked product A is
+            shown the products closest to A according to this measure).</span>
+        </p>
+
+        <p>
+          <strong><span data-lang="fr">Résultat de l'étape — </span><span data-lang="en">Step outcome — </span></strong>
+          <span data-lang="fr">Le résultat est une table de similarité entre produits, utilisable pour
+            recommander à un client actif des produits proches de ceux qu'il a déjà appréciés. Cette approche ne
+            fonctionne toutefois que pour les clients ayant suffisamment d'historique (au moins 3 avis) — un
+            besoin auquel répond l'étape suivante.</span>
+          <span data-lang="en">The result is a product similarity table, usable to recommend an active customer
+            products close to those they already liked. This approach, however, only works for customers with
+            enough history (at least 3 reviews) — a need addressed by the next step.</span>
+        </p>
+      </div>
+
       <div class="project-image" style="max-width: 800px; margin: 40px auto 0;">
         <img src="assets/projects/RecommendationFeedback/kcore_experiment.png"
           alt="Recommendation & Customer Feedback – Expérimentation méthodologique : 4 configurations testées, la similarité brute avec seuil k-core=3 obtient +428,6% de lift"
@@ -593,6 +779,142 @@
             the 5★ rating bias) was tested then rejected — the real root cause was too low a k-core threshold,
             not the rating bias</span>
         </p>
+      </div>
+
+      <div class="content-text" style="max-width: 900px; margin: 40px auto 0;">
+        <h3>
+          <span data-lang="fr">Étape 5 — Recommandation par contenu (content-based, filet de sécurité)</span>
+          <span data-lang="en">Step 5 — Content-Based Recommendations (safety net)</span>
+        </h3>
+        <p>
+          <span data-lang="fr">Le filtrage collaboratif de l'étape précédente est inefficace pour la grande
+            majorité des clients : dans cet échantillon, près de 9 clients sur 10 n'ont laissé qu'un seul avis,
+            ce qui est insuffisant pour entrer dans le noyau actif calculé à l'étape 4. Cette étape comble ce
+            manque en s'appuyant non plus sur le comportement des clients, mais sur le contenu des produits
+            eux-mêmes.</span>
+          <span data-lang="en">The collaborative filtering from the previous step is ineffective for the vast
+            majority of customers: in this sample, nearly 9 out of 10 customers left only one review, which
+            isn't enough to enter the active core computed in step 4. This step fills that gap by relying not
+            on customer behavior anymore, but on the products' own content.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">a) Construction d'une fiche textuelle par produit</span>
+          <span data-lang="en">a) Building a Text Profile per Product</span>
+        </h4>
+        <p>
+          <span data-lang="fr">Pour chaque produit du catalogue, on assemble en un seul texte son titre, sa
+            description, ses caractéristiques, sa marque et ses catégories — une sorte de « carte d'identité »
+            textuelle du produit.</span>
+          <span data-lang="en">For each product in the catalog, its title, description, features, brand and
+            categories are assembled into a single text — a sort of textual "ID card" for the product.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">b) Vectorisation TF-IDF de cette fiche produit</span>
+          <span data-lang="en">b) TF-IDF Vectorization of the Product Profile</span>
+        </h4>
+        <p>
+          <span data-lang="fr">Comme à l'étape 3, cette fiche textuelle est convertie en une série de poids
+            numériques (<strong>TF-IDF</strong>) qui capturent les mots les plus caractéristiques de chaque
+            produit, en filtrant les mots trop génériques présents dans presque toutes les fiches.</span>
+          <span data-lang="en">As in step 3, this text profile is converted into a series of numeric weights
+            (<strong>TF-IDF</strong>) that capture each product's most characteristic words, filtering out
+            overly generic words present in almost every profile.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">c) Calcul de similarité entre produits par lots</span>
+          <span data-lang="en">c) Batched Product Similarity Computation</span>
+        </h4>
+        <p>
+          <span data-lang="fr">La similarité cosinus est de nouveau utilisée, mais cette fois entre les fiches
+            textuelles des produits, et non plus entre leurs schémas de notation. Deux produits au vocabulaire
+            proche (même type de produit, mêmes ingrédients, même usage décrit) sont jugés similaires. Le calcul
+            est effectué par lots de 1 000 produits à la fois, pour rester gérable en mémoire sur les dizaines
+            de milliers de produits du catalogue.</span>
+          <span data-lang="en">Cosine similarity is used again, but this time between the products' text
+            profiles rather than their rating patterns. Two products with similar vocabulary (same product
+            type, same ingredients, same described use) are considered similar. The computation is done in
+            batches of 1,000 products at a time, to stay manageable in memory across the catalog's tens of
+            thousands of products.</span>
+        </p>
+
+        <h4>
+          <span data-lang="fr">d) Sélection des produits les plus proches</span>
+          <span data-lang="en">d) Nearest-Product Selection</span>
+        </h4>
+        <p>
+          <span data-lang="fr">Comme à l'étape précédente, seuls les 20 produits les plus proches sont conservés
+            pour chaque produit du catalogue.</span>
+          <span data-lang="en">As in the previous step, only the 20 closest products are kept for each product
+            in the catalog.</span>
+        </p>
+
+        <p>
+          <strong><span data-lang="fr">Résultat de l'étape — </span><span data-lang="en">Step outcome — </span></strong>
+          <span data-lang="fr">Le résultat est une deuxième table de similarité, cette fois basée uniquement sur
+            le contenu des produits — totalement indépendante de l'historique d'achat. Elle permet de proposer
+            une recommandation dès qu'un seul avis positif est connu sur un client, comblant ainsi le trou
+            laissé par le filtrage collaboratif pour la grande majorité des utilisateurs.</span>
+          <span data-lang="en">The result is a second similarity table, this time based solely on product
+            content — fully independent from purchase history. It allows a recommendation to be produced as
+            soon as a single positive review is known for a customer, filling the gap left by collaborative
+            filtering for the vast majority of users.</span>
+        </p>
+      </div>
+
+      <div class="content-text" style="max-width: 900px; margin: 40px auto 0;">
+        <h4>
+          <span data-lang="fr">Comparatif des 3 approches de recommandation</span>
+          <span data-lang="en">Comparison of the 3 Recommendation Approaches</span>
+        </h4>
+        <table class="api-table">
+          <thead>
+            <tr>
+              <th><span data-lang="fr">Approche</span><span data-lang="en">Approach</span></th>
+              <th><span data-lang="fr">Ce qui est comparé</span><span data-lang="en">What is compared</span></th>
+              <th><span data-lang="fr">Vecteur d'un produit</span><span data-lang="en">A product's vector</span>
+              </th>
+              <th><span data-lang="fr">Personnalisé pour l'utilisateur ?</span><span data-lang="en">Personalized
+                  to the user?</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span data-lang="fr">1. Collaborative Filtering — étape 4</span><span data-lang="en">1.
+                  Collaborative Filtering — step 4</span></td>
+              <td><span data-lang="fr">Les notes données par les utilisateurs à chaque produit</span><span
+                  data-lang="en">Ratings given by users to each product</span></td>
+              <td><span data-lang="fr">Une colonne de la matrice utilisateur×produit — ex. P1 = [5, 4, 1, 2, 5,
+                    1] (une note par utilisateur)</span><span data-lang="en">A column of the user×product
+                  matrix — e.g. P1 = [5, 4, 1, 2, 5, 1] (one rating per user)</span></td>
+              <td>✅ <span data-lang="fr">Oui, personnalisé pour CET utilisateur</span><span data-lang="en">Yes,
+                  personalized for THIS user</span></td>
+            </tr>
+            <tr>
+              <td><span data-lang="fr">2. Content-based — étape 5</span><span data-lang="en">2. Content-based —
+                  step 5</span></td>
+              <td><span data-lang="fr">Le texte descriptif de chaque produit (titre, description, features,
+                    marque, catégories)</span><span data-lang="en">Each product's descriptive text (title,
+                    description, features, brand, categories)</span></td>
+              <td><span data-lang="fr">Un vecteur TF-IDF — ex. P1 = [fragrance:0.23, perfume:0.16, long:0.32,
+                    ...] (un poids par mot)</span><span data-lang="en">A TF-IDF vector — e.g. P1 =
+                  [fragrance:0.23, perfume:0.16, long:0.32, ...] (one weight per word)</span></td>
+              <td>✅ <span data-lang="fr">Oui (via le produit qu'il a déjà aimé)</span><span data-lang="en">Yes
+                  (via the product they already liked)</span></td>
+            </tr>
+            <tr>
+              <td><span data-lang="fr">3. Popularité — la baseline</span><span data-lang="en">3. Popularity —
+                  the baseline</span></td>
+              <td><span data-lang="fr">Le nombre total de fois où chaque produit a été noté, au global</span>
+                <span data-lang="en">The total number of times each product has been rated, overall</span></td>
+              <td>—</td>
+              <td>❌ <span data-lang="fr">Non ! Même liste pour tout le monde</span><span data-lang="en">No! Same
+                  list for everyone</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
