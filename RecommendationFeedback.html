@@ -876,51 +876,60 @@
           <span data-lang="fr">Comparatif des 3 approches de recommandation</span>
           <span data-lang="en">Comparison of the 3 Recommendation Approaches</span>
         </h4>
-        <table class="api-table">
-          <thead>
-            <tr>
-              <th><span data-lang="fr">Approche</span><span data-lang="en">Approach</span></th>
-              <th><span data-lang="fr">Ce qui est comparé</span><span data-lang="en">What is compared</span></th>
-              <th><span data-lang="fr">Vecteur d'un produit</span><span data-lang="en">A product's vector</span>
-              </th>
-              <th><span data-lang="fr">Personnalisé pour l'utilisateur ?</span><span data-lang="en">Personalized
-                  to the user?</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span data-lang="fr">1. Collaborative Filtering</span><span data-lang="en">1.
-                  Collaborative Filtering</span></td>
-              <td><span data-lang="fr">Les notes données par les utilisateurs à chaque produit</span><span
-                  data-lang="en">Ratings given by users to each product</span></td>
-              <td><span data-lang="fr">Une colonne de la matrice utilisateur×produit — ex. P1 = [5, 4, 1, 2, 5,
-                    1] (une note par utilisateur)</span><span data-lang="en">A column of the user×product
-                  matrix — e.g. P1 = [5, 4, 1, 2, 5, 1] (one rating per user)</span></td>
-              <td>✅ <span data-lang="fr">Oui, personnalisé pour CET utilisateur</span><span data-lang="en">Yes,
-                  personalized for THIS user</span></td>
-            </tr>
-            <tr>
-              <td><span data-lang="fr">2. Content-based</span><span data-lang="en">2. Content-based</span></td>
-              <td><span data-lang="fr">Le texte descriptif de chaque produit (titre, description, features,
-                    marque, catégories)</span><span data-lang="en">Each product's descriptive text (title,
-                    description, features, brand, categories)</span></td>
-              <td><span data-lang="fr">Un vecteur TF-IDF — ex. P1 = [fragrance:0.23, perfume:0.16, long:0.32,
-                    ...] (un poids par mot)</span><span data-lang="en">A TF-IDF vector — e.g. P1 =
-                  [fragrance:0.23, perfume:0.16, long:0.32, ...] (one weight per word)</span></td>
-              <td>✅ <span data-lang="fr">Oui (via le produit qu'il a déjà aimé)</span><span data-lang="en">Yes
-                  (via the product they already liked)</span></td>
-            </tr>
-            <tr>
-              <td><span data-lang="fr">3. Popularité — la baseline</span><span data-lang="en">3. Popularity —
-                  the baseline</span></td>
-              <td><span data-lang="fr">Le nombre total de fois où chaque produit a été noté, au global</span>
-                <span data-lang="en">The total number of times each product has been rated, overall</span></td>
-              <td>—</td>
-              <td>❌ <span data-lang="fr">Non ! Même liste pour tout le monde</span><span data-lang="en">No! Same
-                  list for everyone</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th><span data-lang="fr">Approche</span><span data-lang="en">Approach</span></th>
+                <th><span data-lang="fr">Ce qui est comparé</span><span data-lang="en">What is compared</span>
+                </th>
+                <th><span data-lang="fr">Vecteur d'un produit</span><span data-lang="en">A product's
+                    vector</span></th>
+                <th><span data-lang="fr">Personnalisé pour l'utilisateur ?</span><span data-lang="en">Personalized
+                    to the user?</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Collaborative Filtering</td>
+                <td><span data-lang="fr">Les notes données par les utilisateurs à chaque produit</span><span
+                    data-lang="en">Ratings given by users to each product</span></td>
+                <td><span data-lang="fr">Une colonne de la matrice utilisateur×produit — ex.
+                      <code>P1 = [5, 4, 1, 2, 5, 1]</code> (une note par utilisateur)</span><span
+                    data-lang="en">A column of the user×product matrix — e.g.
+                    <code>P1 = [5, 4, 1, 2, 5, 1]</code> (one rating per user)</span></td>
+                <td><span class="tag-yes"><span data-lang="fr">Oui</span><span data-lang="en">Yes</span></span>
+                  <span data-lang="fr">personnalisé pour CET utilisateur</span><span data-lang="en">personalized
+                    for THIS user</span></td>
+              </tr>
+              <tr>
+                <td>Content-based</td>
+                <td><span data-lang="fr">Le texte descriptif de chaque produit (titre, description, features,
+                      marque, catégories)</span><span data-lang="en">Each product's descriptive text (title,
+                      description, features, brand, categories)</span></td>
+                <td><span data-lang="fr">Un vecteur TF-IDF — ex.
+                      <code>P1 = [fragrance:0.23, perfume:0.16, long:0.32, ...]</code> (un poids par mot)</span>
+                  <span data-lang="en">A TF-IDF vector — e.g.
+                    <code>P1 = [fragrance:0.23, perfume:0.16, long:0.32, ...]</code> (one weight per word)</span>
+                </td>
+                <td><span class="tag-yes"><span data-lang="fr">Oui</span><span data-lang="en">Yes</span></span>
+                  <span data-lang="fr">via le produit qu'il a déjà aimé</span><span data-lang="en">via the
+                    product they already liked</span></td>
+              </tr>
+              <tr>
+                <td><span data-lang="fr">Popularité — la baseline</span><span data-lang="en">Popularity —
+                    the baseline</span></td>
+                <td><span data-lang="fr">Le nombre total de fois où chaque produit a été noté, au global</span>
+                  <span data-lang="en">The total number of times each product has been rated, overall</span>
+                </td>
+                <td>—</td>
+                <td><span class="tag-no"><span data-lang="fr">Non</span><span data-lang="en">No</span></span>
+                  <span data-lang="fr">même liste pour tout le monde</span><span data-lang="en">same list for
+                    everyone</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
