@@ -7616,6 +7616,18 @@ html.no-csstransitions .home-content__main2 {
     margin-top: 40px;
 }
 
+/* Force exactly 4 equal columns on one row (instead of auto-fit wrapping
+   the 4th card alone), with a 2-column fallback once it gets too tight. */
+.features-grid--4col {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+    .features-grid--4col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 .feature-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 16px;
