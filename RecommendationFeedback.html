@@ -525,7 +525,7 @@
         <span data-lang="en">Results Observed Across 199,119 Reviews</span>
       </h3>
 
-      <div class="features-grid">
+      <div class="features-grid features-grid--4col">
         <div class="feature-card">
           <div class="feature-image">
             <img src="assets/projects/RecommendationFeedback/sentiment_pie.png"
@@ -604,6 +604,35 @@
             </ul>
           </div>
           <div class="feature-tech">NMF / TF-IDF</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/projects/RecommendationFeedback/topic_sentiment.png"
+              alt="Recommendation & Customer Feedback – Sentiment (positif/neutre/négatif) par thème NMF : T7 et T5 concentrent le plus de négatif (17%), T1 quasi exempt (1,9%)"
+              loading="lazy">
+          </div>
+          <h3>
+            <span data-lang="fr">Le Négatif Concentré par Thème</span>
+            <span data-lang="en">Negative Reviews Concentrated by Topic</span>
+          </h3>
+          <div class="feature-text">
+            <ul>
+              <li><span data-lang="fr">Le thème dominant "skin, color, easy, perfect" (44% du corpus) et le
+                  thème "smell, feel" concentrent le plus de négatif : <strong>17%</strong>, au-dessus de la
+                  moyenne globale (13%)</span>
+                <span data-lang="en">The dominant topic "skin, color, easy, perfect" (44% of the corpus) and
+                  the "smell, feel" topic concentrate the most negative reviews: <strong>17%</strong>, above the
+                  overall average (13%)</span>
+              </li>
+              <li><span data-lang="fr">Le thème "love, daughter" (cadeaux) est quasi exempt de négatif :
+                  <strong>98%</strong> positif, seulement <strong>1,9%</strong> négatif</span>
+                <span data-lang="en">The "love, daughter" (gifting) topic is nearly free of complaints:
+                  <strong>98%</strong> positive, only <strong>1.9%</strong> negative</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-tech">NMF × VADER</div>
         </div>
       </div>
     </div>
