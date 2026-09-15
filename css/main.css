@@ -7629,6 +7629,20 @@ html.no-csstransitions .home-content__main2 {
 }
 
 /* Comparison table (Recommendation & Customer Feedback) */
+/* Tall variant for portrait dashboard screenshots (Streamlit tabs): the
+   default 200px height squashes a tall screenshot down to a barely-visible
+   sliver once object-fit:contain applies. Click still opens the lightbox
+   for full detail. */
+.feature-image--tall {
+    height: 380px;
+}
+
+@media (max-width: 768px) {
+    .feature-image--tall {
+        height: 300px;
+    }
+}
+
 .compare-table-wrap {
     overflow-x: auto;
     border-radius: 14px;
