@@ -5,6 +5,22 @@
     var TRACKING_ENABLED = true;
     if (!TRACKING_ENABLED) return;
 
+    // Exclusion des visites du propriétaire : ?_sx=k7q2 marque durablement ce navigateur
+    // (localStorage), ?_sx=0 le démarque. Le paramètre est retiré de l'URL aussitôt lu.
+    var OWNER_PARAM = "_sx";
+    var OWNER_TOKEN = "k7q2";
+    try {
+        var url = new URL(location.href);
+        var ownerValue = url.searchParams.get(OWNER_PARAM);
+        if (ownerValue !== null) {
+            if (ownerValue === OWNER_TOKEN) localStorage.setItem(OWNER_PARAM, "1");
+            if (ownerValue === "0") localStorage.removeItem(OWNER_PARAM);
+            url.searchParams.delete(OWNER_PARAM);
+            history.replaceState(history.state, "", url.pathname + url.search + url.hash);
+        }
+        if (localStorage.getItem(OWNER_PARAM) === "1") return;
+    } catch (e) { }
+
     var EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
     var SERVICE_ID = "service_i69ky8n";
     var TEMPLATE_ID = "template_q43b26r";
