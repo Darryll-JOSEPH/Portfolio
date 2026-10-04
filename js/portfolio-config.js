@@ -95,6 +95,7 @@ const config = PORTFOLIO_CONFIG[cfg];
 ===================================================== */
 
 const SUPABASE_DOCS_BASE = "https://ftgbtlgybubhpsxwwlbh.supabase.co/storage/v1/object/public/documents";
+const AGENT_EXPERIENCES_API = "https://agent-ia-cv.vercel.app/api/public/experiences";
 
 const candidateId = params.get("id") || null;
 
@@ -236,6 +237,66 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (btn) btn.href = candidateCvUrl;
                     });
                 }
+            })
+            .catch(() => { });
+    }
+
+    /* =====================================================
+       Missions sur-mesure des expériences (candidature)
+       Seules les puces de mission (profil courant) des
+       3 expériences sont remplacées par celles du CV généré,
+       en français (bullets) et en anglais (bullets_en) :
+       intitulés et dates ne sont jamais touchés. Si une
+       langue manque (candidature ancienne sans bullets_en)
+       ou en cas d'échec, les puces par défaut restent.
+    ===================================================== */
+
+    if (candidateId) {
+        const normalize = (s) =>
+            (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+        // Les 3 expériences sont chez Albingia : on les distingue par
+        // l'intitulé (le stage et le MDM d'abord, car le poste MDM peut
+        // aussi contenir "Data Analyst"), puis par la date pour le poste actuel.
+        const experienceKey = (exp) => {
+            const poste = normalize(exp.poste);
+            if (/stage|crm|dynamics/.test(poste)) return "stage";
+            if (/mdm/.test(poste)) return "mdm";
+            if (/\bbi\b|analyst|decisionnel/.test(poste)) return "bi";
+            if (/aujourd/.test(normalize(exp.dates))) return "mdm";
+            return null;
+        };
+
+        const replaceMissions = (key, lang, bullets) => {
+            if (!Array.isArray(bullets) || bullets.length === 0) return;
+
+            const list = document.querySelector(
+                `.timeline__slide[data-experience="${key}"] ul[data-lang="${lang}"][data-role="${cfg}"]`
+            );
+            if (!list) return;
+
+            list.replaceChildren(...bullets.map(text => {
+                const li = document.createElement("li");
+                li.dataset.lang = lang;
+                li.textContent = text;
+                return li;
+            }));
+        };
+
+        fetch(`${AGENT_EXPERIENCES_API}/${encodeURIComponent(candidateId)}`)
+            .then(res => (res.ok ? res.json() : null))
+            .then(data => {
+                if (!data || !Array.isArray(data.experiences)) return;
+
+                const done = new Set();
+                data.experiences.forEach(exp => {
+                    const key = experienceKey(exp);
+                    if (!key || done.has(key)) return;
+                    done.add(key);
+
+                    replaceMissions(key, "fr", exp.bullets);
+                    replaceMissions(key, "en", exp.bullets_en);
+                });
             })
             .catch(() => { });
     }
