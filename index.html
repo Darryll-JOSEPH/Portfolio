@@ -4378,8 +4378,41 @@
                 p.style.transform = `rotateY(${i * stepAngle}deg) translateZ(${radius}px)`;
             });
 
+            reserveSpaceForFrontPanel();
+
             box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
             updateActivePanel(); // assure update initiale
+        }
+
+        // La carte de devant, rapprochée par la perspective 3D, est agrandie et déborde au-dessus
+        // du carrousel : on mesure ce débordement (chaque carte tour à tour placée de face) et on
+        // réserve cette marge pour qu'elle ne recouvre jamais le titre de la section, quelle que
+        // soit la hauteur de l'écran. Inutile en mobile, où le carrousel devient une liste (static).
+        function reserveSpaceForFrontPanel() {
+            if (getComputedStyle(box).position === 'static') {
+                box.style.marginTop = '';
+                return;
+            }
+
+            // .box a une transition CSS sur transform : on la coupe le temps de la mesure pour lire
+            // la position finale de chaque rotation, pas une position en cours d'animation.
+            const previousTransition = box.style.transition;
+            box.style.transition = 'none';
+
+            const boxTop = box.getBoundingClientRect().top;
+            let overflowTop = 0;
+            panels.forEach((p, i) => {
+                box.style.transform = `perspective(1000px) rotateY(${-i * stepAngle}deg)`;
+                // Les éléments masqués (lien de l'autre langue) n'ont pas de position : ignorés.
+                const visible = [...p.children].filter((el) => el.getClientRects().length > 0);
+                const top = Math.min(...visible.map((el) => el.getBoundingClientRect().top));
+                if (Number.isFinite(top)) overflowTop = Math.max(overflowTop, boxTop - top);
+            });
+            box.style.marginTop = `${Math.ceil(overflowTop) + 16}px`;
+
+            box.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+            void box.offsetWidth; // applique la rotation courante avant de rétablir la transition
+            box.style.transition = previousTransition;
         }
 
         // Met à jour la classe active sur le panneau "en face"
