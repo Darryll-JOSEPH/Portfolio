@@ -4509,6 +4509,19 @@
             recalcStepActiveMarkerProps();
         });
 
+        // La hauteur du cadre suit celle de l'étape active même quand son contenu change
+        // après coup (puces sur-mesure chargées via l'id, changement de langue, largeur).
+        if (window.ResizeObserver) {
+            const slideResizeObserver = new ResizeObserver((entries) => {
+                entries.forEach(({ target }) => {
+                    if (target.classList.contains(DOM.timelineSlideActive)) {
+                        setSlideContainerHeight(getCurrentSlideHeight(target));
+                    }
+                });
+            });
+            timelineSlides?.forEach((slide) => slideResizeObserver.observe(slide));
+        }
+
         timeline?.addEventListener("click", (event) => {
             const { target } = event;
 
