@@ -335,12 +335,12 @@ function openLink(event) {
         ssPhotoswipe();
         ssSlickSlider();
         ssWaypoints();
-        ssStatCount();
-        ssSmoothScroll();
-        ssPlaceholder();
-        ssAlertBoxes();
-        ssContactForm();
-        ssBackToTop();
+
+        // Retiré : ssStatCount, ssSmoothScroll, ssPlaceholder, ssAlertBoxes et ssContactForm
+        // n'existent pas (restes du modèle d'origine) : leur appel levait une ReferenceError à
+        // chaque chargement et interrompait l'initialisation avant ssBackToTop(), qui n'était
+        // donc jamais exécutée. Le bouton "retour en haut" est géré par le script de
+        // index.html (.back-to-top.show), ssBackToTop() reste volontairement non appelée.
 
     })();
 
