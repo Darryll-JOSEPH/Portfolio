@@ -3815,6 +3815,11 @@
             const heroSection = document.getElementById("about");
             const goTopButton = document.getElementById("go-top");
 
+            // Aucun élément #go-top dans la page (le bouton "retour en haut" est le lien
+            // .back-to-top, géré par le script plus bas) : sans ce garde-fou, chaque
+            // défilement levait une TypeError dans la console.
+            if (!heroSection || !goTopButton) return;
+
             const heroHeight = heroSection.offsetHeight;
 
             // Si on dépasse la hauteur du hero → montrer le bouton
