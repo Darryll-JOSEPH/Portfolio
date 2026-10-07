@@ -212,12 +212,26 @@ document.addEventListener("DOMContentLoaded", () => {
        en cas d'échec ou de réponse invalide, le titre de la variante reste.
     ===================================================== */
 
+    // Titres BI Developer / Analytics Engineer / Data Engineer : le message d'accueil et le texte de
+    // présentation (data-title dans index.html) remplacent ceux de la variante. Les titres de la
+    // variante (da, dads, dsii) gardent leurs textes d'origine.
+    const TITLE_TEXT_KEYS = ["bi", "ae", "de"];
+
     const titleSpans = candidateId
         ? document.querySelectorAll(`.tagline [data-role="${cfg}"], .footer-info [data-role="${cfg}"]`)
         : [];
 
+    // Masqués le temps de la réponse : les titres, mais aussi les textes d'accueil et de
+    // présentation qui peuvent être remplacés (seuls les titres reçoivent le texte de l'API).
+    const pendingSpans = candidateId
+        ? document.querySelectorAll(
+            `.tagline [data-role="${cfg}"], .footer-info [data-role="${cfg}"], ` +
+            `.home-content h4 [data-profile="${cfg}"], .hero-text .intro [data-role="${cfg}"]`
+        )
+        : [];
+
     const setTitleVisible = (visible) => {
-        titleSpans.forEach(el => { el.style.visibility = visible ? "" : "hidden"; });
+        pendingSpans.forEach(el => { el.style.visibility = visible ? "" : "hidden"; });
     };
 
     const isValidTitle = (v) => typeof v === "string" && v.trim() !== "" && v.length <= 60;
@@ -229,6 +243,15 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isValidTitle(text)) el.textContent = text;
         });
         if (isValidTitle(title.en)) document.title = `Darryll JOSEPH | ${title.en} Portfolio`;
+
+        if (TITLE_TEXT_KEYS.includes(title.key)) {
+            document
+                .querySelectorAll(".home-content h4 [data-profile], .hero-text .intro [data-role]")
+                .forEach(el => { el.style.display = "none"; });
+            document
+                .querySelectorAll(`[data-title="${title.key}"]`)
+                .forEach(el => { el.style.display = "inline"; });
+        }
     };
 
     if (candidateId) {
