@@ -21,10 +21,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const candidateId = params.get("id") || null;
 
+    // Titre générique de la candidature dans le pied de page — voir portfolio-config.js
+    // pour le détail (liste fixe, masqué au plus 2,5 s le temps de la réponse).
+    const AGENT_EXPERIENCES_API = "https://agent-ia-cv.vercel.app/api/public/experiences";
+
     // Affichage data-role (contenu spécifique au profil ciblé)
     document.querySelectorAll("[data-role]").forEach(el => {
         el.style.display = el.dataset.role === cfg ? "inline" : "none";
     });
+
+    if (candidateId) {
+        const titleSpans = document.querySelectorAll(`.footer-info [data-role="${cfg}"]`);
+        const setTitleVisible = (visible) => {
+            titleSpans.forEach(el => { el.style.visibility = visible ? "" : "hidden"; });
+        };
+        const isValidTitle = (v) => typeof v === "string" && v.trim() !== "" && v.length <= 60;
+
+        setTitleVisible(false);
+        setTimeout(() => setTitleVisible(true), 2500);
+
+        fetch(`${AGENT_EXPERIENCES_API}/${encodeURIComponent(candidateId)}`)
+            .then(res => (res.ok ? res.json() : null))
+            .then(data => {
+                const title = data && data.portfolio_titre;
+                if (!title) return;
+                titleSpans.forEach(el => {
+                    const text = title[el.dataset.lang];
+                    if (isValidTitle(text)) el.textContent = text;
+                });
+            })
+            .catch(() => { })
+            .finally(() => setTitleVisible(true));
+    }
 
     // CV téléchargeable selon le profil ciblé
     const cvFiles = {

@@ -205,6 +205,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       Titre générique de la candidature (sous le nom, pied de page, onglet)
+       Fourni par l'agent IA (portfolio_titre) : un titre choisi dans une
+       liste fixe, jamais le titre de l'offre. Masqué le temps de la réponse
+       (2,5 s au plus) pour ne pas afficher l'ancien titre puis le remplacer ;
+       en cas d'échec ou de réponse invalide, le titre de la variante reste.
+    ===================================================== */
+
+    const titleSpans = candidateId
+        ? document.querySelectorAll(`.tagline [data-role="${cfg}"], .footer-info [data-role="${cfg}"]`)
+        : [];
+
+    const setTitleVisible = (visible) => {
+        titleSpans.forEach(el => { el.style.visibility = visible ? "" : "hidden"; });
+    };
+
+    const isValidTitle = (v) => typeof v === "string" && v.trim() !== "" && v.length <= 60;
+
+    const applyCandidateTitle = (title) => {
+        if (!title) return;
+        titleSpans.forEach(el => {
+            const text = title[el.dataset.lang];
+            if (isValidTitle(text)) el.textContent = text;
+        });
+        if (isValidTitle(title.en)) document.title = `Darryll JOSEPH | ${title.en} Portfolio`;
+    };
+
+    if (candidateId) {
+        setTitleVisible(false);
+        setTimeout(() => setTitleVisible(true), 2500);
+    }
+
+
+    /* =====================================================
     CV selon le profil
     ===================================================== */
 
@@ -286,6 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${AGENT_EXPERIENCES_API}/${encodeURIComponent(candidateId)}`)
             .then(res => (res.ok ? res.json() : null))
             .then(data => {
+                if (data) applyCandidateTitle(data.portfolio_titre);
                 if (!data || !Array.isArray(data.experiences)) return;
 
                 const done = new Set();
@@ -298,7 +332,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     replaceMissions(key, "en", exp.bullets_en);
                 });
             })
-            .catch(() => { });
+            .catch(() => { })
+            .finally(() => setTitleVisible(true));
     }
 
     /* =====================================================
