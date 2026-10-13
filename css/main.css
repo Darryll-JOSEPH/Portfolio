@@ -10355,7 +10355,7 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
 /*   PASSIONS            */
 /* ===================== */
 #passions {
-    background: var(--bg-alt, #f6f6f9);
+    background: var(--paper);
     padding: 60px 20px;
 }
 
