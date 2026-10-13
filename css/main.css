@@ -10356,10 +10356,11 @@ radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 100%); */
 /* ===================== */
 #passions {
     background: var(--paper);
-    padding: 60px 20px;
+    padding: 20px 20px 60px;
 }
 
 #passions .section-title {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
