@@ -5,6 +5,25 @@
     var TRACKING_ENABLED = true;
     if (!TRACKING_ENABLED) return;
 
+    // Aucun suivi (donc aucun email) hors du site en ligne : tests en local (localhost, adresse IP du
+    // réseau, fichier ouvert directement), navigateurs automatisés (tests, aperçus) et pages intégrées
+    // dans une autre page (iframe). Seules les vraies visites du site publié sont comptées.
+    try {
+        var host = location.hostname;
+        var isLocalHost =
+            location.protocol === "file:" ||
+            host === "" ||
+            host === "localhost" ||
+            /^127\./.test(host) ||
+            host === "[::1]" ||
+            /\.(local|localhost|test|internal)$/.test(host) ||
+            /^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(host);
+        if (isLocalHost) return;
+        if (navigator.webdriver) return;
+        if (/HeadlessChrome|Playwright|Puppeteer|Selenium/i.test(navigator.userAgent || "")) return;
+        if (window.top !== window.self) return;
+    } catch (e) { }
+
     // Exclusion des visites du propriétaire : ?_sx=k7q2 marque durablement ce navigateur
     // (localStorage), ?_sx=0 le démarque. Le paramètre est retiré de l'URL aussitôt lu.
     var OWNER_PARAM = "_sx";
