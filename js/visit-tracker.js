@@ -101,6 +101,11 @@
         } catch (e) { }
     }
 
+    // Une visite qui démarre directement sur une ancre (#about, #projects...) ne vient pas du lien du CV, qui n'en
+    // contient pas : c'est un robot (analyseur de CV, antivirus de liens) qui parcourt les liens du menu, souvent
+    // quelques secondes après l'envoi d'une candidature. Ces visites ne sont pas comptées.
+    if (!sessionStorage.getItem("pv_start") && location.hash) return;
+
     // --- Session bootstrap (runs on every page load) ---
     var isNewSession = !sessionStorage.getItem("pv_start");
 
@@ -247,6 +252,17 @@
         true
     );
 
+    // Un email n'est envoyé que si la page a reçu une vraie action humaine (souris, défilement, clavier, toucher) :
+    // les événements fabriqués par un script ont isTrusted à false et ne comptent pas.
+    function markHuman(e) {
+        if (e && e.isTrusted) {
+            try { sessionStorage.setItem("pv_human", "1"); } catch (err) { }
+        }
+    }
+    ["mousemove", "scroll", "wheel", "keydown", "touchstart", "click"].forEach(function (evt) {
+        window.addEventListener(evt, markHuman, { passive: true, capture: true });
+    });
+
     // --- Send the visit summary email once, on real exit ---
     function buildPayload() {
         var start = parseInt(sessionStorage.getItem("pv_start"), 10) || Date.now();
@@ -278,6 +294,7 @@
     function trySendVisitEmail() {
         if (sessionStorage.getItem("pv_internal_nav") === "1") return;
         if (sessionStorage.getItem("pv_sent") === "1") return;
+        if (sessionStorage.getItem("pv_human") !== "1") return;
 
         var start = parseInt(sessionStorage.getItem("pv_start"), 10) || Date.now();
         var durationSec = (Date.now() - start) / 1000;
